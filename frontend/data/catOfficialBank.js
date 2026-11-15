@@ -1578,3 +1578,159 @@ window.IPM_VARC = window.IPM_VARC || [
     ];
   }
 })();
+
+// ==============================================================================
+// EXACT SCHEMA FIX FOR TAB 3 (VARC STUDIO) & TAB 4 (TRAP DOCTOR) IN CAT 2026
+// ==============================================================================
+window.CAT_OFFICIAL_BANK = window.CAT_OFFICIAL_BANK || {};
+window.CAT_OFFICIAL_BANK.varc = {
+  readingComprehension: [
+    {
+      subtype: "CAT 2026 RC • Philosophy of Science",
+      difficulty: "CAT 99%ile • +3 / -1 MCQ",
+      passage: "Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities (such as quarks and electromagnetic fields) genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.",
+      questions: [
+        {
+          qid: "CAT-RC-101",
+          prompt: "How does structural realism resolve the tension between scientific realism and the pessimistic meta-induction?",
+          options: [
+            "By denying that historical theories such as caloric fluid ever achieved empirical success.",
+            "By contending that mathematical relationships persist across paradigm shifts even when underlying theoretical entities are abandoned.",
+            "By conceding that unobservable entities cannot be modeled through mathematical equations.",
+            "By claiming modern physics is exempt from historical patterns of theory replacement."
+          ],
+          correct: 1,
+          explanation: "Sentence 3 states that structural realism preserves 'the mathematical and relational structure captured by the equations' across theory change."
+        },
+        {
+          qid: "CAT-RC-102",
+          prompt: "Which of the following would most weaken the anti-realist's 'pessimistic meta-induction' as presented in the passage?",
+          options: [
+            "Demonstrating that caloric fluid equations remain mathematically isomorphic to modern thermodynamic heat-transfer equations.",
+            "Showing that modern particle accelerators cost significantly more than nineteenth-century laboratories.",
+            "Proving that unobservable entities cannot be directly detected by human sensory organs.",
+            "Establishing that future scientific revolutions will occur more rapidly than historical ones."
+          ],
+          correct: 0,
+          explanation: "If historical equations remain structurally valid in modern physics, theory replacement does not invalidate scientific progress."
+        }
+      ]
+    },
+    {
+      subtype: "CAT 2026 RC • Behavioral Macroeconomics",
+      difficulty: "CAT 98%ile • +3 / -1 MCQ",
+      passage: "While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.",
+      questions: [
+        {
+          qid: "CAT-RC-201",
+          prompt: "The primary purpose of the passage is to:",
+          options: [
+            "Advocate for the immediate abolition of central bank forward guidance.",
+            "Highlight an intertemporal policy trade-off between near-term macroeconomic stimulus and long-term financial stability.",
+            "Prove that non-bank intermediaries are solely responsible for liquidity traps.",
+            "Argue that rate-normalization cycles have no impact on long-term bond yields."
+          ],
+          correct: 1,
+          explanation: "The passage explicitly frames the tension as an 'intertemporal trade-off' between near-term recovery and future systemic fragility."
+        }
+      ]
+    }
+  ],
+  vaTita: [
+    {
+      subtype: "TITA Parajumble (+3 / 0 • No Negative Marking)",
+      difficulty: "CAT 98%ile",
+      tita: true,
+      id: "CAT-VA-PJ1",
+      sentences: [
+        "1. Yet this very abundance of granular behavioral data has paradoxically made causal inference harder rather than easier for empirical economists.",
+        "2. Over the past decade, digital platforms have generated unprecedented real-time records of consumer choices, search queries, and price sensitivity.",
+        "3. Without exogenous shocks or randomized field experiments, observational correlations in massive datasets routinely conflate genuine preference shifts with algorithmic nudges.",
+        "4. Consequently, modern econometricians increasingly pair machine-learning prediction tools with quasi-experimental designs to isolate true causal effects."
+      ],
+      answer: "2134",
+      explanation: "2 introduces digital behavioral data; 1 pivots ('Yet this very abundance...') to causal inference; 3 diagnoses why correlations fail; 4 concludes ('Consequently...') with quasi-experimental designs -> 2134."
+    },
+    {
+      subtype: "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
+      difficulty: "CAT 97%ile",
+      tita: true,
+      id: "CAT-VA-OOO1",
+      sentences: [
+        "1. Early urban planners viewed street-level congestion purely as an engineering bottleneck solvable by widening arterial roads.",
+        "2. Subsequent empirical studies revealed the phenomenon of induced demand, wherein expanded road capacity rapidly attracts latent vehicular traffic.",
+        "3. High-speed intercity rail networks have significantly reduced domestic aviation emissions across Western Europe.",
+        "4. As a result, expanding highway lanes frequently restores peak-hour gridlock within a few years of construction.",
+        "5. Contemporary mobility policy therefore prioritizes congestion pricing and transit-oriented density over unchecked road expansion."
+      ],
+      answer: "3",
+      explanation: "1-2-4-5 trace urban road widening, induced demand, recurring gridlock, and congestion pricing. Sentence 3 shifts to intercity rail and aviation emissions -> 3."
+    },
+    {
+      subtype: "Para-Summary (+3 / -1 MCQ)",
+      difficulty: "CAT 96%ile",
+      tita: false,
+      id: "CAT-VA-PS1",
+      stem: "Although algorithmic credit scoring expands formal loan access to thin-file borrowers by analyzing non-traditional digital footprints, opaque machine-learning models risk encoding historical socioeconomic proxies that are difficult for applicants to audit or contest.",
+      options: [
+        "Algorithmic credit scoring should be banned because machine-learning models always discriminate against thin-file borrowers.",
+        "While alternative-data algorithms widen credit access for thin-file applicants, their opacity can embed uncontestable socioeconomic biases.",
+        "Thin-file borrowers prefer traditional credit bureaus over algorithmic underwriting models.",
+        "Auditing machine-learning models eliminates all historical biases in consumer lending."
+      ],
+      answer: 1,
+      explanation: "Option (B) captures both the benefit (widening access) and the risk (opaque socioeconomic proxies)."
+    }
+  ]
+};
+
+window.IPM_TRAPS_CLINIC = [
+  {
+    id: "CAT-TRAP-01",
+    domain: "Algebra & Modulus",
+    examTag: "CAT 2026 QA",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Squaring |f(x)| = g(x) Without Enforcing RHS >= 0",
+    trapScenario: "Solving |2x - 7| = x - 5 by squaring both sides to obtain 3x^2 - 18x + 24 = 0 => x = 2 or x = 4.",
+    whyItFails: "An absolute value |2x - 7| is always >= 0, which requires x - 5 >= 0 (x >= 5). Both x = 2 and x = 4 make RHS negative.",
+    fixRule: "Always enforce g(x) >= 0 BEFORE opening modulus bars or squaring both sides.",
+    miniDrill: {
+      prompt: "[TITA] How many real solutions satisfy |2x - 7| = x - 5?",
+      options: ["0", "1", "2", "3"],
+      answer: 0,
+      explanation: "Requires x >= 5, which rejects both x = 2 and x = 4 => 0 real solutions."
+    }
+  },
+  {
+    id: "CAT-TRAP-02",
+    domain: "Arithmetic & Mixtures",
+    examTag: "CAT 2026 QA",
+    penalty: "-1 Mark in MCQ",
+    title: "Adding Removed Volumes in Successive Replacement",
+    trapScenario: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water; subtracting (6+10+12)/60 from 100%.",
+    whyItFails: "Subsequent draws remove diluted mixture rather than pure milk, so remaining fractions multiply rather than subtract.",
+    fixRule: "Multiply remaining pure fractions: (54/60) * (50/60) * (48/60) = 60%.",
+    miniDrill: {
+      prompt: "60L pure milk has 6L, 10L, and 12L sequentially replaced with water. Final milk %?",
+      options: ["53.33%", "56.00%", "60.00%", "64.00%"],
+      answer: 2,
+      explanation: "(9/10) * (5/6) * (4/5) = 3/5 = 60%."
+    }
+  },
+  {
+    id: "CAT-TRAP-03",
+    domain: "DILR • Set Theory",
+    examTag: "CAT 2026 DILR",
+    penalty: "-4 Marks on Cascading Set",
+    title: "Confusing 'At Least 2 Sets' with 'Exactly 2 Sets'",
+    trapScenario: "100 students: 70 QA, 65 DILR, 60 VARC (everyone studies >=1). Taking min(70, 65, 60) = 60 as max all-three.",
+    whyItFails: "Sum of sets = E_1 + 2*E_2 + 3*E_3 = 195, while E_1 + E_2 + E_3 = 100 => E_2 + 2*E_3 = 95 => Max E_3 = 47.",
+    fixRule: "Always subtract Total (N - E_0) from Sum of Sets to isolate E_2 + 2*E_3 first.",
+    miniDrill: {
+      prompt: "In a group of 100 (70 QA, 65 DILR, 60 VARC, none = 0), what is the maximum number studying all 3?",
+      options: ["45", "47", "50", "60"],
+      answer: 1,
+      explanation: "E_2 + 2*E_3 = 95 => setting E_2 = 1 gives 2*E_3 = 94 => Max E_3 = 47."
+    }
+  }
+];

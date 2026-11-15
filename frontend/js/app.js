@@ -71,7 +71,7 @@ window.switchTab = function (tabId) {
   try {
     if (tabId === "tab1" && typeof window.renderTab1 === "function") return window.renderTab1(el);
     if (tabId === "tab2" && typeof window.renderTab2 === "function") return window.renderTab2(el);
-    if (tabId === "tab3" && typeof window.renderTab3 === "function") return window.renderTab3(el);
+    if (tabId === "tab3" && typeof window.renderTab3VarcVocab === "function") return window.renderTab3VarcVocab(el);
     if (tabId === "tab8" && typeof window.renderTab8 === "function") return window.renderTab8(el);
     if (tabId === "tab4" && typeof window.renderTab4 === "function") return window.renderTab4(el);
     if (tabId === "tab6" && typeof window.renderTab6 === "function") return window.renderTab6(el);
