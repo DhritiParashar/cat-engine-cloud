@@ -107,10 +107,10 @@ window.renderTab8 = function (el) {
   const mode = window.getActiveMode();
   const papers = [
     { id: "FULL_DIAGNOSTIC", label: "Full 45-Q All-Section Random Mock (60m)", mins: 60, qs: 45 },
-    { id: "QUANT_SPRINT", label: "Quant & Higher Math 30-Q Sprint (40m)", mins: 40, qs: 30 },
-    { id: "NCERT_HIGHER_MATH_SPRINT", label: "Class 10/11/12 + Higher Math 30-Q Sprint (40m)", mins: 40, qs: 30 },
-    { id: "DILR_SPRINT", label: "DI & LR 25-Q Sprint (40m)", mins: 40, qs: 25 },
-    { id: "VARC_SPRINT", label: "VARC (RC & TITA) 30-Q Sprint (40m)", mins: 40, qs: 30 }
+    { id: "QUANT_SPRINT", label: "CAT QA 22-Q Sectional Sprint (40m)", mins: 40, qs: 30 },
+    { id: "NCERT_HIGHER_MATH_SPRINT", label: "XAT Decision Making + Quant 25-Q Sprint (40m)", mins: 40, qs: 30 },
+    { id: "DILR_SPRINT", label: "CAT DILR 20-Q Caselet Sprint (40m)", mins: 40, qs: 25 },
+    { id: "VARC_SPRINT", label: "CAT VARC 24-Q RC & TITA Sprint (40m)", mins: 40, qs: 30 }
   ];
   const selectedPaper = papers.find(p => p.id === window.MOCK_PAPER_TYPE) || papers[0];
 
@@ -156,7 +156,7 @@ window.renderTab8 = function (el) {
         <div class="flex flex-wrap items-center justify-between gap-4 pt-3 border-t border-slate-800">
           <label class="flex items-center gap-2 text-xs text-slate-200 cursor-pointer">
             <input type="checkbox" ${window.MOCK_INCLUDE_NCERT ? "checked" : ""} onchange="window.toggleMockNcert(this.checked)">
-            <span>Blend Class 10/11/12 NCERT & Higher Math Question Bank</span>
+            <span>Include TITA Non-MCQ Integer & Parajumble Questions (+3 / 0)</span>
           </label>
 
           <button type="button" onclick="window.fetchNewRandomMock()"

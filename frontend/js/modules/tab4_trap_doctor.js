@@ -61,7 +61,7 @@ window.renderTrapCard = function (t, idx, total) {
 window.renderTab4 = function (el) {
   const list = window.getFilteredTraps();
   if (window.TRAP_FOCUS_IDX >= list.length) window.TRAP_FOCUS_IDX = 0;
-  const domains = ["ALL", "Quant & Higher Math", "DI & LR", "VARC & Vocab"];
+  const domains = ["ALL", "CAT Quantitative Aptitude", "CAT DILR", "VARC (RC & TITA)"];
   const defusedCount = list.filter(t => window.TRAP_DRILL_STATE[t.id]?.correct).length;
 
   const p = window.EV_ACCURACY_PCT / 100;
