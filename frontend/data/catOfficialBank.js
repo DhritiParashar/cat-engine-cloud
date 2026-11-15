@@ -184,3 +184,162 @@ window.IPM_QUANT_CORE = [
     }))
   }
 ];
+// Exhaustive IIM CAT 2026 Chapter Refresher, Concepts, Traps & Practice Drills
+window.IPM_REFRESHERS = window.IPM_REFRESHERS || {};
+window.IPM_REFRESHERS["CAT-MOD-ALG"] = {
+  title: "CAT 2026 Algebra: Modulus, Quadratics, Functions & Logarithms",
+  summary: "Algebra accounts for 35–40% of CAT QA (7–8 questions out of 22). Mastering critical-point interval splitting for nested modulus, AM-GM optimization, and functional equations is mandatory for 99+ percentile.",
+  keyFormulas: [
+    "Triangle Inequality: |a| + |b| >= |a + b|, with equality iff a * b >= 0.",
+    "AM >= GM for positive reals: (x_1 + x_2 + ... + x_n)/n >= (x_1 * x_2 * ... * x_n)^(1/n).",
+    "Log Base Change: log_b(a) = log_c(a) / log_c(b) = 1 / log_a(b)."
+  ],
+  workedExample: "|x^2 - 7x + 10| + |x - 2| = x - 2 requires x >= 2 so |x - 2| = x - 2, leaving |x^2 - 7x + 10| = 0 => x = 2 or x = 5 (2 solutions)."
+};
+window.IPM_REFRESHERS["CAT-MOD-ARITH"] = {
+  title: "CAT 2026 Arithmetic: Mixtures, TSD, Time & Work, Ratios",
+  summary: "Arithmetic forms the backbone of CAT QA (8–9 questions). Successive replacement, relative speed on circular tracks, and efficiency-ratio work models appear every single year.",
+  keyFormulas: [
+    "Successive Replacement: Final Pure = Initial * (1 - v_1/V)(1 - v_2/V)...(1 - v_k/V).",
+    "Circular Track First Meeting: Opposite directions = L / (v_1 + v_2); Same direction = L / |v_1 - v_2|.",
+    "Distinct Meeting Points on Circle: Ratio of reduced speeds a : b -> (a + b) points if opposite, |a - b| if same."
+  ],
+  workedExample: "60L pure milk with 6L, 10L, 12L replaced sequentially: (54/60)*(50/60)*(48/60) = (9/10)*(5/6)*(4/5) = 3/5 = 60%."
+};
+window.IPM_REFRESHERS["CAT-MOD-NUM"] = {
+  title: "CAT 2026 Number System: Remainders, Factors & Base Systems",
+  summary: "Number System questions reward structural theorems (Euler's Totient, Fermat's Little Theorem, Chinese Remainder Theorem, and binomial parity identities).",
+  keyFormulas: [
+    "Odd Power Identity: (a^n + b^n) is divisible by (a + b) for every odd positive integer n.",
+    "Euler's Theorem: If gcd(a, N) = 1, then a^phi(N) ≡ 1 (mod N).",
+    "Number of Factors of N = p^a * q^b * r^c: (a + 1)(b + 1)(c + 1)."
+  ],
+  workedExample: "Since 103 is odd, 7^103 + 11^103 is divisible by 7 + 11 = 18, leaving remainder 0."
+};
+
+window.IPM_QUANT_CORE = [
+  {
+    id: "CAT-MOD-ALG",
+    pillar: "CAT 2026 ALGEBRA",
+    title: "CAT 2026 Algebra: Modulus, Quadratics & Functions (TITA + MCQ)",
+    weightage: "High Weightage • 7–8 Qs in CAT QA (+3 / -1 MCQ, +3 / 0 TITA)",
+    concepts: [
+      {
+        heading: "Nested Modulus Domain Pruning",
+        formula: "|f(x)| + |g(x)| = g(x)  <=>  f(x) = 0  AND  g(x) >= 0",
+        derivation: "Since |f(x)| >= 0 and |g(x)| >= g(x), their sum equals g(x) if and only if both inequalities hold with equality simultaneously.",
+        shortcut: "Check RHS >= 0 first to eliminate half the number line before solving."
+      },
+      {
+        heading: "AM-GM Maxima & Minima",
+        formula: "If x + y = S (constant), x*y is maximized at x = y = S/2",
+        derivation: "By AM >= GM, (x + y)/2 >= sqrt(xy) with equality iff x = y.",
+        shortcut: "Split exponents to match variable powers before applying AM-GM."
+      }
+    ],
+    traps: [
+      {
+        title: "Forgetting Non-Negativity of RHS in Modulus Equations",
+        wrongStep: "Squaring both sides of |x - 5| = 2x - 10 without checking 2x - 10 >= 0.",
+        correction: "Verify every candidate root satisfies RHS >= 0.",
+        penalty: "-1 Mark in CAT MCQ"
+      }
+    ],
+    questions: [
+      {
+        id: "CAT-QA-Q1",
+        stem: "[TITA] Find the number of distinct real solutions to: |x^2 - 7x + 10| + |x - 2| = x - 2.",
+        options: ["2", "0", "1", "3"],
+        answer: 0,
+        explanation: "Requires x >= 2 => |x - 2| = x - 2 => |x^2 - 7x + 10| = 0 => x = 2 or x = 5 (both >= 2). Hence 2 real solutions."
+      },
+      {
+        id: "CAT-QA-Q2",
+        stem: "If x > 0 and y > 0 such that 3x + 4y = 24, what is the maximum possible value of x^2 * y^3?",
+        options: ["256", "432", "512", "648"],
+        answer: 1,
+        explanation: "Split 3x into two parts (1.5x + 1.5x) and 4y into three parts (4y/3 each). Sum of 5 terms = 24 => each term = 24/5. Product (1.5x)^2 * (4y/3)^3 <= (24/5)^5 => x = 4, y = 3 => x^2 * y^3 = 16 * 27 = 432."
+      }
+    ]
+  },
+  {
+    id: "CAT-MOD-ARITH",
+    pillar: "CAT 2026 ARITHMETIC",
+    title: "CAT 2026 Arithmetic: Mixtures, Replacement & Ratios",
+    weightage: "Highest Weightage • 8–9 Qs in CAT QA",
+    concepts: [
+      {
+        heading: "Successive Dilution & Replacement",
+        formula: "C_final = C_initial * (1 - v_1/V) * (1 - v_2/V) * ... * (1 - v_k/V)",
+        derivation: "Each removal of volume v_i removes v_i/V of the current pure solute regardless of prior dilutions.",
+        shortcut: "Multiply remaining fractions directly without tracking intermediate water volumes."
+      }
+    ],
+    traps: [
+      {
+        title: "Adding Removed Volumes Instead of Multiplying Fractions",
+        wrongStep: "Subtracting (6 + 10 + 12)/60 = 28/60 from 100%.",
+        correction: "Later draws remove a diluted mixture, not pure milk; multiply (54/60)*(50/60)*(48/60) = 60%.",
+        penalty: "-1 Mark in CAT MCQ"
+      }
+    ],
+    questions: [
+      {
+        id: "CAT-QA-Q3",
+        stem: "A vessel holds 60L pure milk. 6L, 10L, and 12L are sequentially drawn and replaced with water. Find the final milk concentration.",
+        options: ["54%", "56%", "60%", "64%"],
+        answer: 2,
+        explanation: "(54/60)*(50/60)*(48/60) = (9/10)*(5/6)*(4/5) = 3/5 = 60%."
+      },
+      {
+        id: "CAT-QA-Q4",
+        stem: "Two runners A and B start simultaneously from the same point on a 1200m circular track in opposite directions at 5 m/s and 7 m/s. At how many distinct points on the track will they meet?",
+        options: ["2", "5", "7", "12"],
+        answer: 3,
+        explanation: "Ratio of speeds = 5 : 7 (coprime). Running in opposite directions, they meet at 5 + 7 = 12 distinct points."
+      }
+    ]
+  },
+  {
+    id: "CAT-MOD-NUM",
+    pillar: "CAT 2026 NUMBER SYSTEM",
+    title: "CAT 2026 Number System: Cyclicity & Binomial Remainders",
+    weightage: "99%ile Differentiator • 3–4 Qs in CAT QA",
+    concepts: [
+      {
+        heading: "Odd-Exponent Sum Divisibility",
+        formula: "For odd n: (a^n + b^n) = (a + b)(a^(n-1) - a^(n-2)b + ... + b^(n-1))",
+        derivation: "Substituting a = -b makes a^n + b^n = (-b)^n + b^n = 0 whenever n is odd.",
+        shortcut: "Check if bases sum to the divisor immediately when exponents are equal and odd."
+      }
+    ],
+    traps: [
+      {
+        title: "Applying (a + b) Divisibility to Even Exponents",
+        wrongStep: "Assuming a^2 + b^2 is divisible by a + b.",
+        correction: "a^n + b^n is divisible by (a + b) ONLY when n is odd.",
+        penalty: "0 Marks on TITA"
+      }
+    ],
+    questions: [
+      {
+        id: "CAT-QA-Q5",
+        stem: "[TITA] What is the remainder when 7^103 + 11^103 is divided by 18?",
+        options: ["0", "1", "7", "11"],
+        answer: 0,
+        explanation: "Since 103 is odd, 7^103 + 11^103 is divisible by 7 + 11 = 18 -> remainder is 0."
+      },
+      {
+        id: "CAT-QA-Q6",
+        stem: "How many positive integers divide 720 but are NOT divisible by 6?",
+        options: ["12", "15", "18", "30"],
+        answer: 1,
+        explanation: "720 = 2^4 * 3^2 * 5^1 -> Total factors = 5 * 3 * 2 = 30. Factors divisible by 6 = 6 * (2^3 * 3^1 * 5^1) -> 4 * 2 * 2 = 16? Wait: 30 - 16 = 14 (let's verify: powers of 2 in {0,1,2,3,4}, powers of 3 in {0,1,2}, powers of 5 in {0,1}; divisible by 6 requires pow2 >= 1 (4 choices) and pow3 >= 1 (2 choices) and pow5 in {0,1} (2 choices) = 16; not divisible by 6 = 30 - 16 = 14)."
+      }
+    ]
+  }
+];
+window.CAT_OFFICIAL_BANK.quant[2].options = ["14", "12", "16", "30"];
+window.IPM_QUANT_CORE[2].questions[1].options = ["14", "12", "16", "30"];
+window.IPM_QUANT_CORE[2].questions[1].answer = 0;
+window.IPM_HIGHER_MATH = [];
