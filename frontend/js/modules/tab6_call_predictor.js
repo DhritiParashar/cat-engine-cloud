@@ -7,7 +7,7 @@ window.renderTab6 = function (el) {
         <div class="grid grid-cols-2 gap-3 text-xs">
           <div>
             <label class="text-slate-400">Class 10 %</label>
-            <input id="cp-10" type="number" value="92" class="w-full mt-1 rounded-lg bg-slate-950 border border-slate-700 p-2 text-white">
+            <input id="cp-10" type="number" value="8.7" class="w-full mt-1 rounded-lg bg-slate-950 border border-slate-700 p-2 text-white">
           </div>
           <div>
             <label class="text-slate-400">Class 12 %</label>
