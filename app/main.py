@@ -1044,88 +1044,64 @@ class CreateVoucherReq(BaseModel):
     max_uses: int = 50
 
 @app.post("/api/mock/generate")
-def api_generate_mock(req: MockGenReq):
-    try:
-        qs = generate_stratified_mock(req.exam_mode, req.paper_type, req.include_ncert, req.exclude_codes)
-        if not qs:
-            seed_initial_databank()
-            qs = generate_stratified_mock(req.exam_mode, req.paper_type, req.include_ncert, req.exclude_codes)
-        return {"count": len(qs), "questions": qs, "db": db_backend_info()}
-    except Exception as e:
-        import traceback
-        traceback.print_exc()
-        return {"count": 0, "questions": [], "error": str(e), "db": db_backend_info()}
+async def api_mock_generate(request: Request):
+    import json
+    from sqlalchemy import text
+    from app.db_engine import engine, db_backend_info
+    body = await request.json()
+    paper_type = str(body.get("paper_type") or "FULL_DIAGNOSTIC").upper()
+    include_tita = bool(body.get("include_ncert", True))
+    exclude_codes = set(body.get("exclude_codes") or [])
 
-class EvaluationRequest(BaseModel):
-    track: str
-    prompt: str
-    student_response: str
-    mode: str = "PI_OR_WAT"
+    tita_clause = "" if include_tita else " AND q_type = 'MCQ'"
+    with engine.begin() as conn:
+        conn.execute(text("DELETE FROM ipm_questions WHERE exam_tags NOT LIKE '%CAT_2026%'"))
+        total_pool = conn.execute(text("SELECT COUNT(*) FROM ipm_questions WHERE exam_tags LIKE '%CAT_2026%'")).scalar() or 0
 
-class DoubtRequest(BaseModel):
-    track: str
-    topic: str
-    question: str
-    student_attempt: Optional[str] = ""
+        def fetch_sec(sec_filter, target_n):
+            sql = f"""
+                SELECT q_code, section, topic, exam_tags, q_type, difficulty, prompt, options_json, answer, explanation
+                FROM ipm_questions
+                WHERE exam_tags LIKE '%CAT_2026%' {sec_filter} {tita_clause}
+                ORDER BY RANDOM()
+                LIMIT :lim
+            """
+            rows = conn.execute(text(sql), {"lim": target_n * 4}).mappings().all()
+            unseen = [r for r in rows if r["q_code"] not in exclude_codes]
+            seen = [r for r in rows if r["q_code"] in exclude_codes]
+            picked = (unseen + seen)[:target_n]
+            out = []
+            for r in picked:
+                opts = r["options_json"]
+                if isinstance(opts, str):
+                    try: opts = json.loads(opts)
+                    except Exception: opts = []
+                ans_raw = str(r["answer"] or "").strip()
+                ans_val = int(ans_raw) if (opts and ans_raw.isdigit() and int(ans_raw) < len(opts)) else ans_raw
+                out.append({
+                    "id": r["q_code"], "q_code": r["q_code"], "section": r["section"],
+                    "topic": r["topic"], "q_type": r["q_type"], "difficulty": r["difficulty"],
+                    "prompt": r["prompt"], "options": opts or [], "answer": ans_val,
+                    "explanation": r["explanation"]
+                })
+            return out
 
-class CallPredictorRequest(BaseModel):
-    class10_pct: float
-    class12_pct: float
-    has_class12_math: bool
-    ipmat_indore_sa: Optional[int] = 0
-    ipmat_indore_mcq: Optional[int] = 0
-    ipmat_indore_va: Optional[int] = 0
-    ipmat_rohtak_score: Optional[int] = 0
-    jipmat_score: Optional[int] = 0
-    iimb_ug_score: Optional[int] = 0
-    jee_main_percentile: Optional[float] = 0.0
+        if paper_type == "QUANT_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
+        elif paper_type == "DILR_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'DILR'", 20)
+        elif paper_type == "VARC_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'VARC'", 24)
+        elif paper_type == "NCERT_HIGHER_MATH_SPRINT":
+            qs = fetch_sec("", 25)
+        else:
+            qs = (
+                fetch_sec("AND UPPER(section) = 'VARC'", 24) +
+                fetch_sec("AND UPPER(section) = 'DILR'", 20) +
+                fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
+            )
 
-class RegisterReq(BaseModel):
-    full_name: str
-    email: str
-    password: str
-    target_track: str = "ALL_IIM_MASTER"
-    category: str = "General"
-    class10_pct: float = 90.0
-    class12_pct: float = 90.0
-
-class LoginReq(BaseModel):
-    email: str
-    password: str
-
-class MockGenReq(BaseModel):
-    exam_mode: str = "ALL_IIM_MASTER"
-    paper_type: str = "FULL_DIAGNOSTIC"
-    include_ncert: bool = True
-    exclude_codes: List[str] = []
-
-class MockSubmitReq(BaseModel):
-    token: Optional[str] = None
-    exam_track: str
-    paper_type: str
-    score: float
-    max_score: float
-    accuracy_pct: float
-    attempted_q_codes: List[str] = []
-
-class ForgotInitReq(BaseModel):
-    email: str
-
-class ForgotConfirmReq(BaseModel):
-    challenge_id: int
-    reset_otp: str
-    new_password: str
-
-class RedeemVoucherReq(BaseModel):
-    token: str
-    code: str
-
-class CreateVoucherReq(BaseModel):
-    code: str
-    label: str = "Beta Tester Pass"
-    valid_days: int = 14
-    max_uses: int = 50
-
+    return {"questions": qs, "db": {"engine": db_backend_info().get("engine", "PostgreSQL"), "total_questions": total_pool}}
 @app.post("/api/mock/submit")
 def api_submit_mock(req: MockSubmitReq):
     db = SessionLocal()
@@ -2064,59 +2040,3 @@ def api_get_pyq(exam: str = "ALL", year: str = "ALL"):
     return {"count": len(items), "questions": items, "db": db_backend_info()}
 
 
-@app.post("/api/mock/generate")
-async def api_generate_cat_2026_mock(request: Request):
-    import json
-    from sqlalchemy import text
-    from app.db_engine import engine, db_backend_info
-    body = await request.json()
-    paper_type = str(body.get("paper_type") or "FULL_DIAGNOSTIC").upper()
-    include_tita = bool(body.get("include_ncert", True))
-    exclude_codes = set(body.get("exclude_codes") or [])
-
-    tita_clause = "" if include_tita else " AND q_type = 'MCQ'"
-    with engine.connect() as conn:
-        conn.execute(text("DELETE FROM ipm_questions WHERE exam_tags NOT LIKE '%CAT_2026%'"))
-        total_pool = conn.execute(text("SELECT COUNT(*) FROM ipm_questions WHERE exam_tags LIKE '%CAT_2026%'")).scalar() or 0
-
-        def fetch_sec(sec_filter, target_n):
-            sql = f"""
-                SELECT q_code, section, topic, exam_tags, q_type, difficulty, prompt, options_json, answer, explanation
-                FROM ipm_questions
-                WHERE exam_tags LIKE '%CAT_2026%' {sec_filter} {tita_clause}
-                ORDER BY RANDOM()
-                LIMIT :lim
-            """
-            rows = conn.execute(text(sql), {"lim": target_n * 3}).mappings().all()
-            unseen = [r for r in rows if r["q_code"] not in exclude_codes]
-            seen = [r for r in rows if r["q_code"] in exclude_codes]
-            picked = (unseen + seen)[:target_n]
-            out = []
-            for r in picked:
-                opts = r["options_json"]
-                if isinstance(opts, str):
-                    try: opts = json.loads(opts)
-                    except Exception: opts = []
-                ans_raw = str(r["answer"] or "").strip()
-                ans_val = int(ans_raw) if (opts and ans_raw.isdigit() and int(ans_raw) < len(opts)) else ans_raw
-                out.append({
-                    "id": r["q_code"], "q_code": r["q_code"], "section": r["section"],
-                    "topic": r["topic"], "q_type": r["q_type"], "difficulty": r["difficulty"],
-                    "prompt": r["prompt"], "options": opts or [], "answer": ans_val,
-                    "explanation": r["explanation"]
-                })
-            return out
-
-        if paper_type == "QUANT_SPRINT":
-            qs = fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
-        elif paper_type == "DILR_SPRINT":
-            qs = fetch_sec("AND UPPER(section) = 'DILR'", 20)
-        elif paper_type == "VARC_SPRINT":
-            qs = fetch_sec("AND UPPER(section) = 'VARC'", 24)
-        elif paper_type == "NCERT_HIGHER_MATH_SPRINT":
-            qs = fetch_sec("", 25)
-        else:
-            # Official CAT 2026 Standard 66-Question Paper: 24 VARC + 20 DILR + 22 QA
-            qs = fetch_sec("AND UPPER(section) = 'VARC'", 24) + fetch_sec("AND UPPER(section) = 'DILR'", 20) + fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
-
-    return {"questions": qs, "db": {"engine": db_backend_info().get("engine", "PostgreSQL"), "total_questions": total_pool}}
