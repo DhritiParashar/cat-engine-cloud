@@ -52,3 +52,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 })();
+
+// UNIFIED_CAT_TAB_ROUTER: Ensures Tabs 1, 2, 3, 4 (tab8), 5 (tab4) & 6 (tab6) always switch cleanly
+window.switchTab = function (tabId) {
+  window.IPM_STATE = window.IPM_STATE || {};
+  window.IPM_STATE.activeTab = tabId;
+
+  document.querySelectorAll("[data-tab-btn]").forEach(btn => {
+    const isActive = btn.getAttribute("data-tab-btn") === tabId;
+    btn.className = isActive
+      ? "px-3.5 py-2 rounded-xl bg-indigo-600 text-white text-xs font-bold shadow cursor-pointer"
+      : "px-3.5 py-2 rounded-xl bg-slate-950 text-slate-300 border border-slate-800 text-xs font-semibold hover:border-indigo-500 cursor-pointer";
+  });
+
+  const el = document.getElementById("tab-content");
+  if (!el) return;
+
+  try {
+    if (tabId === "tab1" && typeof window.renderTab1 === "function") return window.renderTab1(el);
+    if (tabId === "tab2" && typeof window.renderTab2 === "function") return window.renderTab2(el);
+    if (tabId === "tab3" && typeof window.renderTab3 === "function") return window.renderTab3(el);
+    if (tabId === "tab8" && typeof window.renderTab8 === "function") return window.renderTab8(el);
+    if (tabId === "tab4" && typeof window.renderTab4 === "function") return window.renderTab4(el);
+    if (tabId === "tab6" && typeof window.renderTab6 === "function") return window.renderTab6(el);
+  } catch (err) {
+    console.error("Error rendering tab " + tabId + ":", err);
+    el.innerHTML = `<div class="p-6 rounded-2xl bg-slate-900 border border-rose-500/40 text-xs text-rose-200">Recovered tab view (${tabId}): ${err.message}</div>`;
+  }
+};
+window.renderActiveTab = function () {
+  const cur = (window.IPM_STATE && window.IPM_STATE.activeTab) || "tab1";
+  window.switchTab(cur);
+};

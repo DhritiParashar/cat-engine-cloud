@@ -1482,3 +1482,99 @@ window.IPM_VARC = window.IPM_VARC || [
     ];
   }
 })();
+
+// ELABORATE TAB 2 DILR OVERVIEW & CONCEPT BRIDGE TO MATCH TAB 1 DEPTH
+(function elaborateCatDilrDepth() {
+  const R = window.IPM_CHAPTER_REFRESHERS || {};
+
+  if (R["CAT-DILR-SET"]) {
+    R["CAT-DILR-SET"].overviewParagraphs = [
+      "Set Theory, Venn Diagrams & Maxima-Minima Optimization constitute 25–30% of all IIM CAT DILR sets—typically appearing as a full 4-question or 5-question anchor caselet in every slot. Unlike routine 2-circle school Venn problems where every intersection is given explicitly, CAT presents incomplete 3-set or 4-set survey tables with missing boundary counts and asks for the maximum or minimum possible number of elements in a target region.",
+      "Concept Bridge: Never guess intersection sizes by trial and error. Anchor the Fundamental 3-Set Degree-Sum Identity: Sum of Individual Set Totals [n(A) + n(B) + n(C)] = E_1 + 2*E_2 + 3*E_3, where E_k denotes elements belonging to EXACTLY k sets. Meanwhile, Total Surveyed Population N = E_0 + E_1 + E_2 + E_3. Subtracting these two equations immediately isolates the Excess Overlap Equation: E_2 + 2*E_3 = [n(A) + n(B) + n(C)] - (N - E_0).",
+      "Exam-Day Execution Protocol: Once you compute the Excess Overlap constant K = E_2 + 2*E_3, maximizing E_3 (all three sets) reduces to setting E_2 = 0 (if K is even) or E_2 = 1 (if K is odd), provided no single-set count becomes negative. Conversely, minimizing E_3 reduces to pushing E_2 as large as possible up to (N - E_0), driving E_3 down to zero whenever K <= N - E_0."
+    ];
+    R["CAT-DILR-SET"].prerequisites = [
+      "3-Set Inclusion-Exclusion Formula: n(A U B U C) = n(A) + n(B) + n(C) - n(A ∩ B) - n(B ∩ C) - n(A ∩ C) + n(A ∩ B ∩ C).",
+      "Exact-Overlap Partition Identity: Total Population N = E_0 (None) + E_1 (Exactly 1) + E_2 (Exactly 2) + E_3 (Exactly 3).",
+      "Degree-Sum Identity: n(A) + n(B) + n(C) = E_1 + 2*E_2 + 3*E_3 (each element in k sets is counted k times in the sum).",
+      "Excess Overlap Equation: E_2 + 2*E_3 = [n(A) + n(B) + n(C)] - (N - E_0).",
+      "At-Least-Two Overlap Relation: n(At least 2 sets) = E_2 + E_3 = Excess - E_3.",
+      "Pairwise Intersection Sum: n(A ∩ B) + n(B ∩ C) + n(A ∩ C) = E_2 + 3*E_3.",
+      "4-Attribute Karnaugh Grid Setup: For 4 binary attributes (e.g., 4 events or 4 product lines), replace overlapping circles with a 4x4 truth table of 16 mutually exclusive cells.",
+      "Boundary Feasibility Check: Every individual region (including 'Only A' = n(A) - overlaps) must remain >= 0 for an extreme value to be valid."
+    ];
+    R["CAT-DILR-SET"].conceptBridgeTraps = [
+      { pitfall: "Confusing 'At Least 2 Sets' with 'Exactly 2 Sets'", bridge: "In CAT wording, 'A and B' includes A ∩ B ∩ C (E_3). Always label exact-2 regions as E_2 and triple overlap as E_3." },
+      { pitfall: "Assuming E_0 (Neither) Equals Zero Automatically", bridge: "Unless the prompt states 'every respondent chose at least one', E_0 >= 0 is a variable that shifts (N - E_0)." },
+      { pitfall: "Ignoring Upper Bounds on Individual Set Sizes", bridge: "E_3 can never exceed min(n(A), n(B), n(C)), even if floor(Excess / 2) is larger." },
+      { pitfall: "Parity Mismatch When Setting E_2 = 0", bridge: "In E_2 + 2*E_3 = Excess, if Excess is odd, E_2 must be at least 1, so Max E_3 = (Excess - 1) / 2." }
+    ];
+  }
+
+  if (R["CAT-DILR-TOURN"]) {
+    R["CAT-DILR-TOURN"].overviewParagraphs = [
+      "Round-Robin Tournaments, Knockout Brackets & Multi-Stage League Tables appear in nearly every CAT DILR paper. Unlike casual puzzle solving, CAT tournament sets hide 60% of match outcomes behind partial points tables, goal-difference tiebreakers, or knockout upset rules, requiring algebraic conservation laws to reconstruct the missing cells.",
+      "Concept Bridge: In an n-team single round-robin league, every team plays (n - 1) matches and total matches equal C(n, 2) = n(n - 1)/2. Under standard football scoring (Win = 3, Draw = 1, Loss = 0), every decisive match injects 3 total points into the standings table while every draw injects 2 points—immediately fixing the exact number of draws D = 3*C(n, 2) - Sum(Points) before you analyze a single head-to-head fixture.",
+      "Knockout Seeding Bridge: In a standard single-elimination knockout of N = 2^k teams, exactly (N - 1) matches are played. In Round 1, Seed i always faces Seed (N + 1 - i) so the seed sum equals (N + 1); in Round 2, the winner of Match m faces the winner of Match (N/2 + 1 - m), enabling instant identification of upset paths."
+    ];
+    R["CAT-DILR-TOURN"].prerequisites = [
+      "Single Round-Robin Match Count: N teams play N*(N - 1)/2 total matches; double round-robin plays N*(N - 1) matches.",
+      "Knockout Elimination Count: Any single-elimination tournament with N entrants requires exactly (N - 1) matches.",
+      "Football Point-Sum Conservation: Total Points Awarded = 3 * (Total Matches) - 1 * (Number of Draws).",
+      "2-1-0 Scoring Conservation: Under Win = 2, Draw = 1, Loss = 0, Total Points = 2 * C(N, 2) regardless of draws.",
+      "Maximum Points of an Unbeaten Team: An unbeaten team with d draws earns 3*(N - 1) - 2d points.",
+      "Seeded Knockout Pairing Rule: In Round r (with M_r matches), Match i pairs with Match (M_r + 1 - i) in the next round.",
+      "Minimum Points to Guarantee Qualification: Solve worst-case tie scenarios among the top (k + 1) contenders."
+    ],
+    R["CAT-DILR-TOURN"].conceptBridgeTraps = [
+      { pitfall: "Assuming Equal-Points Teams Have Identical W-D-L Records", bridge: "4 points in 3 matches can be 1W-1D-1L or 0W-4D-0L (in 5-team leagues). Always check match-count sums." },
+      { pitfall: "Forgetting Total Wins Must Equal Total Losses", bridge: "Across the entire league table, Sum(Wins) = Sum(Losses) and Sum(Draws) must be an even integer." },
+      { pitfall: "Miscounting Semi-Final & Final Matches in Hybrid Formats", bridge: "Separate group-stage round-robin matches from top-4 knockout matches before applying point conservation." },
+      { pitfall: "Overlooking Unbeaten vs Winless Constraints", bridge: "'Unbeaten' means 0 losses (draws allowed); 'won all matches' means 0 draws and 0 losses." }
+    ];
+  }
+
+  if (R["CAT-DILR-GRID"]) {
+    R["CAT-DILR-GRID"].overviewParagraphs = [
+      "Matrix Arrangements, Directed Routes & Networks, and Logical Constraint Grids test multi-dimensional deduction across 4–6 entities and 3–4 attributes. CAT setters design these sets so that direct clues populate ~35% of the table while the remaining 65% unlocks through negative-clue elimination, capacity bounds, and binary case splitting.",
+      "Concept Bridge: Always index your master table by the strictest ordered dimension—such as time slots (9 AM to 2 PM), floor numbers (1 to 6), or rank positions (1st to 5th)—rather than unordered person names. Write negative constraints ('P is not from Delhi or Mumbai') in a dedicated exclusion column so forced singletons jump out visually.",
+      "Network & Flow Bridge: For directed pipeline, traffic, or supply-chain networks, apply Kirchhoff's Flow Conservation Law at every intermediate node (Total Inflow = Total Outflow) and check edge upper/lower capacity bounds to lock bottleneck paths immediately."
+    ];
+    R["CAT-DILR-GRID"].prerequisites = [
+      "Strictest-Anchor Row Indexing: Order rows by sequential time, rank, or spatial position before assigning attributes.",
+      "Truth-Matrix Elimination: For N-to-N matching, an N x N grid with 'X' for impossible pairs forces unique 'O' assignments.",
+      "Kirchhoff Node Flow Conservation: At every non-source, non-sink node in a network, Sum(Inflows) = Sum(Outflows).",
+      "Manhattan Grid Shortest Paths: Moving only Right and Up from (0,0) to (m,n) yields C(m + n, m) distinct shortest paths.",
+      "Circular Seating Symmetry: N people around a circle have (N - 1)! relative arrangements; for even N, person i sits opposite person (i + N/2).",
+      "Binary Case-Splitting Discipline: When a clue yields exactly two valid placements, branch cleanly into Case I and Case II."
+    ],
+    R["CAT-DILR-GRID"].conceptBridgeTraps = [
+      { pitfall: "Overwriting Grid Cells Without Case Splitting", bridge: "Erasing tentative entries loses track of valid alternatives. Draw side-by-side Case I / Case II mini-grids." },
+      { pitfall: "Confusing 'Immediate Left' in Facing-Center vs Facing-Outward Circles", bridge: "Facing center: left is clockwise. Facing outward: left is counter-clockwise." },
+      { pitfall: "Ignoring Edge Capacity Limits in Route Networks", bridge: "Verify that every directed edge satisfies Min_Cap <= Flow <= Max_Cap after balancing nodes." },
+      { pitfall: "Missing Implicit Distinctness Clues", bridge: "Phrases like 'distinct integer scores' or 'no two cities repeat' eliminate duplicate values across rows." }
+    ];
+  }
+
+  if (R["CAT-DILR-DI"]) {
+    R["CAT-DILR-DI"].overviewParagraphs = [
+      "CAT Data Interpretation (Stacked Bar Charts, Spider/Radar Plots, Scatter Diagrams, and Missing-Data Financial Tables) blends visual ratio estimation with logical boundary deduction. Unlike clerical banking exams, CAT DI never requires tedious 5-digit long division—every chart embeds structural ratios or row/column sum invariants.",
+      "Concept Bridge: Convert percentage shares and growth rates into fraction benchmarks (1/6 = 16.67%, 1/7 = 14.28%, 1/8 = 12.5%, 1/9 = 11.11%, 1/11 = 9.09%, 1/12 = 8.33%) to compare ratios by cross-multiplication (a/b > c/d <=> a*d > b*c) in under 5 seconds.",
+      "Missing-Table Reconstruction Bridge: When CAT presents a financial or demographic table with blank cells ('--'), compute row sums, column sums, and weighted-average bounds first—missing values are almost always pinned down by integer divisibility or min/max range constraints."
+    ];
+    R["CAT-DILR-DI"].prerequisites = [
+      "Fraction-to-Percentage Benchmarks: 1/6 = 16.67%, 1/7 = 14.28%, 1/8 = 12.5%, 1/9 = 11.11%, 1/11 = 9.09%.",
+      "Cross-Multiplication Ratio Comparison: Compare a/b vs c/d by comparing integer products a*d vs b*c directly.",
+      "Compound Annual Growth Rate (CAGR): Final = Initial * (1 + r)^n; linear approximation (1 + r)^n ≈ 1 + n*r for small r.",
+      "Base-Shift Identity: Moving from 25% market share to 20% market share is a -5 percentage-point change, but a -20% relative change.",
+      "Weighted Average Bounds: The blended average of two segments always lies strictly between the two segment rates.",
+      "Index-Number Base Scaling: When index = 100 in base year, index = 135 represents a +35% cumulative rise from the base year."
+    ],
+    R["CAT-DILR-DI"].conceptBridgeTraps = [
+      { pitfall: "Confusing Market Share % Growth with Absolute Revenue Growth", bridge: "A firm's market share % can decline even while its absolute revenue rises if total market size expands faster." },
+      { pitfall: "Summing Year-on-Year Growth Rates Linearly", bridge: "Two consecutive +10% growth years yield +21% cumulative growth (1.1 * 1.1 = 1.21), not +20%." },
+      { pitfall: "Misreading Stacked Bar Segment Heights vs Cumulative Totals", bridge: "In stacked bars, a segment's value equals (Top Boundary - Bottom Boundary), not the top axis reading." },
+      { pitfall: "Computing Exact Decimals When Option Spreads Exceed 5%", bridge: "Use 2-significant-digit rounding whenever answer choices are separated by more than 4–5%." }
+    ];
+  }
+})();
