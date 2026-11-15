@@ -114,7 +114,7 @@ window.renderTab8 = function (el) {
   ];
   const selectedPaper = papers.find(p => p.id === window.MOCK_PAPER_TYPE) || papers[0];
 
-  // STATE 1: MOCK LOBBY (Nothing starts until user explicitly clicks Start Random Mock)
+  // STATE 1: MOCK LOBBY (Nothing starts until user explicitly clicks Start Full CAT Mock)
   if (!window.MOCK_ACTIVE_SESSION && !window.MOCK_LOADING) {
     el.innerHTML = `
       <div class="max-w-4xl mx-auto my-4 bg-slate-900/95 border border-slate-800 rounded-2xl p-6 space-y-5 shadow-xl">
@@ -125,7 +125,7 @@ window.renderTab8 = function (el) {
             </span>
             <h2 class="text-xl font-bold text-white mt-1.5">Configure Timed Mock — ${mode.label}</h2>
             <p class="text-xs text-slate-400 mt-0.5">
-              Timer & question generation will <strong>not</strong> start until you click <strong>Start Random Mock</strong> below.
+              Timer & question generation will <strong>not</strong> start until you click <strong>Start Full CAT Mock</strong> below.
             </p>
           </div>
           <div class="text-right text-xs text-slate-300 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5">
@@ -161,7 +161,7 @@ window.renderTab8 = function (el) {
 
           <button type="button" onclick="window.fetchNewRandomMock()"
             class="px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-xs md:text-sm font-extrabold text-white shadow-lg cursor-pointer">
-            &#9654; Start Random Mock (${selectedPaper.qs} Qs &bull; ${selectedPaper.mins} Mins)
+            &#9654; Start Full CAT Mock (${selectedPaper.qs} Qs &bull; ${selectedPaper.mins} Mins)
           </button>
         </div>
       </div>
