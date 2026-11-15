@@ -2574,7 +2574,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
       "10"
     ],
     "answer": 1,
-    "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52? Wait: 100 - 48 = 52; let's check: E_1 = 52, E_2 = 1, E_3 = 47 => sum = 52 + 2 + 141 = 195! Correct = 52."
+    "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52 aspirants (since 52 + 2(1) + 3(47) = 195)."
   },
   {
     "id": "CAT26-DILR-12",
@@ -3798,7 +3798,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
       "10"
     ],
     "answer": 1,
-    "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52? Wait: 100 - 48 = 52; let's check: E_1 = 52, E_2 = 1, E_3 = 47 => sum = 52 + 2 + 141 = 195! Correct = 52."
+    "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52 aspirants (since 52 + 2(1) + 3(47) = 195)."
   },
   {
     "id": "CAT26-DILR-12",
