@@ -107,10 +107,10 @@ window.renderTab8 = function (el) {
   const mode = window.getActiveMode();
   const papers = [
     { id: "FULL_DIAGNOSTIC", label: "Full 66-Q CAT Standard Mock (120m)", mins: 60, qs: 45 },
-    { id: "QUANT_SPRINT", label: "CAT QA 22-Q Sectional Sprint (40m)", mins: 40, qs: 30 },
-    { id: "NCERT_HIGHER_MATH_SPRINT", label: "XAT Decision Making + Quant 25-Q Sprint (40m)", mins: 40, qs: 30 },
-    { id: "DILR_SPRINT", label: "CAT DILR 20-Q Caselet Sprint (40m)", mins: 40, qs: 25 },
-    { id: "VARC_SPRINT", label: "CAT VARC 24-Q RC & TITA Sprint (40m)", mins: 40, qs: 30 }
+    { id: "QUANT_SPRINT", label: "CAT QA 22-Q Sectional Sprint (40m)", mins: 40, qs: 22 },
+    { id: "NCERT_HIGHER_MATH_SPRINT", label: "XAT Decision Making + Quant 25-Q Sprint (40m)", mins: 40, qs: 25 },
+    { id: "DILR_SPRINT", label: "CAT DILR 20-Q Caselet Sprint (40m)", mins: 40, qs: 20 },
+    { id: "VARC_SPRINT", label: "CAT VARC 24-Q RC & TITA Sprint (40m)", mins: 40, qs: 24 }
   ];
   const selectedPaper = papers.find(p => p.id === window.MOCK_PAPER_TYPE) || papers[0];
 
