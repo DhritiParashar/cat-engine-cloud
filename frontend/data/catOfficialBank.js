@@ -146,9 +146,41 @@ window.IPM_VARC_BANK = window.CAT_OFFICIAL_BANK.varc.vaTita.map(q => ({
   answer: q.tita ? 0 : q.correct, explanation: q.explanation
 }));
 window.IPM_DILR_VARC_BANK = window.IPM_VARC_BANK;
-window.IPM_QUANT_CORE = window.CAT_OFFICIAL_BANK.quant.map(q => ({
-  id: q.id, topic: q.subtype, difficulty: q.difficulty,
-  question: q.stem,
-  options: q.options || [q.answer, "0", "1", "3"],
-  answer: q.tita ? 0 : q.correct, explanation: q.explanation
-}));
+window.IPM_QUANT_CORE = [
+  {
+    id: "CAT-MOD-ALG",
+    title: "CAT 2026 Algebra: Modulus, Quadratics & Functions (TITA + MCQ)",
+    weightage: "High Weightage • ~7–8 Qs in CAT QA (+3 / -1 MCQ, +3 / 0 TITA)",
+    refresher: "Critical-point case analysis is essential for nested modulus equations. Always verify domain restrictions (e.g., RHS >= 0) before squaring or opening absolute value bars.",
+    shortcuts: [
+      "For |f(x)| + |g(x)| = g(x), f(x) must equal 0 and g(x) must be >= 0."
+    ],
+    drills: [window.CAT_OFFICIAL_BANK.quant[0]].map(q => ({
+      id: q.id, question: q.stem, options: [q.answer, "0", "1", "3"], answer: 0, explanation: q.explanation
+    }))
+  },
+  {
+    id: "CAT-MOD-ARITH",
+    title: "CAT 2026 Arithmetic: Mixtures, Replacement & Ratios",
+    weightage: "Highest Weightage • ~8–9 Qs in CAT QA",
+    refresher: "Successive dilution and replacement problems reduce directly to multiplicative remaining-fraction factors.",
+    shortcuts: [
+      "Remaining pure concentration = Initial * (1 - v1/V) * (1 - v2/V) * (1 - v3/V)."
+    ],
+    drills: [window.CAT_OFFICIAL_BANK.quant[1]].map(q => ({
+      id: q.id, question: q.stem, options: q.options, answer: q.correct, explanation: q.explanation
+    }))
+  },
+  {
+    id: "CAT-MOD-NUM",
+    title: "CAT 2026 Number System: Cyclicity & Binomial Remainders",
+    weightage: "99%ile Differentiator • ~3–4 Qs in CAT QA",
+    refresher: "Use algebraic factor identities alongside Euler's Totient and Fermat's Little Theorem for high-power remainders.",
+    shortcuts: [
+      "For any odd integer n, (a^n + b^n) is always divisible by (a + b)."
+    ],
+    drills: [window.CAT_OFFICIAL_BANK.quant[2]].map(q => ({
+      id: q.id, question: q.stem, options: [q.answer, "1", "7", "11"], answer: 0, explanation: q.explanation
+    }))
+  }
+];
