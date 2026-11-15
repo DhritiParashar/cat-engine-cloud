@@ -1054,8 +1054,7 @@ async def api_mock_generate(request: Request):
     exclude_codes = set(body.get("exclude_codes") or [])
 
     tita_clause = "" if include_tita else " AND q_type = 'MCQ'"
-    with engine.begin() as conn:
-        conn.execute(text("DELETE FROM ipm_questions WHERE exam_tags NOT LIKE '%CAT_2026%'"))
+    with engine.connect() as conn:
         total_pool = conn.execute(text("SELECT COUNT(*) FROM ipm_questions WHERE exam_tags LIKE '%CAT_2026%'")).scalar() or 0
 
         def fetch_sec(sec_filter, target_n):

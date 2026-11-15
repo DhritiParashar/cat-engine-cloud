@@ -1,3 +1,22 @@
+window.buildLocalCatFallbackMock = function () {
+  const pool = (window.IPM_TAGGED_MOCK_QUESTIONS || []).map(q => ({
+    ...q,
+    q_type: q.q_type || ((!q.options || q.options.length === 0) ? "SA_NUMERIC" : "MCQ")
+  }));
+  const shuffle = arr => [...arr].sort(() => Math.random() - 0.5);
+  const pt = window.MOCK_PAPER_TYPE || "FULL_DIAGNOSTIC";
+  const allowTita = window.MOCK_INCLUDE_NCERT !== false;
+  const filtered = allowTita ? pool : pool.filter(q => q.q_type === "MCQ");
+  if (pt === "QUANT_SPRINT") return shuffle(filtered.filter(q => q.section === "QUANT_CORE")).slice(0, 22);
+  if (pt === "DILR_SPRINT") return shuffle(filtered.filter(q => q.section === "DILR")).slice(0, 20);
+  if (pt === "VARC_SPRINT") return shuffle(filtered.filter(q => q.section === "VARC")).slice(0, 24);
+  if (pt === "NCERT_HIGHER_MATH_SPRINT") return shuffle(filtered).slice(0, 25);
+  return [
+    ...shuffle(filtered.filter(q => q.section === "VARC")).slice(0, 24),
+    ...shuffle(filtered.filter(q => q.section === "DILR")).slice(0, 20),
+    ...shuffle(filtered.filter(q => q.section === "QUANT_CORE")).slice(0, 22)
+  ];
+};
 window.MOCK_ANSWERS = {};
 window.MOCK_SUBMITTED = false;
 window.MOCK_PAPER_TYPE = "FULL_DIAGNOSTIC";
@@ -34,11 +53,11 @@ window.fetchNewRandomMock = async function () {
       window.MOCK_QUESTIONS_CACHE = data.questions;
       window.MOCK_DB_INFO = data.db || null;
     } else {
-      window.MOCK_QUESTIONS_CACHE = (window.IPM_TAGGED_MOCK_QUESTIONS || []).slice(0, 20);
+      window.MOCK_QUESTIONS_CACHE = window.buildLocalCatFallbackMock();
     }
   } catch (e) {
     window.MOCK_ERROR_MSG = e.message;
-    window.MOCK_QUESTIONS_CACHE = (window.IPM_TAGGED_MOCK_QUESTIONS || []).slice(0, 20);
+    window.MOCK_QUESTIONS_CACHE = window.buildLocalCatFallbackMock();
   } finally {
     window.MOCK_LOADING = false;
     window.MOCK_ACTIVE_SESSION = true;
