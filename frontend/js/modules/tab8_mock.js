@@ -106,7 +106,7 @@ window.toggleMockNcert = function (flag) {
 window.renderTab8 = function (el) {
   const mode = window.getActiveMode();
   const papers = [
-    { id: "FULL_DIAGNOSTIC", label: "Full 45-Q All-Section Random Mock (60m)", mins: 60, qs: 45 },
+    { id: "FULL_DIAGNOSTIC", label: "Full 66-Q CAT Standard Mock (120m)", mins: 60, qs: 45 },
     { id: "QUANT_SPRINT", label: "CAT QA 22-Q Sectional Sprint (40m)", mins: 40, qs: 30 },
     { id: "NCERT_HIGHER_MATH_SPRINT", label: "XAT Decision Making + Quant 25-Q Sprint (40m)", mins: 40, qs: 30 },
     { id: "DILR_SPRINT", label: "CAT DILR 20-Q Caselet Sprint (40m)", mins: 40, qs: 25 },
@@ -129,7 +129,7 @@ window.renderTab8 = function (el) {
             </p>
           </div>
           <div class="text-right text-xs text-slate-300 bg-slate-950 border border-slate-800 rounded-xl px-3.5 py-2.5">
-            <div>Unseen History Tracked: <strong class="text-emerald-300">${window.MOCK_HISTORY_CODES.length} Qs</strong></div>
+            <div>260+ DB Pool • Unseen Tracked: <strong class="text-emerald-300">${window.MOCK_HISTORY_CODES.length} Qs</strong></div>
             <div>Marking: <strong>MCQ +${mode.marking.mcqCorrect}/${mode.marking.mcqWrong}</strong> | <strong>SA +${mode.marking.saCorrect}/${mode.marking.saWrong}</strong></div>
           </div>
         </div>
@@ -186,7 +186,7 @@ window.renderTab8 = function (el) {
             </div>
             <p class="text-[11px] text-slate-400">
               Answered: <strong>${answeredCount}/${questions.length}</strong> &bull;
-              Unseen History Tracked: <strong>${window.MOCK_HISTORY_CODES.length} Qs</strong> &bull;
+              260+ DB Pool • Unseen Tracked: <strong>${window.MOCK_HISTORY_CODES.length} Qs</strong> &bull;
               MCQ: <strong>+${mode.marking.mcqCorrect}/${mode.marking.mcqWrong}</strong> | SA: <strong>+${mode.marking.saCorrect}/${mode.marking.saWrong}</strong>
             </p>
           </div>
