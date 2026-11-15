@@ -1439,3 +1439,9 @@ def seed_batch3_cuet_and_indore_archive():
             })
 
 seed_batch3_cuet_and_indore_archive()
+
+try:
+    from app.seed_cat_postgres import seed_cat_2026_postgres
+    seed_cat_2026_postgres(engine)
+except Exception as _cat_seed_err:
+    print('CAT 2026 Postgres seed warning:', _cat_seed_err)

@@ -991,3 +991,47 @@ window.IPM_QUANT_CORE = [
     ]
   }
 ];
+
+// Live PostgreSQL Hydration: Fetch CAT_2026 questions from Neon PostgreSQL and merge into active QA, DILR & VARC modules
+(async function hydrateCatFromPostgres() {
+  try {
+    const res = await fetch("/api/questions?exam=CAT_2026&limit=150&t=" + Date.now());
+    const data = await res.json();
+    if (!data || !Array.isArray(data.questions) || !data.questions.length) return;
+    window.CAT_POSTGRES_BANK = data.questions;
+
+    const topicMap = [
+      { modId: "CAT-MOD-ALG", kw: ["Algebra", "Modulus", "Quadratic", "Function", "Maxima"] },
+      { modId: "CAT-MOD-ARITH1", kw: ["Mixtures", "Profit", "Loss", "Interest", "Percentage"] },
+      { modId: "CAT-MOD-ARITH2", kw: ["Circular", "Escalator", "TSD", "Work", "Speed"] },
+      { modId: "CAT-MOD-NUM", kw: ["Number", "Remainder", "Factor", "Euler"] },
+      { modId: "CAT-MOD-GEO", kw: ["Geometry", "Triangle", "Circle", "Mensuration"] },
+      { modId: "CAT-MOD-MODM", kw: ["Modern", "Combinatorics", "Logarithm", "Probability", "Derangement"] }
+    ];
+
+    const qaItems = data.questions.filter(q => q.section === "QUANT_CORE");
+    for (const mapEntry of topicMap) {
+      const mod = (window.IPM_QUANT_CORE || []).find(m => m.id === mapEntry.modId);
+      if (!mod) continue;
+      const matched = qaItems.filter(q => mapEntry.kw.some(k => (q.topic || "").toLowerCase().includes(k.toLowerCase())));
+      if (matched.length) {
+        mod.questions = matched.map(q => {
+          const hasOpts = Array.isArray(q.options) && q.options.length > 0;
+          return {
+            id: q.id,
+            stem: q.prompt,
+            options: hasOpts ? q.options : [String(q.answer), "0", "1", "2"],
+            answer: hasOpts ? Number(q.answer) : 0,
+            explanation: q.explanation
+          };
+        });
+      }
+    }
+
+    if (typeof window.renderActiveTab === "function") {
+      window.renderActiveTab();
+    }
+  } catch (e) {
+    console.warn("CAT PostgreSQL hydration fallback:", e);
+  }
+})();
