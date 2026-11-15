@@ -44,7 +44,7 @@ window.renderTab7 = function (el) {
   const list = window.getFilteredDoubts();
   if (window.DOUBT_SELECTED_IDX >= list.length) window.DOUBT_SELECTED_IDX = 0;
   const activeDoubt = list[window.DOUBT_SELECTED_IDX] || list[0];
-  const domains = ["ALL", "Quant Core", "Higher Math & Stats", "DI & Logical Reasoning", "VARC & Grammar"];
+  const domains = ["ALL", "Quant Core", "Number System & Modern Math", "DI & Logical Reasoning", "VARC (RC & TITA)"];
   const modes = [
     { id: "SOCRATIC_HINT", label: "1. Socratic Guiding Hint (Think First)", activeCls: "bg-indigo-600 text-white" },
     { id: "SHORTCUT_30S", label: "2. 30-Second Exam Shortcut", activeCls: "bg-emerald-600 text-white" },

@@ -83,7 +83,7 @@ window.renderTab4 = function (el) {
             Interactive Trap Clinic (${list.length})
           </button>
           <button onclick="window.setTrapSubTab('ev_calc')" class="px-3 py-1.5 rounded-lg text-xs font-bold transition ${window.TRAP_SUBTAB === 'ev_calc' ? 'bg-rose-600 text-white' : 'text-slate-400 hover:text-white'}">
-            +4 / -1 / 0 Guess & Skip Simulator
+            +3 / -1 / 0 Guess & Skip Simulator
           </button>
         </div>
       </div>
@@ -92,7 +92,7 @@ window.renderTab4 = function (el) {
         window.TRAP_SUBTAB === "ev_calc"
           ? `<div class="bg-slate-900/90 border border-slate-800 rounded-2xl p-5 space-y-4">
                <h3 class="text-base font-bold text-amber-300">Expected Value (EV) Decision Simulator: When to Attempt vs. Skip</h3>
-               <p class="text-xs text-slate-300">Slide your estimated confidence/elimination probability on a tough question to compare Expected Marks in <strong>MCQ (+4 / -1)</strong> vs. <strong>IPMAT Indore SA (+4 / 0)</strong>:</p>
+               <p class="text-xs text-slate-300">Slide your estimated confidence/elimination probability on a tough question to compare Expected Marks in <strong>MCQ (+3 / -1)</strong> vs. <strong>IPMAT Indore SA (+3 / 0)</strong>:</p>
                <div class="space-y-2 max-w-xl">
                  <div class="flex justify-between text-xs font-bold">
                    <span>Your Estimated Probability of Being Correct:</span>
@@ -103,12 +103,12 @@ window.renderTab4 = function (el) {
                </div>
                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                  <div class="p-4 rounded-xl bg-slate-950 border border-sky-500/40 space-y-1.5">
-                   <div class="text-xs font-bold uppercase text-sky-400">Standard MCQ (+4 / -1) — All 8 IIMs</div>
+                   <div class="text-xs font-bold uppercase text-sky-400">Standard MCQ (+3 / -1) — All 8 IIMs</div>
                    <div class="text-2xl font-extrabold ${Number(evMcq) > 0 ? 'text-emerald-400' : 'text-rose-400'}">EV = ${evMcq} marks / question</div>
                    <div class="text-xs text-slate-300">${Number(evMcq) > 0 ? "ATTEMPT: Positive expected value (break-even threshold is strictly > 20%, i.e., eliminate at least 1 option)." : "SKIP: Negative or zero expected value—do not blind-guess."}</div>
                  </div>
                  <div class="p-4 rounded-xl bg-slate-950 border border-amber-500/40 space-y-1.5">
-                   <div class="text-xs font-bold uppercase text-amber-300">IPMAT Indore Section 1 Short Answer (+4 / 0)</div>
+                   <div class="text-xs font-bold uppercase text-amber-300">IPMAT Indore Section 1 Short Answer (+3 / 0)</div>
                    <div class="text-2xl font-extrabold text-emerald-400">EV = +${evSa} marks / question</div>
                    <div class="text-xs text-slate-300">ALWAYS ATTEMPT: Zero negative marking means ANY positive probability (> 0%) yields strictly positive expected marks.</div>
                  </div>

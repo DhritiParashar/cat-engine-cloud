@@ -1135,3 +1135,293 @@ window.IPM_QUANT_CORE = [
     ];
   }
 })();
+// ==============================================================================
+// SITE 1 (CAT 2026): COMPLETE ENRICHMENT OF TABS 2, 3, 4, 5 & 6
+// ==============================================================================
+
+// 1. TAB 2: CAT 2026 DILR CASELET LAB (4 Pillars + Deep Concept Bridges + Worked Caselets + Interactive Drills)
+window.IPM_DILR_VARC_BANK = {};
+window.IPM_CHAPTER_REFRESHERS["CAT-DILR-SET"] = {
+  overviewParagraphs: [
+    "Set Theory, Venn Diagrams & Maxima-Minima Optimization constitute 25–30% of all IIM CAT DILR sets (typically 1 full 4-question or 5-question caselet in every slot). Unlike textbook 2-circle Venn problems, CAT presents incomplete 3-set or 4-set overlap tables with missing boundary bounds and asks for the maximum or minimum possible count in an intersection region.",
+    "Concept Bridge: Never guess intersection sizes by trial and error. Anchor the Fundamental 3-Set Sum Identity: Sum of Individual Set Totals (A + B + C) = (Exactly 1) + 2*(Exactly 2) + 3*(Exactly 3), while Total Population N = (Exactly 1) + (Exactly 2) + (Exactly 3) + (None). Subtracting these two equations immediately isolates (Exactly 2) + 2*(Exactly 3) = (A + B + C) - (N - None)."
+  ],
+  examMetrics: {
+    weightage: "1 Full Set / Slot (4–5 Qs)",
+    targetPace: "9 – 11 mins / Set",
+    format: "MCQ (+3/-1) & TITA (+3/0)",
+    strategy: "Set Selection & Equation Subtraction"
+  },
+  prerequisites: [
+    "3-Set Inclusion-Exclusion: n(A U B U C) = n(A) + n(B) + n(C) - n(A ∩ B) - n(B ∩ C) - n(A ∩ C) + n(A ∩ B ∩ C).",
+    "Degree-Sum Identity: n(A) + n(B) + n(C) = E_1 + 2*E_2 + 3*E_3, where E_k denotes elements in exactly k sets.",
+    "Excess Overlap Identity: E_2 + 2*E_3 = [n(A) + n(B) + n(C)] - [N - E_0]."
+  ],
+  conceptBridgeTraps: [
+    { pitfall: "Confusing 'At Least 2' with 'Exactly 2'", bridge: "Always denote E_2 = exact 2-set overlap and E_3 = exact 3-set overlap; 'at least 2' equals E_2 + E_3." },
+    { pitfall: "Ignoring Non-Negativity of E_1, E_2, E_3", bridge: "Maximizing E_3 requires setting E_2 = 0 (if parity allows) while keeping every individual region >= 0." }
+  ],
+  corePrinciples: [
+    "Excess-Overlap Optimization Law: To maximize E_3, set E_2 = 0 in E_2 + 2*E_3 = Excess; to minimize E_3, maximize E_2 up to (N - E_0).",
+    "4-Set Grid Partition Law: For 4 attributes (e.g., 4 events or 4 regions), replace Venn circles with a 2x2 Karnaugh/truth table of 16 mutually exclusive cells."
+  ],
+  workedExamples: [
+    {
+      level: "CAT 95%ile",
+      problem: "In a cohort of 100 MBA aspirants, 70 solve QA daily, 65 solve DILR daily, and 60 solve VARC daily. Every aspirant solves at least one section. Find the minimum and maximum possible number of aspirants solving all three sections.",
+      steps: [
+        "Compute Excess Overlap = (70 + 65 + 60) - 100 = 195 - 100 = 95 = E_2 + 2*E_3.",
+        "For Maximum E_3: minimize E_2. Since 95 is odd, set E_2 = 1 => 2*E_3 = 94 => Max E_3 = 47.",
+        "For Minimum E_3: maximize E_2 subject to E_1 + E_2 + E_3 = 100 => set E_1 = 0, E_2 = 95, E_3 = 0 => Min E_3 = 0."
+      ]
+    },
+    {
+      level: "CAT 99.5%ile",
+      problem: "Four IIMs (A, B, C, L) sent distinct delegate counts from {12, 15, 18, 20} (sum = 65). Each delegate entered 1 or 2 events (none entered 3), and exactly 6 delegates from each institute entered 2 events. In IIM A, single-event delegates split across Case Clash, FinQuest, and StratWars in ratio 3:2:1. IIM C sent the most delegates, and IIM B > IIM L. Determine exact counts.",
+      steps: [
+        "For IIM A, single-event delegates (Total - 6) must be divisible by 3 + 2 + 1 = 6 => Total in {12, 18}.",
+        "Since IIM C = 20 (highest) and IIM B > IIM L, IIM A = 18, IIM B = 15, and IIM L = 12.",
+        "IIM A single-event delegates = 18 - 6 = 12, splitting 3:2:1 into 6 (Case Clash), 4 (FinQuest), and 2 (StratWars)."
+      ]
+    }
+  ]
+};
+
+window.IPM_CHAPTER_REFRESHERS["CAT-DILR-TOURN"] = {
+  overviewParagraphs: [
+    "Round-Robin Tournaments, Knockout Brackets & Scheduling Grids appear in almost every CAT DILR paper. Success depends on converting match results into global point-conservation equations before filling individual team cells.",
+    "Concept Bridge: In an n-team single round-robin league, total matches played equal C(n, 2) = n(n - 1)/2. Under standard football scoring (Win = 3, Draw = 1, Loss = 0), every decisive match injects 3 total points into the standings table while every draw injects 2 points—immediately fixing the exact number of draws from the sum of team points."
+  ],
+  examMetrics: {
+    weightage: "1 Full Set / Slot (4–5 Qs)",
+    targetPace: "10 – 12 mins / Set",
+    format: "High TITA (+3/0) Concentration",
+    strategy: "Total-Points Conservation Law"
+  },
+  prerequisites: [
+    "Single Round-Robin Matches: N teams play N*(N - 1)/2 total matches; each team plays (N - 1) matches.",
+    "Knockout Matches: N teams require (N - 1) matches to crown 1 champion.",
+    "Point-Sum Conservation: Total Points = 3 * (Total Matches) - 1 * (Number of Draws)."
+  ],
+  conceptBridgeTraps: [
+    { pitfall: "Assuming Equal-Points Teams Tied Head-to-Head", bridge: "Two teams with identical points can have different W-D-L records (e.g., 1W-1D-1L = 4 pts vs 0W-4D-0L = 4 pts)." },
+    { pitfall: "Ignoring Unbeaten Team Constraints", bridge: "An unbeaten team has 0 losses, meaning its maximum points equal 3*(N - 1) minus 2 per draw." }
+  ],
+  corePrinciples: [
+    "Draw-Count Conservation Law: Number of draws D = 3 * C(n, 2) - Sum(All Team Points).",
+    "Knockout Upset Seed Law: In a standard seeded knockout where seed i plays seed (N + 1 - i) in Round 1, sum of seed numbers in every un-upset match equals (N + 1)."
+  ],
+  workedExamples: [
+    {
+      level: "CAT 99.5%ile",
+      problem: "Six teams play a single round-robin tournament (Win = 3, Draw = 1, Loss = 0). No two teams finished with equal points, the top team won all 5 matches, and total points awarded across all 15 matches was 41. Find the number of draws.",
+      steps: [
+        "Total matches among 6 teams = C(6, 2) = 15 matches.",
+        "Apply Draw-Count Law: D = 3*(15) - 41 = 45 - 41 = 4 draws (and 11 decisive matches)."
+      ]
+    }
+  ]
+};
+
+window.IPM_CHAPTER_REFRESHERS["CAT-DILR-GRID"] = {
+  overviewParagraphs: [
+    "Matrix Arrangements, Routes & Networks, and Logical Constraint Grids test multi-dimensional deduction across 4–6 entities and 3–4 attributes. CAT setters design these sets so that direct clues fill ~40% of the grid while the remaining 60% unlocks via elimination and parity/sum constraints.",
+    "Concept Bridge: Always choose the primary row index with the strictest ordering or numeric anchor (such as time slots, floor numbers, or ranked scores), write negative constraints in a dedicated 'Excluded' margin column, and split into at most two clean sub-cases (Case I and Case II) whenever a binary branch appears."
+  ],
+  examMetrics: {
+    weightage: "1–2 Sets / Slot (4–8 Qs)",
+    targetPace: "9 – 11 mins / Set",
+    format: "MCQ (+3/-1) & TITA (+3/0)",
+    strategy: "Anchor Indexing & Binary Branching"
+  },
+  prerequisites: [
+    "Directed Network Flow: At every intermediate node, Inflow = Outflow.",
+    "Shortest Path Grid Counting: Paths from (0,0) to (m,n) moving only Right/Up = C(m + n, m)."
+  ],
+  conceptBridgeTraps: [
+    { pitfall: "Overwriting Cells Without Case Splitting", bridge: "When two valid placements exist, duplicate the grid into Case A and Case B rather than erasing." }
+  ],
+  corePrinciples: [
+    "Strictest-Anchor Indexing Law: Index rows by ordered dimensions (1st to 5th, Monday to Friday) rather than unordered names.",
+    "Negative-Clue Elimination Law: Cross out impossible values explicitly in a 5x5 truth matrix to trigger forced singletons."
+  ],
+  workedExamples: [
+    {
+      level: "CAT 95%ile",
+      problem: "Five analysts (P, Q, R, S, T) from Mumbai, Delhi, Bengaluru, Chennai, and Kolkata specialize in FinTech, Healthcare, SaaS, Energy, and Retail. P is from Mumbai and not in FinTech; the Bengaluru analyst is in SaaS; R is in Healthcare and not from Delhi or Kolkata.",
+      steps: [
+        "From R = Healthcare and R not in {Mumbai (P), Bengaluru (SaaS), Delhi, Kolkata}, R must be from Chennai.",
+        "Remaining cities for Q, S, T are Bengaluru (SaaS), Delhi, and Kolkata."
+      ]
+    }
+  ]
+};
+
+window.IPM_CHAPTER_REFRESHERS["CAT-DILR-DI"] = {
+  overviewParagraphs: [
+    "CAT Data Interpretation (Stacked Bars, Spider/Radar Charts, Scatter Plots, and Missing-Data Financial Tables) pairs visual ratio estimation with logical boundary deduction. Unlike clerical banking exams, CAT DI avoids tedious 5-digit multiplication—every table has a structural shortcut.",
+    "Concept Bridge: Use percentage-fraction benchmarks (1/6 = 16.67%, 1/7 = 14.28%, 1/8 = 12.5%, 1/9 = 11.11%, 1/11 = 9.09%) to compare growth rates visually without long division, and check row/column totals first to recover missing table entries."
+  ],
+  examMetrics: {
+    weightage: "1 Set / Slot (4–5 Qs)",
+    targetPace: "8 – 10 mins / Set",
+    format: "MCQ (+3/-1) & TITA (+3/0)",
+    strategy: "Fraction Benchmarks & Base Comparison"
+  },
+  prerequisites: [
+    "CAGR Approximation: For small r, (1 + r)^n ≈ 1 + n*r + n(n-1)/2 * r^2.",
+    "Ratio Comparison: a/b > c/d <=> a*d > b*c (cross-multiplication without decimal division)."
+  ],
+  conceptBridgeTraps: [
+    { pitfall: "Confusing Share % Growth with Absolute Volume Growth", bridge: "A company's market share % can fall even while its absolute revenue rises if total market size grows faster." }
+  ],
+  corePrinciples: [
+    "Cross-Multiplication Ratio Law: Compare fractions a/b vs c/d by comparing a*d vs b*c directly.",
+    "Base-Shift Percentage Law: A drop from 25% share to 20% share is a 5 percentage-point drop, but a 20% relative decline."
+  ],
+  workedExamples: [
+    {
+      level: "Foundation",
+      problem: "Revenue rises from Rs. 240 Cr to Rs. 280 Cr while operating margin drops from 25% to 22.5%. Find change in operating profit.",
+      steps: [
+        "Initial profit = 25% of 240 = Rs. 60 Cr.",
+        "New profit = 22.5% of 280 = (9/40) * 280 = 9 * 7 = Rs. 63 Cr => +Rs. 3 Cr (+5% increase)."
+      ]
+    }
+  ]
+};
+
+window.IPM_DILR = [
+  {
+    id: "CAT-DILR-SET",
+    pillar: "CAT 2026 DILR • PILLAR 1",
+    title: "Set Theory, Venn Diagrams & Maxima-Minima Optimization",
+    weightage: "High Yield • 1 Full 4–5 Q Caselet per Slot",
+    concepts: [],
+    traps: [{ title: "Confusing 'At Least 2' with 'Exactly 2'", wrongStep: "Using E_2 instead of E_2 + E_3.", correction: "Subtract N from sum of sets to get E_2 + 2*E_3.", penalty: "-4 Marks on Cascading Set" }],
+    questions: [
+      { id: "CAT-DILR-S1-Q1", stem: "[CAT DILR Set 1 • Q1 TITA] Four B-schools (IIM A, B, C, L) sent distinct delegate counts from {12, 15, 18, 20} (sum = 65) across Case Clash (CC), FinQuest (FQ), and StratWars (SW). Each delegate entered 1 or 2 events (none entered 3), and exactly 6 delegates per institute entered 2 events. In IIM A, single-event delegates split across CC, FQ, SW in ratio 3:2:1. IIM C sent the most delegates, and IIM B > IIM L. How many total delegates did IIM A send?", options: ["18", "12", "15", "20"], answer: 0, explanation: "Total - 6 must be divisible by 6 => {12, 18}. Since IIM C = 20 and IIM B > IIM L, IIM A = 18." },
+      { id: "CAT-DILR-S1-Q2", stem: "[CAT DILR Set 1 • Q2] Based on the B-school delegate distribution above (IIM A = 18 total, 6 in two events, single-event split 3:2:1 across CC, FQ, SW), how many IIM A delegates participated ONLY in Case Clash?", options: ["3", "4", "6", "9"], answer: 2, explanation: "12 single-event delegates split 3:2:1 => 6 in CC only." }
+    ]
+  },
+  {
+    id: "CAT-DILR-TOURN",
+    pillar: "CAT 2026 DILR • PILLAR 2",
+    title: "Round-Robin Tournaments, Knockout Brackets & Scheduling",
+    weightage: "High Yield • 1 Full 4–5 Q Caselet per Slot",
+    concepts: [],
+    traps: [{ title: "Missing Total-Points Conservation in Leagues", wrongStep: "Guessing individual match results before counting draws.", correction: "Compute Draws D = 3*C(n, 2) - Sum(Points) first.", penalty: "Time Sink" }],
+    questions: [
+      { id: "CAT-DILR-S2-Q1", stem: "[CAT DILR Set 2 • Q1 TITA] Six teams play a single round-robin football league (Win = 3, Draw = 1, Loss = 0). Total points awarded across all 15 matches was 41. How many matches ended in a draw?", options: ["4", "3", "5", "6"], answer: 0, explanation: "D = 3*15 - 41 = 45 - 41 = 4 draws." }
+    ]
+  },
+  {
+    id: "CAT-DILR-GRID",
+    pillar: "CAT 2026 DILR • PILLAR 3",
+    title: "Matrix Arrangements, Routes & Logical Constraint Grids",
+    weightage: "Core DILR • 1–2 Caselets per Slot",
+    concepts: [],
+    traps: [{ title: "Erasing Grid Entries Without Binary Branching", wrongStep: "Overwriting cells when two placements are valid.", correction: "Split cleanly into Case I and Case II.", penalty: "Cascading Grid Error" }],
+    questions: [
+      { id: "CAT-DILR-S3-Q1", stem: "Five analysts (P, Q, R, S, T) from Mumbai, Delhi, Bengaluru, Chennai, and Kolkata specialize in FinTech, Healthcare, SaaS, Energy, and Retail. P is from Mumbai and not in FinTech; the Bengaluru analyst is in SaaS; R is in Healthcare and not from Delhi or Kolkata. Which city is R from?", options: ["Mumbai", "Delhi", "Chennai", "Kolkata"], answer: 2, explanation: "Eliminating Mumbai (P), Bengaluru (SaaS), Delhi, and Kolkata leaves Chennai for R." }
+    ]
+  },
+  {
+    id: "CAT-DILR-DI",
+    pillar: "CAT 2026 DILR • PILLAR 4",
+    title: "Multi-Chart Data Interpretation & Missing-Data Tables",
+    weightage: "Core DILR • 1 Caselet per Slot",
+    concepts: [],
+    traps: [{ title: "Confusing Percentage-Point Change with Relative % Change", wrongStep: "Treating a drop from 25% to 20% as a 5% drop.", correction: "25% to 20% is a 5 percentage-point drop, or a 20% relative drop.", penalty: "-1 Mark in MCQ" }],
+    questions: [
+      { id: "CAT-DILR-S4-Q1", stem: "A firm's revenue grows from Rs. 240 Cr to Rs. 280 Cr while operating margin shifts from 25% to 22.5%. By how much does operating profit increase?", options: ["Rs. 1.5 Cr", "Rs. 2.5 Cr", "Rs. 3.0 Cr", "Rs. 4.0 Cr"], answer: 2, explanation: "New profit = 0.225 * 280 = Rs. 63 Cr vs Old profit = 0.25 * 240 = Rs. 60 Cr => +Rs. 3.0 Cr." }
+    ]
+  }
+];
+window.getDilrModules = function () { return window.IPM_DILR; };
+
+// 2. TAB 4: PURGE IPMAT/JIPMAT TAGS FROM TRAP DOCTOR & AI DOUBTS
+window.IPM_TRAPS_CLINIC = [
+  {
+    id: "CAT-TRAP-01",
+    domain: "Algebra & Modulus",
+    exam: "CAT 2026 QA (+3/-1 vs TITA)",
+    title: "Squaring |f(x)| = g(x) Without Checking RHS >= 0",
+    trapStem: "Solve |2x - 7| = x - 5. A student squares both sides: 4x^2 - 28x + 49 = x^2 - 10x + 25 => 3x^2 - 18x + 24 = 0 => x = 2 or x = 4.",
+    wrongReasoning: "Accepting both x = 2 and x = 4 because both satisfy the squared quadratic.",
+    correctReasoning: "RHS (x - 5) must be >= 0 => x >= 5! Neither x = 2 nor x = 4 satisfies x >= 5, so there are 0 real solutions.",
+    evImpact: "Selecting '2 solutions' costs -1 mark in MCQ (4-mark swing vs +3)."
+  },
+  {
+    id: "CAT-TRAP-02",
+    domain: "Arithmetic & Mixtures",
+    exam: "CAT 2026 QA",
+    title: "Adding Removed Volumes in Successive Replacement",
+    trapStem: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water. Find remaining milk %.",
+    wrongReasoning: "Subtracting (6 + 10 + 12)/60 = 28/60 from 100% to get 53.33%.",
+    correctReasoning: "Multiply remaining fractions: (54/60) * (50/60) * (48/60) = (9/10)*(5/6)*(4/5) = 3/5 = 60%.",
+    evImpact: "Classic distractor option (53.33% or 54%) traps 45% of test-takers."
+  },
+  {
+    id: "CAT-TRAP-03",
+    domain: "VARC • Parajumbles & RC",
+    exam: "CAT 2026 VARC",
+    title: "Selecting Extreme / Universal Options in CAT RC Inference",
+    trapStem: "Passage notes that 'prolonged low interest rates can inadvertently encourage leverage in shadow banks.' Option (A) states: 'Low interest rates inevitably destabilize financial markets.'",
+    wrongReasoning: "Choosing Option (A) because it echoes 'leverage' and 'fragility' keywords from the passage.",
+    correctReasoning: "CAT RC eliminates absolute modifiers ('inevitably', 'always', 'solely') when the author uses hedged modal verbs ('can', 'may').",
+    evImpact: "Eliminating extreme qualifiers raises CAT VARC accuracy above 85%."
+  },
+  {
+    id: "CAT-TRAP-04",
+    domain: "DILR • Set Theory",
+    exam: "CAT 2026 DILR",
+    title: "Double-Counting Triple Overlaps in 3-Set Sum Equations",
+    trapStem: "100 students: 70 QA, 65 DILR, 60 VARC (everyone studies >=1). Find maximum students studying all 3.",
+    wrongReasoning: "Taking min(70, 65, 60) = 60 without checking total population capacity.",
+    correctReasoning: "E_2 + 2*E_3 = (70 + 65 + 60) - 100 = 95 => Max E_3 = floor(95 / 2) = 47.",
+    evImpact: "Saves an entire 4-question DILR set (+12 to +16 net score)."
+  }
+];
+
+window.IPM_DOUBT_BANK = [
+  {
+    id: "CAT-DBT-01",
+    domain: "Quant Core",
+    examTag: "CAT 2026 QA",
+    question: "Why does selling two items at the SAME Selling Price—one at +20% profit and one at -20% loss—always result in a 4% net loss instead of breaking even?",
+    hint: "Assume SP = Rs. 120 for BOTH items. Compute CP_1 (at +20% profit) and CP_2 (at -20% loss) separately—which item had the larger Cost Price?",
+    shortcut: "Equal-SP Formula: Net Loss % = (x^2 / 100)% = (20^2 / 100)% = 4% loss on total transaction.",
+    derivation: "For SP = 120: CP_1 = 120 / 1.2 = Rs. 100, while CP_2 = 120 / 0.8 = Rs. 150. Total CP = Rs. 250 vs Total SP = Rs. 240 => Loss = 10/250 = 4%."
+  },
+  {
+    id: "CAT-DBT-02",
+    domain: "Number System",
+    examTag: "CAT 2026 QA (TITA)",
+    question: "How do I find the last two digits of 3^2026 in under 45 seconds without expanding powers?",
+    hint: "Use Euler's Totient Theorem mod 100: compute phi(100) = 100*(1 - 1/2)*(1 - 1/5) = 40, so 3^40 ≡ 1 (mod 100).",
+    shortcut: "Divide exponent 2026 by 40 -> remainder 26. Since 3^20 ≡ 01 (mod 100), 3^26 ≡ 3^6 = 729 ≡ 29.",
+    derivation: "3^2026 = (3^40)^50 * 3^26 ≡ 1 * (3^20) * 3^6 ≡ 1 * 729 ≡ 29 (mod 100)."
+  },
+  {
+    id: "CAT-DBT-03",
+    domain: "VARC • TITA",
+    examTag: "CAT 2026 VARC",
+    question: "What is the fastest opening move on a 4-sentence CAT TITA Parajumble with zero options?",
+    hint: "Scan for mandatory pairs first: look for a general claim followed by 'Yet / However / Consequently' or a full noun phrase followed by a demonstrative ('This phenomenon / These findings').",
+    shortcut: "Lock 2 mandatory pairs (e.g., 2-1 and 3-4) before deciding which pair opens the paragraph.",
+    derivation: "CAT TITA parajumbles carry +3/0 marking (zero negative penalty), and locking one strong pronoun-antecedent link eliminates 18 of 24 permutations immediately."
+  }
+];
+
+// 3. TAB 8: POPULATE MOCK FALLBACK WITH CAT 2026 QUESTIONS (+3/-1 & TITA)
+window.IPM_TAGGED_MOCK_QUESTIONS = (window.CAT_POSTGRES_BANK || []).concat(
+  (window.IPM_QUANT_CORE || []).flatMap(m => (m.questions || []).map(q => ({
+    id: q.id, section: "QUANT", topic: m.title, exam: "CAT 2026",
+    prompt: q.stem, options: q.options, answer: q.answer, explanation: q.explanation
+  }))),
+  (window.IPM_DILR || []).flatMap(m => (m.questions || []).map(q => ({
+    id: q.id, section: "DILR", topic: m.title, exam: "CAT 2026",
+    prompt: q.stem, options: q.options, answer: q.answer, explanation: q.explanation
+  })))
+);

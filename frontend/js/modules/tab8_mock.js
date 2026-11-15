@@ -110,7 +110,7 @@ window.renderTab8 = function (el) {
     { id: "QUANT_SPRINT", label: "Quant & Higher Math 30-Q Sprint (40m)", mins: 40, qs: 30 },
     { id: "NCERT_HIGHER_MATH_SPRINT", label: "Class 10/11/12 + Higher Math 30-Q Sprint (40m)", mins: 40, qs: 30 },
     { id: "DILR_SPRINT", label: "DI & LR 25-Q Sprint (40m)", mins: 40, qs: 25 },
-    { id: "VARC_SPRINT", label: "VARC & Grammar 30-Q Sprint (40m)", mins: 40, qs: 30 }
+    { id: "VARC_SPRINT", label: "VARC (RC & TITA) 30-Q Sprint (40m)", mins: 40, qs: 30 }
   ];
   const selectedPaper = papers.find(p => p.id === window.MOCK_PAPER_TYPE) || papers[0];
 
@@ -220,7 +220,7 @@ window.renderTab8 = function (el) {
                 ${q.source_tag === "CLASS_10_11_12_IMPORT" ? `<span class="text-[10px] px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 font-semibold">Class 10/11/12 Bank</span>` : ""}
                 <span class="text-[11px] px-2.5 py-0.5 rounded font-semibold ${
                   q.type === "SA_NUMERIC" ? "bg-amber-500/20 text-amber-300" : "bg-sky-500/20 text-sky-300"
-                }">${q.type === "SA_NUMERIC" ? "Short Answer (Zero Negative)" : "MCQ (+4 / -1)"}</span>
+                }">${q.type === "SA_NUMERIC" ? "Short Answer (Zero Negative)" : "MCQ (+3 / -1)"}</span>
               </div>
             </div>
             <p class="text-xs md:text-sm text-slate-100 whitespace-pre-line leading-relaxed">${q.prompt}</p>
