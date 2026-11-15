@@ -1035,3 +1035,103 @@ window.IPM_QUANT_CORE = [
     console.warn("CAT PostgreSQL hydration fallback:", e);
   }
 })();
+// Deep Chapter Overview & Concept Bridge Enrichment for CAT 2026
+(function enrichCatOverviews() {
+  const R = window.IPM_CHAPTER_REFRESHERS || {};
+  if (R["CAT-MOD-ALG"]) {
+    R["CAT-MOD-ALG"].overviewParagraphs = [
+      "Algebra is the single strongest differentiator between a 95th percentile and a 99.5+ percentile score in IIM CAT Quantitative Aptitude, consistently contributing 7 to 8 questions out of 22. While Arithmetic rewards speed and familiarity, CAT Algebra tests structural reasoning: analyzing critical points of nested absolute values without squaring blindly, determining root locations of quadratics using discriminant-vertex-boundary conditions, and applying weighted AM-GM-HM inequalities to asymmetric expressions.",
+      "Concept Bridge: In school mathematics, students solve modulus and radical equations by squaring both sides—a habit that introduces extraneous roots and wastes 2–3 minutes per question in CAT. Instead, view |x - a| geometrically as distance on the real line, check right-hand-side non-negativity (RHS >= 0) first to prune half the domain immediately, and use weighted AM-GM splitting whenever sums and products of positive variables are linked."
+    ];
+    R["CAT-MOD-ALG"].examMetrics = {
+      weightage: "7–8 Qs / 22 (35–40% QA)",
+      targetPace: "1.8 – 2.2 mins / Q",
+      format: "MCQ (+3/-1) & TITA (+3/0)",
+      strategy: "Domain Pruning & AM-GM Split"
+    };
+    R["CAT-MOD-ALG"].conceptBridgeTraps = [
+      { pitfall: "Blindly Squaring Modulus / Radical Equations", bridge: "Squaring |f(x)| = g(x) creates false roots where g(x) < 0. Always enforce g(x) >= 0 before solving." },
+      { pitfall: "Applying AM >= GM to Negative or Zero Variables", bridge: "AM >= GM holds strictly for positive real numbers (x_i > 0). Shift variables (e.g., t = x + 1 > 0) before applying." }
+    ];
+  }
+  if (R["CAT-MOD-ARITH1"]) {
+    R["CAT-MOD-ARITH1"].overviewParagraphs = [
+      "Arithmetic Part I (Percentages, Profit-Loss-Discount, Simple & Compound Interest, Ratios, and Mixtures/Alligation) forms the scoring anchor of CAT QA, delivering 4 to 5 direct questions in every slot. CAT rarely tests single-step formulas; instead, setters chain successive markups/discounts with faulty weights, multi-stage dilution/replacement, and partner-wise profit sharing.",
+      "Concept Bridge: Stop setting up 'Let Cost Price = x' algebraic equations. Convert every percentage change into a clean fraction multiplier (e.g., +16.67% = 7/6, -12.5% = 7/8), apply the Alligation teeter-totter whenever two concentrations merge into a known average, and conserve the unchanged component (such as solid pulp in fresh-vs-dry fruit or water during pure-solute addition)."
+    ];
+    R["CAT-MOD-ARITH1"].examMetrics = {
+      weightage: "4–5 Qs / 22 (20–23% QA)",
+      targetPace: "1.4 – 1.8 mins / Q",
+      format: "High-Accuracy MCQ & TITA",
+      strategy: "Fraction Multipliers & Alligation"
+    };
+    R["CAT-MOD-ARITH1"].conceptBridgeTraps = [
+      { pitfall: "Adding Removed Volumes in Successive Replacement", bridge: "Later withdrawals remove diluted mixture, not pure solute. Multiply remaining fractions: prod(1 - v_i/V)." },
+      { pitfall: "Computing Discount on Cost Price", bridge: "Markup acts on CP, Discount acts on Marked Price (MP), and Profit is always measured on actual CP delivered." }
+    ];
+  }
+  if (R["CAT-MOD-ARITH2"]) {
+    R["CAT-MOD-ARITH2"].overviewParagraphs = [
+      "Arithmetic Part II (Time-Speed-Distance, Circular Tracks, Boats/Escalators, and Time & Work) contributes 4 to 5 high-value questions per CAT slot. Questions routinely combine variable speeds, back-and-forth linear track meetings, moving escalators, and negative-efficiency outlet pipes.",
+      "Concept Bridge: Whenever distance is constant, speed and time are inversely proportional—eliminating variables completely via ratio shifts. On circular tracks, reduce speeds to their coprime ratio a : b first: runners meet at (a + b) distinct points in opposite directions and |a - b| points in the same direction."
+    ];
+    R["CAT-MOD-ARITH2"].examMetrics = {
+      weightage: "4–5 Qs / 22 (20–23% QA)",
+      targetPace: "1.5 – 2.0 mins / Q",
+      format: "MCQ (+3/-1) & TITA (+3/0)",
+      strategy: "Inverse Ratios & LCM Work Units"
+    };
+    R["CAT-MOD-ARITH2"].conceptBridgeTraps = [
+      { pitfall: "Using Raw Speeds Instead of Coprime Ratio on Circles", bridge: "Divide both speeds by their GCD before computing (a + b) or |a - b| distinct meeting points." },
+      { pitfall: "Arithmetic Mean of Equal-Distance Speeds", bridge: "Equal distances require the Harmonic Mean 2*v_1*v_2 / (v_1 + v_2), never (v_1 + v_2)/2." }
+    ];
+  }
+  if (R["CAT-MOD-NUM"]) {
+    R["CAT-MOD-NUM"].overviewParagraphs = [
+      "CAT Number System questions reward structural theorems—Euler's Totient Theorem, Fermat's Little Theorem, Chinese Remainder Theorem, Legendre's factorial exponent formula, and binomial parity—rather than brute-force arithmetic. Roughly half of Number System prompts appear as TITA integer-entry items.",
+      "Concept Bridge: Never expand large powers like 3^2026 or 7^103 + 11^103. Reduce the base modulo the divisor first, check if odd exponents allow (a + b) divisibility, or use Euler's totient phi(N) to collapse high exponents into small remainders."
+    ];
+    R["CAT-MOD-NUM"].examMetrics = {
+      weightage: "3–4 Qs / 22 (15–18% QA)",
+      targetPace: "1.6 – 2.1 mins / Q",
+      format: "Heavy TITA (+3/0) Presence",
+      strategy: "Euler Totient & Binomial Parity"
+    };
+    R["CAT-MOD-NUM"].conceptBridgeTraps = [
+      { pitfall: "Applying (a + b) Divisibility to Even Exponents", bridge: "(a^n + b^n) is divisible by (a + b) ONLY when n is an odd positive integer." },
+      { pitfall: "Forgetting 0 and 1 in Factor-Exclusion Counts", bridge: "Always count via prime-exponent choices (a+1)(b+1)(c+1) rather than listing divisors manually." }
+    ];
+  }
+  if (R["CAT-MOD-GEO"]) {
+    R["CAT-MOD-GEO"].overviewParagraphs = [
+      "Geometry and Mensuration contributes 3 to 4 questions in CAT QA, spanning triangle area scaling, Stewart's cevian theorem, inradius/circumradius identities, cyclic quadrilaterals, intersecting chords, and 3D cone/frustum cuts.",
+      "Concept Bridge: Avoid coordinate-bashing or heavy trigonometry. Over 80% of CAT Geometry problems yield in 3 steps using similar-triangle area ratios ((side ratio)^2), shared-angle area products ((AD*AE)/(AB*AC)), and Power of a Point (PT^2 = PA * PB)."
+    ];
+    R["CAT-MOD-GEO"].examMetrics = {
+      weightage: "3–4 Qs / 22 (15–18% QA)",
+      targetPace: "1.8 – 2.3 mins / Q",
+      format: "MCQ (+3/-1) & TITA (+3/0)",
+      strategy: "Area Ratio Scaling & Power of Point"
+    };
+    R["CAT-MOD-GEO"].conceptBridgeTraps = [
+      { pitfall: "Assuming Parallel Lines Without Statement", bridge: "Use (AD/AB)*(AE/AC) for shared-angle triangles; only square the ratio when DE || BC is proven." },
+      { pitfall: "Confusing Surface Area vs Volume Scaling in 3D Cuts", bridge: "Parallel cone cuts scale linear dimensions by k, areas by k^2, and volumes by k^3." }
+    ];
+  }
+  if (R["CAT-MOD-MODM"]) {
+    R["CAT-MOD-MODM"].overviewParagraphs = [
+      "Modern Math (Logarithms, AP/GP/HP Sequences, Permutations & Combinations, Probability, and Set Theory) contributes 3 to 4 high-scoring questions in CAT QA, frequently in TITA format where eliminating negative marking lets you attempt calculated counting problems confidently.",
+      "Concept Bridge: Map distribution problems onto Stars-and-Bars immediately (C(n - 1, r - 1) for positive integers vs. C(n + r - 1, r - 1) for non-negative integers), and use change-of-base to unify mixed-base logarithm equations into a single variable."
+    ];
+    R["CAT-MOD-MODM"].examMetrics = {
+      weightage: "3–4 Qs / 22 (15–18% QA)",
+      targetPace: "1.6 – 2.0 mins / Q",
+      format: "High TITA (+3/0) Concentration",
+      strategy: "Stars-and-Bars & Base Change"
+    };
+    R["CAT-MOD-MODM"].conceptBridgeTraps = [
+      { pitfall: "Confusing Positive (>=1) vs Non-Negative (>=0) Solutions", bridge: "Give 1 unit to each variable first when strictly positive integers are required: C(n - 1, r - 1)." },
+      { pitfall: "Ignoring Logarithm Domain Positivity", bridge: "Every argument inside log_b(f(x)) must satisfy f(x) > 0, and base b > 0, b != 1." }
+    ];
+  }
+})();
