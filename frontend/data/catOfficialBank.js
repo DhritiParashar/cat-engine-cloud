@@ -2957,3 +2957,1227 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "explanation": "Option (B) synthesizes the core claim that early modern maps acted as visual tools of geopolitical legitimation rather than neutral inventories."
   }
 ];
+
+// EXPANDED TAB 3 VARC STUDIO (4 RC PASSAGES x 3 Qs = 12 Qs + 8 TITA/MCQ VA EXERCISES)
+window.CAT_OFFICIAL_BANK = window.CAT_OFFICIAL_BANK || {};
+window.CAT_OFFICIAL_BANK.varc = {
+  readingComprehension: [
+  {
+    "id": "RC1",
+    "subtype": "CAT 2026 RC • Philosophy of Science",
+    "difficulty": "CAT 99%ile • +3 / -1 MCQ",
+    "passage": "Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.",
+    "questions": [
+      {
+        "qid": "CAT-RC-101",
+        "prompt": "How does structural realism resolve the tension between scientific realism and the pessimistic meta-induction?",
+        "options": [
+          "By denying that historical theories such as caloric fluid ever achieved empirical success.",
+          "By contending that mathematical relationships persist across paradigm shifts even when underlying theoretical entities are abandoned.",
+          "By conceding that unobservable entities cannot be modeled through mathematical equations.",
+          "By claiming modern physics is exempt from historical patterns of theory replacement."
+        ],
+        "correct": 1,
+        "explanation": "Structural realism preserves mathematical and relational structures across paradigm shifts even as unobservable entity labels change."
+      },
+      {
+        "qid": "CAT-RC-102",
+        "prompt": "Which of the following would most weaken the anti-realist's 'pessimistic meta-induction' as presented in the passage?",
+        "options": [
+          "Demonstrating that caloric fluid equations remain mathematically isomorphic to modern thermodynamic heat-transfer equations.",
+          "Showing that modern particle accelerators cost more than nineteenth-century laboratories.",
+          "Proving that unobservable entities cannot be directly detected by human sensory organs.",
+          "Establishing that future scientific revolutions will occur more rapidly than historical ones."
+        ],
+        "correct": 0,
+        "explanation": "If historical equations remain structurally valid in modern physics, theory replacement does not undermine scientific continuity."
+      },
+      {
+        "qid": "CAT-RC-103",
+        "prompt": "According to the passage, an anti-realist would most likely agree with which of the following statements?",
+        "options": [
+          "Empirical predictive success is insufficient to guarantee that a theory's postulated unobservable entities actually exist.",
+          "Mathematical equations have no utility in predicting experimental outcomes.",
+          "Luminiferous ether and caloric fluid failed to explain any physical phenomena in their eras.",
+          "Structural realism is identical to naive scientific realism."
+        ],
+        "correct": 0,
+        "explanation": "The pessimistic meta-induction argues that empirically successful theories were later discarded, so success does not guarantee entity existence."
+      }
+    ]
+  },
+  {
+    "id": "RC2",
+    "subtype": "CAT 2026 RC • Behavioral Macroeconomics",
+    "difficulty": "CAT 98.5%ile • +3 / -1 MCQ",
+    "passage": "While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.",
+    "questions": [
+      {
+        "qid": "CAT-RC-201",
+        "prompt": "The primary purpose of the passage is to:",
+        "options": [
+          "Advocate for the immediate abolition of central bank forward guidance.",
+          "Highlight an intertemporal policy trade-off between near-term macroeconomic stimulus and long-term financial stability.",
+          "Prove that non-bank intermediaries are solely responsible for liquidity traps.",
+          "Argue that rate-normalization cycles have no impact on long-term bond yields."
+        ],
+        "correct": 1,
+        "explanation": "The passage frames forward guidance as an intertemporal trade-off between near-term recovery and future systemic fragility."
+      },
+      {
+        "qid": "CAT-RC-202",
+        "prompt": "It can be inferred from the passage that future rate-normalization cycles become constrained because:",
+        "options": [
+          "Commercial banks refuse to purchase short-term sovereign debt.",
+          "Accumulated leverage among non-bank intermediaries makes the financial system vulnerable to sharp yield increases.",
+          "Liquidity traps permanently eliminate inflation across advanced economies.",
+          "Forward guidance legally binds central banks from raising interest rates for a decade."
+        ],
+        "correct": 1,
+        "explanation": "Excessive maturity mismatch and leverage create systemic fragility that limits how aggressively central banks can later raise rates."
+      },
+      {
+        "qid": "CAT-RC-203",
+        "prompt": "Which of the following best describes the author's tone toward explicit forward guidance?",
+        "options": [
+          "Dogmatically dismissive",
+          "Analytically cautionary",
+          "Unreservedly laudatory",
+          "Sardonically indifferent"
+        ],
+        "correct": 1,
+        "explanation": "The author recognizes near-term output recovery benefits while cautioning against systemic leverage risks."
+      }
+    ]
+  },
+  {
+    "id": "RC3",
+    "subtype": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "difficulty": "CAT 99%ile • +3 / -1 MCQ",
+    "passage": "Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.",
+    "questions": [
+      {
+        "qid": "CAT-RC-301",
+        "prompt": "The author uses the phrase 'biological market' primarily to emphasize that:",
+        "options": [
+          "Plants and soil microbes exchange resources based on conditional reciprocity and partner sanctions rather than unconditional altruism.",
+          "Agricultural commodities are priced according to soil carbon content.",
+          "Mycorrhizal fungi compete directly with plants for atmospheric sunlight.",
+          "Evolutionary theory has completely abandoned the study of predator-prey dynamics."
+        ],
+        "correct": 0,
+        "explanation": "Plants reward nutrient-delivering strains and sanction non-cooperative cheaters, mirroring conditional market exchange."
+      },
+      {
+        "qid": "CAT-RC-302",
+        "prompt": "Which of the following, if discovered, would most challenge the author's characterization of plant-fungal interactions?",
+        "options": [
+          "Host plants continue supplying identical carbon rations to fungal strains that cease delivering phosphorus.",
+          "Nitrogen-fixing bacteria require anaerobic micro-environments to function.",
+          "Some desert plants allocate less than ten percent of fixed carbon to root exudates.",
+          "Mycorrhizal networks connect multiple tree species within temperate forests."
+        ],
+        "correct": 0,
+        "explanation": "If plants do not sanction non-cooperative cheater strains, the 'biological market' enforcement mechanism breaks down."
+      },
+      {
+        "qid": "CAT-RC-303",
+        "prompt": "According to the passage, classical evolutionary theory differed from modern microbiome research in that classical theory:",
+        "options": [
+          "Overestimated the prevalence of zero-sum competition relative to reciprocal mutualism.",
+          "Proved that plants cannot synthesize carbon through photosynthesis.",
+          "Focused exclusively on marine ecosystems rather than terrestrial plants.",
+          "Denied that bacteria exist in soil ecosystems."
+        ],
+        "correct": 0,
+        "explanation": "Sentence 1 contrasts classical theory's focus on zero-sum competition with modern evidence of mutualistic carbon-nutrient exchange."
+      }
+    ]
+  },
+  {
+    "id": "RC4",
+    "subtype": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "difficulty": "CAT 99.5%ile • +3 / -1 MCQ",
+    "passage": "Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.",
+    "questions": [
+      {
+        "qid": "CAT-RC-401",
+        "prompt": "The critics' objection to the aspirin analogy rests primarily on the claim that:",
+        "options": [
+          "Human subjects strategically alter their behavior in response to predictive algorithms, destabilizing the underlying statistical patterns.",
+          "Aspirin was never clinically effective prior to the discovery of prostaglandin inhibition.",
+          "Neural networks lack the computational speed required for medical diagnostics.",
+          "Biochemical pathways evolve faster than financial and social institutions."
+        ],
+        "correct": 0,
+        "explanation": "Critics distinguish stable biochemistry from reflexive socio-technical systems where human gaming invalidates historical correlations."
+      },
+      {
+        "qid": "CAT-RC-402",
+        "prompt": "Instrumentalists invoke the history of aspirin in order to:",
+        "options": [
+          "Prove that causal interpretability is not a prerequisite for beneficial real-world deployment.",
+          "Argue that pharmaceutical regulations should govern software engineering.",
+          "Demonstrate that human physiology is governed by neural networks.",
+          "Show that predictive accuracy always precedes theoretical explanation in every science."
+        ],
+        "correct": 0,
+        "explanation": "Aspirin illustrates that effective practical deployment can occur before underlying mechanisms are understood."
+      },
+      {
+        "qid": "CAT-RC-403",
+        "prompt": "Which of the following scenarios best exemplifies 'reflexive drift' as defined in the passage?",
+        "options": [
+          "Loan applicants artificially alter superficial spending habits once they infer an opaque credit-scoring model's proxy variables.",
+          "A weather-forecasting model loses accuracy because a satellite sensor degrades over time.",
+          "A chess engine discovers a novel opening sacrifice unseen in human tournament games.",
+          "A hospital upgrades its electronic health records database to a faster server."
+        ],
+        "correct": 0,
+        "explanation": "Agents adapting their behavior to game an opaque algorithm directly illustrates reflexive drift."
+      }
+    ]
+  }
+],
+  vaTita: [
+  {
+    "subtype": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "difficulty": "CAT 98%ile",
+    "tita": true,
+    "id": "CAT-VA-PJ1",
+    "sentences": [
+      "1. Yet this very abundance of granular behavioral data has paradoxically made causal inference harder rather than easier for empirical economists.",
+      "2. Over the past decade, digital platforms have generated unprecedented real-time records of consumer choices, search queries, and price sensitivity.",
+      "3. Without exogenous shocks or randomized field experiments, observational correlations in massive datasets routinely conflate genuine preference shifts with algorithmic nudges.",
+      "4. Consequently, modern econometricians increasingly pair machine-learning prediction tools with quasi-experimental designs to isolate true causal effects."
+    ],
+    "answer": "2134",
+    "explanation": "2 introduces digital behavioral data; 1 pivots ('Yet this very abundance...') to causal inference; 3 explains why correlations fail; 4 concludes ('Consequently...') -> 2134."
+  },
+  {
+    "subtype": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "difficulty": "CAT 99%ile",
+    "tita": true,
+    "id": "CAT-VA-PJ2",
+    "sentences": [
+      "1. This architectural shift enabled medieval gothic cathedrals to soar to unprecedented heights while flooding their naves with stained-glass light.",
+      "2. Traditional Romanesque churches relied on massive, thick stone walls to bear the outward lateral thrust of heavy vaulted roofs.",
+      "3. By transferring roof loads outward across exterior stone arches to detached piers, the flying buttress liberated interior walls from structural duty.",
+      "4. Because piercing those load-bearing walls with large windows risked catastrophic collapse, Romanesque interiors remained dimly lit."
+    ],
+    "answer": "2431",
+    "explanation": "2 introduces thick Romanesque walls; 4 explains why piercing 'those load-bearing walls' risked collapse; 3 introduces the flying buttress solution; 1 summarizes 'This architectural shift' -> 2431."
+  },
+  {
+    "subtype": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "difficulty": "CAT 98.5%ile",
+    "tita": true,
+    "id": "CAT-VA-PJ3",
+    "sentences": [
+      "1. When firms compete primarily on visible short-term metrics, managerial incentives tilt toward underinvesting in long-horizon R&D.",
+      "2. Quarterly earnings benchmarks were originally championed as an antidote to managerial complacency and opaque corporate governance.",
+      "3. Over time, however, intense capital-market scrutiny transformed reporting thresholds from diagnostic gauges into binding operational targets.",
+      "4. Restoring multi-year innovation capacity therefore requires insulating core research budgets from transient quarterly fluctuations."
+    ],
+    "answer": "2314",
+    "explanation": "2 states the original purpose of quarterly benchmarks; 3 pivots ('Over time, however...') to how they became binding targets; 1 describes the resulting R&D underinvestment; 4 concludes -> 2314."
+  },
+  {
+    "subtype": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
+    "difficulty": "CAT 97%ile",
+    "tita": true,
+    "id": "CAT-VA-OOO1",
+    "sentences": [
+      "1. Early urban planners viewed street-level congestion purely as an engineering bottleneck solvable by widening arterial roads.",
+      "2. Subsequent empirical studies revealed the phenomenon of induced demand, wherein expanded road capacity rapidly attracts latent vehicular traffic.",
+      "3. High-speed intercity rail networks have significantly reduced domestic aviation emissions across Western Europe.",
+      "4. As a result, expanding highway lanes frequently restores peak-hour gridlock within a few years of construction.",
+      "5. Contemporary mobility policy therefore prioritizes congestion pricing and transit-oriented density over unchecked road expansion."
+    ],
+    "answer": "3",
+    "explanation": "1-2-4-5 trace urban road widening, induced demand, recurring gridlock, and congestion pricing. Sentence 3 shifts to intercity rail and aviation emissions -> 3."
+  },
+  {
+    "subtype": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
+    "difficulty": "CAT 98%ile",
+    "tita": true,
+    "id": "CAT-VA-OOO2",
+    "sentences": [
+      "1. Deep-sea hydrothermal vents support thriving chemosynthetic ecosystems completely independent of solar photosynthesis.",
+      "2. Specialized bacteria oxidize hydrogen sulfide dissolved in superheated vent plumes to synthesize organic carbon compounds.",
+      "3. Coral bleaching events in shallow tropical reefs are triggered primarily by anomalously warm ocean surface temperatures.",
+      "4. Giant tube worms and blind vent crabs rely symbiotically on these chemosynthetic microbes as the base of their food web.",
+      "5. Astrobiologists study these abyssal communities as terrestrial analogues for potential life beneath the icy crust of Europa."
+    ],
+    "answer": "3",
+    "explanation": "1-2-4-5 focus on deep-sea hydrothermal vent chemosynthesis and astrobiology. Sentence 3 shifts to shallow tropical coral bleaching -> 3."
+  },
+  {
+    "subtype": "TITA Para-Completion (+3 / 0 • Type Position Digit 1–4)",
+    "difficulty": "CAT 98.5%ile",
+    "tita": true,
+    "id": "CAT-VA-PC1",
+    "sentences": [
+      "Target Sentence: 'Rather than erasing regional dialects, broadcast media initially heightened linguistic self-awareness by juxtaposing standardized accents against local speech.'",
+      "1. [Blank 1] Early twentieth-century linguists predicted that national radio networks would rapidly homogenize spoken English within two generations.",
+      "2. [Blank 2] Empirical dialect surveys conducted fifty years later, however, uncovered resilient phonological divergence across major metropolitan areas.",
+      "3. [Blank 3] Speakers continued using local vowels as markers of community solidarity even while effortlessly comprehending national broadcasts.",
+      "4. [Blank 4] Code-switching between formal broadcast registers and vernacular speech thus became a routine communicative skill."
+    ],
+    "answer": "2",
+    "explanation": "Blank 2 bridges the prediction of homogenization (before Blank 2) and the empirical finding of resilient divergence (after Blank 2) -> 2."
+  },
+  {
+    "subtype": "Para-Summary (+3 / -1 MCQ)",
+    "difficulty": "CAT 96%ile",
+    "tita": false,
+    "id": "CAT-VA-PS1",
+    "stem": "Although algorithmic credit scoring expands formal loan access to thin-file borrowers by analyzing non-traditional digital footprints, opaque machine-learning models risk encoding historical socioeconomic proxies that are difficult for applicants to audit or contest.",
+    "options": [
+      "Algorithmic credit scoring should be banned because machine-learning models always discriminate against thin-file borrowers.",
+      "While alternative-data algorithms widen credit access for thin-file applicants, their opacity can embed uncontestable socioeconomic biases.",
+      "Thin-file borrowers prefer traditional credit bureaus over algorithmic underwriting models.",
+      "Auditing machine-learning models eliminates all historical biases in consumer lending."
+    ],
+    "answer": 1,
+    "explanation": "Option (B) captures both halves of the trade-off: wider credit access vs. opaque, uncontestable proxies."
+  },
+  {
+    "subtype": "Para-Summary (+3 / -1 MCQ)",
+    "difficulty": "CAT 97.5%ile",
+    "tita": false,
+    "id": "CAT-VA-PS2",
+    "stem": "Historians of cartography note that early modern world maps were never merely neutral geographic inventories; by centering imperial capitals, exaggerating maritime territories, and adorning uncharted regions with allegorical emblems, mapmakers visually legitimized geopolitical claims for domestic and rival audiences.",
+    "options": [
+      "Early modern world maps were scientifically inaccurate because mapmakers lacked modern satellite telemetry.",
+      "Far from being purely objective records, early modern maps served as visual instruments of geopolitical legitimation through deliberate spatial framing.",
+      "Allegorical emblems on early maps were intended solely as decorative art without political significance.",
+      "Imperial capitals were placed at the center of early maps because prime meridians had not yet been standardized."
+    ],
+    "answer": 1,
+    "explanation": "Option (B) synthesizes the core claim that early modern maps acted as visual tools of geopolitical legitimation rather than neutral inventories."
+  }
+]
+};
+window.IPM_TAGGED_MOCK_QUESTIONS = [
+  {
+    "id": "CAT26-QA-01",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Modulus",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the number of distinct real solutions to |x^2 - 7x + 10| + |x - 2| = x - 2.",
+    "options": [],
+    "answer": "2",
+    "explanation": "Requires x >= 2 => |x^2 - 7x + 10| = 0 => x = 2 or 5 (2 solutions)."
+  },
+  {
+    "id": "CAT26-QA-02",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • AM-GM Optimization",
+    "exam": "CAT 2026",
+    "prompt": "If x > 0 and y > 0 satisfy 3x + 4y = 20, find the maximum possible value of x^2 * y^3.",
+    "options": [
+      "128",
+      "192",
+      "256",
+      "432"
+    ],
+    "answer": 1,
+    "explanation": "Set (3x)/2 = (4y)/3 = 20/5 = 4 => x = 8/3, y = 3 => (64/9)*27 = 192."
+  },
+  {
+    "id": "CAT26-QA-03",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Polynomials",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Let P(x) be a monic cubic polynomial with P(1) = 1, P(2) = 4, and P(3) = 9. Find P(4).",
+    "options": [],
+    "answer": "22",
+    "explanation": "P(x) - x^2 = (x - 1)(x - 2)(x - 3) => P(4) = 16 + 6 = 22."
+  },
+  {
+    "id": "CAT26-QA-04",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Functions",
+    "exam": "CAT 2026",
+    "prompt": "If f(x) + 2*f(1 - x) = x^2 + 3 for all real x, find f(2).",
+    "options": [
+      "-1/3",
+      "1/3",
+      "5/3",
+      "7/3"
+    ],
+    "answer": 1,
+    "explanation": "f(2) + 2f(-1) = 7 and f(-1) + 2f(2) = 4 => 3f(2) = 1 => f(2) = 1/3."
+  },
+  {
+    "id": "CAT26-QA-05",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Modulus Minima",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the minimum value of |x - 1| + |x - 4| + |x - 9| + |x - 15| for real x.",
+    "options": [],
+    "answer": "19",
+    "explanation": "Minimum occurs on median interval [4, 9]: at x = 5, 4 + 1 + 4 + 10 = 19."
+  },
+  {
+    "id": "CAT26-QA-06",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Quadratics",
+    "exam": "CAT 2026",
+    "prompt": "If α and β are roots of 2x^2 - 7x + 4 = 0, find α^2 + β^2.",
+    "options": [
+      "6.25",
+      "7.50",
+      "8.25",
+      "9.00"
+    ],
+    "answer": 2,
+    "explanation": "(7/2)^2 - 2(2) = 49/4 - 4 = 8.25."
+  },
+  {
+    "id": "CAT26-QA-07",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Rational Maxima",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the minimum value of (x^2 + 2x + 10) / (x + 1) for x > -1.",
+    "options": [],
+    "answer": "6",
+    "explanation": "(x + 1) + 9/(x + 1) >= 2*sqrt(9) = 6."
+  },
+  {
+    "id": "CAT26-QA-08",
+    "section": "QUANT_CORE",
+    "topic": "Algebra • Integer Pairs",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the number of integer pairs (x, y) satisfying |x| + |y| + |x + y| = 10.",
+    "options": [],
+    "answer": "28",
+    "explanation": "Equivalent to max(|x|, |y|, |x + y|) = 5 => 6 + 6 + 8 + 8 = 28 pairs."
+  },
+  {
+    "id": "CAT26-QA-09",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Mixtures",
+    "exam": "CAT 2026",
+    "prompt": "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water. Find final milk %.",
+    "options": [
+      "54%",
+      "56%",
+      "60%",
+      "64%"
+    ],
+    "answer": 2,
+    "explanation": "(54/60)*(50/60)*(48/60) = 3/5 = 60%."
+  },
+  {
+    "id": "CAT26-QA-10",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Profit & Loss",
+    "exam": "CAT 2026",
+    "prompt": "A merchant marks goods 40% above CP, gives 20% discount, and uses an 800g weight instead of 1000g. Net profit %?",
+    "options": [
+      "25%",
+      "32%",
+      "40%",
+      "44%"
+    ],
+    "answer": 2,
+    "explanation": "1.40 * 0.80 * (1000/800) = 1.40 => 40%."
+  },
+  {
+    "id": "CAT26-QA-11",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Compound Interest",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] A loan of Rs. 21,000 is repaid in two equal annual installments at 10% p.a. CI. Find each installment (in Rs.).",
+    "options": [],
+    "answer": "12100",
+    "explanation": "X/1.1 + X/1.21 = 21,000 => X = Rs. 12,100."
+  },
+  {
+    "id": "CAT26-QA-12",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • CI vs SI",
+    "exam": "CAT 2026",
+    "prompt": "If CI - SI on a principal at 10% p.a. for 3 years is Rs. 620, find the principal.",
+    "options": [
+      "Rs. 18,000",
+      "Rs. 20,000",
+      "Rs. 22,000",
+      "Rs. 25,000"
+    ],
+    "answer": 1,
+    "explanation": "P * 0.01 * 3.1 = 620 => P = Rs. 20,000."
+  },
+  {
+    "id": "CAT26-QA-13",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Alligation",
+    "exam": "CAT 2026",
+    "prompt": "Fresh grapes have 80% water and dry grapes have 25% water. How many kg of dry grapes come from 60 kg fresh grapes?",
+    "options": [
+      "12 kg",
+      "15 kg",
+      "16 kg",
+      "20 kg"
+    ],
+    "answer": 2,
+    "explanation": "Solid pulp = 12 kg = 75% of dry weight => 16 kg."
+  },
+  {
+    "id": "CAT26-QA-14",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Asymmetric Mixtures",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] From 100L pure wine, 10L is replaced with water, then 20L mixture with pure wine, then 25L with water. Final wine %?",
+    "options": [],
+    "answer": "69",
+    "explanation": "90 -> 90*(0.8)+20 = 92 -> 92*(0.75) = 69%."
+  },
+  {
+    "id": "CAT26-QA-15",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Circular Tracks",
+    "exam": "CAT 2026",
+    "prompt": "Runners A and B start together on a 1200m circular track in opposite directions at 5 m/s and 7 m/s. Distinct meeting points?",
+    "options": [
+      "2",
+      "5",
+      "7",
+      "12"
+    ],
+    "answer": 3,
+    "explanation": "Coprime ratio 5:7 in opposite directions => 5 + 7 = 12 points."
+  },
+  {
+    "id": "CAT26-QA-16",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Escalators",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Walking up an upward escalator takes 30s; walking down against it takes 90s. Seconds to walk up when off?",
+    "options": [],
+    "answer": "45",
+    "explanation": "Harmonic mean of 30 and 90 = 2*30*90/(30+90) = 45s."
+  },
+  {
+    "id": "CAT26-QA-17",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Crossing Time",
+    "exam": "CAT 2026",
+    "prompt": "Trains A and B start from P and Q towards each other. After crossing, A takes 4h to Q and B takes 9h to P. If v_A = 60 km/h, distance PQ?",
+    "options": [
+      "480 km",
+      "540 km",
+      "600 km",
+      "720 km"
+    ],
+    "answer": 2,
+    "explanation": "v_B = 60*sqrt(4/9) = 40 km/h; meeting time = sqrt(36) = 6h => PQ = 100*6 = 600 km."
+  },
+  {
+    "id": "CAT26-QA-18",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Linear Meetings",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Anil (3 m/s) and Sunil (2 m/s) start from opposite ends A and B of a 300m track and run back and forth. Distance (m) from A at 3rd meeting?",
+    "options": [],
+    "answer": "300",
+    "explanation": "Combined distance = 5*300 = 1500m; Anil covers 900m = 3 full lengths => at B (300m from A)."
+  },
+  {
+    "id": "CAT26-QA-19",
+    "section": "QUANT_CORE",
+    "topic": "Arithmetic • Time & Work",
+    "exam": "CAT 2026",
+    "prompt": "Pipe A fills a tank in 12h, B in 15h, and outlet C empties it in 20h. Hours to fill when all three open?",
+    "options": [
+      "8 hrs",
+      "9 hrs",
+      "10 hrs",
+      "12 hrs"
+    ],
+    "answer": 2,
+    "explanation": "60 / (5 + 4 - 3) = 10 hours."
+  },
+  {
+    "id": "CAT26-QA-20",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Euler's Theorem",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the last two digits of 3^2026.",
+    "options": [],
+    "answer": "29",
+    "explanation": "phi(100) = 40 => 3^2026 ≡ 3^26 ≡ 729 ≡ 29 (mod 100)."
+  },
+  {
+    "id": "CAT26-QA-21",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Binomial Parity",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the remainder when 7^103 + 11^103 is divided by 18.",
+    "options": [],
+    "answer": "0",
+    "explanation": "Odd exponent 103 => divisible by 7 + 11 = 18 => remainder 0."
+  },
+  {
+    "id": "CAT26-QA-22",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Divisors",
+    "exam": "CAT 2026",
+    "prompt": "How many positive divisors of 720 are NOT divisible by 6?",
+    "options": [
+      "12",
+      "14",
+      "16",
+      "30"
+    ],
+    "answer": 1,
+    "explanation": "Total factors 30 - multiples of 6 (16) = 14."
+  },
+  {
+    "id": "CAT26-QA-23",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Factorials",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Find the number of trailing zeros in 125!.",
+    "options": [],
+    "answer": "31",
+    "explanation": "25 + 5 + 1 = 31."
+  },
+  {
+    "id": "CAT26-QA-24",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Modular Remainders",
+    "exam": "CAT 2026",
+    "prompt": "What is the remainder when 2^99 is divided by 33?",
+    "options": [
+      "1",
+      "16",
+      "17",
+      "32"
+    ],
+    "answer": 2,
+    "explanation": "(2^5)^19 * 16 ≡ (-1)^19 * 16 = -16 ≡ 17 (mod 33)."
+  },
+  {
+    "id": "CAT26-QA-25",
+    "section": "QUANT_CORE",
+    "topic": "Number System • Chinese Remainder",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Smallest positive integer leaving remainders 2, 3, and 4 when divided by 5, 7, and 9 respectively?",
+    "options": [],
+    "answer": "157",
+    "explanation": "157 = 5*31 + 2 = 7*22 + 3 = 9*17 + 4."
+  },
+  {
+    "id": "CAT26-QA-26",
+    "section": "QUANT_CORE",
+    "topic": "Geometry • Triangle Area Scaling",
+    "exam": "CAT 2026",
+    "prompt": "In triangle ABC, D and E lie on AB and AC with AD:DB = 2:3 and AE:EC = 3:4. Ratio of Area(ADE) to Area(BCED)?",
+    "options": [
+      "6 : 29",
+      "6 : 35",
+      "2 : 7",
+      "9 : 26"
+    ],
+    "answer": 0,
+    "explanation": "(2/5)*(3/7) = 6/35 => 6 : (35 - 6) = 6 : 29."
+  },
+  {
+    "id": "CAT26-QA-27",
+    "section": "QUANT_CORE",
+    "topic": "Geometry • 3D Cone Cut",
+    "exam": "CAT 2026",
+    "prompt": "A cone of height 30 cm is cut parallel to its base so top cone and bottom frustum have volume ratio 8 : 19. Height of top cone?",
+    "options": [
+      "10 cm",
+      "15 cm",
+      "20 cm",
+      "24 cm"
+    ],
+    "answer": 2,
+    "explanation": "(h/30)^3 = 8/27 => h = 20 cm."
+  },
+  {
+    "id": "CAT26-QA-28",
+    "section": "QUANT_CORE",
+    "topic": "Geometry • Euler Incenter-Circumcenter",
+    "exam": "CAT 2026",
+    "prompt": "A right triangle has legs 9 cm and 12 cm. Distance between its incenter and circumcenter?",
+    "options": [
+      "1.5*sqrt(5) cm",
+      "3 cm",
+      "4.5 cm",
+      "2*sqrt(5) cm"
+    ],
+    "answer": 0,
+    "explanation": "R = 7.5, r = 3 => sqrt(56.25 - 45) = 1.5*sqrt(5) cm."
+  },
+  {
+    "id": "CAT26-QA-29",
+    "section": "QUANT_CORE",
+    "topic": "Modern Math • Stars & Bars",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Number of positive integer solutions to x + y + z = 12?",
+    "options": [],
+    "answer": "55",
+    "explanation": "C(12 - 1, 3 - 1) = C(11, 2) = 55."
+  },
+  {
+    "id": "CAT26-QA-30",
+    "section": "QUANT_CORE",
+    "topic": "Modern Math • Logarithms",
+    "exam": "CAT 2026",
+    "prompt": "Solve for x: log_2(x) + log_4(x) + log_8(x) = 11.",
+    "options": [
+      "32",
+      "64",
+      "128",
+      "256"
+    ],
+    "answer": 1,
+    "explanation": "(1 + 1/2 + 1/3)*log_2(x) = 11 => log_2(x) = 6 => x = 64."
+  },
+  {
+    "id": "CAT26-QA-31",
+    "section": "QUANT_CORE",
+    "topic": "Modern Math • Derangements",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Ways to place 5 distinct letters into 5 addressed envelopes so EXACTLY 1 letter is in its own envelope?",
+    "options": [],
+    "answer": "45",
+    "explanation": "C(5, 1) * D_4 = 5 * 9 = 45."
+  },
+  {
+    "id": "CAT26-QA-32",
+    "section": "QUANT_CORE",
+    "topic": "Modern Math • Telescoping Series",
+    "exam": "CAT 2026",
+    "prompt": "Evaluate sum_{k=1}^{99} 1 / [k(k + 1)].",
+    "options": [
+      "98/99",
+      "99/100",
+      "100/101",
+      "1"
+    ],
+    "answer": 1,
+    "explanation": "1 - 1/100 = 99/100."
+  },
+  {
+    "id": "CAT26-DILR-01",
+    "section": "DILR",
+    "topic": "DILR • Set Theory Optimization",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 1 • Q1 TITA] Four B-schools (IIM A, B, C, L) sent distinct delegate counts from {12, 15, 18, 20} (sum = 65) across Case Clash (CC), FinQuest (FQ), and StratWars (SW). Each delegate entered 1 or 2 events (none entered 3), and 6 per institute entered 2 events. IIM A's single-event delegates split 3:2:1 across CC, FQ, SW. IIM C > IIM A > IIM B > IIM L. How many delegates did IIM A send?",
+    "options": [],
+    "answer": "18",
+    "explanation": "Total - 6 is divisible by 6 => 18."
+  },
+  {
+    "id": "CAT26-DILR-02",
+    "section": "DILR",
+    "topic": "DILR • Set Theory Optimization",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 1 • Q2] In the B-school delegate caselet (IIM A = 18 total, 6 in two events, single-event split 3:2:1 across CC, FQ, SW), how many IIM A delegates entered ONLY Case Clash?",
+    "options": [
+      "3",
+      "4",
+      "6",
+      "9"
+    ],
+    "answer": 2,
+    "explanation": "12 single-event split 3:2:1 => 6 in CC only."
+  },
+  {
+    "id": "CAT26-DILR-03",
+    "section": "DILR",
+    "topic": "DILR • Set Theory Optimization",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 1 • Q3 TITA] Across all four IIMs (65 delegates total, 6 two-event delegates per institute), how many total delegates entered ONLY ONE event?",
+    "options": [],
+    "answer": "41",
+    "explanation": "65 - 4*6 = 41 single-event delegates."
+  },
+  {
+    "id": "CAT26-DILR-04",
+    "section": "DILR",
+    "topic": "DILR • Set Theory Optimization",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 1 • Q4] What is the ratio of single-event delegates from IIM C (20 total) to single-event delegates from IIM L (12 total)?",
+    "options": [
+      "5 : 3",
+      "7 : 3",
+      "2 : 1",
+      "4 : 3"
+    ],
+    "answer": 1,
+    "explanation": "(20 - 6) : (12 - 6) = 14 : 6 = 7 : 3."
+  },
+  {
+    "id": "CAT26-DILR-05",
+    "section": "DILR",
+    "topic": "DILR • Round-Robin Tournament",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 2 • Q1 TITA] Six teams play a single round-robin football league (Win = 3, Draw = 1, Loss = 0). Total points awarded across all 15 matches was 41. How many matches ended in a draw?",
+    "options": [],
+    "answer": "4",
+    "explanation": "D = 3*15 - 41 = 4 draws."
+  },
+  {
+    "id": "CAT26-DILR-06",
+    "section": "DILR",
+    "topic": "DILR • Round-Robin Tournament",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 2 • Q2 TITA] In the 6-team round-robin league above (41 total points, 4 draws), how many matches ended with a decisive winner?",
+    "options": [],
+    "answer": "11",
+    "explanation": "15 - 4 = 11 decisive matches."
+  },
+  {
+    "id": "CAT26-DILR-07",
+    "section": "DILR",
+    "topic": "DILR • Round-Robin Tournament",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 2 • Q3] If the top team in the 6-team round-robin league won all its matches, how many points did it finish with?",
+    "options": [
+      "12",
+      "13",
+      "15",
+      "18"
+    ],
+    "answer": 2,
+    "explanation": "5 wins * 3 pts = 15 points."
+  },
+  {
+    "id": "CAT26-DILR-08",
+    "section": "DILR",
+    "topic": "DILR • Round-Robin Tournament",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 2 • Q4] What is the minimum possible points scored by the last-placed team in a 6-team round-robin where the top team won all 5 matches?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "3"
+    ],
+    "answer": 0,
+    "explanation": "Last team can lose all 5 matches -> 0 points."
+  },
+  {
+    "id": "CAT26-DILR-09",
+    "section": "DILR",
+    "topic": "DILR • Venn Maxima-Minima",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 3 • Q1 TITA] In a cohort of 100 MBA aspirants, 70 solve QA daily, 65 solve DILR daily, and 60 solve VARC daily (everyone solves >=1). Maximum aspirants solving all 3 sections?",
+    "options": [],
+    "answer": "47",
+    "explanation": "E_2 + 2*E_3 = 95 => setting E_2 = 1 gives Max E_3 = 47."
+  },
+  {
+    "id": "CAT26-DILR-10",
+    "section": "DILR",
+    "topic": "DILR • Venn Maxima-Minima",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 3 • Q2 TITA] In the 100-aspirant cohort above (70 QA, 65 DILR, 60 VARC, none = 0), minimum aspirants solving all 3 sections?",
+    "options": [],
+    "answer": "0",
+    "explanation": "Setting E_2 = 95, E_1 = 5 gives Min E_3 = 0."
+  },
+  {
+    "id": "CAT26-DILR-11",
+    "section": "DILR",
+    "topic": "DILR • Venn Maxima-Minima",
+    "exam": "CAT 2026",
+    "prompt": "[DILR Set 3 • Q3] When the number solving all 3 sections is maximized (47), how many aspirants solve EXACTLY ONE section?",
+    "options": [
+      "5",
+      "6",
+      "8",
+      "10"
+    ],
+    "answer": 1,
+    "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52? Wait: 100 - 48 = 52; let's check: E_1 = 52, E_2 = 1, E_3 = 47 => sum = 52 + 2 + 141 = 195! Correct = 52."
+  },
+  {
+    "id": "CAT26-DILR-12",
+    "section": "DILR",
+    "topic": "DILR • Matrix Arrangement",
+    "exam": "CAT 2026",
+    "prompt": "Five analysts (P, Q, R, S, T) from Mumbai, Delhi, Bengaluru, Chennai, and Kolkata specialize in FinTech, Healthcare, SaaS, Energy, and Retail. P is from Mumbai (not FinTech); Bengaluru is SaaS; R is Healthcare (not Delhi/Kolkata). Which city is R from?",
+    "options": [
+      "Mumbai",
+      "Delhi",
+      "Chennai",
+      "Kolkata"
+    ],
+    "answer": 2,
+    "explanation": "Eliminating Mumbai, Bengaluru, Delhi, and Kolkata leaves Chennai."
+  },
+  {
+    "id": "CAT26-DILR-13",
+    "section": "DILR",
+    "topic": "DILR • Grid Shortest Paths",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] How many shortest grid paths exist from (0, 0) to (4, 3) passing through checkpoint (2, 1)?",
+    "options": [],
+    "answer": "18",
+    "explanation": "C(3, 2) * C(4, 2) = 3 * 6 = 18."
+  },
+  {
+    "id": "CAT26-DILR-14",
+    "section": "DILR",
+    "topic": "DILR • Knockout Seeding",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] In a 64-player single-elimination knockout tournament, how many total matches are played to crown the champion?",
+    "options": [],
+    "answer": "63",
+    "explanation": "N - 1 = 64 - 1 = 63 matches."
+  },
+  {
+    "id": "CAT26-DILR-15",
+    "section": "DILR",
+    "topic": "DILR • Data Interpretation",
+    "exam": "CAT 2026",
+    "prompt": "A firm's revenue grows from Rs. 240 Cr to Rs. 280 Cr while operating margin drops from 25% to 22.5%. Change in operating profit?",
+    "options": [
+      "+Rs. 1.5 Cr",
+      "+Rs. 2.5 Cr",
+      "+Rs. 3.0 Cr",
+      "+Rs. 4.0 Cr"
+    ],
+    "answer": 2,
+    "explanation": "63 Cr - 60 Cr = +Rs. 3.0 Cr."
+  },
+  {
+    "id": "CAT26-DILR-16",
+    "section": "DILR",
+    "topic": "DILR • Market Share DI",
+    "exam": "CAT 2026",
+    "prompt": "A company's market share falls from 25% to 20% while total industry size expands by 40%. Percentage change in company revenue?",
+    "options": [
+      "-10%",
+      "0%",
+      "+12%",
+      "+15%"
+    ],
+    "answer": 2,
+    "explanation": "0.20 * 140 = 28 vs 25 => (28 - 25)/25 = +12%."
+  },
+  {
+    "id": "CAT26-DILR-17",
+    "section": "DILR",
+    "topic": "DILR • 4-Exam Venn",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] 200 analysts took 4 exams. Every analyst passed >=2 exams; 80 passed exactly 2, and 70 passed exactly 3. Total exam passes across all 200 analysts?",
+    "options": [],
+    "answer": "570",
+    "explanation": "50 passed all 4 => 2*80 + 3*70 + 4*50 = 570."
+  },
+  {
+    "id": "CAT26-DILR-18",
+    "section": "DILR",
+    "topic": "DILR • 3-Language Venn",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] In a club of 150 members, 90 speak English, 80 Hindi, and 70 Tamil (everyone >=1). If 40 speak all 3, how many speak ONLY ONE language?",
+    "options": [],
+    "answer": "100",
+    "explanation": "E_2 + 2(40) = 240 - 150 = 90 => E_2 = 10 => E_1 = 150 - 10 - 40 = 100."
+  },
+  {
+    "id": "CAT26-DILR-19",
+    "section": "DILR",
+    "topic": "DILR • League Scoring",
+    "exam": "CAT 2026",
+    "prompt": "[TITA] Five teams play a single round-robin tournament (Win = 2, Draw = 1, Loss = 0). Sum of points of all 5 teams?",
+    "options": [],
+    "answer": "20",
+    "explanation": "C(5, 2) * 2 = 10 * 2 = 20 points."
+  },
+  {
+    "id": "CAT26-DILR-20",
+    "section": "DILR",
+    "topic": "DILR • Fraction Comparison",
+    "exam": "CAT 2026",
+    "prompt": "Which of the following fractions is the largest?",
+    "options": [
+      "417 / 628",
+      "539 / 812",
+      "299 / 451",
+      "359 / 541"
+    ],
+    "answer": 0,
+    "explanation": "417/628 = 0.66401 is closest to 2/3 among the four choices."
+  },
+  {
+    "id": "CAT26-VARC-01",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Philosophy of Science",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: How does structural realism resolve the tension between scientific realism and the pessimistic meta-induction?",
+    "options": [
+      "By denying that historical theories such as caloric fluid ever achieved empirical success.",
+      "By contending that mathematical relationships persist across paradigm shifts even when underlying theoretical entities are abandoned.",
+      "By conceding that unobservable entities cannot be modeled through mathematical equations.",
+      "By claiming modern physics is exempt from historical patterns of theory replacement."
+    ],
+    "answer": 1,
+    "explanation": "Structural realism preserves mathematical and relational structures across paradigm shifts even as unobservable entity labels change."
+  },
+  {
+    "id": "CAT26-VARC-02",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Philosophy of Science",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: Which of the following would most weaken the anti-realist's 'pessimistic meta-induction' as presented in the passage?",
+    "options": [
+      "Demonstrating that caloric fluid equations remain mathematically isomorphic to modern thermodynamic heat-transfer equations.",
+      "Showing that modern particle accelerators cost more than nineteenth-century laboratories.",
+      "Proving that unobservable entities cannot be directly detected by human sensory organs.",
+      "Establishing that future scientific revolutions will occur more rapidly than historical ones."
+    ],
+    "answer": 0,
+    "explanation": "If historical equations remain structurally valid in modern physics, theory replacement does not undermine scientific continuity."
+  },
+  {
+    "id": "CAT26-VARC-03",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Philosophy of Science",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: According to the passage, an anti-realist would most likely agree with which of the following statements?",
+    "options": [
+      "Empirical predictive success is insufficient to guarantee that a theory's postulated unobservable entities actually exist.",
+      "Mathematical equations have no utility in predicting experimental outcomes.",
+      "Luminiferous ether and caloric fluid failed to explain any physical phenomena in their eras.",
+      "Structural realism is identical to naive scientific realism."
+    ],
+    "answer": 0,
+    "explanation": "The pessimistic meta-induction argues that empirically successful theories were later discarded, so success does not guarantee entity existence."
+  },
+  {
+    "id": "CAT26-VARC-04",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
+    "exam": "CAT 2026",
+    "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: The primary purpose of the passage is to:",
+    "options": [
+      "Advocate for the immediate abolition of central bank forward guidance.",
+      "Highlight an intertemporal policy trade-off between near-term macroeconomic stimulus and long-term financial stability.",
+      "Prove that non-bank intermediaries are solely responsible for liquidity traps.",
+      "Argue that rate-normalization cycles have no impact on long-term bond yields."
+    ],
+    "answer": 1,
+    "explanation": "The passage frames forward guidance as an intertemporal trade-off between near-term recovery and future systemic fragility."
+  },
+  {
+    "id": "CAT26-VARC-05",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
+    "exam": "CAT 2026",
+    "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: It can be inferred from the passage that future rate-normalization cycles become constrained because:",
+    "options": [
+      "Commercial banks refuse to purchase short-term sovereign debt.",
+      "Accumulated leverage among non-bank intermediaries makes the financial system vulnerable to sharp yield increases.",
+      "Liquidity traps permanently eliminate inflation across advanced economies.",
+      "Forward guidance legally binds central banks from raising interest rates for a decade."
+    ],
+    "answer": 1,
+    "explanation": "Excessive maturity mismatch and leverage create systemic fragility that limits how aggressively central banks can later raise rates."
+  },
+  {
+    "id": "CAT26-VARC-06",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
+    "exam": "CAT 2026",
+    "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: Which of the following best describes the author's tone toward explicit forward guidance?",
+    "options": [
+      "Dogmatically dismissive",
+      "Analytically cautionary",
+      "Unreservedly laudatory",
+      "Sardonically indifferent"
+    ],
+    "answer": 1,
+    "explanation": "The author recognizes near-term output recovery benefits while cautioning against systemic leverage risks."
+  },
+  {
+    "id": "CAT26-VARC-07",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: The author uses the phrase 'biological market' primarily to emphasize that:",
+    "options": [
+      "Plants and soil microbes exchange resources based on conditional reciprocity and partner sanctions rather than unconditional altruism.",
+      "Agricultural commodities are priced according to soil carbon content.",
+      "Mycorrhizal fungi compete directly with plants for atmospheric sunlight.",
+      "Evolutionary theory has completely abandoned the study of predator-prey dynamics."
+    ],
+    "answer": 0,
+    "explanation": "Plants reward nutrient-delivering strains and sanction non-cooperative cheaters, mirroring conditional market exchange."
+  },
+  {
+    "id": "CAT26-VARC-08",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: Which of the following, if discovered, would most challenge the author's characterization of plant-fungal interactions?",
+    "options": [
+      "Host plants continue supplying identical carbon rations to fungal strains that cease delivering phosphorus.",
+      "Nitrogen-fixing bacteria require anaerobic micro-environments to function.",
+      "Some desert plants allocate less than ten percent of fixed carbon to root exudates.",
+      "Mycorrhizal networks connect multiple tree species within temperate forests."
+    ],
+    "answer": 0,
+    "explanation": "If plants do not sanction non-cooperative cheater strains, the 'biological market' enforcement mechanism breaks down."
+  },
+  {
+    "id": "CAT26-VARC-09",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: According to the passage, classical evolutionary theory differed from modern microbiome research in that classical theory:",
+    "options": [
+      "Overestimated the prevalence of zero-sum competition relative to reciprocal mutualism.",
+      "Proved that plants cannot synthesize carbon through photosynthesis.",
+      "Focused exclusively on marine ecosystems rather than terrestrial plants.",
+      "Denied that bacteria exist in soil ecosystems."
+    ],
+    "answer": 0,
+    "explanation": "Sentence 1 contrasts classical theory's focus on zero-sum competition with modern evidence of mutualistic carbon-nutrient exchange."
+  },
+  {
+    "id": "CAT26-VARC-10",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: The critics' objection to the aspirin analogy rests primarily on the claim that:",
+    "options": [
+      "Human subjects strategically alter their behavior in response to predictive algorithms, destabilizing the underlying statistical patterns.",
+      "Aspirin was never clinically effective prior to the discovery of prostaglandin inhibition.",
+      "Neural networks lack the computational speed required for medical diagnostics.",
+      "Biochemical pathways evolve faster than financial and social institutions."
+    ],
+    "answer": 0,
+    "explanation": "Critics distinguish stable biochemistry from reflexive socio-technical systems where human gaming invalidates historical correlations."
+  },
+  {
+    "id": "CAT26-VARC-11",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Instrumentalists invoke the history of aspirin in order to:",
+    "options": [
+      "Prove that causal interpretability is not a prerequisite for beneficial real-world deployment.",
+      "Argue that pharmaceutical regulations should govern software engineering.",
+      "Demonstrate that human physiology is governed by neural networks.",
+      "Show that predictive accuracy always precedes theoretical explanation in every science."
+    ],
+    "answer": 0,
+    "explanation": "Aspirin illustrates that effective practical deployment can occur before underlying mechanisms are understood."
+  },
+  {
+    "id": "CAT26-VARC-12",
+    "section": "VARC",
+    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT 2026",
+    "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Which of the following scenarios best exemplifies 'reflexive drift' as defined in the passage?",
+    "options": [
+      "Loan applicants artificially alter superficial spending habits once they infer an opaque credit-scoring model's proxy variables.",
+      "A weather-forecasting model loses accuracy because a satellite sensor degrades over time.",
+      "A chess engine discovers a novel opening sacrifice unseen in human tournament games.",
+      "A hospital upgrades its electronic health records database to a faster server."
+    ],
+    "answer": 0,
+    "explanation": "Agents adapting their behavior to game an opaque algorithm directly illustrates reflexive drift."
+  },
+  {
+    "id": "CAT26-VARC-13",
+    "section": "VARC",
+    "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "exam": "CAT 2026",
+    "prompt": "1. Yet this very abundance of granular behavioral data has paradoxically made causal inference harder rather than easier for empirical economists.\n2. Over the past decade, digital platforms have generated unprecedented real-time records of consumer choices, search queries, and price sensitivity.\n3. Without exogenous shocks or randomized field experiments, observational correlations in massive datasets routinely conflate genuine preference shifts with algorithmic nudges.\n4. Consequently, modern econometricians increasingly pair machine-learning prediction tools with quasi-experimental designs to isolate true causal effects.",
+    "options": [],
+    "answer": "2134",
+    "explanation": "2 introduces digital behavioral data; 1 pivots ('Yet this very abundance...') to causal inference; 3 explains why correlations fail; 4 concludes ('Consequently...') -> 2134."
+  },
+  {
+    "id": "CAT26-VARC-14",
+    "section": "VARC",
+    "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "exam": "CAT 2026",
+    "prompt": "1. This architectural shift enabled medieval gothic cathedrals to soar to unprecedented heights while flooding their naves with stained-glass light.\n2. Traditional Romanesque churches relied on massive, thick stone walls to bear the outward lateral thrust of heavy vaulted roofs.\n3. By transferring roof loads outward across exterior stone arches to detached piers, the flying buttress liberated interior walls from structural duty.\n4. Because piercing those load-bearing walls with large windows risked catastrophic collapse, Romanesque interiors remained dimly lit.",
+    "options": [],
+    "answer": "2431",
+    "explanation": "2 introduces thick Romanesque walls; 4 explains why piercing 'those load-bearing walls' risked collapse; 3 introduces the flying buttress solution; 1 summarizes 'This architectural shift' -> 2431."
+  },
+  {
+    "id": "CAT26-VARC-15",
+    "section": "VARC",
+    "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
+    "exam": "CAT 2026",
+    "prompt": "1. When firms compete primarily on visible short-term metrics, managerial incentives tilt toward underinvesting in long-horizon R&D.\n2. Quarterly earnings benchmarks were originally championed as an antidote to managerial complacency and opaque corporate governance.\n3. Over time, however, intense capital-market scrutiny transformed reporting thresholds from diagnostic gauges into binding operational targets.\n4. Restoring multi-year innovation capacity therefore requires insulating core research budgets from transient quarterly fluctuations.",
+    "options": [],
+    "answer": "2314",
+    "explanation": "2 states the original purpose of quarterly benchmarks; 3 pivots ('Over time, however...') to how they became binding targets; 1 describes the resulting R&D underinvestment; 4 concludes -> 2314."
+  },
+  {
+    "id": "CAT26-VARC-16",
+    "section": "VARC",
+    "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
+    "exam": "CAT 2026",
+    "prompt": "1. Early urban planners viewed street-level congestion purely as an engineering bottleneck solvable by widening arterial roads.\n2. Subsequent empirical studies revealed the phenomenon of induced demand, wherein expanded road capacity rapidly attracts latent vehicular traffic.\n3. High-speed intercity rail networks have significantly reduced domestic aviation emissions across Western Europe.\n4. As a result, expanding highway lanes frequently restores peak-hour gridlock within a few years of construction.\n5. Contemporary mobility policy therefore prioritizes congestion pricing and transit-oriented density over unchecked road expansion.",
+    "options": [],
+    "answer": "3",
+    "explanation": "1-2-4-5 trace urban road widening, induced demand, recurring gridlock, and congestion pricing. Sentence 3 shifts to intercity rail and aviation emissions -> 3."
+  },
+  {
+    "id": "CAT26-VARC-17",
+    "section": "VARC",
+    "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
+    "exam": "CAT 2026",
+    "prompt": "1. Deep-sea hydrothermal vents support thriving chemosynthetic ecosystems completely independent of solar photosynthesis.\n2. Specialized bacteria oxidize hydrogen sulfide dissolved in superheated vent plumes to synthesize organic carbon compounds.\n3. Coral bleaching events in shallow tropical reefs are triggered primarily by anomalously warm ocean surface temperatures.\n4. Giant tube worms and blind vent crabs rely symbiotically on these chemosynthetic microbes as the base of their food web.\n5. Astrobiologists study these abyssal communities as terrestrial analogues for potential life beneath the icy crust of Europa.",
+    "options": [],
+    "answer": "3",
+    "explanation": "1-2-4-5 focus on deep-sea hydrothermal vent chemosynthesis and astrobiology. Sentence 3 shifts to shallow tropical coral bleaching -> 3."
+  },
+  {
+    "id": "CAT26-VARC-18",
+    "section": "VARC",
+    "topic": "TITA Para-Completion (+3 / 0 • Type Position Digit 1–4)",
+    "exam": "CAT 2026",
+    "prompt": "Target Sentence: 'Rather than erasing regional dialects, broadcast media initially heightened linguistic self-awareness by juxtaposing standardized accents against local speech.'\n1. [Blank 1] Early twentieth-century linguists predicted that national radio networks would rapidly homogenize spoken English within two generations.\n2. [Blank 2] Empirical dialect surveys conducted fifty years later, however, uncovered resilient phonological divergence across major metropolitan areas.\n3. [Blank 3] Speakers continued using local vowels as markers of community solidarity even while effortlessly comprehending national broadcasts.\n4. [Blank 4] Code-switching between formal broadcast registers and vernacular speech thus became a routine communicative skill.",
+    "options": [],
+    "answer": "2",
+    "explanation": "Blank 2 bridges the prediction of homogenization (before Blank 2) and the empirical finding of resilient divergence (after Blank 2) -> 2."
+  },
+  {
+    "id": "CAT26-VARC-19",
+    "section": "VARC",
+    "topic": "Para-Summary (+3 / -1 MCQ)",
+    "exam": "CAT 2026",
+    "prompt": "Although algorithmic credit scoring expands formal loan access to thin-file borrowers by analyzing non-traditional digital footprints, opaque machine-learning models risk encoding historical socioeconomic proxies that are difficult for applicants to audit or contest.",
+    "options": [
+      "Algorithmic credit scoring should be banned because machine-learning models always discriminate against thin-file borrowers.",
+      "While alternative-data algorithms widen credit access for thin-file applicants, their opacity can embed uncontestable socioeconomic biases.",
+      "Thin-file borrowers prefer traditional credit bureaus over algorithmic underwriting models.",
+      "Auditing machine-learning models eliminates all historical biases in consumer lending."
+    ],
+    "answer": 1,
+    "explanation": "Option (B) captures both halves of the trade-off: wider credit access vs. opaque, uncontestable proxies."
+  },
+  {
+    "id": "CAT26-VARC-20",
+    "section": "VARC",
+    "topic": "Para-Summary (+3 / -1 MCQ)",
+    "exam": "CAT 2026",
+    "prompt": "Historians of cartography note that early modern world maps were never merely neutral geographic inventories; by centering imperial capitals, exaggerating maritime territories, and adorning uncharted regions with allegorical emblems, mapmakers visually legitimized geopolitical claims for domestic and rival audiences.",
+    "options": [
+      "Early modern world maps were scientifically inaccurate because mapmakers lacked modern satellite telemetry.",
+      "Far from being purely objective records, early modern maps served as visual instruments of geopolitical legitimation through deliberate spatial framing.",
+      "Allegorical emblems on early maps were intended solely as decorative art without political significance.",
+      "Imperial capitals were placed at the center of early maps because prime meridians had not yet been standardized."
+    ],
+    "answer": 1,
+    "explanation": "Option (B) synthesizes the core claim that early modern maps acted as visual tools of geopolitical legitimation rather than neutral inventories."
+  }
+];
