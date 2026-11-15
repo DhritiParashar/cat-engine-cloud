@@ -929,14 +929,14 @@ with engine.begin() as conn:
     conn.execute(text("""
         UPDATE ipm_questions
         SET pyq_exam = CASE
-            WHEN q_code ILIKE '%IIMB%' OR pyq_exam ILIKE '%Bangalore%' OR pyq_exam ILIKE '%IIMB%' THEN 'IIM Bangalore'
-            WHEN q_code ILIKE '%ROH%'  OR pyq_exam ILIKE '%Rohtak%' THEN 'IPMAT Rohtak'
-            WHEN q_code ILIKE '%JIP%'  OR pyq_exam ILIKE '%JIPMAT%' THEN 'JIPMAT'
-            WHEN q_code ILIKE '%IND%'  OR pyq_exam ILIKE '%Indore%' THEN 'IPMAT Indore'
+            WHEN q_code LIKE '%IIMB%' OR pyq_exam LIKE '%Bangalore%' OR pyq_exam LIKE '%IIMB%' THEN 'IIM Bangalore'
+            WHEN q_code LIKE '%ROH%'  OR pyq_exam LIKE '%Rohtak%' THEN 'IPMAT Rohtak'
+            WHEN q_code LIKE '%JIP%'  OR pyq_exam LIKE '%JIPMAT%' THEN 'JIPMAT'
+            WHEN q_code LIKE '%IND%'  OR pyq_exam LIKE '%Indore%' THEN 'IPMAT Indore'
             ELSE pyq_exam
         END,
         is_pyq = TRUE
-        WHERE is_pyq = TRUE OR q_code ILIKE 'PYQ_%'
+        WHERE is_pyq = TRUE OR q_code LIKE 'PYQ_%'
     """))
 seed_full_pyq_archive_to_postgres()
 

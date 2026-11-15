@@ -1936,10 +1936,10 @@ def api_get_questions(section: str = "ALL", topic: str = "ALL", exam: str = "ALL
         clauses.append("UPPER(section) = :sec")
         params["sec"] = section.upper().strip()
     if topic and topic.upper() != "ALL":
-        clauses.append("topic ILIKE :top")
+        clauses.append("topic LIKE :top")
         params["top"] = f"%{topic.strip()}%"
     if exam and exam.upper() != "ALL":
-        clauses.append("(exam_tags ILIKE :ex OR pyq_exam ILIKE :ex)")
+        clauses.append("(exam_tags LIKE :ex OR pyq_exam LIKE :ex)")
         params["ex"] = f"%{exam.strip()}%"
     if pyq_only:
         clauses.append("is_pyq = TRUE")
