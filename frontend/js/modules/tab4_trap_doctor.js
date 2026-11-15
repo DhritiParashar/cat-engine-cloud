@@ -9,7 +9,7 @@ window.getFilteredTraps = function () {
   const all = window.IPM_TRAPS_CLINIC || [];
   return window.TRAP_DOMAIN_FILTER === "ALL"
     ? all
-    : all.filter(t => t.domain === window.TRAP_DOMAIN_FILTER);
+    : all.filter(t => (t.domain === window.TRAP_DOMAIN_FILTER || (t.category && t.category === window.TRAP_DOMAIN_FILTER)));
 };
 
 window.renderTrapCard = function (t, idx, total) {

@@ -4183,3 +4183,303 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
 ];
 
 window.IPM_TAGGED_MOCK_QUESTIONS = (window.IPM_TAGGED_MOCK_QUESTIONS || []).concat([{"id": "CAT26-VARC-21", "section": "VARC", "topic": "VARC \u2022 RC Cognitive Science", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Predictive processing models of perception propose that the brain is not a passive receiver of sensory inputs, but a hierarchical Bayesian inference engine that continuously generates top-down predictions and updates them only when bottom-up sensory signals register prediction errors.\n\nQuestion: Under predictive processing, sensory receptors primarily transmit:", "options": ["Complete, unfiltered replicas of the external visual field.", "Discrepancies between expected sensory states and actual incoming signals.", "Motor commands directly to peripheral muscle fibers.", "Long-term episodic memories stored in the hippocampus."], "answer": 1, "explanation": "Predictive processing transmits bottom-up prediction errors (discrepancies) rather than redundant raw signals."}, {"id": "CAT26-VARC-22", "section": "VARC", "topic": "VARC \u2022 RC Institutional Economics", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Sovereign wealth funds established by commodity-exporting nations serve a dual macroeconomic function: stabilizing fiscal budgets against volatile spot-price cycles and converting exhaustible subterranean resource rents into diversified intergenerational financial capital.\n\nQuestion: Which policy failure would most directly undermine the second function described in the passage?", "options": ["Investing commodity surpluses into globally diversified equity and infrastructure portfolios.", "Liquidating fund principal during commodity booms to finance recurring current-account subsidies.", "Publishing audited quarterly asset-allocation disclosures.", "Enforcing counter-cyclical fiscal withdrawal rules during oil price slumps."], "answer": 1, "explanation": "Consuming principal during booms destroys intergenerational capital accumulation."}, {"id": "CAT26-VARC-23", "section": "VARC", "topic": "VARC \u2022 RC Historiography", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Microhistorians examine seemingly marginal archival episodes\u2014such as a sixteenth-century village miller's inquisitorial trial\u2014not out of antiquarian curiosity, but because anomalous edge cases expose the unspoken mentalit\u00e9s and social fault lines that grand macro-historical narratives smooth over.\n\nQuestion: Microhistorians study anomalous local episodes primarily in order to:", "options": ["Replace chronological dating with literary fiction.", "Uncover underlying cultural assumptions obscured by broad macro-historical generalizations.", "Prove that macroeconomic forces have no influence on rural communities.", "Argue that archival records from the sixteenth century are entirely fabricated."], "answer": 1, "explanation": "Edge cases reveal unspoken mentalit\u00e9s and fault lines smoothed over by grand narratives."}, {"id": "CAT26-VARC-24", "section": "VARC", "topic": "VARC \u2022 RC Climate Finance", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Carbon border adjustment mechanisms aim to prevent 'carbon leakage'\u2014the relocation of emissions-intensive manufacturing to jurisdictions with lax climate regulations\u2014by levying tariffs proportional to the embedded carbon intensity of imported industrial goods.\n\nQuestion: A carbon border adjustment mechanism would be redundant if:", "options": ["Domestic manufacturers face higher electricity costs than foreign competitors.", "All major trading partners enforced equivalent carbon pricing across emissions-intensive sectors.", "Imported steel and cement accounted for a small share of domestic construction.", "Developing economies relied exclusively on hydroelectric power."], "answer": 1, "explanation": "Equivalent global carbon pricing eliminates regulatory arbitrage and carbon leakage."}, {"id": "CAT26-VARC-25", "section": "VARC", "topic": "VARC \u2022 TITA Parajumble", "exam": "CAT 2026", "q_type": "SA_NUMERIC", "prompt": "[TITA Parajumble] Arrange sentences 1\u20134 into a coherent paragraph (type 4 digits):\n1. Consequently, central banks now monitor non-bank liquidity ratios alongside traditional commercial bank reserves.\n2. Over the past fifteen years, post-crisis capital regulations shifted corporate credit origination from regulated commercial banks toward private credit funds and money-market vehicles.\n3. Yet because these shadow-banking intermediaries rely on short-term wholesale funding without direct central-bank lender-of-last-resort access, sudden redemptions can trigger fire-sale spirals.\n4. This migration reduced balance-sheet leverage within the core banking sector.", "options": [], "answer": "2431", "explanation": "2 introduces the shift to non-bank credit; 4 notes the positive effect ('This migration...'); 3 pivots ('Yet...') to redemption fire-sale risk; 1 concludes ('Consequently...') -> 2431."}, {"id": "CAT26-VARC-26", "section": "VARC", "topic": "VARC \u2022 TITA Odd-One-Out", "exam": "CAT 2026", "q_type": "SA_NUMERIC", "prompt": "[TITA Odd-One-Out] Identify the sentence (1\u20135) that does NOT belong:\n1. Bioluminescent marine organisms generate cold light through the enzymatic oxidation of luciferin catalyzed by luciferase.\n2. Deep-sea anglerfish deploy bioluminescent lures to attract prey in the aphotic zone.\n3. Offshore wind turbines require subsea high-voltage direct-current cables to transmit electricity to coastal grids.\n4. Certain dinoflagellates emit brief flashes of blue light when mechanically disturbed by predators, creating a 'burglar alarm' effect.\n5. Geneticists have adapted luciferase reporter genes to track cellular gene expression in real time.", "options": [], "answer": "3", "explanation": "Sentences 1, 2, 4, and 5 discuss bioluminescence and luciferase; 3 discusses offshore wind transmission cables -> 3."}, {"id": "CAT26-VARC-27", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Summary Prompt: While open-source software ecosystems accelerate collaborative innovation by allowing global developers to audit and extend shared codebases, critical infrastructure projects frequently suffer from maintenance bottlenecks when core libraries rely on unpaid volunteer maintainers.", "options": ["Open-source software is inherently less secure than proprietary enterprise software.", "Open-source ecosystems foster rapid collaborative innovation, yet critical shared libraries face sustainability risks due to under-resourced volunteer maintenance.", "Volunteer developers prefer building new features rather than auditing existing codebases.", "Proprietary software companies should be legally required to fund open-source maintainers."], "answer": 1, "explanation": "Option (B) captures both collaborative innovation and volunteer maintenance bottlenecks."}, {"id": "CAT26-VARC-28", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Summary Prompt: Behavioral nudges such as automatic retirement-plan enrollment substantially raise participation rates without restricting freedom of choice, yet critics warn that default architectures can subtly steer individuals toward suboptimal contribution rates if inertia prevents active portfolio review.", "options": ["Automatic enrollment should be abolished because it eliminates employee freedom of choice.", "Default-based behavioral nudges effectively boost participation while preserving choice, though passive inertia may lock participants into suboptimal default settings.", "Most employees actively rebalance their retirement portfolios every quarter.", "Behavioral economics has disproven the existence of consumer inertia in financial planning."], "answer": 1, "explanation": "Option (B) synthesizes the participation gain alongside the inertia risk of suboptimal defaults."}]);
+
+
+// ==============================================================================
+// ENRICHED 18-TRAP CAT 2026 NEGATIVE-MARKING CLINIC (6 QA + 6 DILR + 6 VARC)
+// ==============================================================================
+window.IPM_TRAPS_CLINIC = [
+  // --- 6 CAT QUANTITATIVE APTITUDE TRAPS ---
+  {
+    id: "CAT-QA-TRAP-01",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • Algebra",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Squaring |f(x)| = g(x) Without Enforcing RHS >= 0",
+    trapScenario: "Solving |2x - 7| = x - 5 by squaring both sides to get 3x² - 18x + 24 = 0 ⇒ x = 2 or x = 4.",
+    whyItFails: "Since |2x - 7| ≥ 0 always, we must have x - 5 ≥ 0 (x ≥ 5). Both x = 2 and x = 4 violate x ≥ 5.",
+    fixRule: "Enforce g(x) ≥ 0 BEFORE squaring or opening absolute-value bars.",
+    miniDrill: {
+      prompt: "[TITA] How many real solutions satisfy |2x - 7| = x - 5?",
+      options: ["0", "1", "2", "3"],
+      answer: 0,
+      explanation: "Requires x ≥ 5, rejecting both x = 2 and x = 4 ⇒ 0 real solutions."
+    }
+  },
+  {
+    id: "CAT-QA-TRAP-02",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • Arithmetic",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Adding Removed Volumes Linearly in Successive Replacement",
+    trapScenario: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water; subtracting (6+10+12)/60 from 100%.",
+    whyItFails: "Later draws remove diluted mixture rather than pure milk, so pure fractions multiply rather than subtract.",
+    fixRule: "Multiply remaining pure fractions: (54/60) × (50/60) × (48/60) = 60%.",
+    miniDrill: {
+      prompt: "60L pure milk has 6L, 10L, and 12L sequentially replaced with water. Final milk %?",
+      options: ["53.33%", "56.00%", "60.00%", "64.00%"],
+      answer: 2,
+      explanation: "(9/10) × (5/6) × (4/5) = 3/5 = 60%."
+    }
+  },
+  {
+    id: "CAT-QA-TRAP-03",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • Inequalities",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Applying AM >= GM to Negative or Sign-Changing Variables",
+    trapScenario: "Concluding x + 9/x ≥ 6 for ALL non-zero real x via AM ≥ GM.",
+    whyItFails: "AM ≥ GM holds strictly for positive reals (x > 0). For x < 0, x + 9/x ≤ -6.",
+    fixRule: "Verify positivity of every term first; if x < 0, substitute y = -x > 0.",
+    miniDrill: {
+      prompt: "What is the MAXIMUM value of x + 9/x for x < 0?",
+      options: ["-6", "-3", "0", "6"],
+      answer: 0,
+      explanation: "Let y = -x > 0 ⇒ y + 9/y ≥ 6 ⇒ -(y + 9/y) ≤ -6."
+    }
+  },
+  {
+    id: "CAT-QA-TRAP-04",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • Number System",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Dividing Modular Congruences Without Dividing the Modulus",
+    trapScenario: "Reducing 6x ≡ 12 (mod 18) directly to x ≡ 2 (mod 18).",
+    whyItFails: "When dividing a ≡ b (mod m) by k, you must also divide the modulus by gcd(k, m): gcd(6, 18) = 6.",
+    fixRule: "6x ≡ 12 (mod 18) divides by 6 to give x ≡ 2 (mod 3), yielding solutions 2, 5, 8, 11, 14, 17 (mod 18).",
+    miniDrill: {
+      prompt: "How many integers x in {1, 2, ..., 18} satisfy 6x ≡ 12 (mod 18)?",
+      options: ["1", "3", "6", "9"],
+      answer: 2,
+      explanation: "x ≡ 2 (mod 3) has 18/3 = 6 solutions in {1..18}."
+    }
+  },
+  {
+    id: "CAT-QA-TRAP-05",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • TSD",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Using Unreduced Speeds in Circular Track Meeting Counts",
+    trapScenario: "Two runners at 6 m/s and 9 m/s in opposite directions meet at 6 + 9 = 15 distinct points.",
+    whyItFails: "Distinct meeting points depend on the COPRIME reduced ratio a : b = 2 : 3, not raw speeds.",
+    fixRule: "Divide speeds by gcd(6, 9) = 3 first ⇒ 2 + 3 = 5 distinct meeting points.",
+    miniDrill: {
+      prompt: "Runners at 8 m/s and 12 m/s run in opposite directions on a circular track. Distinct meeting points?",
+      options: ["4", "5", "10", "20"],
+      answer: 1,
+      explanation: "8 : 12 reduces to 2 : 3 ⇒ 2 + 3 = 5 distinct points."
+    }
+  },
+  {
+    id: "CAT-QA-TRAP-06",
+    domain: "CAT Quantitative Aptitude",
+    examTag: "CAT 2026 QA • Modern Math",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Applying Positive-Integer Stars & Bars to Non-Negative Variables",
+    trapScenario: "Using C(n - 1, r - 1) when variables allow zero (x_i ≥ 0).",
+    whyItFails: "C(n - 1, r - 1) requires x_i ≥ 1; non-negative solutions require adding r virtual units first.",
+    fixRule: "Use C(n - 1, r - 1) for x_i ≥ 1, and C(n + r - 1, r - 1) for x_i ≥ 0.",
+    miniDrill: {
+      prompt: "Number of non-negative integer solutions (x ≥ 0, y ≥ 0, z ≥ 0) to x + y + z = 10?",
+      options: ["36", "45", "55", "66"],
+      answer: 3,
+      explanation: "C(10 + 3 - 1, 3 - 1) = C(12, 2) = 66."
+    }
+  },
+
+  // --- 6 CAT DILR TRAPS ---
+  {
+    id: "CAT-DILR-TRAP-01",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • Set Theory",
+    penalty: "-4 Marks on Cascading Set",
+    title: "Confusing 'At Least 2 Sets' with 'Exactly 2 Sets'",
+    trapScenario: "100 students: 70 QA, 65 DILR, 60 VARC (everyone ≥1). Taking min(70, 65, 60) = 60 as max all-three.",
+    whyItFails: "Sum of sets = E₁ + 2E₂ + 3E₃ = 195 while E₁ + E₂ + E₃ = 100 ⇒ E₂ + 2E₃ = 95 ⇒ Max E₃ = 47.",
+    fixRule: "Subtract Total (N - E₀) from Sum of Sets to isolate E₂ + 2E₃ before optimizing.",
+    miniDrill: {
+      prompt: "In a cohort of 100 (70 QA, 65 DILR, 60 VARC, none = 0), max studying all 3?",
+      options: ["45", "47", "50", "60"],
+      answer: 1,
+      explanation: "E₂ + 2E₃ = 95 ⇒ E₂ = 1 gives 2E₃ = 94 ⇒ Max E₃ = 47."
+    }
+  },
+  {
+    id: "CAT-DILR-TRAP-02",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • Tournaments",
+    penalty: "-4 Marks on Cascading Set",
+    title: "Assuming Equal-Points Teams Have Identical W-D-L Records",
+    trapScenario: "Assuming two teams with 4 points in a 5-team round-robin both went 1W-1D-2L.",
+    whyItFails: "4 points in 4 matches can also be achieved via 0W-4D-0L (four draws).",
+    fixRule: "Use Draw-Count Conservation D = 3×C(n, 2) - Sum(Points) to fix total draws across the table.",
+    miniDrill: {
+      prompt: "6 teams play a single round-robin (Win=3, Draw=1, Loss=0). Total points = 41. Total draws?",
+      options: ["2", "3", "4", "5"],
+      answer: 2,
+      explanation: "15 matches × 3 = 45; Draws = 45 - 41 = 4."
+    }
+  },
+  {
+    id: "CAT-DILR-TRAP-03",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • DI Tables",
+    penalty: "-1 Mark in MCQ",
+    title: "Confusing Market Share % Change with Absolute Revenue Growth",
+    trapScenario: "Assuming a firm whose market share fell from 25% to 20% suffered a revenue decline.",
+    whyItFails: "If total industry revenue grew by 40% (100 → 140), firm revenue grew from 25 to 28 (+12%).",
+    fixRule: "Always multiply Market Share % × Total Market Size before computing growth rates.",
+    miniDrill: {
+      prompt: "Market share drops from 25% to 20% while industry revenue rises 40%. Firm revenue change?",
+      options: ["-20%", "-5%", "+12%", "+15%"],
+      answer: 2,
+      explanation: "0.20 × 140 = 28 vs 25 ⇒ +3/25 = +12%."
+    }
+  },
+  {
+    id: "CAT-DILR-TRAP-04",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • Arrangements",
+    penalty: "-4 Marks on Cascading Set",
+    title: "Reversing Left/Right Orientation in Outward-Facing Circles",
+    trapScenario: "Treating 'immediate left' as clockwise when people face AWAY from the center.",
+    whyItFails: "Facing center: left is clockwise. Facing outward: left is counter-clockwise.",
+    fixRule: "Mark outward arrows on your circle sketch before placing any directional clues.",
+    miniDrill: {
+      prompt: "In a 6-person outward-facing circle, A is at 12 o'clock (facing North). Who is to A's immediate left?",
+      options: ["Person at 10 o'clock (West)", "Person at 2 o'clock (East)", "Person at 6 o'clock (South)", "Cannot be determined"],
+      answer: 0,
+      explanation: "Facing North (outward at 12 o'clock), left points West (10 o'clock, counter-clockwise)."
+    }
+  },
+  {
+    id: "CAT-DILR-TRAP-05",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • Data Sufficiency",
+    penalty: "-1 Mark in MCQ",
+    title: "Accepting 'Yes/No' Ambiguity or Quadratic Dual Roots as Sufficient",
+    trapScenario: "Concluding x² = 25 is sufficient to find the value of x.",
+    whyItFails: "x² = 25 yields two distinct values (+5 and -5), violating unique-value sufficiency.",
+    fixRule: "Check for negative/zero/fractional cases before declaring a statement sufficient.",
+    miniDrill: {
+      prompt: "Is integer x > 0? (1) x² > 16  (2) x³ < 27",
+      options: ["Statement (1) alone", "Statement (2) alone", "Both together are sufficient", "Neither is sufficient even together"],
+      answer: 3,
+      explanation: "x = -5 satisfies both (-5)² = 25 > 16 and (-5)³ = -125 < 27, while x = 2.5 fails (1) and x = -6 works ⇒ not sufficient."
+    }
+  },
+  {
+    id: "CAT-DILR-TRAP-06",
+    domain: "CAT DILR",
+    examTag: "CAT 2026 DILR • Quant-Based LR",
+    penalty: "-1 Mark in MCQ",
+    title: "Overlooking Implicit Distinctness in Integer Grid Clues",
+    trapScenario: "Assigning duplicate scores {10, 10, 15} when the prompt specifies 'distinct integer scores'.",
+    whyItFails: "CAT embeds 'distinct' or 'no two tied' in the opening paragraph to eliminate symmetric partitions.",
+    fixRule: "Underline 'distinct', 'at least', and 'at most' in the caselet preamble before building tables.",
+    miniDrill: {
+      prompt: "Three distinct positive integers sum to 10. What is the maximum possible value of the largest integer?",
+      options: ["5", "6", "7", "8"],
+      answer: 2,
+      explanation: "Minimize the two smallest distinct positive integers as 1 and 2 ⇒ max = 10 - 3 = 7."
+    }
+  },
+
+  // --- 6 VARC (RC & TITA) TRAPS ---
+  {
+    id: "CAT-VARC-TRAP-01",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • RC Inference",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Choosing Extreme 'Always / Never / Solely' Distractors in RC",
+    trapScenario: "Selecting an option stating 'X is the sole cause of Y' when the passage says 'X contributes to Y'.",
+    whyItFails: "CAT RC authors qualify claims carefully; universal absolutes overstep textual evidence.",
+    fixRule: "Eliminate options with unsubstantiated absolutes (solely, invariably, impossible) unless the author explicitly asserts them.",
+    miniDrill: {
+      prompt: "Passage: 'Prolonged near-zero rates can inadvertently incentivize leverage among non-bank intermediaries.' Which inference is valid?",
+      options: ["Near-zero rates always cause financial crises.", "Extended ultra-low rate policies carry a risk of encouraging higher non-bank leverage.", "Commercial banks never use leverage.", "Central banks should ban non-bank intermediaries."],
+      answer: 1,
+      explanation: "Option (B) preserves the passage's calibrated modal ('can incentivize' → 'carry a risk of encouraging')."
+    }
+  },
+  {
+    id: "CAT-VARC-TRAP-02",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • TITA Parajumble",
+    penalty: "0 Penalty (Missed +3 Opportunity)",
+    title: "Placing Pronoun/Demonstrative Sentences ('This shift...') Before Their Antecedent",
+    trapScenario: "Starting a parajumble with 'This architectural shift enabled...' because it sounds emphatic.",
+    whyItFails: "Demonstrative phrases ('This shift', 'Such models', 'These findings') require an explicit noun antecedent in the immediately preceding sentence.",
+    fixRule: "Lock mandatory pairs via pronoun-antecedent chains BEFORE deciding opening/closing sentences.",
+    miniDrill: {
+      prompt: "[TITA Parajumble] Order: (1) This shift enabled soaring gothic naves. (2) Romanesque churches used thick walls. (3) Flying buttresses transferred roof loads outward. (4) Thick walls couldn't hold large windows.",
+      options: ["2431", "2341", "3124", "4231"],
+      answer: 0,
+      explanation: "2 → 4 ('those walls') → 3 (flying buttress solution) → 1 ('This shift') = 2431."
+    }
+  },
+  {
+    id: "CAT-VARC-TRAP-03",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • Para-Summary",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Picking a One-Sided Summary That Drops the Author's 'However / Yet' Pivot",
+    trapScenario: "Selecting a summary praising algorithmic credit scoring while ignoring the second half's warning on opaque bias.",
+    whyItFails: "In 'Although X, Y' structures, the main clause Y carries the author's primary thesis, while X is the concession.",
+    fixRule: "Verify that your chosen summary retains BOTH the concession and the main contrasting claim.",
+    miniDrill: {
+      prompt: "'Although nudges boost retirement participation, passive inertia may lock workers into low default savings rates.' Best summary?",
+      options: ["Nudges completely solve retirement under-saving.", "Behavioral nudges raise enrollment but risk locking passive participants into suboptimal defaults.", "Workers dislike automatic enrollment.", "Default rates should always be set at maximum."],
+      answer: 1,
+      explanation: "Option (B) preserves both the enrollment gain and the inertia drawback."
+    }
+  },
+  {
+    id: "CAT-VARC-TRAP-04",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • TITA Odd-One-Out",
+    penalty: "0 Penalty (Missed +3 Opportunity)",
+    title: "Falling for Shared-Keyword Trap Sentences in Odd-One-Out",
+    trapScenario: "Keeping a sentence about 'offshore wind subsea cables' in a paragraph about 'bioluminescent marine organisms' just because both mention 'marine/ocean'.",
+    whyItFails: "CAT embeds topical keywords ('marine', 'emissions', 'coral') inside an off-theme sentence to fool keyword matchers.",
+    fixRule: "Check whether all 4 coherent sentences form a single logical chain; eject the sentence that breaks the chain.",
+    miniDrill: {
+      prompt: "Which topic breaks a 4-sentence chain on deep-sea hydrothermal vent chemosynthesis?",
+      options: ["Bacteria oxidizing hydrogen sulfide", "Tube worms relying on vent microbes", "Shallow coral bleaching from warm surface water", "Astrobiological analogues for Europa"],
+      answer: 2,
+      explanation: "Shallow coral bleaching shifts ecosystem and mechanism away from abyssal chemosynthesis."
+    }
+  },
+  {
+    id: "CAT-VARC-TRAP-05",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • Critical Reasoning",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Confusing Necessary vs. Sufficient Conditions in Weaken/Strengthen",
+    trapScenario: "Concluding that because all top fund managers hold quant degrees, a quant degree guarantees top performance.",
+    whyItFails: "Observing trait X among all winners makes X a common/necessary correlate, NOT a sufficient guarantee.",
+    fixRule: "Look for a counterexample showing non-winners with trait X or winners without trait X.",
+    miniDrill: {
+      prompt: "'Every top-decile fund manager in our sample holds a quant degree; thus hiring quant grads guarantees top-decile returns.' Flaw?",
+      options: ["Sample size is small", "Confuses a trait observed among winners with a sufficient condition for winning", "Ignores inflation", "Assumes fees are zero"],
+      answer: 1,
+      explanation: "Necessity-vs-sufficiency fallacy."
+    }
+  },
+  {
+    id: "CAT-VARC-TRAP-06",
+    domain: "VARC (RC & TITA)",
+    examTag: "CAT 2026 VARC • RC Tone & Attitude",
+    penalty: "-1 Mark in MCQ (4-Mark Swing)",
+    title: "Misreading 'Analytically Cautionary' Criticism as 'Cynical / Dismissive'",
+    trapScenario: "Labeling an economist who warns about forward-guidance leverage risks as 'cynical' or 'hostile'.",
+    whyItFails: "Academic CAT passages rarely adopt emotional cynicism; nuanced critique is analytical and qualified.",
+    fixRule: "Reject emotionally charged tone words (cynical, scathing, euphoric) in favor of measured academic descriptors.",
+    miniDrill: {
+      prompt: "An author praises a policy's short-term recovery benefits while warning of long-term leverage risks. Best tone?",
+      options: ["Scathingly dismissive", "Analytically cautionary", "Blindly euphoric", "Apathetically indifferent"],
+      answer: 1,
+      explanation: "Balanced weighing of benefits and risks is 'analytically cautionary'."
+    }
+  }
+];
