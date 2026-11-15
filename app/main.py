@@ -2061,3 +2061,61 @@ def api_get_pyq(exam: str = "ALL", year: str = "ALL"):
         seed_batch3_cuet_and_indore_archive()
         items = get_pyq_questions_from_db("ALL", "ALL")
     return {"count": len(items), "questions": items, "db": db_backend_info()}
+
+
+@app.post("/api/mock/generate")
+async def api_generate_cat_2026_mock(request: Request):
+    import json
+    from sqlalchemy import text
+    from app.db_engine import engine, db_backend_info
+    body = await request.json()
+    paper_type = str(body.get("paper_type") or "FULL_DIAGNOSTIC").upper()
+    include_tita = bool(body.get("include_ncert", True))
+    exclude_codes = set(body.get("exclude_codes") or [])
+
+    tita_clause = "" if include_tita else " AND q_type = 'MCQ'"
+    with engine.connect() as conn:
+        conn.execute(text("DELETE FROM ipm_questions WHERE exam_tags NOT LIKE '%CAT_2026%'"))
+        total_pool = conn.execute(text("SELECT COUNT(*) FROM ipm_questions WHERE exam_tags LIKE '%CAT_2026%'")).scalar() or 0
+
+        def fetch_sec(sec_filter, target_n):
+            sql = f"""
+                SELECT q_code, section, topic, exam_tags, q_type, difficulty, prompt, options_json, answer, explanation
+                FROM ipm_questions
+                WHERE exam_tags LIKE '%CAT_2026%' {sec_filter} {tita_clause}
+                ORDER BY RANDOM()
+                LIMIT :lim
+            """
+            rows = conn.execute(text(sql), {"lim": target_n * 3}).mappings().all()
+            unseen = [r for r in rows if r["q_code"] not in exclude_codes]
+            seen = [r for r in rows if r["q_code"] in exclude_codes]
+            picked = (unseen + seen)[:target_n]
+            out = []
+            for r in picked:
+                opts = r["options_json"]
+                if isinstance(opts, str):
+                    try: opts = json.loads(opts)
+                    except Exception: opts = []
+                ans_raw = str(r["answer"] or "").strip()
+                ans_val = int(ans_raw) if (opts and ans_raw.isdigit() and int(ans_raw) < len(opts)) else ans_raw
+                out.append({
+                    "id": r["q_code"], "q_code": r["q_code"], "section": r["section"],
+                    "topic": r["topic"], "q_type": r["q_type"], "difficulty": r["difficulty"],
+                    "prompt": r["prompt"], "options": opts or [], "answer": ans_val,
+                    "explanation": r["explanation"]
+                })
+            return out
+
+        if paper_type == "QUANT_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
+        elif paper_type == "DILR_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'DILR'", 20)
+        elif paper_type == "VARC_SPRINT":
+            qs = fetch_sec("AND UPPER(section) = 'VARC'", 24)
+        elif paper_type == "NCERT_HIGHER_MATH_SPRINT":
+            qs = fetch_sec("", 25)
+        else:
+            # Official CAT 2026 Standard 66-Question Paper: 24 VARC + 20 DILR + 22 QA
+            qs = fetch_sec("AND UPPER(section) = 'VARC'", 24) + fetch_sec("AND UPPER(section) = 'DILR'", 20) + fetch_sec("AND UPPER(section) = 'QUANT_CORE'", 22)
+
+    return {"questions": qs, "db": {"engine": db_backend_info().get("engine", "PostgreSQL"), "total_questions": total_pool}}
