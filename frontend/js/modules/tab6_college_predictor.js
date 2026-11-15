@@ -1,7 +1,7 @@
 window.CAT_CALL_STATE = window.CAT_CALL_STATE || {
   varcRaw: 38, dilrRaw: 30, qaRaw: 32,
   catPct: 99.15, varcPct: 98.4, dilrPct: 98.1, qaPct: 98.6,
-  classX: 92, classXII: 90, gradPct: 82, workExMonths: 24,
+  classX: 92, classXII: 90, gradCgpa: 8.7, gradPct: 82, workExMonths: 24,
   category: "GEN", isNonEngineer: false, isFemale: true
 };
 
@@ -45,6 +45,8 @@ window.updateCatCallField = function (field, val) {
   else {
     s[field] = Number(val);
     if (["varcRaw", "dilrRaw", "qaRaw"].includes(field)) window.recalcCatPercentilesFromRaw();
+    if (field === "gradCgpa") { s.gradCgpa = Math.min(10, Math.max(4, s.gradCgpa)); s.gradPct = Number(Math.min(100, (s.gradCgpa - 0.5) * 10).toFixed(1)); }
+    if (field === "gradPct") { s.gradCgpa = Number(Math.min(10, (s.gradPct / 10) + 0.5).toFixed(2)); }
   }
   window.renderActiveTab();
 };
@@ -109,7 +111,8 @@ window.renderTab6 = function (el) {
         <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-4 space-y-3">
           <div class="text-xs font-bold uppercase text-indigo-300">2. Undergraduate &amp; Work-Ex Profile (MBA Inputs)</div>
           <div class="grid grid-cols-3 gap-2 text-xs">
-            <label><span class="text-slate-400">Undergrad %</span><input type="number" min="50" max="100" value="${s.gradPct}" onchange="window.updateCatCallField('gradPct', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
+            <label><span class="text-slate-400">UG CGPA (/10)</span><input type="number" step="0.1" min="4" max="10" value="${s.gradCgpa || 8.7}" onchange="window.updateCatCallField('gradCgpa', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
+     <label><span class="text-slate-400">UG Equiv %</span><input type="number" min="50" max="100" value="${s.gradPct}" onchange="window.updateCatCallField('gradPct', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
             <label><span class="text-slate-400">Class XII %</span><input type="number" min="50" max="100" value="${s.classXII}" onchange="window.updateCatCallField('classXII', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
             <label><span class="text-slate-400">Class X %</span><input type="number" min="50" max="100" value="${s.classX}" onchange="window.updateCatCallField('classX', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
           </div>
