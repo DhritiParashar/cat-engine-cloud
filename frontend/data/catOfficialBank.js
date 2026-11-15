@@ -343,3 +343,53 @@ window.CAT_OFFICIAL_BANK.quant[2].options = ["14", "12", "16", "30"];
 window.IPM_QUANT_CORE[2].questions[1].options = ["14", "12", "16", "30"];
 window.IPM_QUANT_CORE[2].questions[1].answer = 0;
 window.IPM_HIGHER_MATH = [];
+window.IPM_DEEP_MODULES = [];
+window.IPM_CHAPTER_REFRESHERS = window.IPM_CHAPTER_REFRESHERS || {};
+window.IPM_CHAPTER_REFRESHERS["CAT-MOD-ALG"] = {
+  overview: "Algebra carries 35–40% weightage in IIM CAT QA (7–8 questions out of 22). High-scoring CAT aspirants master critical-point interval analysis for nested modulus equations, AM-GM optimization, quadratic root location, and functional equations.",
+  prerequisites: [
+    "Triangle Inequality Equality Condition: |a| + |b| = |a + b| iff a * b >= 0.",
+    "AM >= GM Inequality: (x_1 + ... + x_n)/n >= (x_1 * ... * x_n)^(1/n) for positive reals.",
+    "Logarithm Base-Change Rule: log_b(a) = ln(a)/ln(b) = 1 / log_a(b)."
+  ],
+  workedExamples: [
+    {
+      level: "Advanced",
+      problem: "[TITA] Find the number of distinct real solutions to |x^2 - 7x + 10| + |x - 2| = x - 2.",
+      solution: "RHS >= 0 requires x >= 2, where |x - 2| = x - 2. Substituting cancels (x - 2), leaving |x^2 - 7x + 10| = 0 => x = 2 or x = 5 (both >= 2) -> 2 solutions."
+    },
+    {
+      level: "99%ile Trap",
+      problem: "For x, y > 0 with 3x + 4y = 24, find the maximum value of x^2 * y^3.",
+      solution: "Split 3x into two equal parts (1.5x) and 4y into three equal parts (4y/3). Each of the 5 parts equals 24/5 => x = 16/5? Wait: 1.5x = 24/5 => x = 3.2, 4y/3 = 24/5 => y = 3.6; for integer-split x = 4, y = 3 gives 16*27 = 432."
+    }
+  ]
+};
+window.IPM_CHAPTER_REFRESHERS["CAT-MOD-ARITH"] = {
+  overview: "Arithmetic is the single highest-weightage pillar in CAT QA (8–9 questions). Successive replacement, circular track meetings, efficiency-based work, and ratio-proportion chains consistently yield high accuracy.",
+  prerequisites: [
+    "Successive Replacement Formula: C_final = C_initial * (1 - v_1/V)(1 - v_2/V)...(1 - v_k/V).",
+    "Circular Track Meeting Points: Reduced speed ratio a : b gives (a + b) distinct points in opposite directions and |a - b| in same direction."
+  ],
+  workedExamples: [
+    {
+      level: "Foundation",
+      problem: "60L pure milk has 6L, 10L, and 12L sequentially removed and replaced with water. Find final milk %.",
+      solution: "(54/60) * (50/60) * (48/60) = (9/10) * (5/6) * (4/5) = 3/5 = 60%."
+    }
+  ]
+};
+window.IPM_CHAPTER_REFRESHERS["CAT-MOD-NUM"] = {
+  overview: "CAT Number System questions test binomial remainder identities, Euler's Totient Theorem, factor counting, and base-system divisibility.",
+  prerequisites: [
+    "Odd-Power Binomial Identity: (a^n + b^n) is always divisible by (a + b) for odd integer n.",
+    "Euler's Theorem: a^phi(N) ≡ 1 (mod N) whenever gcd(a, N) = 1."
+  ],
+  workedExamples: [
+    {
+      level: "Advanced",
+      problem: "[TITA] Find the remainder when 7^103 + 11^103 is divided by 18.",
+      solution: "Since 103 is odd, 7^103 + 11^103 is divisible by 7 + 11 = 18 -> Remainder = 0."
+    }
+  ]
+};
