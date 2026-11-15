@@ -2039,3 +2039,13 @@ def api_get_pyq(exam: str = "ALL", year: str = "ALL"):
     return {"count": len(items), "questions": items, "db": db_backend_info()}
 
 
+
+
+@app.on_event("startup")
+def on_startup_seed_cat_2026():
+    try:
+        from app.db_engine import engine
+        from app.seed_cat_postgres import seed_cat_2026_postgres
+        seed_cat_2026_postgres(engine)
+    except Exception as e:
+        print("CAT 2026 seed warning:", e)
