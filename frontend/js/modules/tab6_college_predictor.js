@@ -2,7 +2,8 @@ window.CAT_CALL_STATE = window.CAT_CALL_STATE || {
   varcRaw: 38, dilrRaw: 30, qaRaw: 32,
   catPct: 99.15, varcPct: 98.4, dilrPct: 98.1, qaPct: 98.6,
   classX: 92, classXII: 90, gradCgpa: 8.7, gradPct: 82, workExMonths: 24,
-  category: "GEN", isNonEngineer: false, isFemale: true
+  category: "GEN", isNonEngineer: false, isFemale: true,
+  mockSyncLabel: "Synced with Registered Profile"
 };
 
 window.rawToCatPercentile = function (raw, maxMarks) {
@@ -14,8 +15,18 @@ window.rawToCatPercentile = function (raw, maxMarks) {
   return Number(Math.max(40, (ratio / 0.30) * 85).toFixed(2));
 };
 
+window.recalcCatPercentilesFromRaw = function () {
+  const s = window.CAT_CALL_STATE;
+  const totalRaw = Number(s.varcRaw) + Number(s.dilrRaw) + Number(s.qaRaw);
+  s.varcPct = window.rawToCatPercentile(s.varcRaw, 72);
+  s.dilrPct = window.rawToCatPercentile(s.dilrRaw, 60);
+  s.qaPct   = window.rawToCatPercentile(s.qaRaw, 66);
+  s.catPct  = window.rawToCatPercentile(totalRaw, 198);
+};
+
 window.syncPredictorFromLatestMock = function () {
-  const hist = (typeof window.getLocalMockHistory === "function") ? window.getLocalMockHistory() : [];
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]"); } catch (e) {}
   if (!hist.length) {
     alert("Complete and submit a mock in Tab 4 first to import your live CAT score.");
     return;
@@ -26,16 +37,8 @@ window.syncPredictorFromLatestMock = function () {
   window.CAT_CALL_STATE.dilrRaw = Math.min(60, Math.round(scaled198 * 0.30));
   window.CAT_CALL_STATE.qaRaw   = Math.min(66, Math.max(0, scaled198 - window.CAT_CALL_STATE.varcRaw - window.CAT_CALL_STATE.dilrRaw));
   window.recalcCatPercentilesFromRaw();
-  window.renderActiveTab();
-};
-
-window.recalcCatPercentilesFromRaw = function () {
-  const s = window.CAT_CALL_STATE;
-  const totalRaw = Number(s.varcRaw) + Number(s.dilrRaw) + Number(s.qaRaw);
-  s.varcPct = window.rawToCatPercentile(s.varcRaw, 72);
-  s.dilrPct = window.rawToCatPercentile(s.dilrRaw, 60);
-  s.qaPct   = window.rawToCatPercentile(s.qaRaw, 66);
-  s.catPct  = window.rawToCatPercentile(totalRaw, 198);
+  window.CAT_CALL_STATE.mockSyncLabel = `Imported Tab 4 Mock (${latest.score}/${latest.maxScore}) → Scaled ${scaled198}/198`;
+  window.renderTab6(window._LAST_TAB6_EL || document.getElementById("tab-content"));
 };
 
 window.updateCatCallField = function (field, val) {
@@ -46,12 +49,21 @@ window.updateCatCallField = function (field, val) {
     s[field] = Number(val);
     if (["varcRaw", "dilrRaw", "qaRaw"].includes(field)) window.recalcCatPercentilesFromRaw();
     if (field === "gradCgpa") { s.gradCgpa = Math.min(10, Math.max(4, s.gradCgpa)); s.gradPct = Number(Math.min(100, (s.gradCgpa - 0.5) * 10).toFixed(1)); }
-    if (field === "gradPct") { s.gradCgpa = Number(Math.min(10, (s.gradPct / 10) + 0.5).toFixed(2)); }
+    if (field === "gradPct")  { s.gradCgpa = Number(Math.min(10, (s.gradPct / 10) + 0.5).toFixed(2)); }
   }
-  window.renderActiveTab();
+  window.renderTab6(window._LAST_TAB6_EL || document.getElementById("tab-content"));
 };
 
 window.renderTab6 = function (el) {
+  if (!el) return;
+  window._LAST_TAB6_EL = el;
+  try {
+    const p = JSON.parse(localStorage.getItem("goalisb_postgrad_profile_v1") || "{}");
+    if (p.classXII) window.CAT_CALL_STATE.classXII = Number(p.classXII);
+    if (p.ugCgpa10) { window.CAT_CALL_STATE.gradCgpa = Number(p.ugCgpa10); window.CAT_CALL_STATE.gradPct = Number(p.ugPct || (p.ugCgpa10 - 0.5)*10); }
+    if (p.workExMonths !== undefined) window.CAT_CALL_STATE.workExMonths = Number(p.workExMonths);
+  } catch (e) {}
+
   const s = window.CAT_CALL_STATE;
   const totalRaw = Number(s.varcRaw) + Number(s.dilrRaw) + Number(s.qaRaw);
   const catRelax = { GEN: 0, EWS: -2.0, NCOBC: -3.5, SC: -10.0, ST: -15.0 }[s.category] || 0;
@@ -60,413 +72,84 @@ window.renderTab6 = function (el) {
   const divBonus = (s.isNonEngineer ? 4.0 : 0) + (s.isFemale ? 4.5 : 0);
 
   const programs = [
-    { name: "IIM Ahmedabad — PGP (MBA)", roi: "Fee ₹25L • Avg CTC ₹34.5L", formula: "65% CAT + 35% AR (Undergrad, XII, X, WorkEx, Diversity)", secMin: 85 + secRelax, overallMin: 99.35 + catRelax, cs: (s.catPct * 0.65) + ((s.classX * 0.10 + s.classXII * 0.10 + s.gradPct * 0.10 + wxNorm * 0.5) + divBonus * 0.6), cut: 87.2 + catRelax * 0.45 },
-    { name: "IIM Bangalore — PGP (MBA)", roi: "Fee ₹24.5L • Avg CTC ₹35.3L", formula: "55% CAT + 10% Grad + 10% XII + 10% X + 10% WorkEx + 5% Gender", secMin: 85 + secRelax, overallMin: 99.10 + catRelax, cs: (s.catPct * 0.55) + (s.classX * 0.10) + (s.classXII * 0.10) + (s.gradPct * 0.10) + wxNorm + (s.isFemale ? 5 : 0), cut: 87.8 + catRelax * 0.45 },
+    { name: "IIM Ahmedabad — PGP (MBA)", roi: "Fee ₹25L • Avg CTC ₹34.5L", formula: "65% CAT + 35% AR (UG CGPA, XII, X, WorkEx, Diversity)", secMin: 85 + secRelax, overallMin: 99.35 + catRelax, cs: (s.catPct * 0.65) + ((s.classX * 0.10 + s.classXII * 0.10 + s.gradPct * 0.10 + wxNorm * 0.5) + divBonus * 0.6), cut: 87.2 + catRelax * 0.45 },
+    { name: "IIM Bangalore — PGP (MBA)", roi: "Fee ₹24.5L • Avg CTC ₹35.3L", formula: "55% CAT + 10% UG + 10% XII + 10% X + 10% WorkEx + 5% Gender", secMin: 85 + secRelax, overallMin: 99.10 + catRelax, cs: (s.catPct * 0.55) + (s.classX * 0.10) + (s.classXII * 0.10) + (s.gradPct * 0.10) + wxNorm + (s.isFemale ? 5 : 0), cut: 87.8 + catRelax * 0.45 },
     { name: "IIM Calcutta — MBA", roi: "Fee ₹27L • Avg CTC ₹35.0L", formula: "56% CAT + 15% XII + 10% X + 8% WorkEx + 7% AcadDiv + 4% Gender", secMin: 85 + secRelax, overallMin: 99.25 + catRelax, cs: (s.catPct * 0.56) + (s.classX * 0.10) + (s.classXII * 0.15) + (wxNorm * 0.8) + (s.isFemale ? 4 : 0) + (s.isNonEngineer ? 7 : 0), cut: 86.5 + catRelax * 0.45 },
-    { name: "FMS Delhi — MBA (Flagship)", roi: "Fee ₹2.0L • Avg CTC ₹34.1L (17x ROI)", formula: "100% CAT (40% VARC + 30% DILR + 30% QA) + 5 Women Bonus", secMin: 80 + secRelax, overallMin: 98.90 + catRelax, cs: ((s.varcRaw / 72) * 40 + (s.dilrRaw / 60) * 30 + (s.qaRaw / 66) * 30) * 1.65 + (s.isFemale ? 5.0 : 0), cut: 84.0 + catRelax * 0.45 },
-    { name: "IIM Lucknow — PGP (MBA)", roi: "Fee ₹20.7L • Avg CTC ₹32.2L", formula: "60% CAT + 10% Grad + 10% XII + 10% WorkEx + 10% Diversity", secMin: 85 + secRelax, overallMin: 98.40 + catRelax, cs: (s.catPct * 0.60) + (s.classXII * 0.10) + (s.gradPct * 0.10) + wxNorm + (s.isNonEngineer ? 5 : 0) + (s.isFemale ? 5 : 0), cut: 85.4 + catRelax * 0.45 },
+    { name: "FMS Delhi — MBA (17x ROI Flagship)", roi: "Fee ₹2.0L • Avg CTC ₹34.1L", formula: "100% CAT Weighted (40% VARC + 30% DILR + 30% QA) + 5 Women Bonus", secMin: 80 + secRelax, overallMin: 98.90 + catRelax, cs: ((s.varcRaw / 72) * 40 + (s.dilrRaw / 60) * 30 + (s.qaRaw / 66) * 30) * 1.65 + (s.isFemale ? 5.0 : 0), cut: 84.0 + catRelax * 0.45 },
+    { name: "IIM Lucknow — PGP (MBA)", roi: "Fee ₹20.7L • Avg CTC ₹32.2L", formula: "60% CAT + 10% UG + 10% XII + 10% WorkEx + 10% Diversity", secMin: 85 + secRelax, overallMin: 98.40 + catRelax, cs: (s.catPct * 0.60) + (s.classXII * 0.10) + (s.gradPct * 0.10) + wxNorm + (s.isNonEngineer ? 5 : 0) + (s.isFemale ? 5 : 0), cut: 85.4 + catRelax * 0.45 },
     { name: "IIM Kozhikode — PGP (MBA)", roi: "Fee ₹20.5L • Avg CTC ₹31.0L", formula: "45% CAT + 20% XII + 15% X + 10% Diversity + 10% WorkEx", secMin: 80 + secRelax, overallMin: 97.80 + catRelax, cs: (s.catPct * 0.45) + (s.classX * 0.15) + (s.classXII * 0.20) + wxNorm + (s.isFemale || s.isNonEngineer ? 10 : 0), cut: 85.0 + catRelax * 0.45 },
     { name: "IIM Mumbai — MBA", roi: "Fee ₹21.0L • Avg CTC ₹31.5L", formula: "60% CAT + 20% Past Academics + 10% WorkEx + 10% Diversity", secMin: 88 + secRelax, overallMin: 98.20 + catRelax, cs: (s.catPct * 0.60) + ((s.classX + s.classXII) * 0.10) + wxNorm + (s.isFemale ? 5 : 0), cut: 85.8 + catRelax * 0.45 },
-    { name: "XLRI Jamshedpur — PGDM (BM)", roi: "Fee ₹28.6L • Avg CTC ₹32.7L", formula: "XAT Overall + Decision Making Gate (Zero Past-Acad Penalty)", secMin: 80 + secRelax, overallMin: 96.50 + catRelax, cs: s.catPct * 0.88 + (s.isFemale ? 3 : 0), cut: 84.5 + catRelax * 0.45 }
+    { name: "XLRI Jamshedpur — PGDM (BM via XAT)", roi: "Fee ₹28.6L • Avg CTC ₹32.7L", formula: "XAT Overall + Decision Making Gate (0% School Marks Weight)", secMin: 80 + secRelax, overallMin: 96.50 + catRelax, cs: s.catPct * 0.88 + (s.isFemale ? 3 : 0), cut: 84.5 + catRelax * 0.45 }
   ];
 
-  const rowsHtml = programs.map(p => {
+  const cardsHtml = programs.map(p => {
     const failsSec = s.varcPct < p.secMin || s.dilrPct < p.secMin || s.qaPct < p.secMin;
     const gap = p.cs - p.cut;
     const badge = failsSec
-      ? `<span class="px-2.5 py-1 rounded-full bg-rose-500/20 text-rose-300 text-[11px] font-bold">Sectional Gate Risk (&lt;${p.secMin.toFixed(0)}%ile)</span>`
+      ? `<span class="px-2.5 py-1 rounded-full bg-rose-100 text-rose-700 text-[11px] font-bold">Sectional Gate Risk (&lt;${p.secMin.toFixed(0)}%ile)</span>`
       : (gap >= 1.5 && s.catPct >= p.overallMin
-          ? `<span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 text-[11px] font-bold">High WAT-PI Call (&ge;88%)</span>`
+          ? `<span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">High PI Call (&ge;88%)</span>`
           : (gap >= -1.2 && s.catPct >= p.overallMin - 0.8
-              ? `<span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 text-[11px] font-bold">PI Bubble (Strong WAT/PI Needed)</span>`
-              : `<span class="px-2.5 py-1 rounded-full bg-slate-800 text-slate-400 text-[11px] font-bold">Reach (+${Math.max(0.5, p.overallMin - s.catPct).toFixed(1)}%ile CAT)</span>`));
+              ? `<span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 text-[11px] font-bold">WAT-PI Bubble Zone</span>`
+              : `<span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-600 text-[11px] font-bold">Reach (+${Math.max(0.5, p.overallMin - s.catPct).toFixed(1)}%ile CAT)</span>`));
     return `
-      <tr class="border-b border-slate-800/80 hover:bg-slate-950/60">
-        <td class="py-3 px-3.5"><div class="font-bold text-white">${p.name}</div><div class="text-[11px] text-emerald-400 font-semibold">${p.roi}</div><div class="text-[11px] text-slate-400">${p.formula}</div></td>
-        <td class="py-3 px-3 font-mono text-xs text-slate-300">${p.secMin.toFixed(0)}%ile / ${p.overallMin.toFixed(1)}%ile</td>
-        <td class="py-3 px-3 font-bold text-indigo-300">${p.cs.toFixed(1)} <span class="text-[11px] text-slate-500 font-normal">/ ${p.cut.toFixed(1)}</span></td>
-        <td class="py-3 px-3">${badge}</td>
-      </tr>
+      <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+        <div class="space-y-0.5">
+          <div class="font-extrabold text-sm text-slate-900 dark:text-white">${p.name}</div>
+          <div class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">${p.roi} &bull; Gate: ${p.secMin.toFixed(0)}%ile Sec / ${p.overallMin.toFixed(1)}%ile Overall</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400">${p.formula}</div>
+        </div>
+        <div class="text-right space-y-1">
+          <div>${badge}</div>
+          <div class="text-[11px] font-mono text-indigo-600 dark:text-indigo-300 font-bold">CS: ${p.cs.toFixed(1)} / ${p.cut.toFixed(1)} Cutoff</div>
+        </div>
+      </div>
     `;
   }).join("");
 
   el.innerHTML = `
-    <div class="max-w-6xl mx-auto my-4 space-y-5">
-      <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4 shadow-xl">
-        <div>
-          <span class="text-[10px] px-2.5 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 font-bold uppercase">Postgraduate MBA / PGP Admissions &amp; ROI Command Center</span>
-          <h2 class="text-xl font-extrabold text-white mt-1">IIM A/B/C/L/K/M, FMS Delhi &amp; XLRI Shortlist &amp; ROI Strategy</h2>
-          <p class="text-xs text-slate-400">Evaluates your CAT 2026 score alongside Undergraduate GPA, Full-Time Work Experience, Past Academic Weightings &amp; Diversity Multipliers for Postgraduate Management Programs.</p>
-        </div>
-        <button type="button" onclick="window.syncPredictorFromLatestMock()" class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold shadow cursor-pointer">&#8635; Import Latest Mock Score</button>
-      </div>
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-4 space-y-3">
-          <div class="text-xs font-bold uppercase text-indigo-300">1. CAT 2026 Sectional Raw Score (198 Max)</div>
-          <div><div class="flex justify-between text-xs text-slate-300"><span>VARC (/72)</span><strong>${s.varcRaw} (${s.varcPct}%ile)</strong></div><input type="range" min="0" max="72" value="${s.varcRaw}" oninput="window.updateCatCallField('varcRaw', this.value)" class="w-full accent-indigo-500"></div>
-          <div><div class="flex justify-between text-xs text-slate-300"><span>DILR (/60)</span><strong>${s.dilrRaw} (${s.dilrPct}%ile)</strong></div><input type="range" min="0" max="60" value="${s.dilrRaw}" oninput="window.updateCatCallField('dilrRaw', this.value)" class="w-full accent-indigo-500"></div>
-          <div><div class="flex justify-between text-xs text-slate-300"><span>QA (/66)</span><strong>${s.qaRaw} (${s.qaPct}%ile)</strong></div><input type="range" min="0" max="66" value="${s.qaRaw}" oninput="window.updateCatCallField('qaRaw', this.value)" class="w-full accent-indigo-500"></div>
-          <div class="p-2.5 rounded-xl bg-slate-950 border border-indigo-500/30 flex justify-between text-xs"><span class="text-slate-300">Projected CAT Overall:</span><strong class="text-emerald-300">${totalRaw}/198 (${s.catPct}%ile)</strong></div>
-        </div>
-        <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-4 space-y-3">
-          <div class="text-xs font-bold uppercase text-indigo-300">2. Undergraduate &amp; Work-Ex Profile (MBA Inputs)</div>
-          <div class="grid grid-cols-3 gap-2 text-xs">
-            <label><span class="text-slate-400">UG CGPA (/10)</span><input type="number" step="0.1" min="4" max="10" value="${s.gradCgpa || 8.7}" onchange="window.updateCatCallField('gradCgpa', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
-     <label><span class="text-slate-400">UG Equiv %</span><input type="number" min="50" max="100" value="${s.gradPct}" onchange="window.updateCatCallField('gradPct', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
-            <label><span class="text-slate-400">Class XII %</span><input type="number" min="50" max="100" value="${s.classXII}" onchange="window.updateCatCallField('classXII', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
-            <label><span class="text-slate-400">Class X %</span><input type="number" min="50" max="100" value="${s.classX}" onchange="window.updateCatCallField('classX', this.value)" class="w-full px-2 py-1.5 rounded-lg bg-slate-950 border border-slate-700 text-white font-bold"></label>
+    <div class="max-w-6xl mx-auto my-4 grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-sm">
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">Postgraduate MBA / PGP Engine</span>
+            <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">IIM A/B/C/L/K/M, FMS &amp; XLRI Predictor</h2>
           </div>
-          <div><div class="flex justify-between text-xs text-slate-300"><span>Post-Grad Work Experience</span><strong>${s.workExMonths} Months</strong></div><input type="range" min="0" max="60" value="${s.workExMonths}" oninput="window.updateCatCallField('workExMonths', this.value)" class="w-full accent-indigo-500"></div>
-          <div class="text-[11px] text-slate-400">Note: Class X/XII marks act only as historical AR weights in IIM MBA shortlists; FMS &amp; XLRI assign 0% weight to school marks.</div>
+          <button type="button" onclick="window.syncPredictorFromLatestMock()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold cursor-pointer">&#8635; Sync Mock</button>
         </div>
-        <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-4 space-y-3">
-          <div class="text-xs font-bold uppercase text-indigo-300">3. Category &amp; Diversity Multipliers</div>
-          <select onchange="window.updateCatCallField('category', this.value)" class="w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white text-xs font-semibold">
+        <div class="text-[11px] text-emerald-600 font-semibold">${s.mockSyncLabel}</div>
+
+        <div class="grid grid-cols-3 gap-2 text-xs">
+          <label><span class="text-slate-500 font-semibold">UG CGPA (/10)</span><input type="number" step="0.1" min="4" max="10" value="${s.gradCgpa}" onchange="window.updateCatCallField('gradCgpa', this.value)" class="mt-1 w-full px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 font-bold"></label>
+          <label><span class="text-slate-500 font-semibold">Class XII %</span><input type="number" min="50" max="100" value="${s.classXII}" onchange="window.updateCatCallField('classXII', this.value)" class="mt-1 w-full px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 font-bold"></label>
+          <label><span class="text-slate-500 font-semibold">Work-Ex (Mo)</span><input type="number" min="0" max="72" value="${s.workExMonths}" onchange="window.updateCatCallField('workExMonths', this.value)" class="mt-1 w-full px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 font-bold"></label>
+        </div>
+
+        <div class="space-y-2.5 pt-2 border-t border-slate-200 dark:border-slate-800">
+          <div><div class="flex justify-between text-xs"><span>VARC Raw (/72)</span><strong>${s.varcRaw} (${s.varcPct}%ile)</strong></div><input type="range" min="0" max="72" value="${s.varcRaw}" oninput="window.updateCatCallField('varcRaw', this.value)" class="w-full accent-indigo-600"></div>
+          <div><div class="flex justify-between text-xs"><span>DILR Raw (/60)</span><strong>${s.dilrRaw} (${s.dilrPct}%ile)</strong></div><input type="range" min="0" max="60" value="${s.dilrRaw}" oninput="window.updateCatCallField('dilrRaw', this.value)" class="w-full accent-indigo-600"></div>
+          <div><div class="flex justify-between text-xs"><span>QA Raw (/66)</span><strong>${s.qaRaw} (${s.qaPct}%ile)</strong></div><input type="range" min="0" max="66" value="${s.qaRaw}" oninput="window.updateCatCallField('qaRaw', this.value)" class="w-full accent-indigo-600"></div>
+          <div class="p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 flex justify-between text-xs">
+            <span class="font-bold text-slate-700 dark:text-slate-200">Projected CAT 2026:</span>
+            <strong class="text-indigo-700 dark:text-indigo-300">${totalRaw}/198 (${s.catPct}%ile)</strong>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <select onchange="window.updateCatCallField('category', this.value)" class="px-2.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 font-semibold">
             <option value="GEN" ${s.category==="GEN"?"selected":""}>General (Open)</option>
             <option value="EWS" ${s.category==="EWS"?"selected":""}>EWS</option>
             <option value="NCOBC" ${s.category==="NCOBC"?"selected":""}>NC-OBC</option>
             <option value="SC" ${s.category==="SC"?"selected":""}>SC</option>
             <option value="ST" ${s.category==="ST"?"selected":""}>ST</option>
           </select>
-          <label class="flex items-center gap-2 text-xs text-slate-200 cursor-pointer"><input type="checkbox" ${s.isNonEngineer?"checked":""} onchange="window.updateCatCallField('isNonEngineer', this.checked)"><span>Non-Engineer Academic Diversity Bonus</span></label>
-          <label class="flex items-center gap-2 text-xs text-slate-200 cursor-pointer"><input type="checkbox" ${s.isFemale?"checked":""} onchange="window.updateCatCallField('isFemale', this.checked)"><span>Female / Gender Diversity Bonus</span></label>
+          <label class="flex items-center gap-1.5 cursor-pointer"><input type="checkbox" ${s.isNonEngineer?"checked":""} onchange="window.updateCatCallField('isNonEngineer', this.checked)"><span>Non-Engineer</span></label>
         </div>
+        <label class="flex items-center gap-1.5 text-xs cursor-pointer"><input type="checkbox" ${s.isFemale?"checked":""} onchange="window.updateCatCallField('isFemale', this.checked)"><span>Female / Gender Diversity Bonus</span></label>
       </div>
-      <div class="bg-slate-900/95 border border-slate-800 rounded-2xl p-4 overflow-x-auto shadow-xl">
-        <table class="w-full text-left text-xs border-collapse">
-          <thead><tr class="border-b border-slate-800 text-[11px] uppercase text-slate-400"><th class="py-2.5 px-3.5">Postgraduate MBA / PGP Program &amp; ROI</th><th class="py-2.5 px-3">Sec / Overall Gate</th><th class="py-2.5 px-3">Composite Score vs Cutoff</th><th class="py-2.5 px-3">Shortlist Verdict</th></tr></thead>
-          <tbody>${rowsHtml}</tbody>
-        </table>
-      </div>
+
+      <div class="lg:col-span-7 space-y-2.5">${cardsHtml}</div>
     </div>
   `;
 };
-// ==============================================================================
-// POSTGRADUATE REGISTRATION ENRICHER & REGISTERED PROFILE HEADER SYNC
-// ==============================================================================
-window.getPostgradProfile = function () {
-  const host = window.location.host.toLowerCase();
-  const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
-  let saved = {};
-  try {
-    saved = JSON.parse(localStorage.getItem("goalisb_postgrad_profile_v1") || localStorage.getItem("ipm_user") || "{}");
-  } catch (e) {}
-
-  return {
-    name: saved.name || "Dina Shah",
-    classXII: Number(saved.classXII || saved.class12 || 90),
-    ugCgpa10: Number(saved.ugCgpa10 || (exam === "GRE" ? 9.25 : (exam === "GMAT" ? 9.1 : 8.7))),
-    ugGpa4: Number(saved.ugGpa4 || (exam === "GRE" ? 3.70 : 3.64)),
-    ugPct: Number(saved.ugPct || 82),
-    workExMonths: Number(saved.workExMonths !== undefined ? saved.workExMonths : (exam === "GMAT" ? 48 : 24)),
-    targetTrack: saved.targetTrack || (exam === "GRE" ? "MS CS / AI" : (exam === "GMAT" ? "Global MBA / MiM" : "IIM A/B/C PGP")),
-    researchTier: saved.researchTier || "PUB",
-    category: saved.category || "GEN"
-  };
-};
-
-window.savePostgradProfile = function (updates) {
-  const cur = window.getPostgradProfile();
-  const next = { ...cur, ...updates };
-  if (updates.ugCgpa10 !== undefined) {
-    const c10 = Math.min(10, Math.max(4, Number(updates.ugCgpa10)));
-    next.ugCgpa10 = Number(c10.toFixed(2));
-    next.ugGpa4 = Number(((c10 / 10) * 4.0).toFixed(2));
-    next.ugPct = Number(Math.min(100, (c10 - 0.5) * 10).toFixed(1));
-  }
-  localStorage.setItem("goalisb_postgrad_profile_v1", JSON.stringify(next));
-
-  // Sync into Tab 6 state automatically
-  if (window.CAT_CALL_STATE) {
-    window.CAT_CALL_STATE.classXII = next.classXII;
-    window.CAT_CALL_STATE.gradCgpa = next.ugCgpa10;
-    window.CAT_CALL_STATE.gradPct = next.ugPct;
-    window.CAT_CALL_STATE.workExMonths = next.workExMonths;
-    window.CAT_CALL_STATE.category = next.category;
-  }
-  if (window.GMAT_ADMIT_STATE) {
-    window.GMAT_ADMIT_STATE.ugCgpa10 = next.ugCgpa10;
-    window.GMAT_ADMIT_STATE.ugGpa = next.ugGpa4;
-    window.GMAT_ADMIT_STATE.workExYears = Number((next.workExMonths / 12).toFixed(1));
-  }
-  if (window.GRE_GRAD_STATE) {
-    window.GRE_GRAD_STATE.ugCgpa10 = next.ugCgpa10;
-    window.GRE_GRAD_STATE.ugGpa = next.ugGpa4;
-    window.GRE_GRAD_STATE.researchTier = next.researchTier;
-  }
-  window.syncRegisteredHeaderAndForms();
-  if (typeof window.renderActiveTab === "function") window.renderActiveTab();
-};
-
-window.openPostgradProfileModal = function () {
-  const p = window.getPostgradProfile();
-  const host = window.location.host.toLowerCase();
-  const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
-
-  let modal = document.getElementById("postgrad-profile-modal");
-  if (!modal) {
-    modal = document.createElement("div");
-    modal.id = "postgrad-profile-modal";
-    modal.className = "fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4";
-    document.body.appendChild(modal);
-  }
-
-  modal.innerHTML = `
-    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-md w-full p-5 space-y-4 text-xs text-slate-200 shadow-2xl">
-      <div class="flex justify-between items-center border-b border-slate-800 pb-2.5">
-        <div>
-          <span class="text-[10px] uppercase font-bold text-indigo-400">Registered Candidate Profile</span>
-          <h3 class="text-base font-extrabold text-white">Postgraduate Academic &amp; Experience Credentials</h3>
-        </div>
-        <button type="button" onclick="document.getElementById('postgrad-profile-modal').remove()" class="text-slate-400 hover:text-white text-lg font-bold">&times;</button>
-      </div>
-      <div class="space-y-3">
-        <label class="block"><span class="text-slate-400">Candidate Full Name</span>
-          <input id="pg-prof-name" type="text" value="${p.name}" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-semibold">
-        </label>
-        <div class="grid grid-cols-2 gap-2.5">
-          <label class="block"><span class="text-slate-400">Undergrad CGPA (10-Pt)</span>
-            <input id="pg-prof-cgpa" type="number" step="0.05" min="4" max="10" value="${p.ugCgpa10}" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-bold">
-          </label>
-          <label class="block"><span class="text-slate-400">${exam === "CAT" ? "Class XII Board %" : "Work Experience (Months)"}</span>
-            <input id="pg-prof-sec" type="number" min="0" max="120" value="${exam === "CAT" ? p.classXII : p.workExMonths}" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-bold">
-          </label>
-        </div>
-        ${exam === "CAT" ? `
-        <div class="grid grid-cols-2 gap-2.5">
-          <label class="block"><span class="text-slate-400">Work Experience (Months)</span>
-            <input id="pg-prof-wx" type="number" min="0" max="96" value="${p.workExMonths}" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-bold">
-          </label>
-          <label class="block"><span class="text-slate-400">Category</span>
-            <select id="pg-prof-cat" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-semibold">
-              <option value="GEN" ${p.category==="GEN"?"selected":""}>General</option>
-              <option value="EWS" ${p.category==="EWS"?"selected":""}>EWS</option>
-              <option value="NCOBC" ${p.category==="NCOBC"?"selected":""}>NC-OBC</option>
-              <option value="SC" ${p.category==="SC"?"selected":""}>SC</option>
-              <option value="ST" ${p.category==="ST"?"selected":""}>ST</option>
-            </select>
-          </label>
-        </div>` : `
-        <label class="block"><span class="text-slate-400">Target Postgraduate Track</span>
-          <input id="pg-prof-track" type="text" value="${p.targetTrack}" class="mt-1 w-full px-3 py-2 rounded-xl bg-slate-950 border border-slate-700 text-white font-semibold">
-        </label>`}
-      </div>
-      <div class="flex justify-end gap-2 pt-2 border-t border-slate-800">
-        <button type="button" onclick="document.getElementById('postgrad-profile-modal').remove()" class="px-3.5 py-2 rounded-xl bg-slate-800 text-slate-300 font-semibold">Cancel</button>
-        <button type="button" onclick="
-          const exam = window.location.host.includes('gmat') ? 'GMAT' : (window.location.host.includes('gre') ? 'GRE' : 'CAT');
-          window.savePostgradProfile({
-            name: document.getElementById('pg-prof-name').value.trim() || 'Dina Shah',
-            ugCgpa10: Number(document.getElementById('pg-prof-cgpa').value || 8.8),
-            classXII: exam === 'CAT' ? Number(document.getElementById('pg-prof-sec').value || 90) : 90,
-            workExMonths: exam === 'CAT' ? Number(document.getElementById('pg-prof-wx').value || 24) : Number(document.getElementById('pg-prof-sec').value || 24),
-            category: document.getElementById('pg-prof-cat') ? document.getElementById('pg-prof-cat').value : 'GEN',
-            targetTrack: document.getElementById('pg-prof-track') ? document.getElementById('pg-prof-track').value : 'Postgrad'
-          });
-          document.getElementById('postgrad-profile-modal').remove();
-        " class="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-extrabold cursor-pointer">Save &amp; Sync Profile</button>
-      </div>
-    </div>
-  `;
-};
-
-window.syncRegisteredHeaderAndForms = function () {
-  const p = window.getPostgradProfile();
-  const host = window.location.host.toLowerCase();
-  const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
-
-  let hist = [];
-  try { hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]"); } catch (e) {}
-  const latest = hist[0];
-
-  let summary = "";
-  if (exam === "GMAT") {
-    const est = latest && latest.maxScore ? Math.min(805, Math.max(205, Math.round((205 + (latest.score / latest.maxScore) * 600) / 10) * 10 + 5)) : null;
-    summary = `CGPA: ${p.ugCgpa10.toFixed(1)}/10 (${p.ugGpa4.toFixed(2)} GPA) | WX: ${(p.workExMonths/12).toFixed(1)}y &bull; ${est ? `Mock &rarr; ${est}/805` : "Target: 715+ Focus"}`;
-  } else if (exam === "GRE") {
-    const est = latest && latest.maxScore ? Math.min(340, Math.max(260, Math.round(260 + (latest.score / latest.maxScore) * 80))) : null;
-    summary = `CGPA: ${p.ugCgpa10.toFixed(1)}/10 (${p.ugGpa4.toFixed(2)} GPA) | ${p.targetTrack} &bull; ${est ? `Mock &rarr; ${est}/340` : "Target: 328+ GRE"}`;
-  } else {
-    const scaled198 = latest && latest.maxScore ? Math.round((latest.score / latest.maxScore) * 198) : null;
-    summary = `XII: ${p.classXII}% | CGPA: ${p.ugCgpa10.toFixed(1)}/10 (${p.ugPct}%) | WX: ${p.workExMonths}m &bull; ${scaled198 !== null ? `Mock &rarr; ${scaled198}/198` : "Target: 99.2+%ile"}`;
-  }
-
-  // Update the top-bar candidate profile pill & make it clickable to edit Postgraduate credentials
-  document.querySelectorAll("header span, header div, nav span, nav div").forEach(el => {
-    if (el.children.length <= 3 && (/Class\s*(X|XII|10|12)/i.test(el.textContent || "") || el.dataset.pgSynced === "1")) {
-      el.dataset.pgSynced = "1";
-      el.style.cursor = "pointer";
-      el.title = "Click to edit Registered Postgraduate Profile (CGPA, Work-Ex, Target Track)";
-      el.onclick = window.openPostgradProfileModal;
-      el.innerHTML = `<span class="font-bold">&#128100; ${p.name}</span> <span class="mx-1.5 opacity-50">|</span> <span class="text-indigo-600 dark:text-indigo-300 font-semibold">${summary}</span> <span class="ml-1.5 text-[10px] px-1.5 py-0.5 rounded bg-indigo-500/15 text-indigo-400">Edit</span>`;
-    }
-  });
-
-  // Also upgrade any Registration Modal inputs labeled 'Class 10 %' / 'Class 12 %' to Postgraduate fields
-  document.querySelectorAll("label, input").forEach(node => {
-    if (node.tagName === "LABEL" && /Class\s*10/i.test(node.textContent || "")) {
-      node.innerHTML = node.innerHTML.replace(/Class\s*10\s*%/gi, "Undergrad CGPA (10-Pt Scale)");
-    }
-    if (node.tagName === "LABEL" && /Class\s*12/i.test(node.textContent || "") && exam !== "CAT") {
-      node.innerHTML = node.innerHTML.replace(/Class\s*12\s*%/gi, "Work Experience (Months)");
-    }
-  });
-};
-
-setInterval(window.syncRegisteredHeaderAndForms, 500);
-// ==============================================================================
-// POSTGRADUATE AUTH GATE RESCUE: 1ST LOGIN/REGISTER SCREEN + LOGOUT + HEADER SYNC
-// ==============================================================================
-(function initPostgradAuthGate() {
-  const host = window.location.host.toLowerCase();
-  const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
-  const defaultCgpa = exam === "GRE" ? "9.25" : (exam === "GMAT" ? "9.10" : "8.70");
-  const defaultWx   = exam === "GMAT" ? "48" : "24";
-
-  function getActiveUser() {
-    try {
-      const raw = localStorage.getItem("ipm_user") || localStorage.getItem("goalisb_user");
-      if (!raw) return null;
-      const u = JSON.parse(raw);
-      return (u && u.name) ? u : null;
-    } catch (e) { return null; }
-  }
-
-  window.handlePostgradLogout = function () {
-    localStorage.removeItem("ipm_user");
-    localStorage.removeItem("goalisb_user");
-    localStorage.removeItem("ipm_token");
-    window.IPM_USER = null;
-    window.location.reload();
-  };
-
-  window.openPostgradAuthGate = function (defaultMode) {
-    let gate = document.getElementById("pg-auth-gate-overlay");
-    if (!gate) {
-      gate = document.createElement("div");
-      gate.id = "pg-auth-gate-overlay";
-      gate.className = "fixed inset-0 z-50 flex items-center justify-center bg-slate-950/95 backdrop-blur-md p-4 overflow-y-auto";
-      document.body.appendChild(gate);
-    }
-    const mode = defaultMode || "REGISTER";
-    const examTitle = exam === "GRE" ? "GRE General (260–340 + AWA)" : (exam === "GMAT" ? "GMAT Focus (205–805)" : "CAT 2026 & OMETs (IIM/FMS/XLRI)");
-    const secLabel  = exam === "CAT" ? "Class 12 Board % (IIM AR Weight)" : "Work Experience (Months)";
-    const secDefault = exam === "CAT" ? "90" : defaultWx;
-
-    gate.innerHTML = `
-      <div class="max-w-4xl w-full bg-white dark:bg-slate-900 rounded-3xl shadow-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 border border-slate-200 dark:border-slate-800">
-        <div class="md:col-span-5 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white p-7 flex flex-col justify-between">
-          <div class="space-y-4">
-            <span class="text-[10px] font-extrabold tracking-widest uppercase px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">${examTitle}</span>
-            <h2 class="text-2xl font-extrabold leading-tight">GOALisB ${exam} Postgraduate Master Engine</h2>
-            <p class="text-xs text-slate-300 leading-relaxed">Calibrated for MBA, PGP, MiM, MS &amp; PhD Admissions with 260+ PostgreSQL Questions &amp; Diagnostic Scorecards.</p>
-            <ul class="space-y-2.5 text-xs text-slate-200 pt-2">
-              <li>&#9745; <strong>260+ Postgraduate Questions:</strong> Official PYQs &amp; Chapter Drills</li>
-              <li>&#9745; <strong>18 Interactive Trap Clinics:</strong> Adaptive &amp; Negative-Marking Defense</li>
-              <li>&#9745; <strong>Admissions &amp; ROI Predictor:</strong> Live Mock-to-Official Score Sync</li>
-            </ul>
-          </div>
-          <div class="text-[11px] text-slate-400 pt-6 border-t border-slate-800">Neon PostgreSQL Encrypted Student Portal</div>
-        </div>
-
-        <div class="md:col-span-7 p-7 space-y-4 text-slate-900 dark:text-slate-100">
-          <div class="flex gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
-            <button type="button" onclick="window.openPostgradAuthGate('LOGIN')" class="flex-1 py-2 rounded-xl text-xs font-bold ${mode==='LOGIN' ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'} cursor-pointer">Student Login</button>
-            <button type="button" onclick="window.openPostgradAuthGate('REGISTER')" class="flex-1 py-2 rounded-xl text-xs font-bold ${mode==='REGISTER' ? 'bg-indigo-600 text-white' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300'} cursor-pointer">Fresh Registration (Free Demo)</button>
-          </div>
-
-          ${mode === "LOGIN" ? `
-            <div class="space-y-3">
-              <h3 class="text-lg font-extrabold">Welcome Back, Aspirant</h3>
-              <label class="block text-xs"><span class="font-semibold text-slate-500">Registered Email or Mobile</span>
-                <input id="pg-login-email" type="text" value="dina.shah@goalisb.com" class="mt-1 w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs font-semibold">
-              </label>
-              <label class="block text-xs"><span class="font-semibold text-slate-500">Password</span>
-                <input id="pg-login-pass" type="password" value="demo1234" class="mt-1 w-full px-3.5 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs">
-              </label>
-              <button type="button" onclick="window.completePostgradAuth('LOGIN')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold shadow-lg cursor-pointer">Enter Postgraduate Master Engine &rarr;</button>
-            </div>
-          ` : `
-            <div class="space-y-3">
-              <h3 class="text-lg font-extrabold">Create Postgraduate Account (Free Demo)</h3>
-              <label class="block text-xs"><span class="font-semibold text-slate-500">Candidate Full Name</span>
-                <input id="pg-reg-name" type="text" placeholder="e.g. Dina Shah" value="Dina Shah" class="mt-1 w-full px-3.5 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs font-semibold">
-              </label>
-              <div class="grid grid-cols-2 gap-3">
-                <label class="block text-xs"><span class="font-semibold text-indigo-500">Undergrad CGPA (10-Pt Scale)</span>
-                  <input id="pg-reg-cgpa" type="number" step="0.05" min="4" max="10" value="${defaultCgpa}" class="mt-1 w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs font-bold">
-                </label>
-                <label class="block text-xs"><span class="font-semibold text-indigo-500">${secLabel}</span>
-                  <input id="pg-reg-sec" type="number" min="0" max="120" value="${secDefault}" class="mt-1 w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs font-bold">
-                </label>
-              </div>
-              <div class="grid grid-cols-2 gap-3">
-                <label class="block text-xs"><span class="font-semibold text-slate-500">Mobile Number</span>
-                  <input id="pg-reg-phone" type="text" placeholder="+91 9876543210" class="mt-1 w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs">
-                </label>
-                <label class="block text-xs"><span class="font-semibold text-slate-500">Email Address</span>
-                  <input id="pg-reg-email" type="email" placeholder="aspirant@example.com" class="mt-1 w-full px-3 py-2 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-xs">
-                </label>
-              </div>
-              <button type="button" onclick="window.completePostgradAuth('REGISTER')" class="w-full py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-extrabold shadow-lg cursor-pointer">Activate Free Demo &amp; Sync Profile &rarr;</button>
-            </div>
-          `}
-        </div>
-      </div>
-    `;
-  };
-
-  window.completePostgradAuth = function (mode) {
-    const existing = getActiveUser() || {};
-    const nameEl = document.getElementById("pg-reg-name");
-    const cgpaEl = document.getElementById("pg-reg-cgpa");
-    const secEl  = document.getElementById("pg-reg-sec");
-
-    const name = (nameEl && nameEl.value.trim()) || existing.name || "Dina Shah";
-    const cgpa = Number((cgpaEl && cgpaEl.value) || existing.ugCgpa10 || defaultCgpa);
-    const sec  = Number((secEl && secEl.value) || (exam === "CAT" ? 90 : defaultWx));
-
-    const profile = {
-      name,
-      tier: "FREE_DEMO",
-      ugCgpa10: cgpa,
-      ugGpa4: Number(((cgpa / 10) * 4.0).toFixed(2)),
-      ugPct: Number(Math.min(100, (cgpa - 0.5) * 10).toFixed(1)),
-      classXII: exam === "CAT" ? sec : 90,
-      workExMonths: exam === "CAT" ? 24 : sec
-    };
-
-    localStorage.setItem("ipm_user", JSON.stringify(profile));
-    localStorage.setItem("goalisb_postgrad_profile_v1", JSON.stringify(profile));
-    window.IPM_USER = profile;
-
-    const gate = document.getElementById("pg-auth-gate-overlay");
-    if (gate) gate.remove();
-    if (typeof window.savePostgradProfile === "function") window.savePostgradProfile(profile);
-    window.location.reload();
-  };
-
-  // Bind top-right 'Free Demo Login / 2-Step Register' button & show Logout button when logged in
-  setInterval(() => {
-    const user = getActiveUser();
-    document.querySelectorAll("button").forEach(btn => {
-      const txt = (btn.textContent || "").trim();
-      if (/Free Demo Login|2-Step Register/i.test(txt)) {
-        if (user) {
-          btn.textContent = "Logout";
-          btn.className = "px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold cursor-pointer";
-          btn.onclick = window.handlePostgradLogout;
-        } else {
-          btn.onclick = () => window.openPostgradAuthGate("REGISTER");
-        }
-      } else if (/^Logout$/i.test(txt)) {
-        btn.onclick = window.handlePostgradLogout;
-      }
-    });
-
-    // Show 1st Login/Register gate automatically if no user is signed in
-    if (!user && !document.getElementById("pg-auth-gate-overlay")) {
-      window.openPostgradAuthGate("REGISTER");
-    }
-  }, 350);
-})();
+window.renderCollegePredictor = window.renderTab6;
