@@ -517,5 +517,432 @@
 <script src="js/modules/tab8_mock.js?v=3"></script>
 <script src="js/modules/tab9_pyq.js?v=3"></script>
 <script src="js/modules/tab9_pyq_vault.js?v=3"></script>
+<script id="pg-unified-modules-bundle">
+window.CAT_DILR_MODULES = [
+  {
+    id: "cat_lr_arrangements",
+    badge: "CAT DILR CASELET LAB • PILLAR 1",
+    title: "Multi-Variable Arrangements, Tournaments & Scheduling Grids",
+    subtitle: "2 Full Sets per Slot (10 Qs) • 5-Minute Set Triage & Case Branching",
+    overview: "CAT DILR no longer splits into isolated DI and LR halves—every 5-question caselet blends logical constraints with quantitative totals. Solving 2 out of 4 sets with 90%+ accuracy in 40 minutes reliably clears the 98.5+ sectional percentile.",
+    bridge: "Spend the first 4 minutes scanning all 4 sets. Pick sets with deterministic anchors (fixed positions, unique sums, or bounded integer ranges) and avoid open-ended multi-case networks on Pass 1.",
+    drills: [
+      { q: "In a 6-team round-robin tournament (each team plays every other team once, 2 points for a win, 1 for a tie, 0 for a loss), what is the total sum of points across all 6 teams if exactly 3 matches end in a tie?", opts: ["27", "30", "33", "36"], ans: 1, exp: "Total matches = 6C2 = 15. Every match awards 2 total points (either 2+0 or 1+1), so total points = 15 * 2 = 30 regardless of ties." },
+      { q: "Four analysts (P, Q, R, S) sit in a row facing North. P is not at either end, Q is immediately to the right of P, and S is not adjacent to Q. Who must sit at the extreme right end?", opts: ["P", "Q", "R", "S"], ans: 2, exp: "P cannot be at ends (positions 1 or 4). Since Q is immediately right of P, (P, Q) is either (2, 3) or (3, 4). If (P, Q) = (2, 3), S cannot be at 4 (adjacent to Q), so S = 1 and R = 4. If (P, Q) = (3, 4), Q is at 4; wait—S cannot be adjacent to Q (so S != 2), leaving S = 1 and R = 2 -> R is at 4 in the unique non-adjacent case (1:S, 2:P, 3:Q, 4:R)." }
+    ]
+  },
+  {
+    id: "cat_di_games",
+    badge: "CAT DILR CASELET LAB • PILLAR 2",
+    title: "Quantitative Reasoning DI: Venn Maxima/Minima, Routes & Networks",
+    subtitle: "2 Full Sets per Slot (10 Qs) • TITA + MCQ Hybrid Sets",
+    overview: "Quantitative DI sets combine 3-set or 4-set Venn overlaps, weighted averages, and directed network flows with 2–3 TITA questions per set.",
+    bridge: "For 3-set Venn maxima/minima with fixed individual totals A, B, C and universe U: maximize 'all three' by setting 'none' = 0 and balancing pairwise intersections; minimize 'all three' using max(0, A + B + C - 2U).",
+    drills: [
+      { q: "[TITA] In a batch of 100 MBA candidates, 75 cleared QA, 80 cleared DILR, and 85 cleared VARC. What is the minimum possible number of candidates who cleared all three sections?", opts: ["35", "40", "45", "50"], ans: 1, exp: "Minimum triple overlap = max(0, 75 + 80 + 85 - 2*100) = 240 - 200 = 40." }
+    ]
+  }
+];
+
+window.renderTab2 = function (el) {
+  window._CAT_DILR_IDX = window._CAT_DILR_IDX || 0;
+  const m = window.CAT_DILR_MODULES[window._CAT_DILR_IDX];
+  const nav = window.CAT_DILR_MODULES.map((item, idx) => `
+    <button type="button" onclick="window._CAT_DILR_IDX=${idx}; window.renderTab2(document.getElementById('main-workspace'));"
+      class="w-full text-left p-4 rounded-2xl border transition cursor-pointer ${idx === window._CAT_DILR_IDX ? 'border-indigo-500 bg-indigo-50/70 dark:bg-indigo-950/40' : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900'}">
+      <div class="font-extrabold text-sm text-slate-900 dark:text-white">${item.title}</div>
+      <div class="text-xs text-slate-500 mt-1">${item.subtitle}</div>
+    </button>
+  `).join("");
+
+  const drillsHtml = m.drills.map((d, i) => `
+    <div class="p-4 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950 space-y-2">
+      <div class="text-xs font-bold text-slate-900 dark:text-white">Q${i+1}. ${d.q}</div>
+      <div class="flex flex-wrap gap-2">
+        ${d.opts.map((o) => `<button type="button" onclick="this.parentElement.nextElementSibling.classList.remove('hidden')" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-semibold hover:border-indigo-500 cursor-pointer">${o}</button>`).join("")}
+      </div>
+      <div class="hidden text-xs text-emerald-700 dark:text-emerald-300 pt-1"><strong>Correct Answer: ${d.opts[d.ans]}</strong> — ${d.exp}</div>
+    </div>
+  `).join("");
+
+  el.innerHTML = `
+    <div class="max-w-6xl mx-auto my-4 grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <div class="lg:col-span-4 space-y-3">
+        <div class="text-xs font-extrabold uppercase tracking-wider text-indigo-600">CAT DILR CASELET LAB (2 CORE PILLARS)</div>
+        ${nav}
+      </div>
+      <div class="lg:col-span-8 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 space-y-4 shadow-sm">
+        <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">${m.badge}</span>
+        <h2 class="text-xl font-extrabold text-slate-900 dark:text-white">${m.title}</h2>
+        <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 space-y-2 text-xs leading-relaxed text-slate-700 dark:text-slate-300">
+          <div class="font-extrabold uppercase text-[11px] text-indigo-600">CAT DILR Architecture &amp; 99+ Percentile Triage</div>
+          <p>${m.overview}</p>
+          <p><strong>Execution Heuristic:</strong> ${m.bridge}</p>
+        </div>
+        <div class="space-y-3">${drillsHtml}</div>
+      </div>
+    </div>
+  `;
+};
+// ==============================================================================
+// DEFINITIVE TABS 2, 3, 4, 5 RENDERERS (STRICT 1-TO-1 TEST-PREP MAPPING)
+// ==============================================================================
+(function () {
+  const host = window.location.host.toLowerCase();
+  const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
+
+  // TAB 3: VERBAL STUDIO (VARC / CR & RC / TC, SE & RC)
+  window.renderVerbalStudio3 = function (el) {
+    const sets = exam === "GMAT" ? [
+      {
+        tag: "GMAT FOCUS CRITICAL REASONING • NECESSARY ASSUMPTION",
+        title: "Supply-Chain Automation & Unit Margin Paradox",
+        passage: "Over the past two years, Meridien Logistics automated 70% of its regional sorting hubs, cutting per-parcel handling labor costs by 38%. Nevertheless, Meridien's overall operating margin declined by 2.4 percentage points over the same period, even though total parcel volume and average revenue per parcel remained unchanged.",
+        q: "Which of the following, if true, most helps to explain the decline in Meridien's overall operating margin?",
+        opts: [
+          "Competitors in the regional parcel market also invested heavily in automated sorting equipment.",
+          "Depreciation and specialized maintenance contracts for the new sorting hardware exceeded the dollar savings from reduced handling labor.",
+          "Customer delivery satisfaction scores improved significantly after hub automation was completed.",
+          "Fuel prices for long-haul freight remained stable throughout the two-year period.",
+          "Meridien plans to automate its remaining 30% of sorting hubs next fiscal year."
+        ],
+        ans: 1,
+        exp: "Total cost = Labor + Equipment/Overhead. Even with revenue constant and labor down 38%, if hardware depreciation + maintenance rose by more than the labor dollar savings, operating margin falls."
+      },
+      {
+        tag: "GMAT FOCUS READING COMPREHENSION • INFERENCE & AUTHOR STRUCTURE",
+        title: "Behavioral Pricing & Reference-Point Anchoring",
+        passage: "Classical microeconomic models posit that rational consumers evaluate price changes solely by comparing marginal utility against budget constraints. Empirical pricing studies, however, reveal strong reference-dependence: consumers penalize perceived price surcharges far more sharply than they reward economically identical discounts from a higher list price, particularly when competitor pricing is transparent.",
+        q: "The passage suggests that a firm seeking to minimize consumer resistance during a cost-driven price adjustment would most likely succeed by:",
+        opts: [
+          "Introducing frequent temporary surcharges rather than altering its published list price.",
+          "Eliminating all competitor price comparisons from its marketing materials.",
+          "Establishing a higher transparent list price paired with targeted promotional discounts rather than adding surcharges to a low base price.",
+          "Assuming consumers evaluate marginal utility independently of historical prices.",
+          "Reducing product quality while keeping nominal prices fixed."
+        ],
+        ans: 2,
+        exp: "Because consumers penalize surcharges far more sharply than equivalent discounts from a higher list price, framing around a higher list price with discounts minimizes reference-point resistance."
+      }
+    ] : (exam === "GRE" ? [
+      {
+        tag: "GRE VERBAL • TEXT COMPLETION & SENTENCE EQUIVALENCE",
+        title: "Multi-Clause Contrast & Semantic Pair Mastery",
+        passage: "Although early historiographers portrayed the 14th-century maritime guilds as rigidly (i) ______ institutions resistant to navigational innovation, archival port ledgers reveal a far more (ii) ______ posture: guild captains routinely underwrote experimental astrolabe trials whenever cross-oceanic freight margins justified the risk.",
+        q: "Select the best pair of entries for Blank (i) and Blank (ii):",
+        opts: [
+          "(i) hidebound  |  (ii) pragmatic",
+          "(i) mercurial  |  (ii) dogmatic",
+          "(i) prescient  |  (ii) sclerotic",
+          "(i) malleable  |  (ii) doctrinaire",
+          "(i) iconoclastic | (ii) orthodox"
+        ],
+        ans: 0,
+        exp: "'Although' signals contrast: 'hidebound' (narrowly traditional/resistant to innovation) contrasts with 'pragmatic' (practical, underwriting trials when margins justified risk)."
+      },
+      {
+        tag: "GRE READING COMPREHENSION • SCIENTIFIC HYPOTHESIS CRITIQUE",
+        title: "Deep-Ocean Thermal Vents & Chemosynthetic Ecosystems",
+        passage: "Until the discovery of hydrothermal vent communities along the Galapagos Rift, biologists assumed that all complex trophic webs depended ultimately on solar photosynthesis. At abyssal depths devoid of sunlight, however, chemoautotrophic bacteria oxidize hydrogen sulfide dissolved in superheated vent plumes to fix inorganic carbon, sustaining dense colonies of tubeworms and bivalves.",
+        q: "Which of the following is most directly supported by the passage?",
+        opts: [
+          "Photosynthetic organisms cannot survive anywhere in the Galapagos Rift.",
+          "At least some complex biological food webs fix inorganic carbon without relying on solar energy.",
+          "Hydrogen sulfide is toxic to all multicellular marine invertebrates.",
+          "Abyssal tubeworms oxidize hydrogen sulfide directly without bacterial symbiosis.",
+          "Solar photosynthesis is less efficient than chemosynthesis in shallow waters."
+        ],
+        ans: 1,
+        exp: "Chemoautotrophic bacteria fix inorganic carbon using hydrogen sulfide in sunlight-free abyssal depths, sustaining complex colonies of tubeworms and bivalves."
+      }
+    ] : [
+      {
+        tag: "CAT VARC STUDIO • READING COMPREHENSION & TITA PARA-SUMMARY",
+        title: "Epistemic Humility, Algorithmic Forecasting & Fat-Tail Risk",
+        passage: "Modern financial and epidemiological forecasting models excel within stationary regimes where historical variance reliably bounds future outcomes. Yet in complex adaptive systems characterized by fat-tailed distributions, optimizing models solely for in-sample precision induces fragility: rare structural breaks—precisely the events carrying catastrophic consequence—lie outside the calibration window and are systematically underpriced.",
+        q: "Which of the following best captures the central thesis of the passage?",
+        opts: [
+          "Historical variance is completely useless for modeling stationary financial or epidemiological systems.",
+          "Over-optimizing predictive models on historical data creates systemic vulnerability to rare, high-impact structural breaks in fat-tailed domains.",
+          "Complex adaptive systems can be accurately predicted by expanding in-sample calibration windows.",
+          "Catastrophic events occur exclusively in epidemiological rather than financial systems."
+        ],
+        ans: 1,
+        exp: "The author contrasts stationary regimes with fat-tailed adaptive systems, arguing that optimizing for in-sample precision makes models fragile to rare, catastrophic structural breaks."
+      },
+      {
+        tag: "CAT VARC STUDIO • TITA PARA-JUMBLE (4-SENTENCE COHERENCE)",
+        title: "Arrange the 4 Sentences Into a Coherent Paragraph (TITA)",
+        passage: "1. Consequently, central banks face an asymmetric trade-off between anchoring long-term inflation expectations and avoiding premature liquidity tightening.\n2. Supply-side energy shocks initially raise headline price indices without reflecting excess aggregate demand.\n3. Raising policy rates aggressively in response to such cost-push pressures can depress capital investment while doing little to expand physical energy supply.\n4. Yet allowing elevated headline inflation to persist risks spilling over into wage-setting behavior across services.",
+        q: "Identify the logical 4-digit sequence (No Negative Marking in CAT TITA):",
+        opts: ["2 - 3 - 4 - 1", "1 - 2 - 3 - 4", "2 - 4 - 1 - 3", "3 - 2 - 4 - 1"],
+        ans: 0,
+        exp: "Sentence 2 introduces supply-side energy shocks -> Sentence 3 explains why raising rates hurts capex -> Sentence 4 ('Yet') gives the counter-risk of wage spillover -> Sentence 1 ('Consequently') concludes with the central bank trade-off: 2341."
+      }
+    ]);
+
+    el.innerHTML = `
+      <div class="max-w-6xl mx-auto my-4 space-y-4">
+        <div class="bg-slate-900 text-white rounded-2xl p-5 border border-slate-800 shadow-lg">
+          <span class="text-[10px] uppercase font-bold text-indigo-300">${exam} High-Percentile Verbal Studio</span>
+          <h2 class="text-xl font-extrabold mt-1">${exam === "CAT" ? "CAT VARC Studio: Dense RC Passages, Para-Jumbles & TITA Summaries" : (exam === "GMAT" ? "GMAT Verbal Studio: Critical Reasoning & Analytical RC" : "GRE Verbal Studio: Text Completion, Sentence Equivalence & RC")}</h2>
+          <p class="text-xs text-slate-300 mt-1">Practice passage structure mapping, assumption negation tests, and zero-penalty TITA / Multi-Blank logic.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          ${sets.map((s, idx) => `
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+              <span class="text-[10px] font-extrabold uppercase px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-300">${s.tag}</span>
+              <h3 class="text-base font-extrabold text-slate-900 dark:text-white">${s.title}</h3>
+              <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-xs leading-relaxed text-slate-700 dark:text-slate-300 whitespace-pre-line">${s.passage}</div>
+              <div class="text-xs font-bold text-slate-900 dark:text-white pt-1">Q${idx+1}. ${s.q}</div>
+              <div class="space-y-2">
+                ${s.opts.map((o, oi) => `
+                  <button type="button" onclick="this.parentElement.nextElementSibling.classList.remove('hidden')"
+                    class="w-full text-left px-3.5 py-2 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-indigo-500 text-xs font-medium text-slate-800 dark:text-slate-200 cursor-pointer">
+                    <strong>${String.fromCharCode(65 + oi)}.</strong> ${o}
+                  </button>
+                `).join("")}
+              </div>
+              <div class="hidden p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-xs text-emerald-800 dark:text-emerald-200">
+                <strong>Correct Answer: ${String.fromCharCode(65 + s.ans)}</strong> — ${s.exp}
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  // TAB 4: TIMED DIAGNOSTIC MOCK SIMULATOR (WITH CLEAN QUESTION STEMS & LIVE TAB 6 SYNC)
+  window.renderMockSimulator4 = function (el) {
+    const bank = [
+      { topic: "Algebra & Inequalities", q: "How many integer values of x satisfy |2x - 7| + |x - 1| <= 8?", opts: ["4", "5", "6", "7"], ans: 2, exp: "Testing boundary integers x = 0, 1, 2, 3, 4, 5 gives |2x-7|+|x-1| = 8, 5, 4, 3, 4, 7 (all <= 8), while x = -1 gives 11 and x = 6 gives 10 -> 6 integer solutions." },
+      { topic: "Arithmetic & Weighted Ratios", q: "A 40-liter solution contains 30% alcohol. How many liters of pure alcohol must be added to raise the concentration to 44%?", opts: ["8 L", "10 L", "12 L", "14 L"], ans: 1, exp: "Water remains constant at 70% of 40 L = 28 L. At 44% alcohol, water is 56% of new total V => 0.56V = 28 => V = 50 L => Added = 50 - 40 = 10 L." },
+      { topic: "Number Properties", q: "What is the remainder when 7^2026 is divided by 5?", opts: ["1", "2", "3", "4"], ans: 3, exp: "7 ≡ 2 (mod 5). Powers of 2 mod 5 cycle with length 4: 2, 4, 3, 1. Since 2026 = 4*506 + 2, 7^2026 ≡ 2^2 = 4 (mod 5)." },
+      { topic: "Combinatorics & Probability", q: "In how many ways can 6 distinct software modules be assigned to 3 servers such that each server receives at least 1 module?", opts: ["360", "540", "600", "720"], ans: 1, exp: "Total unrestricted assignments = 3^6 = 729. Subtract assignments missing at least 1 server: 3*(2^6) - 3*(1^6) = 192 - 3 = 189 => 729 - 189 = 540." },
+      { topic: "Data Logic & Rates", q: "Working together, Pipelines A and B fill a reservoir in 12 hours. If Pipeline A operates alone for 4 hours and Pipeline B finishes the remaining work in 18 hours, how long would Pipeline B take alone?", opts: ["21 hrs", "24 hrs", "27 hrs", "30 hrs"], ans: 0, exp: "4/A + 18/B = 1 and 1/A + 1/B = 1/12 => 4(1/12 - 1/B) + 18/B = 1 => 1/3 + 14/B = 1 => 14/B = 2/3 => B = 21 hours." }
+    ];
+
+    window._MOCK4_ANSWERS = {};
+    const scheme = exam === "CAT" ? "MCQ +3 / -1 (Negative Marking Active)" : "Adaptive Scaled +1 / 0 (Zero Negative Marking)";
+
+    el.innerHTML = `
+      <div class="max-w-5xl mx-auto my-4 space-y-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 flex flex-wrap items-center justify-between gap-3 shadow-sm">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase text-indigo-600">${exam} Live Timed Section Drill</span>
+            <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">Diagnostic Mock Simulator — ${exam} High-Yield Set</h2>
+            <div class="text-xs text-slate-500">Marking Scheme: <strong>${scheme}</strong> &bull; Submits directly into Tab 6 Score Forecaster</div>
+          </div>
+          <button type="button" onclick="
+            let correct = 0, wrong = 0;
+            const bankLen = 5;
+            const ansKey = [2, 1, 3, 1, 0];
+            for (let i = 0; i < bankLen; i++) {
+              if (window._MOCK4_ANSWERS[i] === undefined) continue;
+              if (window._MOCK4_ANSWERS[i] === ansKey[i]) correct++; else wrong++;
+            }
+            const isCat = window.location.host.toLowerCase().includes('cat') || (!window.location.host.includes('gmat') && !window.location.host.includes('gre'));
+            const score = isCat ? Math.max(0, correct * 3 - wrong * 1) : correct;
+            const maxScore = isCat ? bankLen * 3 : bankLen;
+            const hist = JSON.parse(localStorage.getItem('ipm_mock_history_v1') || '[]');
+            hist.unshift({ date: new Date().toLocaleDateString(), score, maxScore, correct, wrong });
+            localStorage.setItem('ipm_mock_history_v1', JSON.stringify(hist));
+            document.getElementById('mock4-result-banner').innerHTML = '<strong>Submitted!</strong> Correct: ' + correct + '/5 | Wrong: ' + wrong + ' | Net Score: ' + score + '/' + maxScore + ' — Telemetry synced to Header &amp; Tab 6 Score Forecaster.';
+            document.getElementById('mock4-result-banner').classList.remove('hidden');
+            document.querySelectorAll('.mock4-exp').forEach(e => e.classList.remove('hidden'));
+          " class="px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-extrabold shadow cursor-pointer">
+            Submit &amp; Sync to Tab 6 Forecaster
+          </button>
+        </div>
+
+        <div id="mock4-result-banner" class="hidden p-4 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-300 dark:border-emerald-700 text-xs text-emerald-900 dark:text-emerald-200"></div>
+
+        <div class="space-y-3">
+          ${bank.map((item, idx) => `
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-3 shadow-sm">
+              <div class="flex justify-between items-center text-xs">
+                <span class="font-extrabold text-indigo-600">Q${idx + 1} &bull; ${item.topic}</span>
+                <span class="text-[11px] px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 font-semibold">${exam === "CAT" ? "+3 / -1 MCQ" : "+1 / 0 Adaptive"}</span>
+              </div>
+              <div class="text-sm font-semibold text-slate-900 dark:text-white">${item.q}</div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                ${item.opts.map((opt, oi) => `
+                  <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 hover:border-indigo-500 text-xs font-semibold cursor-pointer">
+                    <input type="radio" name="mock4_q_${idx}" onchange="window._MOCK4_ANSWERS[${idx}]=${oi}">
+                    <span><strong>${String.fromCharCode(65 + oi)}.</strong> ${opt}</span>
+                  </label>
+                `).join("")}
+              </div>
+              <div class="mock4-exp hidden p-3 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 text-xs text-indigo-900 dark:text-indigo-200">
+                <strong>Solution (${String.fromCharCode(65 + item.ans)}):</strong> ${item.exp}
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+  };
+
+  // Enforce strict 1-to-1 tab assignment across all 3 portals
+  window.renderTab3 = window.renderVerbalStudio3;
+  window.renderTab4 = window.renderMockSimulator4;
+  if (typeof window.renderTrapClinic5 === "function") {
+    window.renderTab5 = window.renderTrapClinic5;
+  }
+})();
+window.CAT_TRAPS_18 = [
+  { cat: "CAT Quantitative Aptitude", title: "Trap 1: Squaring |f(x)| = g(x) Without Checking g(x) >= 0", bait: "Squaring |2x - 7| = x - 5 to get x = 2 or x = 4, missing that x - 5 < 0 for both.", fix: "Enforce RHS >= 0 BEFORE squaring or opening modulus bars." },
+  { cat: "CAT Quantitative Aptitude", title: "Trap 2: Dividing by a Variable Expression in Equations", bait: "Canceling (x - 3) from both sides and losing the root x = 3.", fix: "Factorize (x - 3)(...) = 0 instead of dividing by variable terms." },
+  { cat: "CAT Quantitative Aptitude", title: "Trap 3: Logarithm Domain Blindspot", bait: "Accepting roots where the log argument becomes <= 0 or base becomes 1.", fix: "Check argument > 0 and base > 0, base != 1 on every log solution." },
+  { cat: "CAT Quantitative Aptitude", title: "Trap 4: Weighted AM-GM Applied to Negative Variables", bait: "Applying AM >= GM when variables can take negative values.", fix: "Verify all terms are strictly positive before applying AM >= GM." },
+  { cat: "CAT Quantitative Aptitude", title: "Trap 5: Remainder Negative-Modulus Misread", bait: "Leaving remainder as -2 instead of converting to +5 (mod 7).", fix: "Add the divisor to any negative remainder so 0 <= r < d." },
+  { cat: "CAT Quantitative Aptitude", title: "Trap 6: Geometry Scale Assumption", bait: "Assuming triangles are right-angled or isosceles from visual appearance.", fix: "Rely strictly on Pythagoras, Stewart's Theorem, or coordinate bounds." },
+  { cat: "CAT DILR Caselets", title: "Trap 7: Committing to a 12-Minute Dead-End Set", bait: "Spending 14 minutes on an unsolvable arrangement set in a 40-min section.", fix: "Use the 5-minute triage rule: scan all 4 sets first and lock the 2 cleanest sets." },
+  { cat: "CAT DILR Caselets", title: "Trap 8: 'At Least' vs. 'Exactly' Constraint Misread", bait: "Treating 'at least 2' in a Venn/Grid puzzle as 'exactly 2'.", fix: "Underline every quantifier ('at least', 'at most', 'distinct') before building the grid." },
+  { cat: "CAT DILR Caselets", title: "Trap 9: Overlooking TITA Questions Inside Hard Sets", bait: "Skipping easy TITA sub-questions (zero penalty) in Set 3.", fix: "Even if a set is partially solved, attempt its TITA items with bounded estimates." },
+  { cat: "CAT DILR Caselets", title: "Trap 10: Circular vs. Linear Seating Orientation", bait: "Confusing 'facing center' vs. 'facing outward' left/right directions.", fix: "Draw directional arrows on every seat node before placing clues." },
+  { cat: "CAT DILR Caselets", title: "Trap 11: Percentage-Point vs. Percentage Growth in DI", bait: "Computing relative % change when the chart asks for percentage-point gap.", fix: "Check axis units (% vs absolute) before calculating ratios." },
+  { cat: "CAT DILR Caselets", title: "Trap 12: Missing Symmetric Case Splits", bait: "Stopping at Case 1 when Case 2 gives the unique answer to Question 4.", fix: "Branch cleanly into Case A / Case B the moment a binary split arises." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 13: True-In-Passage But Irrelevant to Question Stem", bait: "Selecting a factually accurate detail from Paragraph 2 that doesn't answer 'main purpose'.", fix: "Match the scope of the choice strictly to what the stem asks." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 14: Extreme Distortions ('All', 'Never', 'Solely')", bait: "Picking a choice that exaggerates the author's cautious claim into an absolute rule.", fix: "Eliminate choices with unsubstantiated absolutes unless the passage explicitly states them." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 15: Outside Real-World Knowledge Bias", bait: "Choosing an answer based on external economics/history knowledge contradicting the author.", fix: "Answer strictly from the author's premises inside the passage." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 16: Leaving TITA Para-Jumbles Blank", bait: "Skipping TITA verbal items out of uncertainty.", fix: "CAT TITA carries 0 negative penalty—always enter your best 4-digit sequence." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 17: Odd-One-Out Theme Drift", bait: "Grouping sentences by shared keywords rather than central argument flow.", fix: "Identify the 4-sentence cohesive paragraph first; the sentence outside that arc is the odd one." },
+  { cat: "CAT VARC (RC & TITA)", title: "Trap 18: Over-Attempting Low-Confidence RC MCQs", bait: "Guessing between 2 close RC options and losing -1 net marks repeatedly.", fix: "Only mark an RC MCQ when you can concretely eliminate 3 options." }
+];
+
+window.renderTrapClinic5 = function (el) {
+  const cards = window.CAT_TRAPS_18.map((t, i) => `
+    <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 space-y-2 shadow-sm">
+      <div class="flex items-center justify-between">
+        <span class="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-300">${t.cat}</span>
+        <span class="text-[11px] font-mono text-slate-400">#${i + 1} / 18</span>
+      </div>
+      <h4 class="font-extrabold text-sm text-slate-900 dark:text-white">${t.title}</h4>
+      <div class="text-xs text-rose-600 dark:text-rose-300"><strong>CAT MCQ Bait (-1 Penalty):</strong> ${t.bait}</div>
+      <div class="text-xs text-emerald-700 dark:text-emerald-300"><strong>99.5+ %ile Defense:</strong> ${t.fix}</div>
+    </div>
+  `).join("");
+
+  el.innerHTML = `
+    <div class="max-w-6xl mx-auto my-4 space-y-4">
+      <div class="bg-slate-900 text-white rounded-2xl p-5 border border-slate-800 shadow-lg">
+        <span class="text-[10px] uppercase font-bold text-amber-300">CAT 198-Mark Negative-Marking Shield</span>
+        <h2 class="text-xl font-extrabold mt-1">18 High-Frequency CAT QA, DILR &amp; VARC Examiner Traps</h2>
+        <p class="text-xs text-slate-300 mt-1">Every MCQ trap costs a 4-mark swing (+3 vs -1), whereas TITA carries 0 penalty. Master all 18 examiner defenses.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">${cards}</div>
+    </div>
+  `;
+};
+window.renderTab5 = window.renderTrapClinic5;
+window.CAT_PREP_STATE = window.CAT_PREP_STATE || {
+  varcRaw: 36, dilrRaw: 27, qaRaw: 30,
+  targetPct: 99.50, attemptsCount: 0,
+  syncNote: "Synced with Tab 4 Mock Ledger (Adjust sliders or click Sync Mock)"
+};
+
+window.rawToCatPercentile = function (raw, maxMarks) {
+  const ratio = Math.max(0, Math.min(1, raw / maxMarks));
+  if (ratio >= 0.72) return Number((99.5 + (ratio - 0.72) * 1.75).toFixed(2));
+  if (ratio >= 0.55) return Number((98.0 + ((ratio - 0.55) / 0.17) * 1.5).toFixed(2));
+  if (ratio >= 0.42) return Number((94.0 + ((ratio - 0.42) / 0.13) * 4.0).toFixed(2));
+  if (ratio >= 0.30) return Number((85.0 + ((ratio - 0.30) / 0.12) * 9.0).toFixed(2));
+  return Number(Math.max(40, (ratio / 0.30) * 85).toFixed(2));
+};
+
+window.syncCatPrepFromMock = function () {
+  let hist = [];
+  try { hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]"); } catch (e) {}
+  if (!hist.length) {
+    alert("Complete and submit a Timed Mock in Tab 4 first to load your live CAT diagnostic telemetry.");
+    return;
+  }
+  const latest = hist[0];
+  const scaled198 = Math.round((Math.max(0, Number(latest.score || 0)) / Math.max(1, Number(latest.maxScore || 198))) * 198);
+  window.CAT_PREP_STATE.varcRaw = Math.min(72, Math.round(scaled198 * 0.38));
+  window.CAT_PREP_STATE.dilrRaw = Math.min(60, Math.round(scaled198 * 0.29));
+  window.CAT_PREP_STATE.qaRaw   = Math.min(66, Math.max(0, scaled198 - window.CAT_PREP_STATE.varcRaw - window.CAT_PREP_STATE.dilrRaw));
+  window.CAT_PREP_STATE.attemptsCount = hist.length;
+  window.CAT_PREP_STATE.syncNote = `Synced from Mock #${hist.length} (${latest.score}/${latest.maxScore}) → Scaled ${scaled198}/198`;
+  window.renderTab6(window._LAST_TAB6_EL || document.getElementById("tab-content"));
+};
+
+window.updateCatPrepField = function (field, val) {
+  window.CAT_PREP_STATE[field] = Number(val);
+  window.renderTab6(window._LAST_TAB6_EL || document.getElementById("tab-content"));
+};
+
+window.renderTab6 = function (el) {
+  if (!el) return;
+  window._LAST_TAB6_EL = el;
+  const s = window.CAT_PREP_STATE;
+  const totalRaw = Number(s.varcRaw) + Number(s.dilrRaw) + Number(s.qaRaw);
+  const varcPct = window.rawToCatPercentile(s.varcRaw, 72);
+  const dilrPct = window.rawToCatPercentile(s.dilrRaw, 60);
+  const qaPct   = window.rawToCatPercentile(s.qaRaw, 66);
+  const overallPct = window.rawToCatPercentile(totalRaw, 198);
+
+  const benchmarks = [
+    { band: "99.8+ Percentile Elite Zone", reqRaw: 112, varcReq: 44, dilrReq: 33, qaReq: 35, pace: "16+ VARC attempts • 2.5 DILR sets • 13+ QA net", action: "Eliminate negative marks on inference RC traps; prioritize TITA QA items." },
+    { band: "99.5 Percentile Benchmark", reqRaw: 103, varcReq: 40, dilrReq: 30, qaReq: 33, pace: "15 VARC • 2 full DILR sets • 12 QA net", action: "Lock 100% accuracy on 2 selected DILR sets in first 28 mins before touching Set 3." },
+    { band: "99.0 Percentile Benchmark", reqRaw: 95,  varcReq: 37, dilrReq: 27, qaReq: 31, pace: "14 VARC • 9 DILR Qs • 11 QA net", action: "Cut unverified MCQ guesses; convert 2–3 Arithmetic/Algebra TITA questions cleanly." },
+    { band: "97.0 Percentile Benchmark", reqRaw: 82,  varcReq: 32, dilrReq: 23, qaReq: 27, pace: "12 VARC • 8 DILR Qs • 10 QA net", action: "Master Tab 1 Arithmetic & Algebra core ratios + Tab 5 Trap Clinic." }
+  ];
+
+  const weakest = [
+    { name: "VARC", gap: 40 - s.varcRaw, fix: "Focus on 3 high-yield RC passages + 4 TITA Para-Summaries in Tab 3." },
+    { name: "DILR", gap: 30 - s.dilrRaw, fix: "Practice 5-minute set-selection triage in Tab 2 DILR Caselet Lab." },
+    { name: "QA",   gap: 33 - s.qaRaw,   fix: "Drill Tab 1 Arithmetic & Algebra speed shortcuts + eliminate -1 MCQ traps." }
+  ].sort((a, b) => b.gap - a.gap)[0];
+
+  const cardsHtml = benchmarks.map(b => {
+    const delta = totalRaw - b.reqRaw;
+    const status = delta >= 0
+      ? `<span class="px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-700 text-[11px] font-bold">Achieved (+${delta} Marks Cushion)</span>`
+      : `<span class="px-2.5 py-1 rounded-full bg-amber-100 text-amber-700 text-[11px] font-bold">Need +${Math.abs(delta)} Net Marks (~${Math.ceil(Math.abs(delta)/3)} Qs)</span>`;
+    return `
+      <div class="p-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900/90 space-y-1.5 shadow-sm">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div class="font-extrabold text-sm text-slate-900 dark:text-white">${b.band} (~${b.reqRaw}/198 Raw)</div>
+          <div>${status}</div>
+        </div>
+        <div class="text-[11px] font-mono text-indigo-600 dark:text-indigo-300 font-semibold">Target Split: VARC ${b.varcReq}/72 &bull; DILR ${b.dilrReq}/60 &bull; QA ${b.qaReq}/66</div>
+        <div class="text-xs text-slate-600 dark:text-slate-300"><strong>Execution Pace:</strong> ${b.pace}</div>
+        <div class="text-[11px] text-slate-500 dark:text-slate-400"><strong>Next Drill Focus:</strong> ${b.action}</div>
+      </div>
+    `;
+  }).join("");
+
+  el.innerHTML = `
+    <div class="max-w-6xl mx-auto my-4 grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-sm">
+        <div class="flex items-start justify-between gap-2">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">CAT Exam Readiness Engine</span>
+            <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">Score, Percentile &amp; Pacing Forecaster</h2>
+          </div>
+          <button type="button" onclick="window.syncCatPrepFromMock()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold cursor-pointer">&#8635; Sync Mock</button>
+        </div>
+        <div class="text-[11px] text-emerald-600 font-semibold">${s.syncNote}</div>
+
+        <div class="space-y-3">
+          <div><div class="flex justify-between text-xs"><span>VARC Raw (/72 • 40 Mins)</span><strong>${s.varcRaw} &rarr; ${varcPct}%ile</strong></div><input type="range" min="0" max="72" value="${s.varcRaw}" oninput="window.updateCatPrepField('varcRaw', this.value)" class="w-full accent-indigo-600"></div>
+          <div><div class="flex justify-between text-xs"><span>DILR Raw (/60 • 40 Mins)</span><strong>${s.dilrRaw} &rarr; ${dilrPct}%ile</strong></div><input type="range" min="0" max="60" value="${s.dilrRaw}" oninput="window.updateCatPrepField('dilrRaw', this.value)" class="w-full accent-indigo-600"></div>
+          <div><div class="flex justify-between text-xs"><span>QA Raw (/66 • 40 Mins)</span><strong>${s.qaRaw} &rarr; ${qaPct}%ile</strong></div><input type="range" min="0" max="66" value="${s.qaRaw}" oninput="window.updateCatPrepField('qaRaw', this.value)" class="w-full accent-indigo-600"></div>
+        </div>
+
+        <div class="p-3.5 rounded-xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-200 dark:border-indigo-800 space-y-1">
+          <div class="flex justify-between text-xs"><span class="font-bold">Projected CAT Scaled Score:</span><strong class="text-indigo-700 dark:text-indigo-300 text-sm">${totalRaw} / 198 (${overallPct}%ile)</strong></div>
+          <div class="text-[11px] text-slate-600 dark:text-slate-300"><strong>Primary Bottleneck (${weakest.name}):</strong> ${weakest.fix}</div>
+        </div>
+      </div>
+      <div class="lg:col-span-7 space-y-2.5">${cardsHtml}</div>
+    </div>
+  `;
+};
+window.renderCollegePredictor = window.renderTab6;
+</script>
 </body>
 </html>
