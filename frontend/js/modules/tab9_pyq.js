@@ -45,7 +45,7 @@ window.renderTab9 = function (el) {
     window.loadPyqFromPostgres();
   }
 
-  const exams = ["ALL", "CAT 2026 & MBA", "CAT 2026 & MBA Rohtak", "OMETs", "IIM Bangalore"];
+  const exams = ["ALL", "CAT & MBA", "CAT & MBA Rohtak", "OMETs", "IIM Bangalore"];
   const years = ["ALL", "2026", "2025", "2024", "2023", "2022"];
   const filtered = window.PYQ_DB_ITEMS;
   const isIimb = window.PYQ_EXAM_FILTER === "IIM Bangalore";

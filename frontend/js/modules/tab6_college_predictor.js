@@ -81,7 +81,7 @@ window.renderTab6 = function (el) {
       <div class="lg:col-span-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 space-y-4 shadow-sm">
         <div class="flex items-start justify-between gap-2">
           <div>
-            <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">CAT 2026 Exam Readiness Engine</span>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">CAT Exam Readiness Engine</span>
             <h2 class="text-lg font-extrabold text-slate-900 dark:text-white">Score, Percentile &amp; Pacing Forecaster</h2>
           </div>
           <button type="button" onclick="window.syncCatPrepFromMock()" class="px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white text-[11px] font-bold cursor-pointer">&#8635; Sync Mock</button>

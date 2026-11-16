@@ -3,13 +3,13 @@ window.IPM_VARC = [
     id: "varc_01",
     pillar: "varc",
     title: "Reading Comprehension (Conceptual, Business & Policy Passages)",
-    exams: ["ALL_IIM_MASTER", "CAT 2026 & MBA_INDORE_RANCHI", "CAT 2026 & MBA_ROHTAK", "OMETs_BG_JAMMU", "IIMB_UG_ECON_DS_DBE", "IIMM_IIML_TECH_MGMT"],
-    weightage: "3 Full Passages (15-18 Qs) in CAT 2026 & MBA 2026 + OMETs/Rohtak",
+    exams: ["ALL_IIM_MASTER", "CAT & MBA_INDORE_RANCHI", "CAT & MBA_ROHTAK", "OMETs_BG_JAMMU", "IIMB_UG_ECON_DS_DBE", "IIMM_IIML_TECH_MGMT"],
+    weightage: "3 Full Passages (15-18 Qs) in CAT & MBA 2026 + OMETs/Rohtak",
     concepts: [
       {
-        heading: "Conceptual & Opinion-Based RC Mapping (CAT 2026 & MBA 2026 Trend)",
+        heading: "Conceptual & Opinion-Based RC Mapping (CAT & MBA 2026 Trend)",
         formula: "Main Idea = Author's Central Claim + Scope Boundaries (Tone: Analytical / Skeptical / Nuanced)",
-        derivation: "CAT 2026 & MBA 2025 and 2026 featured 3 RCs spanning behavioral psychology ('rage bait'), socio-economics, and abstract philosophy where questions test author attitude and subtle inference rather than word-matching.",
+        derivation: "CAT & MBA 2025 and 2026 featured 3 RCs spanning behavioral psychology ('rage bait'), socio-economics, and abstract philosophy where questions test author attitude and subtle inference rather than word-matching.",
         shortcut: "Read the first and last sentences of every paragraph to map structural shifts ('However', 'Yet', 'Paradoxically') before looking at the questions."
       }
     ],
@@ -26,7 +26,7 @@ window.IPM_VARC = [
         id: "varc_rc1",
         type: "MCQ",
         section: "varc",
-        prompt: "[Reading Comprehension Passage — CAT 2026 & MBA 2026 Style]\nPASSAGE: 'Algorithmic curation on digital platforms increasingly rewards \"rage bait\"—content engineered not to persuade or inform, but to provoke immediate moral outrage. Because high-arousal negative emotions generate rapid clicks and replies, engagement-maximizing models inadvertently amplify fringe provocations over nuanced analysis. Ironically, while users report heightened fatigue and distrust toward public discourse, their reflexive interactions continue to train recommendation engines to surface even more polarizing material.'\n\nQ1. Which of the following best captures the central paradox highlighted in the passage?",
+        prompt: "[Reading Comprehension Passage — CAT & MBA 2026 Style]\nPASSAGE: 'Algorithmic curation on digital platforms increasingly rewards \"rage bait\"—content engineered not to persuade or inform, but to provoke immediate moral outrage. Because high-arousal negative emotions generate rapid clicks and replies, engagement-maximizing models inadvertently amplify fringe provocations over nuanced analysis. Ironically, while users report heightened fatigue and distrust toward public discourse, their reflexive interactions continue to train recommendation engines to surface even more polarizing material.'\n\nQ1. Which of the following best captures the central paradox highlighted in the passage?",
         options: [
           "Digital platforms intentionally suppress informative journalism to reduce server costs.",
           "Users' instinctive engagement with infuriating content reinforces algorithms that produce the very discourse users claim to distrust.",
@@ -70,19 +70,19 @@ window.IPM_VARC = [
     id: "varc_02",
     pillar: "varc",
     title: "Vocabulary, Confusable Words & Double/Triple Fill in the Blanks",
-    exams: ["ALL_IIM_MASTER", "CAT 2026 & MBA_INDORE_RANCHI", "CAT 2026 & MBA_ROHTAK", "OMETs_BG_JAMMU", "IIMB_UG_ECON_DS_DBE"],
-    weightage: "High Spike in CAT 2026 & MBA 2026 (10-14 Qs across Vocab, Fillers & Idioms)",
+    exams: ["ALL_IIM_MASTER", "CAT & MBA_INDORE_RANCHI", "CAT & MBA_ROHTAK", "OMETs_BG_JAMMU", "IIMB_UG_ECON_DS_DBE"],
+    weightage: "High Spike in CAT & MBA 2026 (10-14 Qs across Vocab, Fillers & Idioms)",
     concepts: [
       {
         heading: "Context-Clue & Polarity Elimination for Double/Triple Fillers",
         formula: "Blank Polarity (+ / -) + Tone Connectors ('despite', 'consequently', 'albeit') + Collocation Fit",
-        derivation: "CAT 2026 & MBA 2026 heavily tested nuanced word pairs (e.g., appraise vs. apprise, reticent vs. reluctant, mitigating vs. militating, ephemeral vs. perennial).",
+        derivation: "CAT & MBA 2026 heavily tested nuanced word pairs (e.g., appraise vs. apprise, reticent vs. reluctant, mitigating vs. militating, ephemeral vs. perennial).",
         shortcut: "Solve the SECOND or THIRD blank first! Often one blank has a strict preposition or collocation requirement that eliminates 3 of the 4 options instantly."
       },
       {
-        heading: "High-Frequency CAT 2026 & MBA Confusable Pairs & Root Families",
+        heading: "High-Frequency CAT & MBA Confusable Pairs & Root Families",
         formula: "Appraise (evaluate value) vs. Apprise (inform);  Discreet (prudent/tactful) vs. Discrete (separate)",
-        derivation: "Root families like 'equi-' (equanimity, equivocal), 'pan-' (panacea, pandemic), and 'ob-/ab-' (obdurate, abstemious) recur frequently in CAT 2026 and Rohtak.",
+        derivation: "Root families like 'equi-' (equanimity, equivocal), 'pan-' (panacea, pandemic), and 'ob-/ab-' (obdurate, abstemious) recur frequently in CAT and Rohtak.",
         shortcut: "Check prepositions: 'apprise OF', 'acquiesce IN', 'averse TO', 'immune TO/FROM'."
       }
     ],
@@ -99,7 +99,7 @@ window.IPM_VARC = [
         id: "varc_v1",
         type: "MCQ",
         section: "varc",
-        prompt: "[Double Fill-in-the-Blanks — CAT 2026 & MBA 2026 Pattern]\nAlthough the startup's initial revenue projections appeared overly _______, the founders managed to _______ skeptical venture capitalists with disciplined unit economics.\nSelect the pair that best completes the sentence:",
+        prompt: "[Double Fill-in-the-Blanks — CAT & MBA 2026 Pattern]\nAlthough the startup's initial revenue projections appeared overly _______, the founders managed to _______ skeptical venture capitalists with disciplined unit economics.\nSelect the pair that best completes the sentence:",
         options: [
           "sanguine ... mollify",
           "lugubrious ... exacerbate",
@@ -113,7 +113,7 @@ window.IPM_VARC = [
         id: "varc_v2",
         type: "MCQ",
         section: "varc",
-        prompt: "[Triple Fill-in-the-Blanks — CAT 2026 & MBA Pattern]\nFar from being a _______ solution, the new regulatory framework proved _______ in practice, often _______ the very market inefficiencies it sought to eliminate.",
+        prompt: "[Triple Fill-in-the-Blanks — CAT & MBA Pattern]\nFar from being a _______ solution, the new regulatory framework proved _______ in practice, often _______ the very market inefficiencies it sought to eliminate.",
         options: [
           "panacea ... counterproductive ... exacerbating",
           "catalyst ... seamless ... mitigating",
@@ -127,7 +127,7 @@ window.IPM_VARC = [
         id: "varc_v3",
         type: "MCQ",
         section: "varc",
-        prompt: "[Vocabulary & Word Usage — CAT 2026 & MBA 2026 Spike]\nWhich sentence uses the underlined word INCORRECTLY?",
+        prompt: "[Vocabulary & Word Usage — CAT & MBA 2026 Spike]\nWhich sentence uses the underlined word INCORRECTLY?",
         options: [
           "The committee must apprise all stakeholders of the revised admission timeline.",
           "Independent auditors were hired to appraise the distressed company's real estate assets.",
@@ -143,8 +143,8 @@ window.IPM_VARC = [
     id: "varc_03",
     pillar: "varc",
     title: "Grammar (Error Spotting), Para-Jumbles, Para-Completion & Conversation Analysis",
-    exams: ["ALL_IIM_MASTER", "CAT 2026 & MBA_INDORE_RANCHI", "CAT 2026 & MBA_ROHTAK", "OMETs_BG_JAMMU"],
-    weightage: "15-18 Qs in CAT 2026 & MBA & Rohtak",
+    exams: ["ALL_IIM_MASTER", "CAT & MBA_INDORE_RANCHI", "CAT & MBA_ROHTAK", "OMETs_BG_JAMMU"],
+    weightage: "15-18 Qs in CAT & MBA & Rohtak",
     concepts: [
       {
         heading: "Mandatory Pairs in Para-Jumbles & Para-Completion",
@@ -166,7 +166,7 @@ window.IPM_VARC = [
         id: "varc_g1",
         type: "MCQ",
         section: "varc",
-        prompt: "[Grammar — Spotting the Error (CAT 2026 & MBA 2026)]\nIdentify the segment containing a grammatical error:\n(A) Neither the Chief Economist / (B) nor the senior policy advisors / (C) was able to anticipate / (D) the sudden surge in bond yields.",
+        prompt: "[Grammar — Spotting the Error (CAT & MBA 2026)]\nIdentify the segment containing a grammatical error:\n(A) Neither the Chief Economist / (B) nor the senior policy advisors / (C) was able to anticipate / (D) the sudden surge in bond yields.",
         options: ["Segment (A)", "Segment (B)", "Segment (C)", "Segment (D)"],
         answer: 2,
         explanation: "With 'Neither... nor...', the verb agrees with the nearer subject ('senior policy advisors' — plural), so 'was' in Segment (C) must be 'were'."
@@ -175,7 +175,7 @@ window.IPM_VARC = [
         id: "varc_g2",
         type: "MCQ",
         section: "varc",
-        prompt: "[Conversation Analysis — CAT 2026 & MBA 2026 Format]\nManager: 'Our customer acquisition cost jumped 30% last quarter, yet repeat retention remained flat at 42%.'\nAnalyst: 'That suggests our new referral discounts are attracting bargain-hunters rather than high-lifetime-value users.'\nWhich assumption underlies the Analyst's response?",
+        prompt: "[Conversation Analysis — CAT & MBA 2026 Format]\nManager: 'Our customer acquisition cost jumped 30% last quarter, yet repeat retention remained flat at 42%.'\nAnalyst: 'That suggests our new referral discounts are attracting bargain-hunters rather than high-lifetime-value users.'\nWhich assumption underlies the Analyst's response?",
         options: [
           "Customer acquisition costs should never exceed 10% of gross revenue.",
           "High-lifetime-value users typically exhibit higher repeat retention rates than bargain-hunters.",

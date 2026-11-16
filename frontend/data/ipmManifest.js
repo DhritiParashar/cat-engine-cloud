@@ -1,11 +1,11 @@
 window.IPM_MANIFEST = {
   brand: "GOALisB CAT & MBA Master Engine",
-  tagline: "Unified Prep for CAT 2026, XAT, NMAT, SNAP & Top IIM / FMS Admissions",
+  tagline: "Unified Prep for CAT, XAT, NMAT, SNAP & Top IIM / FMS Admissions",
 
   examModes: {
     ALL_IIM_MASTER: {
       id: "ALL_IIM_MASTER",
-      label: "CAT 2026 Standard (66 Qs)",
+      label: "CAT Standard (66 Qs)",
       badge: "IIM A/B/C/L/K/I/M",
       campuses: [
         "IIM Ahmedabad", "IIM Bangalore", "IIM Calcutta", "IIM Lucknow",
@@ -26,7 +26,7 @@ window.IPM_MANIFEST = {
     },
     XAT_2026: {
       id: "XAT_2026",
-      label: "XAT 2026 (XLRI)",
+      label: "XAT (XLRI)",
       badge: "75 Qs • DM",
       campuses: ["XLRI Jamshedpur", "XLRI Delhi-NCR", "XIMB", "IMT Ghaziabad"],
       programTypes: ["PGDM-BM", "PGDM-HRM"],

@@ -61,7 +61,7 @@ window.renderTab3VarcVocab = function () {
   container.innerHTML = `
     <div class="space-y-8">
       <div class="p-4 rounded-xl bg-indigo-950 text-white">
-        <h2 class="text-xl font-bold">IIM CAT 2026 — VARC Studio (Academic RC + TITA Parajumbles &amp; Odd-One-Out)</h2>
+        <h2 class="text-xl font-bold">IIM CAT — VARC Studio (Academic RC + TITA Parajumbles &amp; Odd-One-Out)</h2>
         <p class="text-xs text-slate-300 mt-1">Official CAT VARC architecture: 24 Questions • 40 Minutes • +3 / -1 on MCQs and +3 / 0 on Type-In-The-Answer (TITA) items.</p>
       </div>
       <section class="space-y-4"><h3 class="text-lg font-bold">1. Reading Comprehension (Inference &amp; Critical Application)</h3>${rcHtml}</section>

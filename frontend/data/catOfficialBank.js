@@ -1,4 +1,4 @@
-// EXHAUSTIVE IIM CAT 2026 & OMETs MASTER CONTENT BANK
+// EXHAUSTIVE IIM CAT & OMETs MASTER CONTENT BANK
 window.IPM_DEEP_MODULES = [];
 window.IPM_HIGHER_MATH = [];
 window.IPM_CHAPTER_REFRESHERS = {};
@@ -488,7 +488,7 @@ window.IPM_CHAPTER_REFRESHERS["CAT-MOD-MODM"] = {
 window.IPM_QUANT_CORE = [
   {
     "id": "CAT-MOD-ALG",
-    "pillar": "CAT 2026 ALGEBRA (35–40% OF QA)",
+    "pillar": "CAT ALGEBRA (35–40% OF QA)",
     "title": "Algebra: Modulus, Quadratics, Inequalities, Functions & Maxima/Minima",
     "weightage": "Highest Algebra Yield • 7–8 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -590,7 +590,7 @@ window.IPM_QUANT_CORE = [
   },
   {
     "id": "CAT-MOD-ARITH1",
-    "pillar": "CAT 2026 ARITHMETIC I",
+    "pillar": "CAT ARITHMETIC I",
     "title": "Arithmetic I: Percentages, Profit-Loss, SI/CI, Ratios & Mixtures",
     "weightage": "Core Arithmetic • 4–5 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -680,7 +680,7 @@ window.IPM_QUANT_CORE = [
   },
   {
     "id": "CAT-MOD-ARITH2",
-    "pillar": "CAT 2026 ARITHMETIC II",
+    "pillar": "CAT ARITHMETIC II",
     "title": "Arithmetic II: TSD, Circular Tracks, Boats, Escalators & Time-Work",
     "weightage": "Core Arithmetic • 4–5 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -758,7 +758,7 @@ window.IPM_QUANT_CORE = [
   },
   {
     "id": "CAT-MOD-NUM",
-    "pillar": "CAT 2026 NUMBER SYSTEM",
+    "pillar": "CAT NUMBER SYSTEM",
     "title": "Number System: Remainders (Euler/CRT), Factors, Cyclicity & Base Systems",
     "weightage": "99%ile Differentiator • 3–4 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -848,7 +848,7 @@ window.IPM_QUANT_CORE = [
   },
   {
     "id": "CAT-MOD-GEO",
-    "pillar": "CAT 2026 GEOMETRY & MENSURATION",
+    "pillar": "CAT GEOMETRY & MENSURATION",
     "title": "Geometry & Mensuration: Triangles, Circles, Polygons & 3D Solids",
     "weightage": "Core Geometry • 3–4 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -914,7 +914,7 @@ window.IPM_QUANT_CORE = [
   },
   {
     "id": "CAT-MOD-MODM",
-    "pillar": "CAT 2026 MODERN MATH",
+    "pillar": "CAT MODERN MATH",
     "title": "Modern Math: Logarithms, Sequences (AP/GP/HP), P&C & Probability",
     "weightage": "High-Scoring TITA • 3–4 Qs per Slot (+3/-1 MCQ & +3/0 TITA)",
     "concepts": [
@@ -1035,7 +1035,7 @@ window.IPM_QUANT_CORE = [
     console.warn("CAT PostgreSQL hydration fallback:", e);
   }
 })();
-// Deep Chapter Overview & Concept Bridge Enrichment for CAT 2026
+// Deep Chapter Overview & Concept Bridge Enrichment for CAT
 (function enrichCatOverviews() {
   const R = window.IPM_CHAPTER_REFRESHERS || {};
   if (R["CAT-MOD-ALG"]) {
@@ -1136,10 +1136,10 @@ window.IPM_QUANT_CORE = [
   }
 })();
 // ==============================================================================
-// SITE 1 (CAT 2026): COMPLETE ENRICHMENT OF TABS 2, 3, 4, 5 & 6
+// SITE 1 (CAT): COMPLETE ENRICHMENT OF TABS 2, 3, 4, 5 & 6
 // ==============================================================================
 
-// 1. TAB 2: CAT 2026 DILR CASELET LAB (4 Pillars + Deep Concept Bridges + Worked Caselets + Interactive Drills)
+// 1. TAB 2: CAT DILR CASELET LAB (4 Pillars + Deep Concept Bridges + Worked Caselets + Interactive Drills)
 window.IPM_DILR_VARC_BANK = {};
 window.IPM_CHAPTER_REFRESHERS["CAT-DILR-SET"] = {
   overviewParagraphs: [
@@ -1294,7 +1294,7 @@ window.IPM_CHAPTER_REFRESHERS["CAT-DILR-DI"] = {
 window.IPM_DILR = [
   {
     id: "CAT-DILR-SET",
-    pillar: "CAT 2026 DILR • PILLAR 1",
+    pillar: "CAT DILR • PILLAR 1",
     title: "Set Theory, Venn Diagrams & Maxima-Minima Optimization",
     weightage: "High Yield • 1 Full 4–5 Q Caselet per Slot",
     concepts: [],
@@ -1306,7 +1306,7 @@ window.IPM_DILR = [
   },
   {
     id: "CAT-DILR-TOURN",
-    pillar: "CAT 2026 DILR • PILLAR 2",
+    pillar: "CAT DILR • PILLAR 2",
     title: "Round-Robin Tournaments, Knockout Brackets & Scheduling",
     weightage: "High Yield • 1 Full 4–5 Q Caselet per Slot",
     concepts: [],
@@ -1317,7 +1317,7 @@ window.IPM_DILR = [
   },
   {
     id: "CAT-DILR-GRID",
-    pillar: "CAT 2026 DILR • PILLAR 3",
+    pillar: "CAT DILR • PILLAR 3",
     title: "Matrix Arrangements, Routes & Logical Constraint Grids",
     weightage: "Core DILR • 1–2 Caselets per Slot",
     concepts: [],
@@ -1328,7 +1328,7 @@ window.IPM_DILR = [
   },
   {
     id: "CAT-DILR-DI",
-    pillar: "CAT 2026 DILR • PILLAR 4",
+    pillar: "CAT DILR • PILLAR 4",
     title: "Multi-Chart Data Interpretation & Missing-Data Tables",
     weightage: "Core DILR • 1 Caselet per Slot",
     concepts: [],
@@ -1340,12 +1340,12 @@ window.IPM_DILR = [
 ];
 window.getDilrModules = function () { return window.IPM_DILR; };
 
-// 2. TAB 4: PURGE CAT 2026 & MBA/OMETs TAGS FROM TRAP DOCTOR & AI DOUBTS
+// 2. TAB 4: PURGE CAT & MBA/OMETs TAGS FROM TRAP DOCTOR & AI DOUBTS
 window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-01",
     domain: "Algebra & Modulus",
-    exam: "CAT 2026 QA (+3/-1 vs TITA)",
+    exam: "CAT QA (+3/-1 vs TITA)",
     title: "Squaring |f(x)| = g(x) Without Checking RHS >= 0",
     trapStem: "Solve |2x - 7| = x - 5. A student squares both sides: 4x^2 - 28x + 49 = x^2 - 10x + 25 => 3x^2 - 18x + 24 = 0 => x = 2 or x = 4.",
     wrongReasoning: "Accepting both x = 2 and x = 4 because both satisfy the squared quadratic.",
@@ -1355,7 +1355,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-02",
     domain: "Arithmetic & Mixtures",
-    exam: "CAT 2026 QA",
+    exam: "CAT QA",
     title: "Adding Removed Volumes in Successive Replacement",
     trapStem: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water. Find remaining milk %.",
     wrongReasoning: "Subtracting (6 + 10 + 12)/60 = 28/60 from 100% to get 53.33%.",
@@ -1365,7 +1365,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-03",
     domain: "VARC • Parajumbles & RC",
-    exam: "CAT 2026 VARC",
+    exam: "CAT VARC",
     title: "Selecting Extreme / Universal Options in CAT RC Inference",
     trapStem: "Passage notes that 'prolonged low interest rates can inadvertently encourage leverage in shadow banks.' Option (A) states: 'Low interest rates inevitably destabilize financial markets.'",
     wrongReasoning: "Choosing Option (A) because it echoes 'leverage' and 'fragility' keywords from the passage.",
@@ -1375,7 +1375,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-04",
     domain: "DILR • Set Theory",
-    exam: "CAT 2026 DILR",
+    exam: "CAT DILR",
     title: "Double-Counting Triple Overlaps in 3-Set Sum Equations",
     trapStem: "100 students: 70 QA, 65 DILR, 60 VARC (everyone studies >=1). Find maximum students studying all 3.",
     wrongReasoning: "Taking min(70, 65, 60) = 60 without checking total population capacity.",
@@ -1388,7 +1388,7 @@ window.IPM_DOUBT_BANK = [
   {
     id: "CAT-DBT-01",
     domain: "Quant Core",
-    examTag: "CAT 2026 QA",
+    examTag: "CAT QA",
     question: "Why does selling two items at the SAME Selling Price—one at +20% profit and one at -20% loss—always result in a 4% net loss instead of breaking even?",
     hint: "Assume SP = Rs. 120 for BOTH items. Compute CP_1 (at +20% profit) and CP_2 (at -20% loss) separately—which item had the larger Cost Price?",
     shortcut: "Equal-SP Formula: Net Loss % = (x^2 / 100)% = (20^2 / 100)% = 4% loss on total transaction.",
@@ -1397,7 +1397,7 @@ window.IPM_DOUBT_BANK = [
   {
     id: "CAT-DBT-02",
     domain: "Number System",
-    examTag: "CAT 2026 QA (TITA)",
+    examTag: "CAT QA (TITA)",
     question: "How do I find the last two digits of 3^2026 in under 45 seconds without expanding powers?",
     hint: "Use Euler's Totient Theorem mod 100: compute phi(100) = 100*(1 - 1/2)*(1 - 1/5) = 40, so 3^40 ≡ 1 (mod 100).",
     shortcut: "Divide exponent 2026 by 40 -> remainder 26. Since 3^20 ≡ 01 (mod 100), 3^26 ≡ 3^6 = 729 ≡ 29.",
@@ -1406,7 +1406,7 @@ window.IPM_DOUBT_BANK = [
   {
     id: "CAT-DBT-03",
     domain: "VARC • TITA",
-    examTag: "CAT 2026 VARC",
+    examTag: "CAT VARC",
     question: "What is the fastest opening move on a 4-sentence CAT TITA Parajumble with zero options?",
     hint: "Scan for mandatory pairs first: look for a general claim followed by 'Yet / However / Consequently' or a full noun phrase followed by a demonstrative ('This phenomenon / These findings').",
     shortcut: "Lock 2 mandatory pairs (e.g., 2-1 and 3-4) before deciding which pair opens the paragraph.",
@@ -1414,14 +1414,14 @@ window.IPM_DOUBT_BANK = [
   }
 ];
 
-// 3. TAB 8: POPULATE MOCK FALLBACK WITH CAT 2026 QUESTIONS (+3/-1 & TITA)
+// 3. TAB 8: POPULATE MOCK FALLBACK WITH CAT QUESTIONS (+3/-1 & TITA)
 window.IPM_TAGGED_MOCK_QUESTIONS = (window.CAT_POSTGRES_BANK || []).concat(
   (window.IPM_QUANT_CORE || []).flatMap(m => (m.questions || []).map(q => ({
-    id: q.id, section: "QUANT", topic: m.title, exam: "CAT 2026",
+    id: q.id, section: "QUANT", topic: m.title, exam: "CAT",
     prompt: q.stem, options: q.options, answer: q.answer, explanation: q.explanation
   }))),
   (window.IPM_DILR || []).flatMap(m => (m.questions || []).map(q => ({
-    id: q.id, section: "DILR", topic: m.title, exam: "CAT 2026",
+    id: q.id, section: "DILR", topic: m.title, exam: "CAT",
     prompt: q.stem, options: q.options, answer: q.answer, explanation: q.explanation
   })))
 );
@@ -1430,14 +1430,14 @@ window.IPM_TAGGED_MOCK_QUESTIONS = (window.CAT_POSTGRES_BANK || []).concat(
 window.IPM_VARC = window.IPM_VARC || [
   {
     id: "CAT-VARC-RC",
-    pillar: "CAT 2026 VARC • READING COMPREHENSION",
+    pillar: "CAT VARC • READING COMPREHENSION",
     title: "Academic Reading Comprehension (Philosophy, Economics, Sociology & Science)",
     weightage: "16 Qs / 24 in VARC (4 Passages x 4 Qs • +3 / -1 MCQ)",
     questions: (window.CAT_OFFICIAL_BANK && window.CAT_OFFICIAL_BANK.varc && window.CAT_OFFICIAL_BANK.varc.rc) || []
   },
   {
     id: "CAT-VARC-VA",
-    pillar: "CAT 2026 VARC • TITA VERBAL ABILITY",
+    pillar: "CAT VARC • TITA VERBAL ABILITY",
     title: "TITA Parajumbles, Odd-One-Out, Para-Completion & Para-Summary",
     weightage: "8 Qs / 24 in VARC (+3 / 0 TITA & +3 / -1 MCQ)",
     questions: (window.CAT_OFFICIAL_BANK && window.CAT_OFFICIAL_BANK.varc && window.CAT_OFFICIAL_BANK.varc.va) || []
@@ -1580,13 +1580,13 @@ window.IPM_VARC = window.IPM_VARC || [
 })();
 
 // ==============================================================================
-// EXACT SCHEMA FIX FOR TAB 3 (VARC STUDIO) & TAB 4 (TRAP DOCTOR) IN CAT 2026
+// EXACT SCHEMA FIX FOR TAB 3 (VARC STUDIO) & TAB 4 (TRAP DOCTOR) IN CAT
 // ==============================================================================
 window.CAT_OFFICIAL_BANK = window.CAT_OFFICIAL_BANK || {};
 window.CAT_OFFICIAL_BANK.varc = {
   readingComprehension: [
     {
-      subtype: "CAT 2026 RC • Philosophy of Science",
+      subtype: "CAT RC • Philosophy of Science",
       difficulty: "CAT 99%ile • +3 / -1 MCQ",
       passage: "Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities (such as quarks and electromagnetic fields) genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.",
       questions: [
@@ -1617,7 +1617,7 @@ window.CAT_OFFICIAL_BANK.varc = {
       ]
     },
     {
-      subtype: "CAT 2026 RC • Behavioral Macroeconomics",
+      subtype: "CAT RC • Behavioral Macroeconomics",
       difficulty: "CAT 98%ile • +3 / -1 MCQ",
       passage: "While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.",
       questions: [
@@ -1688,7 +1688,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-01",
     domain: "Algebra & Modulus",
-    examTag: "CAT 2026 QA",
+    examTag: "CAT QA",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Squaring |f(x)| = g(x) Without Enforcing RHS >= 0",
     trapScenario: "Solving |2x - 7| = x - 5 by squaring both sides to obtain 3x^2 - 18x + 24 = 0 => x = 2 or x = 4.",
@@ -1704,7 +1704,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-02",
     domain: "Arithmetic & Mixtures",
-    examTag: "CAT 2026 QA",
+    examTag: "CAT QA",
     penalty: "-1 Mark in MCQ",
     title: "Adding Removed Volumes in Successive Replacement",
     trapScenario: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water; subtracting (6+10+12)/60 from 100%.",
@@ -1720,7 +1720,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-03",
     domain: "DILR • Set Theory",
-    examTag: "CAT 2026 DILR",
+    examTag: "CAT DILR",
     penalty: "-4 Marks on Cascading Set",
     title: "Confusing 'At Least 2 Sets' with 'Exactly 2 Sets'",
     trapScenario: "100 students: 70 QA, 65 DILR, 60 VARC (everyone studies >=1). Taking min(70, 65, 60) = 60 as max all-three.",
@@ -1740,7 +1740,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   readingComprehension: [
   {
     "id": "RC1",
-    "subtype": "CAT 2026 RC • Philosophy of Science",
+    "subtype": "CAT RC • Philosophy of Science",
     "difficulty": "CAT 99%ile • +3 / -1 MCQ",
     "passage": "Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.",
     "questions": [
@@ -1784,7 +1784,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC2",
-    "subtype": "CAT 2026 RC • Behavioral Macroeconomics",
+    "subtype": "CAT RC • Behavioral Macroeconomics",
     "difficulty": "CAT 98.5%ile • +3 / -1 MCQ",
     "passage": "While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.",
     "questions": [
@@ -1828,7 +1828,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC3",
-    "subtype": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "subtype": "CAT RC • Evolutionary Ecology & Mutualism",
     "difficulty": "CAT 99%ile • +3 / -1 MCQ",
     "passage": "Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.",
     "questions": [
@@ -1872,7 +1872,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC4",
-    "subtype": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "subtype": "CAT RC • Epistemology of Artificial Intelligence",
     "difficulty": "CAT 99.5%ile • +3 / -1 MCQ",
     "passage": "Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.",
     "questions": [
@@ -2040,7 +2040,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-01",
     "section": "QUANT_CORE",
     "topic": "Algebra • Modulus",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of distinct real solutions to |x^2 - 7x + 10| + |x - 2| = x - 2.",
     "options": [],
     "answer": "2",
@@ -2050,7 +2050,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-02",
     "section": "QUANT_CORE",
     "topic": "Algebra • AM-GM Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If x > 0 and y > 0 satisfy 3x + 4y = 20, find the maximum possible value of x^2 * y^3.",
     "options": [
       "128",
@@ -2065,7 +2065,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-03",
     "section": "QUANT_CORE",
     "topic": "Algebra • Polynomials",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Let P(x) be a monic cubic polynomial with P(1) = 1, P(2) = 4, and P(3) = 9. Find P(4).",
     "options": [],
     "answer": "22",
@@ -2075,7 +2075,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-04",
     "section": "QUANT_CORE",
     "topic": "Algebra • Functions",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If f(x) + 2*f(1 - x) = x^2 + 3 for all real x, find f(2).",
     "options": [
       "-1/3",
@@ -2090,7 +2090,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-05",
     "section": "QUANT_CORE",
     "topic": "Algebra • Modulus Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the minimum value of |x - 1| + |x - 4| + |x - 9| + |x - 15| for real x.",
     "options": [],
     "answer": "19",
@@ -2100,7 +2100,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-06",
     "section": "QUANT_CORE",
     "topic": "Algebra • Quadratics",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If α and β are roots of 2x^2 - 7x + 4 = 0, find α^2 + β^2.",
     "options": [
       "6.25",
@@ -2115,7 +2115,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-07",
     "section": "QUANT_CORE",
     "topic": "Algebra • Rational Maxima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the minimum value of (x^2 + 2x + 10) / (x + 1) for x > -1.",
     "options": [],
     "answer": "6",
@@ -2125,7 +2125,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-08",
     "section": "QUANT_CORE",
     "topic": "Algebra • Integer Pairs",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of integer pairs (x, y) satisfying |x| + |y| + |x + y| = 10.",
     "options": [],
     "answer": "28",
@@ -2135,7 +2135,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-09",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Mixtures",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water. Find final milk %.",
     "options": [
       "54%",
@@ -2150,7 +2150,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-10",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Profit & Loss",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A merchant marks goods 40% above CP, gives 20% discount, and uses an 800g weight instead of 1000g. Net profit %?",
     "options": [
       "25%",
@@ -2165,7 +2165,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-11",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Compound Interest",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] A loan of Rs. 21,000 is repaid in two equal annual installments at 10% p.a. CI. Find each installment (in Rs.).",
     "options": [],
     "answer": "12100",
@@ -2175,7 +2175,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-12",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • CI vs SI",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If CI - SI on a principal at 10% p.a. for 3 years is Rs. 620, find the principal.",
     "options": [
       "Rs. 18,000",
@@ -2190,7 +2190,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-13",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Alligation",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Fresh grapes have 80% water and dry grapes have 25% water. How many kg of dry grapes come from 60 kg fresh grapes?",
     "options": [
       "12 kg",
@@ -2205,7 +2205,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-14",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Asymmetric Mixtures",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] From 100L pure wine, 10L is replaced with water, then 20L mixture with pure wine, then 25L with water. Final wine %?",
     "options": [],
     "answer": "69",
@@ -2215,7 +2215,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-15",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Circular Tracks",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Runners A and B start together on a 1200m circular track in opposite directions at 5 m/s and 7 m/s. Distinct meeting points?",
     "options": [
       "2",
@@ -2230,7 +2230,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-16",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Escalators",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Walking up an upward escalator takes 30s; walking down against it takes 90s. Seconds to walk up when off?",
     "options": [],
     "answer": "45",
@@ -2240,7 +2240,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-17",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Crossing Time",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Trains A and B start from P and Q towards each other. After crossing, A takes 4h to Q and B takes 9h to P. If v_A = 60 km/h, distance PQ?",
     "options": [
       "480 km",
@@ -2255,7 +2255,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-18",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Linear Meetings",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Anil (3 m/s) and Sunil (2 m/s) start from opposite ends A and B of a 300m track and run back and forth. Distance (m) from A at 3rd meeting?",
     "options": [],
     "answer": "300",
@@ -2265,7 +2265,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-19",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Time & Work",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Pipe A fills a tank in 12h, B in 15h, and outlet C empties it in 20h. Hours to fill when all three open?",
     "options": [
       "8 hrs",
@@ -2280,7 +2280,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-20",
     "section": "QUANT_CORE",
     "topic": "Number System • Euler's Theorem",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the last two digits of 3^2026.",
     "options": [],
     "answer": "29",
@@ -2290,7 +2290,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-21",
     "section": "QUANT_CORE",
     "topic": "Number System • Binomial Parity",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the remainder when 7^103 + 11^103 is divided by 18.",
     "options": [],
     "answer": "0",
@@ -2300,7 +2300,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-22",
     "section": "QUANT_CORE",
     "topic": "Number System • Divisors",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "How many positive divisors of 720 are NOT divisible by 6?",
     "options": [
       "12",
@@ -2315,7 +2315,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-23",
     "section": "QUANT_CORE",
     "topic": "Number System • Factorials",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of trailing zeros in 125!.",
     "options": [],
     "answer": "31",
@@ -2325,7 +2325,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-24",
     "section": "QUANT_CORE",
     "topic": "Number System • Modular Remainders",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "What is the remainder when 2^99 is divided by 33?",
     "options": [
       "1",
@@ -2340,7 +2340,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-25",
     "section": "QUANT_CORE",
     "topic": "Number System • Chinese Remainder",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Smallest positive integer leaving remainders 2, 3, and 4 when divided by 5, 7, and 9 respectively?",
     "options": [],
     "answer": "157",
@@ -2350,7 +2350,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-26",
     "section": "QUANT_CORE",
     "topic": "Geometry • Triangle Area Scaling",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "In triangle ABC, D and E lie on AB and AC with AD:DB = 2:3 and AE:EC = 3:4. Ratio of Area(ADE) to Area(BCED)?",
     "options": [
       "6 : 29",
@@ -2365,7 +2365,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-27",
     "section": "QUANT_CORE",
     "topic": "Geometry • 3D Cone Cut",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A cone of height 30 cm is cut parallel to its base so top cone and bottom frustum have volume ratio 8 : 19. Height of top cone?",
     "options": [
       "10 cm",
@@ -2380,7 +2380,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-28",
     "section": "QUANT_CORE",
     "topic": "Geometry • Euler Incenter-Circumcenter",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A right triangle has legs 9 cm and 12 cm. Distance between its incenter and circumcenter?",
     "options": [
       "1.5*sqrt(5) cm",
@@ -2395,7 +2395,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-29",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Stars & Bars",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Number of positive integer solutions to x + y + z = 12?",
     "options": [],
     "answer": "55",
@@ -2405,7 +2405,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-30",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Logarithms",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Solve for x: log_2(x) + log_4(x) + log_8(x) = 11.",
     "options": [
       "32",
@@ -2420,7 +2420,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-31",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Derangements",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Ways to place 5 distinct letters into 5 addressed envelopes so EXACTLY 1 letter is in its own envelope?",
     "options": [],
     "answer": "45",
@@ -2430,7 +2430,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-32",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Telescoping Series",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Evaluate sum_{k=1}^{99} 1 / [k(k + 1)].",
     "options": [
       "98/99",
@@ -2445,7 +2445,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-01",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q1 TITA] Four B-schools (IIM A, B, C, L) sent distinct delegate counts from {12, 15, 18, 20} (sum = 65) across Case Clash (CC), FinQuest (FQ), and StratWars (SW). Each delegate entered 1 or 2 events (none entered 3), and 6 per institute entered 2 events. IIM A's single-event delegates split 3:2:1 across CC, FQ, SW. IIM C > IIM A > IIM B > IIM L. How many delegates did IIM A send?",
     "options": [],
     "answer": "18",
@@ -2455,7 +2455,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-02",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q2] In the B-school delegate caselet (IIM A = 18 total, 6 in two events, single-event split 3:2:1 across CC, FQ, SW), how many IIM A delegates entered ONLY Case Clash?",
     "options": [
       "3",
@@ -2470,7 +2470,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-03",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q3 TITA] Across all four IIMs (65 delegates total, 6 two-event delegates per institute), how many total delegates entered ONLY ONE event?",
     "options": [],
     "answer": "41",
@@ -2480,7 +2480,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-04",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q4] What is the ratio of single-event delegates from IIM C (20 total) to single-event delegates from IIM L (12 total)?",
     "options": [
       "5 : 3",
@@ -2495,7 +2495,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-05",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q1 TITA] Six teams play a single round-robin football league (Win = 3, Draw = 1, Loss = 0). Total points awarded across all 15 matches was 41. How many matches ended in a draw?",
     "options": [],
     "answer": "4",
@@ -2505,7 +2505,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-06",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q2 TITA] In the 6-team round-robin league above (41 total points, 4 draws), how many matches ended with a decisive winner?",
     "options": [],
     "answer": "11",
@@ -2515,7 +2515,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-07",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q3] If the top team in the 6-team round-robin league won all its matches, how many points did it finish with?",
     "options": [
       "12",
@@ -2530,7 +2530,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-08",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q4] What is the minimum possible points scored by the last-placed team in a 6-team round-robin where the top team won all 5 matches?",
     "options": [
       "0",
@@ -2545,7 +2545,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-09",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q1 TITA] In a cohort of 100 MBA aspirants, 70 solve QA daily, 65 solve DILR daily, and 60 solve VARC daily (everyone solves >=1). Maximum aspirants solving all 3 sections?",
     "options": [],
     "answer": "47",
@@ -2555,7 +2555,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-10",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q2 TITA] In the 100-aspirant cohort above (70 QA, 65 DILR, 60 VARC, none = 0), minimum aspirants solving all 3 sections?",
     "options": [],
     "answer": "0",
@@ -2565,7 +2565,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-11",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q3] When the number solving all 3 sections is maximized (47), how many aspirants solve EXACTLY ONE section?",
     "options": [
       "5",
@@ -2580,7 +2580,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-12",
     "section": "DILR",
     "topic": "DILR • Matrix Arrangement",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Five analysts (P, Q, R, S, T) from Mumbai, Delhi, Bengaluru, Chennai, and Kolkata specialize in FinTech, Healthcare, SaaS, Energy, and Retail. P is from Mumbai (not FinTech); Bengaluru is SaaS; R is Healthcare (not Delhi/Kolkata). Which city is R from?",
     "options": [
       "Mumbai",
@@ -2595,7 +2595,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-13",
     "section": "DILR",
     "topic": "DILR • Grid Shortest Paths",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] How many shortest grid paths exist from (0, 0) to (4, 3) passing through checkpoint (2, 1)?",
     "options": [],
     "answer": "18",
@@ -2605,7 +2605,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-14",
     "section": "DILR",
     "topic": "DILR • Knockout Seeding",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] In a 64-player single-elimination knockout tournament, how many total matches are played to crown the champion?",
     "options": [],
     "answer": "63",
@@ -2615,7 +2615,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-15",
     "section": "DILR",
     "topic": "DILR • Data Interpretation",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A firm's revenue grows from Rs. 240 Cr to Rs. 280 Cr while operating margin drops from 25% to 22.5%. Change in operating profit?",
     "options": [
       "+Rs. 1.5 Cr",
@@ -2630,7 +2630,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-16",
     "section": "DILR",
     "topic": "DILR • Market Share DI",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A company's market share falls from 25% to 20% while total industry size expands by 40%. Percentage change in company revenue?",
     "options": [
       "-10%",
@@ -2645,7 +2645,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-17",
     "section": "DILR",
     "topic": "DILR • 4-Exam Venn",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] 200 analysts took 4 exams. Every analyst passed >=2 exams; 80 passed exactly 2, and 70 passed exactly 3. Total exam passes across all 200 analysts?",
     "options": [],
     "answer": "570",
@@ -2655,7 +2655,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-18",
     "section": "DILR",
     "topic": "DILR • 3-Language Venn",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] In a club of 150 members, 90 speak English, 80 Hindi, and 70 Tamil (everyone >=1). If 40 speak all 3, how many speak ONLY ONE language?",
     "options": [],
     "answer": "100",
@@ -2665,7 +2665,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-19",
     "section": "DILR",
     "topic": "DILR • League Scoring",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Five teams play a single round-robin tournament (Win = 2, Draw = 1, Loss = 0). Sum of points of all 5 teams?",
     "options": [],
     "answer": "20",
@@ -2675,7 +2675,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-20",
     "section": "DILR",
     "topic": "DILR • Fraction Comparison",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Which of the following fractions is the largest?",
     "options": [
       "417 / 628",
@@ -2689,8 +2689,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-01",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: How does structural realism resolve the tension between scientific realism and the pessimistic meta-induction?",
     "options": [
       "By denying that historical theories such as caloric fluid ever achieved empirical success.",
@@ -2704,8 +2704,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-02",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: Which of the following would most weaken the anti-realist's 'pessimistic meta-induction' as presented in the passage?",
     "options": [
       "Demonstrating that caloric fluid equations remain mathematically isomorphic to modern thermodynamic heat-transfer equations.",
@@ -2719,8 +2719,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-03",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: According to the passage, an anti-realist would most likely agree with which of the following statements?",
     "options": [
       "Empirical predictive success is insufficient to guarantee that a theory's postulated unobservable entities actually exist.",
@@ -2734,8 +2734,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-04",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: The primary purpose of the passage is to:",
     "options": [
       "Advocate for the immediate abolition of central bank forward guidance.",
@@ -2749,8 +2749,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-05",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: It can be inferred from the passage that future rate-normalization cycles become constrained because:",
     "options": [
       "Commercial banks refuse to purchase short-term sovereign debt.",
@@ -2764,8 +2764,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-06",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: Which of the following best describes the author's tone toward explicit forward guidance?",
     "options": [
       "Dogmatically dismissive",
@@ -2779,8 +2779,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-07",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: The author uses the phrase 'biological market' primarily to emphasize that:",
     "options": [
       "Plants and soil microbes exchange resources based on conditional reciprocity and partner sanctions rather than unconditional altruism.",
@@ -2794,8 +2794,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-08",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: Which of the following, if discovered, would most challenge the author's characterization of plant-fungal interactions?",
     "options": [
       "Host plants continue supplying identical carbon rations to fungal strains that cease delivering phosphorus.",
@@ -2809,8 +2809,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-09",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: According to the passage, classical evolutionary theory differed from modern microbiome research in that classical theory:",
     "options": [
       "Overestimated the prevalence of zero-sum competition relative to reciprocal mutualism.",
@@ -2824,8 +2824,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-10",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: The critics' objection to the aspirin analogy rests primarily on the claim that:",
     "options": [
       "Human subjects strategically alter their behavior in response to predictive algorithms, destabilizing the underlying statistical patterns.",
@@ -2839,8 +2839,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-11",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Instrumentalists invoke the history of aspirin in order to:",
     "options": [
       "Prove that causal interpretability is not a prerequisite for beneficial real-world deployment.",
@@ -2854,8 +2854,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-12",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Which of the following scenarios best exemplifies 'reflexive drift' as defined in the passage?",
     "options": [
       "Loan applicants artificially alter superficial spending habits once they infer an opaque credit-scoring model's proxy variables.",
@@ -2870,7 +2870,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-13",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Yet this very abundance of granular behavioral data has paradoxically made causal inference harder rather than easier for empirical economists.\n2. Over the past decade, digital platforms have generated unprecedented real-time records of consumer choices, search queries, and price sensitivity.\n3. Without exogenous shocks or randomized field experiments, observational correlations in massive datasets routinely conflate genuine preference shifts with algorithmic nudges.\n4. Consequently, modern econometricians increasingly pair machine-learning prediction tools with quasi-experimental designs to isolate true causal effects.",
     "options": [],
     "answer": "2134",
@@ -2880,7 +2880,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-14",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. This architectural shift enabled medieval gothic cathedrals to soar to unprecedented heights while flooding their naves with stained-glass light.\n2. Traditional Romanesque churches relied on massive, thick stone walls to bear the outward lateral thrust of heavy vaulted roofs.\n3. By transferring roof loads outward across exterior stone arches to detached piers, the flying buttress liberated interior walls from structural duty.\n4. Because piercing those load-bearing walls with large windows risked catastrophic collapse, Romanesque interiors remained dimly lit.",
     "options": [],
     "answer": "2431",
@@ -2890,7 +2890,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-15",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. When firms compete primarily on visible short-term metrics, managerial incentives tilt toward underinvesting in long-horizon R&D.\n2. Quarterly earnings benchmarks were originally championed as an antidote to managerial complacency and opaque corporate governance.\n3. Over time, however, intense capital-market scrutiny transformed reporting thresholds from diagnostic gauges into binding operational targets.\n4. Restoring multi-year innovation capacity therefore requires insulating core research budgets from transient quarterly fluctuations.",
     "options": [],
     "answer": "2314",
@@ -2900,7 +2900,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-16",
     "section": "VARC",
     "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Early urban planners viewed street-level congestion purely as an engineering bottleneck solvable by widening arterial roads.\n2. Subsequent empirical studies revealed the phenomenon of induced demand, wherein expanded road capacity rapidly attracts latent vehicular traffic.\n3. High-speed intercity rail networks have significantly reduced domestic aviation emissions across Western Europe.\n4. As a result, expanding highway lanes frequently restores peak-hour gridlock within a few years of construction.\n5. Contemporary mobility policy therefore prioritizes congestion pricing and transit-oriented density over unchecked road expansion.",
     "options": [],
     "answer": "3",
@@ -2910,7 +2910,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-17",
     "section": "VARC",
     "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Deep-sea hydrothermal vents support thriving chemosynthetic ecosystems completely independent of solar photosynthesis.\n2. Specialized bacteria oxidize hydrogen sulfide dissolved in superheated vent plumes to synthesize organic carbon compounds.\n3. Coral bleaching events in shallow tropical reefs are triggered primarily by anomalously warm ocean surface temperatures.\n4. Giant tube worms and blind vent crabs rely symbiotically on these chemosynthetic microbes as the base of their food web.\n5. Astrobiologists study these abyssal communities as terrestrial analogues for potential life beneath the icy crust of Europa.",
     "options": [],
     "answer": "3",
@@ -2920,7 +2920,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-18",
     "section": "VARC",
     "topic": "TITA Para-Completion (+3 / 0 • Type Position Digit 1–4)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Target Sentence: 'Rather than erasing regional dialects, broadcast media initially heightened linguistic self-awareness by juxtaposing standardized accents against local speech.'\n1. [Blank 1] Early twentieth-century linguists predicted that national radio networks would rapidly homogenize spoken English within two generations.\n2. [Blank 2] Empirical dialect surveys conducted fifty years later, however, uncovered resilient phonological divergence across major metropolitan areas.\n3. [Blank 3] Speakers continued using local vowels as markers of community solidarity even while effortlessly comprehending national broadcasts.\n4. [Blank 4] Code-switching between formal broadcast registers and vernacular speech thus became a routine communicative skill.",
     "options": [],
     "answer": "2",
@@ -2930,7 +2930,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-19",
     "section": "VARC",
     "topic": "Para-Summary (+3 / -1 MCQ)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Although algorithmic credit scoring expands formal loan access to thin-file borrowers by analyzing non-traditional digital footprints, opaque machine-learning models risk encoding historical socioeconomic proxies that are difficult for applicants to audit or contest.",
     "options": [
       "Algorithmic credit scoring should be banned because machine-learning models always discriminate against thin-file borrowers.",
@@ -2945,7 +2945,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-20",
     "section": "VARC",
     "topic": "Para-Summary (+3 / -1 MCQ)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Historians of cartography note that early modern world maps were never merely neutral geographic inventories; by centering imperial capitals, exaggerating maritime territories, and adorning uncharted regions with allegorical emblems, mapmakers visually legitimized geopolitical claims for domestic and rival audiences.",
     "options": [
       "Early modern world maps were scientifically inaccurate because mapmakers lacked modern satellite telemetry.",
@@ -2964,7 +2964,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   readingComprehension: [
   {
     "id": "RC1",
-    "subtype": "CAT 2026 RC • Philosophy of Science",
+    "subtype": "CAT RC • Philosophy of Science",
     "difficulty": "CAT 99%ile • +3 / -1 MCQ",
     "passage": "Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.",
     "questions": [
@@ -3008,7 +3008,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC2",
-    "subtype": "CAT 2026 RC • Behavioral Macroeconomics",
+    "subtype": "CAT RC • Behavioral Macroeconomics",
     "difficulty": "CAT 98.5%ile • +3 / -1 MCQ",
     "passage": "While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.",
     "questions": [
@@ -3052,7 +3052,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC3",
-    "subtype": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
+    "subtype": "CAT RC • Evolutionary Ecology & Mutualism",
     "difficulty": "CAT 99%ile • +3 / -1 MCQ",
     "passage": "Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.",
     "questions": [
@@ -3096,7 +3096,7 @@ window.CAT_OFFICIAL_BANK.varc = {
   },
   {
     "id": "RC4",
-    "subtype": "CAT 2026 RC • Epistemology of Artificial Intelligence",
+    "subtype": "CAT RC • Epistemology of Artificial Intelligence",
     "difficulty": "CAT 99.5%ile • +3 / -1 MCQ",
     "passage": "Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.",
     "questions": [
@@ -3264,7 +3264,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-01",
     "section": "QUANT_CORE",
     "topic": "Algebra • Modulus",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of distinct real solutions to |x^2 - 7x + 10| + |x - 2| = x - 2.",
     "options": [],
     "answer": "2",
@@ -3274,7 +3274,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-02",
     "section": "QUANT_CORE",
     "topic": "Algebra • AM-GM Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If x > 0 and y > 0 satisfy 3x + 4y = 20, find the maximum possible value of x^2 * y^3.",
     "options": [
       "128",
@@ -3289,7 +3289,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-03",
     "section": "QUANT_CORE",
     "topic": "Algebra • Polynomials",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Let P(x) be a monic cubic polynomial with P(1) = 1, P(2) = 4, and P(3) = 9. Find P(4).",
     "options": [],
     "answer": "22",
@@ -3299,7 +3299,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-04",
     "section": "QUANT_CORE",
     "topic": "Algebra • Functions",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If f(x) + 2*f(1 - x) = x^2 + 3 for all real x, find f(2).",
     "options": [
       "-1/3",
@@ -3314,7 +3314,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-05",
     "section": "QUANT_CORE",
     "topic": "Algebra • Modulus Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the minimum value of |x - 1| + |x - 4| + |x - 9| + |x - 15| for real x.",
     "options": [],
     "answer": "19",
@@ -3324,7 +3324,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-06",
     "section": "QUANT_CORE",
     "topic": "Algebra • Quadratics",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If α and β are roots of 2x^2 - 7x + 4 = 0, find α^2 + β^2.",
     "options": [
       "6.25",
@@ -3339,7 +3339,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-07",
     "section": "QUANT_CORE",
     "topic": "Algebra • Rational Maxima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the minimum value of (x^2 + 2x + 10) / (x + 1) for x > -1.",
     "options": [],
     "answer": "6",
@@ -3349,7 +3349,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-08",
     "section": "QUANT_CORE",
     "topic": "Algebra • Integer Pairs",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of integer pairs (x, y) satisfying |x| + |y| + |x + y| = 10.",
     "options": [],
     "answer": "28",
@@ -3359,7 +3359,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-09",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Mixtures",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water. Find final milk %.",
     "options": [
       "54%",
@@ -3374,7 +3374,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-10",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Profit & Loss",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A merchant marks goods 40% above CP, gives 20% discount, and uses an 800g weight instead of 1000g. Net profit %?",
     "options": [
       "25%",
@@ -3389,7 +3389,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-11",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Compound Interest",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] A loan of Rs. 21,000 is repaid in two equal annual installments at 10% p.a. CI. Find each installment (in Rs.).",
     "options": [],
     "answer": "12100",
@@ -3399,7 +3399,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-12",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • CI vs SI",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "If CI - SI on a principal at 10% p.a. for 3 years is Rs. 620, find the principal.",
     "options": [
       "Rs. 18,000",
@@ -3414,7 +3414,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-13",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Alligation",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Fresh grapes have 80% water and dry grapes have 25% water. How many kg of dry grapes come from 60 kg fresh grapes?",
     "options": [
       "12 kg",
@@ -3429,7 +3429,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-14",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Asymmetric Mixtures",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] From 100L pure wine, 10L is replaced with water, then 20L mixture with pure wine, then 25L with water. Final wine %?",
     "options": [],
     "answer": "69",
@@ -3439,7 +3439,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-15",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Circular Tracks",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Runners A and B start together on a 1200m circular track in opposite directions at 5 m/s and 7 m/s. Distinct meeting points?",
     "options": [
       "2",
@@ -3454,7 +3454,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-16",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Escalators",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Walking up an upward escalator takes 30s; walking down against it takes 90s. Seconds to walk up when off?",
     "options": [],
     "answer": "45",
@@ -3464,7 +3464,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-17",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Crossing Time",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Trains A and B start from P and Q towards each other. After crossing, A takes 4h to Q and B takes 9h to P. If v_A = 60 km/h, distance PQ?",
     "options": [
       "480 km",
@@ -3479,7 +3479,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-18",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Linear Meetings",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Anil (3 m/s) and Sunil (2 m/s) start from opposite ends A and B of a 300m track and run back and forth. Distance (m) from A at 3rd meeting?",
     "options": [],
     "answer": "300",
@@ -3489,7 +3489,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-19",
     "section": "QUANT_CORE",
     "topic": "Arithmetic • Time & Work",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Pipe A fills a tank in 12h, B in 15h, and outlet C empties it in 20h. Hours to fill when all three open?",
     "options": [
       "8 hrs",
@@ -3504,7 +3504,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-20",
     "section": "QUANT_CORE",
     "topic": "Number System • Euler's Theorem",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the last two digits of 3^2026.",
     "options": [],
     "answer": "29",
@@ -3514,7 +3514,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-21",
     "section": "QUANT_CORE",
     "topic": "Number System • Binomial Parity",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the remainder when 7^103 + 11^103 is divided by 18.",
     "options": [],
     "answer": "0",
@@ -3524,7 +3524,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-22",
     "section": "QUANT_CORE",
     "topic": "Number System • Divisors",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "How many positive divisors of 720 are NOT divisible by 6?",
     "options": [
       "12",
@@ -3539,7 +3539,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-23",
     "section": "QUANT_CORE",
     "topic": "Number System • Factorials",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Find the number of trailing zeros in 125!.",
     "options": [],
     "answer": "31",
@@ -3549,7 +3549,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-24",
     "section": "QUANT_CORE",
     "topic": "Number System • Modular Remainders",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "What is the remainder when 2^99 is divided by 33?",
     "options": [
       "1",
@@ -3564,7 +3564,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-25",
     "section": "QUANT_CORE",
     "topic": "Number System • Chinese Remainder",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Smallest positive integer leaving remainders 2, 3, and 4 when divided by 5, 7, and 9 respectively?",
     "options": [],
     "answer": "157",
@@ -3574,7 +3574,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-26",
     "section": "QUANT_CORE",
     "topic": "Geometry • Triangle Area Scaling",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "In triangle ABC, D and E lie on AB and AC with AD:DB = 2:3 and AE:EC = 3:4. Ratio of Area(ADE) to Area(BCED)?",
     "options": [
       "6 : 29",
@@ -3589,7 +3589,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-27",
     "section": "QUANT_CORE",
     "topic": "Geometry • 3D Cone Cut",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A cone of height 30 cm is cut parallel to its base so top cone and bottom frustum have volume ratio 8 : 19. Height of top cone?",
     "options": [
       "10 cm",
@@ -3604,7 +3604,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-28",
     "section": "QUANT_CORE",
     "topic": "Geometry • Euler Incenter-Circumcenter",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A right triangle has legs 9 cm and 12 cm. Distance between its incenter and circumcenter?",
     "options": [
       "1.5*sqrt(5) cm",
@@ -3619,7 +3619,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-29",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Stars & Bars",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Number of positive integer solutions to x + y + z = 12?",
     "options": [],
     "answer": "55",
@@ -3629,7 +3629,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-30",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Logarithms",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Solve for x: log_2(x) + log_4(x) + log_8(x) = 11.",
     "options": [
       "32",
@@ -3644,7 +3644,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-31",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Derangements",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Ways to place 5 distinct letters into 5 addressed envelopes so EXACTLY 1 letter is in its own envelope?",
     "options": [],
     "answer": "45",
@@ -3654,7 +3654,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-QA-32",
     "section": "QUANT_CORE",
     "topic": "Modern Math • Telescoping Series",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Evaluate sum_{k=1}^{99} 1 / [k(k + 1)].",
     "options": [
       "98/99",
@@ -3669,7 +3669,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-01",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q1 TITA] Four B-schools (IIM A, B, C, L) sent distinct delegate counts from {12, 15, 18, 20} (sum = 65) across Case Clash (CC), FinQuest (FQ), and StratWars (SW). Each delegate entered 1 or 2 events (none entered 3), and 6 per institute entered 2 events. IIM A's single-event delegates split 3:2:1 across CC, FQ, SW. IIM C > IIM A > IIM B > IIM L. How many delegates did IIM A send?",
     "options": [],
     "answer": "18",
@@ -3679,7 +3679,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-02",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q2] In the B-school delegate caselet (IIM A = 18 total, 6 in two events, single-event split 3:2:1 across CC, FQ, SW), how many IIM A delegates entered ONLY Case Clash?",
     "options": [
       "3",
@@ -3694,7 +3694,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-03",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q3 TITA] Across all four IIMs (65 delegates total, 6 two-event delegates per institute), how many total delegates entered ONLY ONE event?",
     "options": [],
     "answer": "41",
@@ -3704,7 +3704,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-04",
     "section": "DILR",
     "topic": "DILR • Set Theory Optimization",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 1 • Q4] What is the ratio of single-event delegates from IIM C (20 total) to single-event delegates from IIM L (12 total)?",
     "options": [
       "5 : 3",
@@ -3719,7 +3719,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-05",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q1 TITA] Six teams play a single round-robin football league (Win = 3, Draw = 1, Loss = 0). Total points awarded across all 15 matches was 41. How many matches ended in a draw?",
     "options": [],
     "answer": "4",
@@ -3729,7 +3729,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-06",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q2 TITA] In the 6-team round-robin league above (41 total points, 4 draws), how many matches ended with a decisive winner?",
     "options": [],
     "answer": "11",
@@ -3739,7 +3739,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-07",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q3] If the top team in the 6-team round-robin league won all its matches, how many points did it finish with?",
     "options": [
       "12",
@@ -3754,7 +3754,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-08",
     "section": "DILR",
     "topic": "DILR • Round-Robin Tournament",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 2 • Q4] What is the minimum possible points scored by the last-placed team in a 6-team round-robin where the top team won all 5 matches?",
     "options": [
       "0",
@@ -3769,7 +3769,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-09",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q1 TITA] In a cohort of 100 MBA aspirants, 70 solve QA daily, 65 solve DILR daily, and 60 solve VARC daily (everyone solves >=1). Maximum aspirants solving all 3 sections?",
     "options": [],
     "answer": "47",
@@ -3779,7 +3779,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-10",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q2 TITA] In the 100-aspirant cohort above (70 QA, 65 DILR, 60 VARC, none = 0), minimum aspirants solving all 3 sections?",
     "options": [],
     "answer": "0",
@@ -3789,7 +3789,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-11",
     "section": "DILR",
     "topic": "DILR • Venn Maxima-Minima",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[DILR Set 3 • Q3] When the number solving all 3 sections is maximized (47), how many aspirants solve EXACTLY ONE section?",
     "options": [
       "5",
@@ -3804,7 +3804,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-12",
     "section": "DILR",
     "topic": "DILR • Matrix Arrangement",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Five analysts (P, Q, R, S, T) from Mumbai, Delhi, Bengaluru, Chennai, and Kolkata specialize in FinTech, Healthcare, SaaS, Energy, and Retail. P is from Mumbai (not FinTech); Bengaluru is SaaS; R is Healthcare (not Delhi/Kolkata). Which city is R from?",
     "options": [
       "Mumbai",
@@ -3819,7 +3819,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-13",
     "section": "DILR",
     "topic": "DILR • Grid Shortest Paths",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] How many shortest grid paths exist from (0, 0) to (4, 3) passing through checkpoint (2, 1)?",
     "options": [],
     "answer": "18",
@@ -3829,7 +3829,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-14",
     "section": "DILR",
     "topic": "DILR • Knockout Seeding",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] In a 64-player single-elimination knockout tournament, how many total matches are played to crown the champion?",
     "options": [],
     "answer": "63",
@@ -3839,7 +3839,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-15",
     "section": "DILR",
     "topic": "DILR • Data Interpretation",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A firm's revenue grows from Rs. 240 Cr to Rs. 280 Cr while operating margin drops from 25% to 22.5%. Change in operating profit?",
     "options": [
       "+Rs. 1.5 Cr",
@@ -3854,7 +3854,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-16",
     "section": "DILR",
     "topic": "DILR • Market Share DI",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "A company's market share falls from 25% to 20% while total industry size expands by 40%. Percentage change in company revenue?",
     "options": [
       "-10%",
@@ -3869,7 +3869,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-17",
     "section": "DILR",
     "topic": "DILR • 4-Exam Venn",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] 200 analysts took 4 exams. Every analyst passed >=2 exams; 80 passed exactly 2, and 70 passed exactly 3. Total exam passes across all 200 analysts?",
     "options": [],
     "answer": "570",
@@ -3879,7 +3879,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-18",
     "section": "DILR",
     "topic": "DILR • 3-Language Venn",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] In a club of 150 members, 90 speak English, 80 Hindi, and 70 Tamil (everyone >=1). If 40 speak all 3, how many speak ONLY ONE language?",
     "options": [],
     "answer": "100",
@@ -3889,7 +3889,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-19",
     "section": "DILR",
     "topic": "DILR • League Scoring",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "[TITA] Five teams play a single round-robin tournament (Win = 2, Draw = 1, Loss = 0). Sum of points of all 5 teams?",
     "options": [],
     "answer": "20",
@@ -3899,7 +3899,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-DILR-20",
     "section": "DILR",
     "topic": "DILR • Fraction Comparison",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Which of the following fractions is the largest?",
     "options": [
       "417 / 628",
@@ -3913,8 +3913,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-01",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: How does structural realism resolve the tension between scientific realism and the pessimistic meta-induction?",
     "options": [
       "By denying that historical theories such as caloric fluid ever achieved empirical success.",
@@ -3928,8 +3928,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-02",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: Which of the following would most weaken the anti-realist's 'pessimistic meta-induction' as presented in the passage?",
     "options": [
       "Demonstrating that caloric fluid equations remain mathematically isomorphic to modern thermodynamic heat-transfer equations.",
@@ -3943,8 +3943,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-03",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Philosophy of Science",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Philosophy of Science",
+    "exam": "CAT",
     "prompt": "Passage: Scientific realism asserts that mature theories describe a mind-independent reality and that unobservable entities—such as quarks, gravitational waves, and electromagnetic fields—genuinely exist. Anti-realists counter with the 'pessimistic meta-induction': because historically successful theories like caloric fluid and luminiferous ether were eventually discarded, current theories will likely meet the same ontological fate. Structural realists propose a middle path, contending that what survives across scientific revolutions is not the ontology of unobservable objects, but the mathematical and relational structure captured by the equations.\n\nQuestion: According to the passage, an anti-realist would most likely agree with which of the following statements?",
     "options": [
       "Empirical predictive success is insufficient to guarantee that a theory's postulated unobservable entities actually exist.",
@@ -3958,8 +3958,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-04",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: The primary purpose of the passage is to:",
     "options": [
       "Advocate for the immediate abolition of central bank forward guidance.",
@@ -3973,8 +3973,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-05",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: It can be inferred from the passage that future rate-normalization cycles become constrained because:",
     "options": [
       "Commercial banks refuse to purchase short-term sovereign debt.",
@@ -3988,8 +3988,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-06",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Behavioral Macroeconomics",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Behavioral Macroeconomics",
+    "exam": "CAT",
     "prompt": "Passage: While central banks have increasingly relied on explicit forward guidance to anchor long-term bond yields during liquidity traps, prolonged commitments to near-zero interest rates can inadvertently incentivize excessive maturity mismatch and leverage among non-bank financial intermediaries. Consequently, monetary policymakers face an intertemporal trade-off: aggressive yield-curve suppression accelerates near-term output recovery but sows systemic fragility that constrains future rate-normalization cycles.\n\nQuestion: Which of the following best describes the author's tone toward explicit forward guidance?",
     "options": [
       "Dogmatically dismissive",
@@ -4003,8 +4003,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-07",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: The author uses the phrase 'biological market' primarily to emphasize that:",
     "options": [
       "Plants and soil microbes exchange resources based on conditional reciprocity and partner sanctions rather than unconditional altruism.",
@@ -4018,8 +4018,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-08",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: Which of the following, if discovered, would most challenge the author's characterization of plant-fungal interactions?",
     "options": [
       "Host plants continue supplying identical carbon rations to fungal strains that cease delivering phosphorus.",
@@ -4033,8 +4033,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-09",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Evolutionary Ecology & Mutualism",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Evolutionary Ecology & Mutualism",
+    "exam": "CAT",
     "prompt": "Passage: Classical evolutionary theory long framed interspecies interactions predominantly through zero-sum competition and predator-prey arms races. Yet genomic sequencing of rhizosphere microbiomes demonstrates that terrestrial plants routinely divert up to twenty percent of their photosynthetically fixed carbon to root exudates that nourish mycorrhizal fungi and nitrogen-fixing bacteria. Far from altruistic self-sacrifice, this metabolic expenditure functions as a biological market: host plants selectively allocate carbon to nutrient-delivering fungal strains while sanctioning non-cooperative 'cheater' strains that hoard phosphorus.\n\nQuestion: According to the passage, classical evolutionary theory differed from modern microbiome research in that classical theory:",
     "options": [
       "Overestimated the prevalence of zero-sum competition relative to reciprocal mutualism.",
@@ -4048,8 +4048,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-10",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: The critics' objection to the aspirin analogy rests primarily on the claim that:",
     "options": [
       "Human subjects strategically alter their behavior in response to predictive algorithms, destabilizing the underlying statistical patterns.",
@@ -4063,8 +4063,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-11",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Instrumentalists invoke the history of aspirin in order to:",
     "options": [
       "Prove that causal interpretability is not a prerequisite for beneficial real-world deployment.",
@@ -4078,8 +4078,8 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   {
     "id": "CAT26-VARC-12",
     "section": "VARC",
-    "topic": "CAT 2026 RC • Epistemology of Artificial Intelligence",
-    "exam": "CAT 2026",
+    "topic": "CAT RC • Epistemology of Artificial Intelligence",
+    "exam": "CAT",
     "prompt": "Passage: Contemporary large neural networks achieve superhuman accuracy across narrow diagnostic and predictive benchmarks while remaining opaque to human causal inspection. Defenders of instrumentalism argue that predictive reliability suffices for high-stakes deployment, likening neural architectures to clinical pharmacology, where aspirin was prescribed effectively decades before its prostaglandin-inhibition mechanism was elucidated. Critics respond that unlike stable biochemical pathways, socio-technical environments exhibit reflexive drift: when human agents adapt their behavior to game an opaque algorithm, historical statistical correlations collapse without warning.\n\nQuestion: Which of the following scenarios best exemplifies 'reflexive drift' as defined in the passage?",
     "options": [
       "Loan applicants artificially alter superficial spending habits once they infer an opaque credit-scoring model's proxy variables.",
@@ -4094,7 +4094,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-13",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Yet this very abundance of granular behavioral data has paradoxically made causal inference harder rather than easier for empirical economists.\n2. Over the past decade, digital platforms have generated unprecedented real-time records of consumer choices, search queries, and price sensitivity.\n3. Without exogenous shocks or randomized field experiments, observational correlations in massive datasets routinely conflate genuine preference shifts with algorithmic nudges.\n4. Consequently, modern econometricians increasingly pair machine-learning prediction tools with quasi-experimental designs to isolate true causal effects.",
     "options": [],
     "answer": "2134",
@@ -4104,7 +4104,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-14",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. This architectural shift enabled medieval gothic cathedrals to soar to unprecedented heights while flooding their naves with stained-glass light.\n2. Traditional Romanesque churches relied on massive, thick stone walls to bear the outward lateral thrust of heavy vaulted roofs.\n3. By transferring roof loads outward across exterior stone arches to detached piers, the flying buttress liberated interior walls from structural duty.\n4. Because piercing those load-bearing walls with large windows risked catastrophic collapse, Romanesque interiors remained dimly lit.",
     "options": [],
     "answer": "2431",
@@ -4114,7 +4114,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-15",
     "section": "VARC",
     "topic": "TITA Parajumble (+3 / 0 • Type 4-Digit Order)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. When firms compete primarily on visible short-term metrics, managerial incentives tilt toward underinvesting in long-horizon R&D.\n2. Quarterly earnings benchmarks were originally championed as an antidote to managerial complacency and opaque corporate governance.\n3. Over time, however, intense capital-market scrutiny transformed reporting thresholds from diagnostic gauges into binding operational targets.\n4. Restoring multi-year innovation capacity therefore requires insulating core research budgets from transient quarterly fluctuations.",
     "options": [],
     "answer": "2314",
@@ -4124,7 +4124,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-16",
     "section": "VARC",
     "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Early urban planners viewed street-level congestion purely as an engineering bottleneck solvable by widening arterial roads.\n2. Subsequent empirical studies revealed the phenomenon of induced demand, wherein expanded road capacity rapidly attracts latent vehicular traffic.\n3. High-speed intercity rail networks have significantly reduced domestic aviation emissions across Western Europe.\n4. As a result, expanding highway lanes frequently restores peak-hour gridlock within a few years of construction.\n5. Contemporary mobility policy therefore prioritizes congestion pricing and transit-oriented density over unchecked road expansion.",
     "options": [],
     "answer": "3",
@@ -4134,7 +4134,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-17",
     "section": "VARC",
     "topic": "TITA Odd-One-Out (+3 / 0 • Type Digit 1–5)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "1. Deep-sea hydrothermal vents support thriving chemosynthetic ecosystems completely independent of solar photosynthesis.\n2. Specialized bacteria oxidize hydrogen sulfide dissolved in superheated vent plumes to synthesize organic carbon compounds.\n3. Coral bleaching events in shallow tropical reefs are triggered primarily by anomalously warm ocean surface temperatures.\n4. Giant tube worms and blind vent crabs rely symbiotically on these chemosynthetic microbes as the base of their food web.\n5. Astrobiologists study these abyssal communities as terrestrial analogues for potential life beneath the icy crust of Europa.",
     "options": [],
     "answer": "3",
@@ -4144,7 +4144,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-18",
     "section": "VARC",
     "topic": "TITA Para-Completion (+3 / 0 • Type Position Digit 1–4)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Target Sentence: 'Rather than erasing regional dialects, broadcast media initially heightened linguistic self-awareness by juxtaposing standardized accents against local speech.'\n1. [Blank 1] Early twentieth-century linguists predicted that national radio networks would rapidly homogenize spoken English within two generations.\n2. [Blank 2] Empirical dialect surveys conducted fifty years later, however, uncovered resilient phonological divergence across major metropolitan areas.\n3. [Blank 3] Speakers continued using local vowels as markers of community solidarity even while effortlessly comprehending national broadcasts.\n4. [Blank 4] Code-switching between formal broadcast registers and vernacular speech thus became a routine communicative skill.",
     "options": [],
     "answer": "2",
@@ -4154,7 +4154,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-19",
     "section": "VARC",
     "topic": "Para-Summary (+3 / -1 MCQ)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Although algorithmic credit scoring expands formal loan access to thin-file borrowers by analyzing non-traditional digital footprints, opaque machine-learning models risk encoding historical socioeconomic proxies that are difficult for applicants to audit or contest.",
     "options": [
       "Algorithmic credit scoring should be banned because machine-learning models always discriminate against thin-file borrowers.",
@@ -4169,7 +4169,7 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
     "id": "CAT26-VARC-20",
     "section": "VARC",
     "topic": "Para-Summary (+3 / -1 MCQ)",
-    "exam": "CAT 2026",
+    "exam": "CAT",
     "prompt": "Historians of cartography note that early modern world maps were never merely neutral geographic inventories; by centering imperial capitals, exaggerating maritime territories, and adorning uncharted regions with allegorical emblems, mapmakers visually legitimized geopolitical claims for domestic and rival audiences.",
     "options": [
       "Early modern world maps were scientifically inaccurate because mapmakers lacked modern satellite telemetry.",
@@ -4182,18 +4182,18 @@ window.IPM_TAGGED_MOCK_QUESTIONS = [
   }
 ];
 
-window.IPM_TAGGED_MOCK_QUESTIONS = (window.IPM_TAGGED_MOCK_QUESTIONS || []).concat([{"id": "CAT26-VARC-21", "section": "VARC", "topic": "VARC \u2022 RC Cognitive Science", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Predictive processing models of perception propose that the brain is not a passive receiver of sensory inputs, but a hierarchical Bayesian inference engine that continuously generates top-down predictions and updates them only when bottom-up sensory signals register prediction errors.\n\nQuestion: Under predictive processing, sensory receptors primarily transmit:", "options": ["Complete, unfiltered replicas of the external visual field.", "Discrepancies between expected sensory states and actual incoming signals.", "Motor commands directly to peripheral muscle fibers.", "Long-term episodic memories stored in the hippocampus."], "answer": 1, "explanation": "Predictive processing transmits bottom-up prediction errors (discrepancies) rather than redundant raw signals."}, {"id": "CAT26-VARC-22", "section": "VARC", "topic": "VARC \u2022 RC Institutional Economics", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Sovereign wealth funds established by commodity-exporting nations serve a dual macroeconomic function: stabilizing fiscal budgets against volatile spot-price cycles and converting exhaustible subterranean resource rents into diversified intergenerational financial capital.\n\nQuestion: Which policy failure would most directly undermine the second function described in the passage?", "options": ["Investing commodity surpluses into globally diversified equity and infrastructure portfolios.", "Liquidating fund principal during commodity booms to finance recurring current-account subsidies.", "Publishing audited quarterly asset-allocation disclosures.", "Enforcing counter-cyclical fiscal withdrawal rules during oil price slumps."], "answer": 1, "explanation": "Consuming principal during booms destroys intergenerational capital accumulation."}, {"id": "CAT26-VARC-23", "section": "VARC", "topic": "VARC \u2022 RC Historiography", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Microhistorians examine seemingly marginal archival episodes\u2014such as a sixteenth-century village miller's inquisitorial trial\u2014not out of antiquarian curiosity, but because anomalous edge cases expose the unspoken mentalit\u00e9s and social fault lines that grand macro-historical narratives smooth over.\n\nQuestion: Microhistorians study anomalous local episodes primarily in order to:", "options": ["Replace chronological dating with literary fiction.", "Uncover underlying cultural assumptions obscured by broad macro-historical generalizations.", "Prove that macroeconomic forces have no influence on rural communities.", "Argue that archival records from the sixteenth century are entirely fabricated."], "answer": 1, "explanation": "Edge cases reveal unspoken mentalit\u00e9s and fault lines smoothed over by grand narratives."}, {"id": "CAT26-VARC-24", "section": "VARC", "topic": "VARC \u2022 RC Climate Finance", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Passage: Carbon border adjustment mechanisms aim to prevent 'carbon leakage'\u2014the relocation of emissions-intensive manufacturing to jurisdictions with lax climate regulations\u2014by levying tariffs proportional to the embedded carbon intensity of imported industrial goods.\n\nQuestion: A carbon border adjustment mechanism would be redundant if:", "options": ["Domestic manufacturers face higher electricity costs than foreign competitors.", "All major trading partners enforced equivalent carbon pricing across emissions-intensive sectors.", "Imported steel and cement accounted for a small share of domestic construction.", "Developing economies relied exclusively on hydroelectric power."], "answer": 1, "explanation": "Equivalent global carbon pricing eliminates regulatory arbitrage and carbon leakage."}, {"id": "CAT26-VARC-25", "section": "VARC", "topic": "VARC \u2022 TITA Parajumble", "exam": "CAT 2026", "q_type": "SA_NUMERIC", "prompt": "[TITA Parajumble] Arrange sentences 1\u20134 into a coherent paragraph (type 4 digits):\n1. Consequently, central banks now monitor non-bank liquidity ratios alongside traditional commercial bank reserves.\n2. Over the past fifteen years, post-crisis capital regulations shifted corporate credit origination from regulated commercial banks toward private credit funds and money-market vehicles.\n3. Yet because these shadow-banking intermediaries rely on short-term wholesale funding without direct central-bank lender-of-last-resort access, sudden redemptions can trigger fire-sale spirals.\n4. This migration reduced balance-sheet leverage within the core banking sector.", "options": [], "answer": "2431", "explanation": "2 introduces the shift to non-bank credit; 4 notes the positive effect ('This migration...'); 3 pivots ('Yet...') to redemption fire-sale risk; 1 concludes ('Consequently...') -> 2431."}, {"id": "CAT26-VARC-26", "section": "VARC", "topic": "VARC \u2022 TITA Odd-One-Out", "exam": "CAT 2026", "q_type": "SA_NUMERIC", "prompt": "[TITA Odd-One-Out] Identify the sentence (1\u20135) that does NOT belong:\n1. Bioluminescent marine organisms generate cold light through the enzymatic oxidation of luciferin catalyzed by luciferase.\n2. Deep-sea anglerfish deploy bioluminescent lures to attract prey in the aphotic zone.\n3. Offshore wind turbines require subsea high-voltage direct-current cables to transmit electricity to coastal grids.\n4. Certain dinoflagellates emit brief flashes of blue light when mechanically disturbed by predators, creating a 'burglar alarm' effect.\n5. Geneticists have adapted luciferase reporter genes to track cellular gene expression in real time.", "options": [], "answer": "3", "explanation": "Sentences 1, 2, 4, and 5 discuss bioluminescence and luciferase; 3 discusses offshore wind transmission cables -> 3."}, {"id": "CAT26-VARC-27", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Summary Prompt: While open-source software ecosystems accelerate collaborative innovation by allowing global developers to audit and extend shared codebases, critical infrastructure projects frequently suffer from maintenance bottlenecks when core libraries rely on unpaid volunteer maintainers.", "options": ["Open-source software is inherently less secure than proprietary enterprise software.", "Open-source ecosystems foster rapid collaborative innovation, yet critical shared libraries face sustainability risks due to under-resourced volunteer maintenance.", "Volunteer developers prefer building new features rather than auditing existing codebases.", "Proprietary software companies should be legally required to fund open-source maintainers."], "answer": 1, "explanation": "Option (B) captures both collaborative innovation and volunteer maintenance bottlenecks."}, {"id": "CAT26-VARC-28", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT 2026", "q_type": "MCQ", "prompt": "Summary Prompt: Behavioral nudges such as automatic retirement-plan enrollment substantially raise participation rates without restricting freedom of choice, yet critics warn that default architectures can subtly steer individuals toward suboptimal contribution rates if inertia prevents active portfolio review.", "options": ["Automatic enrollment should be abolished because it eliminates employee freedom of choice.", "Default-based behavioral nudges effectively boost participation while preserving choice, though passive inertia may lock participants into suboptimal default settings.", "Most employees actively rebalance their retirement portfolios every quarter.", "Behavioral economics has disproven the existence of consumer inertia in financial planning."], "answer": 1, "explanation": "Option (B) synthesizes the participation gain alongside the inertia risk of suboptimal defaults."}]);
+window.IPM_TAGGED_MOCK_QUESTIONS = (window.IPM_TAGGED_MOCK_QUESTIONS || []).concat([{"id": "CAT26-VARC-21", "section": "VARC", "topic": "VARC \u2022 RC Cognitive Science", "exam": "CAT", "q_type": "MCQ", "prompt": "Passage: Predictive processing models of perception propose that the brain is not a passive receiver of sensory inputs, but a hierarchical Bayesian inference engine that continuously generates top-down predictions and updates them only when bottom-up sensory signals register prediction errors.\n\nQuestion: Under predictive processing, sensory receptors primarily transmit:", "options": ["Complete, unfiltered replicas of the external visual field.", "Discrepancies between expected sensory states and actual incoming signals.", "Motor commands directly to peripheral muscle fibers.", "Long-term episodic memories stored in the hippocampus."], "answer": 1, "explanation": "Predictive processing transmits bottom-up prediction errors (discrepancies) rather than redundant raw signals."}, {"id": "CAT26-VARC-22", "section": "VARC", "topic": "VARC \u2022 RC Institutional Economics", "exam": "CAT", "q_type": "MCQ", "prompt": "Passage: Sovereign wealth funds established by commodity-exporting nations serve a dual macroeconomic function: stabilizing fiscal budgets against volatile spot-price cycles and converting exhaustible subterranean resource rents into diversified intergenerational financial capital.\n\nQuestion: Which policy failure would most directly undermine the second function described in the passage?", "options": ["Investing commodity surpluses into globally diversified equity and infrastructure portfolios.", "Liquidating fund principal during commodity booms to finance recurring current-account subsidies.", "Publishing audited quarterly asset-allocation disclosures.", "Enforcing counter-cyclical fiscal withdrawal rules during oil price slumps."], "answer": 1, "explanation": "Consuming principal during booms destroys intergenerational capital accumulation."}, {"id": "CAT26-VARC-23", "section": "VARC", "topic": "VARC \u2022 RC Historiography", "exam": "CAT", "q_type": "MCQ", "prompt": "Passage: Microhistorians examine seemingly marginal archival episodes\u2014such as a sixteenth-century village miller's inquisitorial trial\u2014not out of antiquarian curiosity, but because anomalous edge cases expose the unspoken mentalit\u00e9s and social fault lines that grand macro-historical narratives smooth over.\n\nQuestion: Microhistorians study anomalous local episodes primarily in order to:", "options": ["Replace chronological dating with literary fiction.", "Uncover underlying cultural assumptions obscured by broad macro-historical generalizations.", "Prove that macroeconomic forces have no influence on rural communities.", "Argue that archival records from the sixteenth century are entirely fabricated."], "answer": 1, "explanation": "Edge cases reveal unspoken mentalit\u00e9s and fault lines smoothed over by grand narratives."}, {"id": "CAT26-VARC-24", "section": "VARC", "topic": "VARC \u2022 RC Climate Finance", "exam": "CAT", "q_type": "MCQ", "prompt": "Passage: Carbon border adjustment mechanisms aim to prevent 'carbon leakage'\u2014the relocation of emissions-intensive manufacturing to jurisdictions with lax climate regulations\u2014by levying tariffs proportional to the embedded carbon intensity of imported industrial goods.\n\nQuestion: A carbon border adjustment mechanism would be redundant if:", "options": ["Domestic manufacturers face higher electricity costs than foreign competitors.", "All major trading partners enforced equivalent carbon pricing across emissions-intensive sectors.", "Imported steel and cement accounted for a small share of domestic construction.", "Developing economies relied exclusively on hydroelectric power."], "answer": 1, "explanation": "Equivalent global carbon pricing eliminates regulatory arbitrage and carbon leakage."}, {"id": "CAT26-VARC-25", "section": "VARC", "topic": "VARC \u2022 TITA Parajumble", "exam": "CAT", "q_type": "SA_NUMERIC", "prompt": "[TITA Parajumble] Arrange sentences 1\u20134 into a coherent paragraph (type 4 digits):\n1. Consequently, central banks now monitor non-bank liquidity ratios alongside traditional commercial bank reserves.\n2. Over the past fifteen years, post-crisis capital regulations shifted corporate credit origination from regulated commercial banks toward private credit funds and money-market vehicles.\n3. Yet because these shadow-banking intermediaries rely on short-term wholesale funding without direct central-bank lender-of-last-resort access, sudden redemptions can trigger fire-sale spirals.\n4. This migration reduced balance-sheet leverage within the core banking sector.", "options": [], "answer": "2431", "explanation": "2 introduces the shift to non-bank credit; 4 notes the positive effect ('This migration...'); 3 pivots ('Yet...') to redemption fire-sale risk; 1 concludes ('Consequently...') -> 2431."}, {"id": "CAT26-VARC-26", "section": "VARC", "topic": "VARC \u2022 TITA Odd-One-Out", "exam": "CAT", "q_type": "SA_NUMERIC", "prompt": "[TITA Odd-One-Out] Identify the sentence (1\u20135) that does NOT belong:\n1. Bioluminescent marine organisms generate cold light through the enzymatic oxidation of luciferin catalyzed by luciferase.\n2. Deep-sea anglerfish deploy bioluminescent lures to attract prey in the aphotic zone.\n3. Offshore wind turbines require subsea high-voltage direct-current cables to transmit electricity to coastal grids.\n4. Certain dinoflagellates emit brief flashes of blue light when mechanically disturbed by predators, creating a 'burglar alarm' effect.\n5. Geneticists have adapted luciferase reporter genes to track cellular gene expression in real time.", "options": [], "answer": "3", "explanation": "Sentences 1, 2, 4, and 5 discuss bioluminescence and luciferase; 3 discusses offshore wind transmission cables -> 3."}, {"id": "CAT26-VARC-27", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT", "q_type": "MCQ", "prompt": "Summary Prompt: While open-source software ecosystems accelerate collaborative innovation by allowing global developers to audit and extend shared codebases, critical infrastructure projects frequently suffer from maintenance bottlenecks when core libraries rely on unpaid volunteer maintainers.", "options": ["Open-source software is inherently less secure than proprietary enterprise software.", "Open-source ecosystems foster rapid collaborative innovation, yet critical shared libraries face sustainability risks due to under-resourced volunteer maintenance.", "Volunteer developers prefer building new features rather than auditing existing codebases.", "Proprietary software companies should be legally required to fund open-source maintainers."], "answer": 1, "explanation": "Option (B) captures both collaborative innovation and volunteer maintenance bottlenecks."}, {"id": "CAT26-VARC-28", "section": "VARC", "topic": "VARC \u2022 Para-Summary", "exam": "CAT", "q_type": "MCQ", "prompt": "Summary Prompt: Behavioral nudges such as automatic retirement-plan enrollment substantially raise participation rates without restricting freedom of choice, yet critics warn that default architectures can subtly steer individuals toward suboptimal contribution rates if inertia prevents active portfolio review.", "options": ["Automatic enrollment should be abolished because it eliminates employee freedom of choice.", "Default-based behavioral nudges effectively boost participation while preserving choice, though passive inertia may lock participants into suboptimal default settings.", "Most employees actively rebalance their retirement portfolios every quarter.", "Behavioral economics has disproven the existence of consumer inertia in financial planning."], "answer": 1, "explanation": "Option (B) synthesizes the participation gain alongside the inertia risk of suboptimal defaults."}]);
 
 
 // ==============================================================================
-// ENRICHED 18-TRAP CAT 2026 NEGATIVE-MARKING CLINIC (6 QA + 6 DILR + 6 VARC)
+// ENRICHED 18-TRAP CAT NEGATIVE-MARKING CLINIC (6 QA + 6 DILR + 6 VARC)
 // ==============================================================================
 window.IPM_TRAPS_CLINIC = [
   // --- 6 CAT QUANTITATIVE APTITUDE TRAPS ---
   {
     id: "CAT-QA-TRAP-01",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • Algebra",
+    examTag: "CAT QA • Algebra",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Squaring |f(x)| = g(x) Without Enforcing RHS >= 0",
     trapScenario: "Solving |2x - 7| = x - 5 by squaring both sides to get 3x² - 18x + 24 = 0 ⇒ x = 2 or x = 4.",
@@ -4209,7 +4209,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-QA-TRAP-02",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • Arithmetic",
+    examTag: "CAT QA • Arithmetic",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Adding Removed Volumes Linearly in Successive Replacement",
     trapScenario: "From 60L pure milk, 6L, 10L, and 12L are sequentially replaced with water; subtracting (6+10+12)/60 from 100%.",
@@ -4225,7 +4225,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-QA-TRAP-03",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • Inequalities",
+    examTag: "CAT QA • Inequalities",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Applying AM >= GM to Negative or Sign-Changing Variables",
     trapScenario: "Concluding x + 9/x ≥ 6 for ALL non-zero real x via AM ≥ GM.",
@@ -4241,7 +4241,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-QA-TRAP-04",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • Number System",
+    examTag: "CAT QA • Number System",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Dividing Modular Congruences Without Dividing the Modulus",
     trapScenario: "Reducing 6x ≡ 12 (mod 18) directly to x ≡ 2 (mod 18).",
@@ -4257,7 +4257,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-QA-TRAP-05",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • TSD",
+    examTag: "CAT QA • TSD",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Using Unreduced Speeds in Circular Track Meeting Counts",
     trapScenario: "Two runners at 6 m/s and 9 m/s in opposite directions meet at 6 + 9 = 15 distinct points.",
@@ -4273,7 +4273,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-QA-TRAP-06",
     domain: "CAT Quantitative Aptitude",
-    examTag: "CAT 2026 QA • Modern Math",
+    examTag: "CAT QA • Modern Math",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Applying Positive-Integer Stars & Bars to Non-Negative Variables",
     trapScenario: "Using C(n - 1, r - 1) when variables allow zero (x_i ≥ 0).",
@@ -4291,7 +4291,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-01",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • Set Theory",
+    examTag: "CAT DILR • Set Theory",
     penalty: "-4 Marks on Cascading Set",
     title: "Confusing 'At Least 2 Sets' with 'Exactly 2 Sets'",
     trapScenario: "100 students: 70 QA, 65 DILR, 60 VARC (everyone ≥1). Taking min(70, 65, 60) = 60 as max all-three.",
@@ -4307,7 +4307,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-02",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • Tournaments",
+    examTag: "CAT DILR • Tournaments",
     penalty: "-4 Marks on Cascading Set",
     title: "Assuming Equal-Points Teams Have Identical W-D-L Records",
     trapScenario: "Assuming two teams with 4 points in a 5-team round-robin both went 1W-1D-2L.",
@@ -4323,7 +4323,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-03",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • DI Tables",
+    examTag: "CAT DILR • DI Tables",
     penalty: "-1 Mark in MCQ",
     title: "Confusing Market Share % Change with Absolute Revenue Growth",
     trapScenario: "Assuming a firm whose market share fell from 25% to 20% suffered a revenue decline.",
@@ -4339,7 +4339,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-04",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • Arrangements",
+    examTag: "CAT DILR • Arrangements",
     penalty: "-4 Marks on Cascading Set",
     title: "Reversing Left/Right Orientation in Outward-Facing Circles",
     trapScenario: "Treating 'immediate left' as clockwise when people face AWAY from the center.",
@@ -4355,7 +4355,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-05",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • Data Sufficiency",
+    examTag: "CAT DILR • Data Sufficiency",
     penalty: "-1 Mark in MCQ",
     title: "Accepting 'Yes/No' Ambiguity or Quadratic Dual Roots as Sufficient",
     trapScenario: "Concluding x² = 25 is sufficient to find the value of x.",
@@ -4371,7 +4371,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-DILR-TRAP-06",
     domain: "CAT DILR",
-    examTag: "CAT 2026 DILR • Quant-Based LR",
+    examTag: "CAT DILR • Quant-Based LR",
     penalty: "-1 Mark in MCQ",
     title: "Overlooking Implicit Distinctness in Integer Grid Clues",
     trapScenario: "Assigning duplicate scores {10, 10, 15} when the prompt specifies 'distinct integer scores'.",
@@ -4389,7 +4389,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-01",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • RC Inference",
+    examTag: "CAT VARC • RC Inference",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Choosing Extreme 'Always / Never / Solely' Distractors in RC",
     trapScenario: "Selecting an option stating 'X is the sole cause of Y' when the passage says 'X contributes to Y'.",
@@ -4405,7 +4405,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-02",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • TITA Parajumble",
+    examTag: "CAT VARC • TITA Parajumble",
     penalty: "0 Penalty (Missed +3 Opportunity)",
     title: "Placing Pronoun/Demonstrative Sentences ('This shift...') Before Their Antecedent",
     trapScenario: "Starting a parajumble with 'This architectural shift enabled...' because it sounds emphatic.",
@@ -4421,7 +4421,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-03",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • Para-Summary",
+    examTag: "CAT VARC • Para-Summary",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Picking a One-Sided Summary That Drops the Author's 'However / Yet' Pivot",
     trapScenario: "Selecting a summary praising algorithmic credit scoring while ignoring the second half's warning on opaque bias.",
@@ -4437,7 +4437,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-04",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • TITA Odd-One-Out",
+    examTag: "CAT VARC • TITA Odd-One-Out",
     penalty: "0 Penalty (Missed +3 Opportunity)",
     title: "Falling for Shared-Keyword Trap Sentences in Odd-One-Out",
     trapScenario: "Keeping a sentence about 'offshore wind subsea cables' in a paragraph about 'bioluminescent marine organisms' just because both mention 'marine/ocean'.",
@@ -4453,7 +4453,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-05",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • Critical Reasoning",
+    examTag: "CAT VARC • Critical Reasoning",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Confusing Necessary vs. Sufficient Conditions in Weaken/Strengthen",
     trapScenario: "Concluding that because all top fund managers hold quant degrees, a quant degree guarantees top performance.",
@@ -4469,7 +4469,7 @@ window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-VARC-TRAP-06",
     domain: "VARC (RC & TITA)",
-    examTag: "CAT 2026 VARC • RC Tone & Attitude",
+    examTag: "CAT VARC • RC Tone & Attitude",
     penalty: "-1 Mark in MCQ (4-Mark Swing)",
     title: "Misreading 'Analytically Cautionary' Criticism as 'Cynical / Dismissive'",
     trapScenario: "Labeling an economist who warns about forward-guidance leverage risks as 'cynical' or 'hostile'.",
