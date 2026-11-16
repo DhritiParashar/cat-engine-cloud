@@ -70,9 +70,7 @@
     document.querySelectorAll("button").forEach(b => {
       const txt = (b.textContent || "").trim();
       if (txt.startsWith("6.") && txt.includes("Forecaster")) {
-        b.textContent = mode === "XAT"
-          ? "6. XAT Score & XLRI Cutoff Forecaster"
-          : (mode === "NMAT" ? "6. NMAT & SNAP Score Forecaster" : "6. CAT Score & Percentile Forecaster");
+        b.textContent = "6. Score & Percentile Forecaster";
       }
     });
 
