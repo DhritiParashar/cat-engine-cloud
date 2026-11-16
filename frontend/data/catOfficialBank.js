@@ -1340,7 +1340,7 @@ window.IPM_DILR = [
 ];
 window.getDilrModules = function () { return window.IPM_DILR; };
 
-// 2. TAB 4: PURGE IPMAT/JIPMAT TAGS FROM TRAP DOCTOR & AI DOUBTS
+// 2. TAB 4: PURGE CAT 2026 & MBA/OMETs TAGS FROM TRAP DOCTOR & AI DOUBTS
 window.IPM_TRAPS_CLINIC = [
   {
     id: "CAT-TRAP-01",
