@@ -14,7 +14,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2",
     "explanation": "Requires x >= 2 => |x^2 - 7x + 10| = 0 => x = 2 or 5 (2 solutions).",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -35,7 +35,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Set (3x)/2 = (4y)/3 = 20/5 = 4 => x = 8/3, y = 3 => (64/9)*27 = 192.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -51,7 +51,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "22",
     "explanation": "P(x) - x^2 = (x - 1)(x - 2)(x - 3) => P(4) = 16 + 6 = 22.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -72,7 +72,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "f(2) + 2f(-1) = 7 and f(-1) + 2f(2) = 4 => 3f(2) = 1 => f(2) = 1/3.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -88,7 +88,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "19",
     "explanation": "Minimum occurs on median interval [4, 9]: at x = 5, 4 + 1 + 4 + 10 = 19.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -109,7 +109,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "(7/2)^2 - 2(2) = 49/4 - 4 = 8.25.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -125,7 +125,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "6",
     "explanation": "(x + 1) + 9/(x + 1) >= 2*sqrt(9) = 6.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -141,7 +141,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "28",
     "explanation": "Equivalent to max(|x|, |y|, |x + y|) = 5 => 6 + 6 + 8 + 8 = 28 pairs.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -162,7 +162,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "(54/60)*(50/60)*(48/60) = 3/5 = 60%.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -183,7 +183,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "1.40 * 0.80 * (1000/800) = 1.40 => 40%.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -199,7 +199,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "12100",
     "explanation": "X/1.1 + X/1.21 = 21,000 => X = Rs. 12,100.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -220,7 +220,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "P * 0.01 * 3.1 = 620 => P = Rs. 20,000.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -241,7 +241,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "Solid pulp = 12 kg = 75% of dry weight => 16 kg.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -257,7 +257,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "69",
     "explanation": "90 -> 90*(0.8)+20 = 92 -> 92*(0.75) = 69%.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -278,7 +278,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "3",
     "explanation": "Coprime ratio 5:7 in opposite directions => 5 + 7 = 12 points.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -294,7 +294,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "45",
     "explanation": "Harmonic mean of 30 and 90 = 2*30*90/(30+90) = 45s.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -315,7 +315,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "v_B = 60*sqrt(4/9) = 40 km/h; meeting time = sqrt(36) = 6h => PQ = 100*6 = 600 km.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -331,7 +331,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "300",
     "explanation": "Combined distance = 5*300 = 1500m; Anil covers 900m = 3 full lengths => at B (300m from A).",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -352,7 +352,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "60 / (5 + 4 - 3) = 10 hours.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -368,7 +368,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "29",
     "explanation": "phi(100) = 40 => 3^2026 \u2261 3^26 \u2261 729 \u2261 29 (mod 100).",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -384,7 +384,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "0",
     "explanation": "Odd exponent 103 => divisible by 7 + 11 = 18 => remainder 0.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -405,7 +405,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Total factors 30 - multiples of 6 (16) = 14.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -421,7 +421,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "31",
     "explanation": "25 + 5 + 1 = 31.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -442,7 +442,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "(2^5)^19 * 16 \u2261 (-1)^19 * 16 = -16 \u2261 17 (mod 33).",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -458,7 +458,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "157",
     "explanation": "157 = 5*31 + 2 = 7*22 + 3 = 9*17 + 4.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -479,7 +479,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "(2/5)*(3/7) = 6/35 => 6 : (35 - 6) = 6 : 29.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -500,7 +500,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "(h/30)^3 = 8/27 => h = 20 cm.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -521,7 +521,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "R = 7.5, r = 3 => sqrt(56.25 - 45) = 1.5*sqrt(5) cm.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -537,7 +537,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "55",
     "explanation": "C(12 - 1, 3 - 1) = C(11, 2) = 55.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -558,7 +558,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "(1 + 1/2 + 1/3)*log_2(x) = 11 => log_2(x) = 6 => x = 64.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -574,7 +574,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "45",
     "explanation": "C(5, 1) * D_4 = 5 * 9 = 45.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -595,7 +595,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "1 - 1/100 = 99/100.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -611,7 +611,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "18",
     "explanation": "Total - 6 is divisible by 6 => 18.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -632,7 +632,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "12 single-event split 3:2:1 => 6 in CC only.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -648,7 +648,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "41",
     "explanation": "65 - 4*6 = 41 single-event delegates.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -669,7 +669,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "(20 - 6) : (12 - 6) = 14 : 6 = 7 : 3.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -685,7 +685,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "4",
     "explanation": "D = 3*15 - 41 = 4 draws.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -701,7 +701,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "11",
     "explanation": "15 - 4 = 11 decisive matches.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -722,7 +722,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "5 wins * 3 pts = 15 points.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -743,7 +743,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Last team can lose all 5 matches -> 0 points.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -759,7 +759,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "47",
     "explanation": "E_2 + 2*E_3 = 95 => setting E_2 = 1 gives Max E_3 = 47.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -775,7 +775,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "0",
     "explanation": "Setting E_2 = 95, E_1 = 5 gives Min E_3 = 0.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -796,7 +796,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "E_3 = 47, E_2 = 1 => E_1 = 100 - 47 - 1 = 52 aspirants (since 52 + 2(1) + 3(47) = 195).",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -817,7 +817,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "Eliminating Mumbai, Bengaluru, Delhi, and Kolkata leaves Chennai.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -833,7 +833,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "18",
     "explanation": "C(3, 2) * C(4, 2) = 3 * 6 = 18.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -849,7 +849,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "63",
     "explanation": "N - 1 = 64 - 1 = 63 matches.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -870,7 +870,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "63 Cr - 60 Cr = +Rs. 3.0 Cr.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -891,7 +891,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "2",
     "explanation": "0.20 * 140 = 28 vs 25 => (28 - 25)/25 = +12%.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -907,7 +907,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "570",
     "explanation": "50 passed all 4 => 2*80 + 3*70 + 4*50 = 570.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -923,7 +923,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "100",
     "explanation": "E_2 + 2(40) = 240 - 150 = 90 => E_2 = 10 => E_1 = 150 - 10 - 40 = 100.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -939,7 +939,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "20",
     "explanation": "C(5, 2) * 2 = 10 * 2 = 20 points.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -960,7 +960,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "417/628 = 0.66401 is closest to 2/3 among the four choices.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -981,7 +981,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Structural realism preserves mathematical and relational structures across paradigm shifts even as unobservable entity labels change.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1002,7 +1002,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "If historical equations remain structurally valid in modern physics, theory replacement does not undermine scientific continuity.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1023,7 +1023,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "The pessimistic meta-induction argues that empirically successful theories were later discarded, so success does not guarantee entity existence.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1044,7 +1044,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "The passage frames forward guidance as an intertemporal trade-off between near-term recovery and future systemic fragility.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1065,7 +1065,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Excessive maturity mismatch and leverage create systemic fragility that limits how aggressively central banks can later raise rates.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1086,7 +1086,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "The author recognizes near-term output recovery benefits while cautioning against systemic leverage risks.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1107,7 +1107,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Plants reward nutrient-delivering strains and sanction non-cooperative cheaters, mirroring conditional market exchange.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1128,7 +1128,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "If plants do not sanction non-cooperative cheater strains, the 'biological market' enforcement mechanism breaks down.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1149,7 +1149,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Sentence 1 contrasts classical theory's focus on zero-sum competition with modern evidence of mutualistic carbon-nutrient exchange.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1170,7 +1170,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Critics distinguish stable biochemistry from reflexive socio-technical systems where human gaming invalidates historical correlations.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1191,7 +1191,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Aspirin illustrates that effective practical deployment can occur before underlying mechanisms are understood.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1212,7 +1212,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "0",
     "explanation": "Agents adapting their behavior to game an opaque algorithm directly illustrates reflexive drift.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1228,7 +1228,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2134",
     "explanation": "2 introduces digital behavioral data; 1 pivots ('Yet this very abundance...') to causal inference; 3 explains why correlations fail; 4 concludes ('Consequently...') -> 2134.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1244,7 +1244,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2431",
     "explanation": "2 introduces thick Romanesque walls; 4 explains why piercing 'those load-bearing walls' risked collapse; 3 introduces the flying buttress solution; 1 summarizes 'This architectural shift' -> 2431.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1260,7 +1260,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2314",
     "explanation": "2 states the original purpose of quarterly benchmarks; 3 pivots ('Over time, however...') to how they became binding targets; 1 describes the resulting R&D underinvestment; 4 concludes -> 2314.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1276,7 +1276,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "3",
     "explanation": "1-2-4-5 trace urban road widening, induced demand, recurring gridlock, and congestion pricing. Sentence 3 shifts to intercity rail and aviation emissions -> 3.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1292,7 +1292,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "3",
     "explanation": "1-2-4-5 focus on deep-sea hydrothermal vent chemosynthesis and astrobiology. Sentence 3 shifts to shallow tropical coral bleaching -> 3.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1308,7 +1308,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2",
     "explanation": "Blank 2 bridges the prediction of homogenization (before Blank 2) and the empirical finding of resilient divergence (after Blank 2) -> 2.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1329,7 +1329,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Option (B) captures both halves of the trade-off: wider credit access vs. opaque, uncontestable proxies.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1350,7 +1350,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Option (B) synthesizes the core claim that early modern maps acted as visual tools of geopolitical legitimation rather than neutral inventories.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1371,7 +1371,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Predictive processing transmits bottom-up prediction errors (discrepancies) rather than redundant raw signals.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1392,7 +1392,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Consuming principal during booms destroys intergenerational capital accumulation.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1413,7 +1413,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Edge cases reveal unspoken mentalit\u00e9s and fault lines smoothed over by grand narratives.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1434,7 +1434,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Equivalent global carbon pricing eliminates regulatory arbitrage and carbon leakage.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1450,7 +1450,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "2431",
     "explanation": "2 introduces the shift to non-bank credit; 4 notes the positive effect ('This migration...'); 3 pivots ('Yet...') to redemption fire-sale risk; 1 concludes ('Consequently...') -> 2431.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1466,7 +1466,7 @@ CAT_2026_QUESTIONS = [
     "options": [],
     "answer": "3",
     "explanation": "Sentences 1, 2, 4, and 5 discuss bioluminescence and luciferase; 3 discusses offshore wind transmission cables -> 3.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1487,7 +1487,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Option (B) captures both collaborative innovation and volunteer maintenance bottlenecks.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   },
@@ -1508,7 +1508,7 @@ CAT_2026_QUESTIONS = [
     ],
     "answer": "1",
     "explanation": "Option (B) synthesizes the participation gain alongside the inertia risk of suboptimal defaults.",
-    "is_pyq": false,
+    "is_pyq": False,
     "pyq_year": "2026",
     "pyq_exam": "CAT 2026"
   }
