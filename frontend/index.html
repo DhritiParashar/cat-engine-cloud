@@ -321,7 +321,35 @@
     sub: "VARC (24 Qs • 40m) &bull; DILR (20 Qs • 40m) &bull; QA (22 Qs • 40m) &bull; 198 Marks Scale",
     marking: "MCQ +3/-1 | TITA +3/0 (Zero Penalty)",
     pattern: "66 Qs | 120 Mins | Strict 40-Min Sectional Timer",
-    modes: [{"label":"CAT Standard (66 Qs)","sub":"(198 Marks Scale)","id":"STANDARD"},{"label":"XAT \u0026 Decision Making","sub":"(75 Qs • DM)","id":"XAT"},{"label":"NMAT \u0026 SNAP Speed Sprint","sub":"(Adaptive / Speed)","id":"OMET"}],
+    modes: [
+  {
+    "id": "STANDARD",
+    "label": "CAT Standard (66 Qs)",
+    "sub": "(198 Marks Scale)",
+    "sections": "VARC (24 Qs • 40m) &bull; DILR (20 Qs • 40m) &bull; QA (22 Qs • 40m) &bull; 198 Marks Scale",
+    "pattern": "66 Qs | 120 Mins | Strict 40-Min Sectional Timer",
+    "marking": "MCQ +3/-1 | TITA +3/0 (Zero Penalty)",
+    "targetTab": 1
+  },
+  {
+    "id": "XAT",
+    "label": "XAT & Decision Making",
+    "sub": "(75 Qs • DM)",
+    "sections": "VALR (26 Qs) &bull; Decision Making (21 Qs) &bull; QADI (28 Qs) &bull; Unattempted Penalty after 8 Skips",
+    "pattern": "75 Qs (Part 1) | 165 Mins | Flexible Sectional Pacing",
+    "marking": "+1 / -0.25 (5 Options) | -0.10 after 8 Unattempted Qs",
+    "targetTab": 2
+  },
+  {
+    "id": "OMET",
+    "label": "NMAT & SNAP Speed Sprint",
+    "sub": "(Adaptive / Speed)",
+    "sections": "NMAT: 108 Qs in 120m (Adaptive, Zero Neg) &bull; SNAP: 60 Qs in 60m (1 Min/Q Speed)",
+    "pattern": "High-Speed Calculation & Verbal Fluency | Zero Sectional Locking in SNAP",
+    "marking": "NMAT: +3/0 (Adaptive) | SNAP: +1/-0.25 (4 Options)",
+    "targetTab": 4
+  }
+],
     tabs: ["1. Quantitative Aptitude (QA)","2. DILR Caselet Lab","3. VARC Studio (RC \u0026 TITA)","4. Timed Mock Simulator","5. Trap Doctor \u0026 AI Doubts","6. CAT Score \u0026 Percentile Forecaster"],
     defaultTel: "Target: 99.5%ile CAT &bull; Readiness: 93/198 (~98.5%ile)"
   };
@@ -347,7 +375,18 @@
     window.location.reload();
   };
 
-            window.selectUnifiedTab = function (tabNum) {
+              window.selectExamMode = function (idx) {
+    window._ACTIVE_MODE_IDX = Number(idx);
+    const m = CFG.modes[window._ACTIVE_MODE_IDX] || CFG.modes[0];
+    CFG.sub = m.sections;
+    CFG.pattern = m.pattern;
+    CFG.marking = m.marking;
+    renderCleanHeader();
+    if (m.targetTab && typeof window.selectUnifiedTab === "function") {
+      window.selectUnifiedTab(m.targetTab);
+    }
+  };
+  window.selectUnifiedTab = function (tabNum) {
     const n = Number(tabNum);
     window._ACTIVE_TAB_NUM = n;
     window.ACTIVE_TAB = n;
@@ -415,7 +454,7 @@
     const isDark = document.documentElement.classList.contains("dark");
     const modePills = CFG.modes.map((m, idx) => {
       const active = idx === window._ACTIVE_MODE_IDX;
-      return `<button type="button" onclick="window._ACTIVE_MODE_IDX=${idx}; renderCleanHeader();"
+      return `<button type="button" onclick="window.selectExamMode(${idx});"
         class="px-3.5 py-1.5 rounded-full text-xs font-bold transition cursor-pointer ${active ? 'bg-indigo-600 text-white shadow-sm' : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:border-indigo-500'}">
         ${m.label} <span class="opacity-75 font-normal text-[11px]">${m.sub}</span>
       </button>`;
