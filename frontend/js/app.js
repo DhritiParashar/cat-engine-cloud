@@ -18,7 +18,7 @@ window.renderActiveTab = function () {
   else if (tab === "tab3") window.renderTab3(el);
   else if (tab === "tab4") window.renderTab4(el);
   else if (tab === "tab5") window.renderTab5(el);
-  else if (tab === "tab6") window.renderTab6(el);
+  else if (tab === "tab6") window.renderScoreForecaster6(el);
   else if (tab === "tab7") window.renderTab7(el);
   else if (tab === "tab8") window.renderTab8(el);
   else if (tab === "tab9") window.renderTab9(el);
