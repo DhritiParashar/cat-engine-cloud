@@ -84,3 +84,19 @@ window.renderActiveTab = function () {
   const cur = (window.IPM_STATE && window.IPM_STATE.activeTab) || "tab1";
   window.switchTab(cur);
 };
+
+// _MODE_LOCKED_TAB6: Guarantee Tab 6 & top header readiness always track active CAT / XAT / NMAT mode
+(function () {
+  const origSelect = window.selectUnifiedTab;
+  window.selectUnifiedTab = function (tab) {
+    if (typeof origSelect === "function") origSelect(tab);
+    const tNum = parseInt(String(tab).replace(/\D/g, ""), 10);
+    const ws = document.getElementById("main-workspace");
+    if (tNum === 6 && ws && typeof window.renderScoreForecaster6 === "function") {
+      window.renderScoreForecaster6(ws);
+    }
+    if (typeof window.syncPreparationReadinessHeader === "function") {
+      window.syncPreparationReadinessHeader();
+    }
+  };
+})();
