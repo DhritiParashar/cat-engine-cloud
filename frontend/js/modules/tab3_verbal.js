@@ -1003,44 +1003,223 @@ document.addEventListener("click", (e) => {
   else if (txt.includes("NMAT & SNAP")) window.setCatPortalMode("NMAT");
 });
 
-// Override Tab 6 Forecaster on CAT portal to adapt scale & B-School cutoffs to CAT / XAT / NMAT-SNAP
-const _origRenderTab6 = window.renderScoreForecaster6;
-window.renderScoreForecaster6 = function (el) {
-  _origRenderTab6(el);
-  const mode = window._ACTIVE_CAT_MODE || "CAT";
-  const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
-  const avgRatio = hist.length
-    ? hist.reduce((s, h) => s + (h.maxScore > 0 ? h.score / h.maxScore : 0), 0) / hist.length
-    : 0.47;
+// ==============================================================================
+// CROSS-MODE MOCK CORRELATION ENGINE (CAT / XAT / NMAT-SNAP) FOR TAB 6 SYNC
+// ==============================================================================
+window.computeEquatedMockMetrics = function (entry) {
+  const sid = String(entry.serialId || "");
+  const bpTitle = String(entry.blueprint || "");
+  const mode = sid.startsWith("XAT") || bpTitle.includes("XAT")
+    ? "XAT"
+    : (sid.startsWith("NMAT") || bpTitle.includes("NMAT") || bpTitle.includes("SNAP") ? "NMAT" : "CAT");
 
-  let bannerHtml = "";
-  if (mode === "XAT") {
-    const xatScore = (avgRatio * 75).toFixed(1);
-    const xatPct = Math.min(99.9, 60 + avgRatio * 39.8).toFixed(1);
-    bannerHtml = `
-      <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 text-xs space-y-1">
-        <div class="font-extrabold text-amber-900 dark:text-amber-200 uppercase">Active Mode: XAT &amp; Decision Making (75 Marks • 5 Options A–E • -0.10 Skip Penalty &gt; 8)</div>
-        <div>Projected XAT Scaled Score: <strong>${xatScore} / 75 (~${xatPct}%ile)</strong> &bull; <strong>XLRI Jamshedpur BM Target:</strong> ~96%ile (34+ Marks) &bull; <strong>XLRI HRM Target:</strong> ~94%ile (31+ Marks).</div>
-      </div>`;
-  } else if (mode === "NMAT") {
-    const nmatScore = Math.round(120 + avgRatio * 240);
-    const snapScore = (avgRatio * 60).toFixed(1);
-    bannerHtml = `
-      <div class="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-300 dark:border-purple-700 text-xs space-y-1">
-        <div class="font-extrabold text-purple-900 dark:text-purple-200 uppercase">Active Mode: NMAT (360 Scale • Zero Negative) &amp; SNAP (60 Scale • +1/-0.25 Speed)</div>
-        <div>Projected NMAT Score: <strong>${nmatScore} / 360</strong> (NMIMS Mumbai Core Cutoff: <strong>235+</strong>) &bull; Projected SNAP Score: <strong>${snapScore} / 60</strong> (SIBM Pune / SCMHRD Cutoff: <strong>42.5+</strong>).</div>
-      </div>`;
+  const rawRatio = entry.maxScore > 0 ? Math.max(0, Math.min(1, entry.score / entry.maxScore)) : 0;
+  const isFull = bpTitle.includes("Full") || bpTitle.includes("66 Qs") || bpTitle.includes("75 Qs") || bpTitle.includes("108 Qs") || bpTitle.includes("60 Qs");
+
+  // Mode-calibrated percentile mapping (accounts for +3/-1 vs +1/-0.25 vs zero-negative NMAT)
+  let eqPercentile = 50;
+  if (mode === "CAT") {
+    eqPercentile = Math.min(99.95, 52 + Math.pow(rawRatio, 0.82) * 48);
+  } else if (mode === "XAT") {
+    eqPercentile = Math.min(99.95, 50 + Math.pow(rawRatio, 0.85) * 50);
   } else {
-    const catScore = Math.round(avgRatio * 198);
-    const catPct = Math.min(99.9, 65 + avgRatio * 34.8).toFixed(1);
-    bannerHtml = `
-      <div class="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-300 dark:border-indigo-700 text-xs space-y-1">
-        <div class="font-extrabold text-indigo-900 dark:text-indigo-200 uppercase">Active Mode: CAT Standard (198 Marks • +3/-1 MCQ &amp; +3/0 TITA)</div>
-        <div>Projected CAT Score: <strong>${catScore} / 198 (~${catPct}%ile)</strong> &bull; <strong>IIM A/B/C Safe Zone:</strong> 95+ Marks (99.3%ile+) &bull; <strong>IIM L/K/I &amp; FMS:</strong> 82+ Marks (98.5%ile+).</div>
-      </div>`;
+    // NMAT has zero negative marking, so raw ratio curve is steeper at upper percentiles
+    eqPercentile = Math.min(99.95, 42 + Math.pow(rawRatio, 1.15) * 57.5);
   }
 
-  const wrap = el.querySelector(".max-w-7xl");
-  if (wrap) wrap.insertAdjacentHTML("afterbegin", bannerHtml);
+  return {
+    mode,
+    rawRatio,
+    isFull,
+    weight: isFull ? 1.0 : 0.5,
+    eqPercentile: Number(eqPercentile.toFixed(1))
+  };
+};
+
+window.syncPreparationReadinessHeader = function () {
+  const mode = window._ACTIVE_CAT_MODE || "CAT";
+  const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
+  if (!hist.length) return;
+
+  const enriched = hist.map(h => ({ ...h, _m: window.computeEquatedMockMetrics(h) }));
+  const modePool = enriched.filter(h => h._m.mode === mode);
+  const pool = modePool.length ? modePool : enriched;
+
+  // Exponentially weighted moving average (recency decay 0.75^i * full/sectional weight)
+  let wSum = 0, valSum = 0, eqSum = 0;
+  pool.forEach((h, i) => {
+    const w = Math.pow(0.75, i) * h._m.weight;
+    wSum += w;
+    valSum += w * h._m.rawRatio;
+    eqSum += w * h._m.eqPercentile;
+  });
+
+  const weightedRatio = wSum > 0 ? valSum / wSum : 0;
+  const weightedEqPct = wSum > 0 ? (eqSum / wSum).toFixed(1) : "0.0";
+
+  const labelText = mode === "XAT"
+    ? `XAT Readiness: ${(weightedRatio * 75).toFixed(1)}/75 (~${weightedEqPct}%ile)`
+    : (mode === "NMAT"
+      ? `NMAT Readiness: ${Math.round(120 + weightedRatio * 240)}/360 (~${weightedEqPct}%ile)`
+      : `CAT Readiness: ${Math.round(weightedRatio * 198)}/198 (~${weightedEqPct}%ile)`);
+
+  document.querySelectorAll("span, div").forEach(node => {
+    if (node.children.length === 0 && node.textContent && (node.textContent.includes("Readiness:") || node.textContent.includes("Mocks:"))) {
+      node.textContent = `${modePool.length} ${mode} Mocks • ${labelText}`;
+    }
+  });
+};
+
+window.renderScoreForecaster6 = function (el) {
+  const mode = window._ACTIVE_CAT_MODE || "CAT";
+  const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
+  const enriched = hist.map(h => ({ ...h, _m: window.computeEquatedMockMetrics(h) }));
+  const modePool = enriched.filter(h => h._m.mode === mode);
+  const activePool = modePool.length ? modePool : enriched;
+
+  // Recency-weighted (EWMA) + Full-Length vs Sectional weighted composite
+  let wSum = 0, ratioSum = 0, eqPctSum = 0, accSum = 0;
+  activePool.forEach((h, i) => {
+    const w = Math.pow(0.75, i) * h._m.weight;
+    wSum += w;
+    ratioSum += w * h._m.rawRatio;
+    eqPctSum += w * h._m.eqPercentile;
+    accSum += w * (h.accuracy || 0);
+  });
+
+  const weightedRatio = wSum > 0 ? ratioSum / wSum : 0;
+  const weightedEqPct = wSum > 0 ? eqPctSum / wSum : 0;
+  const weightedAcc = wSum > 0 ? Math.round(accSum / wSum) : 0;
+
+  // Compute momentum delta (latest 2 attempts vs older attempts)
+  let deltaText = "Baseline established";
+  if (activePool.length >= 2) {
+    const recentAvg = activePool.slice(0, 2).reduce((s, h) => s + h._m.eqPercentile, 0) / Math.min(2, activePool.length);
+    const olderAvg = activePool.slice(2).length
+      ? activePool.slice(2).reduce((s, h) => s + h._m.eqPercentile, 0) / activePool.slice(2).length
+      : activePool[activePool.length - 1]._m.eqPercentile;
+    const diff = (recentAvg - olderAvg).toFixed(1);
+    deltaText = parseFloat(diff) >= 0 ? `+${diff}%ile momentum vs earlier mocks` : `${diff}%ile dip vs earlier mocks`;
+  }
+
+  // Unified Cross-Mode Aptitude Index across all CAT + XAT + NMAT sessions combined
+  let allW = 0, allEq = 0;
+  enriched.forEach((h, i) => {
+    const w = Math.pow(0.8, i) * h._m.weight;
+    allW += w;
+    allEq += w * h._m.eqPercentile;
+  });
+  const unifiedCrossExamPct = allW > 0 ? (allEq / allW).toFixed(1) : "0.0";
+
+  let prepStage = "Stage 1: Diagnostic Baseline (Log Mocks to Calibrate)";
+  let stageBadge = "bg-slate-100 text-slate-700";
+  let nextAction = `Launch a timed ${mode} simulation in Tab 4 to compute your recency-weighted readiness tier.`;
+
+  if (activePool.length > 0) {
+    if (weightedEqPct >= 98.5 && weightedAcc >= 80) {
+      prepStage = "Tier 4: 99+ Percentile Elite Ready";
+      stageBadge = "bg-emerald-100 text-emerald-800 border-emerald-300";
+      nextAction = "Maintain 2 full-length mocks per week, protect >=82% accuracy, and review Trap Doctor edge cases.";
+    } else if (weightedEqPct >= 93.0 && weightedAcc >= 70) {
+      prepStage = "Tier 3: 94–98.5 Percentile Call Contender";
+      stageBadge = "bg-indigo-100 text-indigo-800 border-indigo-300";
+      nextAction = "Trim negative-marking guesses on borderline items to push your recency-weighted trajectory into Tier 4.";
+    } else if (weightedEqPct >= 78.0) {
+      prepStage = "Tier 2: Concept Consolidation & Pacing Build";
+      stageBadge = "bg-amber-100 text-amber-800 border-amber-300";
+      nextAction = "Focus on sectional sprints in Tab 4 and target >=78% accuracy before scaling attempt count.";
+    } else {
+      prepStage = "Tier 1: Foundation & Accuracy Calibration";
+      stageBadge = "bg-rose-100 text-rose-800 border-rose-300";
+      nextAction = "Avoid rushed submissions; drill core concepts in Tabs 1–3 and build steady 75%+ accuracy.";
+    }
+  }
+
+  const modeForecast = mode === "XAT"
+    ? `${(weightedRatio * 75).toFixed(1)} / 75 Marks (~${weightedEqPct.toFixed(1)}%ile)`
+    : (mode === "NMAT"
+      ? `${Math.round(120 + weightedRatio * 240)} / 360 NMAT | ${(weightedRatio * 60).toFixed(1)} / 60 SNAP`
+      : `${Math.round(weightedRatio * 198)} / 198 Marks (~${weightedEqPct.toFixed(1)}%ile)`);
+
+  const logRows = enriched.length
+    ? enriched.map(h => `
+        <tr class="border-t border-slate-200 dark:border-slate-800 text-xs ${h._m.mode === mode ? 'bg-indigo-50/30 dark:bg-indigo-950/20' : ''}">
+          <td class="py-2.5 px-3 font-mono font-extrabold text-indigo-600">${h.serialId}</td>
+          <td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded-full text-[10px] font-extrabold bg-slate-100 dark:bg-slate-800">${h._m.mode} • ${h._m.isFull ? "Full (1.0x)" : "Sectional (0.5x)"}</span></td>
+          <td class="py-2.5 px-3 font-bold">${h.blueprint}</td>
+          <td class="py-2.5 px-3 font-extrabold text-emerald-600">${h.score} / ${h.maxScore}</td>
+          <td class="py-2.5 px-3 font-bold text-indigo-600">${h._m.eqPercentile}%ile</td>
+          <td class="py-2.5 px-3">${h.accuracy}%</td>
+          <td class="py-2.5 px-3 text-right">
+            <button type="button" onclick="window.downloadOfficialMarksheet4('${h.serialId}')" class="px-2.5 py-1 rounded-lg bg-slate-900 text-white text-[11px] font-bold cursor-pointer">PDF</button>
+          </td>
+        </tr>
+      `).join("")
+    : `<tr><td colspan="7" class="py-6 text-center text-xs text-slate-400">No mock attempts logged yet.</td></tr>`;
+
+  el.innerHTML = `
+    <div class="max-w-7xl mx-auto my-4 space-y-5">
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 dark:border-slate-800 pb-4">
+          <div>
+            <span class="text-[10px] font-extrabold uppercase tracking-wider text-indigo-600">EWMA RECENCY-WEIGHTED &amp; CROSS-MODE EQUATED ENGINE (${mode} ACTIVE)</span>
+            <h2 class="text-xl font-extrabold text-slate-900 dark:text-white mt-0.5">Preparation Level Ascertained From ${modePool.length} ${mode} Mocks (${enriched.length} Total Cross-Mode)</h2>
+          </div>
+          <span class="px-3.5 py-1.5 rounded-full border text-xs font-extrabold ${stageBadge}">${prepStage}</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 text-xs">
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] font-bold uppercase text-slate-400">${mode} Weighted Forecast</div>
+            <div class="text-base font-extrabold text-indigo-600 dark:text-indigo-400 mt-0.5">${modeForecast}</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">${deltaText}</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] font-bold uppercase text-slate-400">Unified Cross-Exam Index</div>
+            <div class="text-base font-extrabold text-emerald-600 dark:text-emerald-400 mt-0.5">~${unifiedCrossExamPct}%ile Equated</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Normalizes CAT + XAT + NMAT scales</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] font-bold uppercase text-slate-400">Recency-Weighted Accuracy</div>
+            <div class="text-base font-extrabold text-slate-900 dark:text-white mt-0.5">${weightedAcc}%</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Full Mocks 1.0x • Sectionals 0.5x</div>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800">
+            <div class="text-[10px] font-bold uppercase text-slate-400">Active Mode Sample</div>
+            <div class="text-base font-extrabold text-slate-900 dark:text-white mt-0.5">${modePool.length} ${mode} / ${enriched.length} All</div>
+            <div class="text-[10px] text-slate-500 mt-0.5">Switch top pills to compare modes</div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-indigo-50/70 dark:bg-indigo-950/30 border border-indigo-200 dark:border-indigo-800 text-xs text-slate-800 dark:text-slate-200">
+          <strong>Prescribed Next Action (${mode} Track):</strong> ${nextAction}
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 shadow-sm space-y-3">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <h3 class="text-sm font-extrabold text-slate-900 dark:text-white">Correlated Serial Mock Ledger (${enriched.length} Records • Highlighted = Active ${mode} Mode)</h3>
+          <button type="button" onclick="window.clearMockLog4(); window.renderScoreForecaster6(document.getElementById('main-workspace'));"
+            class="px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 text-xs font-extrabold cursor-pointer">&#128465; Clear Log</button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="text-[10px] font-extrabold uppercase text-slate-400 bg-slate-50 dark:bg-slate-950">
+                <th class="py-2 px-3">Serial Mock ID</th>
+                <th class="py-2 px-3">Mode &amp; Weight</th>
+                <th class="py-2 px-3">Blueprint</th>
+                <th class="py-2 px-3">Raw Score</th>
+                <th class="py-2 px-3">Equated %ile</th>
+                <th class="py-2 px-3">Accuracy</th>
+                <th class="py-2 px-3 text-right">Marksheet</th>
+              </tr>
+            </thead>
+            <tbody>${logRows}</tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
 };
 window.renderTab6 = window.renderScoreForecaster6;
