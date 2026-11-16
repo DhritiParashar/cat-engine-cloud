@@ -964,3 +964,70 @@ window.renderScoreForecaster6 = function (el) {
 };
 window.renderTab6 = window.renderScoreForecaster6;
 setTimeout(() => window.syncPreparationReadinessHeader(), 500);
+
+// ==============================================================================
+// MODE-AWARE ENGINE: CAT STANDARD vs. XAT & DECISION MAKING vs. NMAT & SNAP
+// ==============================================================================
+window._ACTIVE_CAT_MODE = window._ACTIVE_CAT_MODE || "CAT";
+
+window.setCatPortalMode = function (modeKey) {
+  window._ACTIVE_CAT_MODE = modeKey;
+  if (modeKey === "XAT") window._SELECTED_MOCK_BP = 4; // Auto-select 75-Q 5-Option XAT Mock
+  else if (modeKey === "CAT") window._SELECTED_MOCK_BP = 0; // Auto-select 66-Q CAT Mock
+
+  // Re-render currently active tab so Tabs 1-6 reflect the chosen exam mode immediately
+  const activeBtn = document.querySelector("[data-tab].bg-indigo-600, .tab-btn.active");
+  const tabNum = activeBtn ? parseInt(String(activeBtn.getAttribute("data-tab") || "4").replace(/\D/g, ""), 10) : 4;
+  if (typeof window.selectUnifiedTab === "function") window.selectUnifiedTab(tabNum || 4);
+};
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  const txt = (btn.textContent || "").trim();
+  if (txt.includes("CAT Standard")) window.setCatPortalMode("CAT");
+  else if (txt.includes("XAT & Decision Making")) window.setCatPortalMode("XAT");
+  else if (txt.includes("NMAT & SNAP")) window.setCatPortalMode("NMAT");
+});
+
+// Override Tab 6 Forecaster on CAT portal to adapt scale & B-School cutoffs to CAT / XAT / NMAT-SNAP
+const _origRenderTab6 = window.renderScoreForecaster6;
+window.renderScoreForecaster6 = function (el) {
+  _origRenderTab6(el);
+  const mode = window._ACTIVE_CAT_MODE || "CAT";
+  const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
+  const avgRatio = hist.length
+    ? hist.reduce((s, h) => s + (h.maxScore > 0 ? h.score / h.maxScore : 0), 0) / hist.length
+    : 0.47;
+
+  let bannerHtml = "";
+  if (mode === "XAT") {
+    const xatScore = (avgRatio * 75).toFixed(1);
+    const xatPct = Math.min(99.9, 60 + avgRatio * 39.8).toFixed(1);
+    bannerHtml = `
+      <div class="p-4 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-700 text-xs space-y-1">
+        <div class="font-extrabold text-amber-900 dark:text-amber-200 uppercase">Active Mode: XAT &amp; Decision Making (75 Marks • 5 Options A–E • -0.10 Skip Penalty &gt; 8)</div>
+        <div>Projected XAT Scaled Score: <strong>${xatScore} / 75 (~${xatPct}%ile)</strong> &bull; <strong>XLRI Jamshedpur BM Target:</strong> ~96%ile (34+ Marks) &bull; <strong>XLRI HRM Target:</strong> ~94%ile (31+ Marks).</div>
+      </div>`;
+  } else if (mode === "NMAT") {
+    const nmatScore = Math.round(120 + avgRatio * 240);
+    const snapScore = (avgRatio * 60).toFixed(1);
+    bannerHtml = `
+      <div class="p-4 rounded-2xl bg-purple-50 dark:bg-purple-950/40 border border-purple-300 dark:border-purple-700 text-xs space-y-1">
+        <div class="font-extrabold text-purple-900 dark:text-purple-200 uppercase">Active Mode: NMAT (360 Scale • Zero Negative) &amp; SNAP (60 Scale • +1/-0.25 Speed)</div>
+        <div>Projected NMAT Score: <strong>${nmatScore} / 360</strong> (NMIMS Mumbai Core Cutoff: <strong>235+</strong>) &bull; Projected SNAP Score: <strong>${snapScore} / 60</strong> (SIBM Pune / SCMHRD Cutoff: <strong>42.5+</strong>).</div>
+      </div>`;
+  } else {
+    const catScore = Math.round(avgRatio * 198);
+    const catPct = Math.min(99.9, 65 + avgRatio * 34.8).toFixed(1);
+    bannerHtml = `
+      <div class="p-4 rounded-2xl bg-indigo-50 dark:bg-indigo-950/40 border border-indigo-300 dark:border-indigo-700 text-xs space-y-1">
+        <div class="font-extrabold text-indigo-900 dark:text-indigo-200 uppercase">Active Mode: CAT Standard (198 Marks • +3/-1 MCQ &amp; +3/0 TITA)</div>
+        <div>Projected CAT Score: <strong>${catScore} / 198 (~${catPct}%ile)</strong> &bull; <strong>IIM A/B/C Safe Zone:</strong> 95+ Marks (99.3%ile+) &bull; <strong>IIM L/K/I &amp; FMS:</strong> 82+ Marks (98.5%ile+).</div>
+      </div>`;
+  }
+
+  const wrap = el.querySelector(".max-w-7xl");
+  if (wrap) wrap.insertAdjacentHTML("afterbegin", bannerHtml);
+};
+window.renderTab6 = window.renderScoreForecaster6;
