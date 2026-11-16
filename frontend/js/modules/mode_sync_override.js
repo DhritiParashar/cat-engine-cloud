@@ -29,10 +29,15 @@
     return "CAT";
   };
 
+  window.isFullLengthMockRecord = function (entry) {
+    const bp = String(entry?.blueprint || "");
+    return bp.includes("Full") || bp.includes("66 Qs") || bp.includes("75 Qs") || bp.includes("108 Qs") || bp.includes("60 Qs");
+  };
+
   window.getModeFilteredHistory = function (mode) {
     const targetMode = mode || window.detectActiveCatPortalMode();
     const all = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
-    return all.filter(item => window.classifyMockEntryMode(item) === targetMode);
+    return all.filter(item => window.classifyMockEntryMode(item) === targetMode && window.isFullLengthMockRecord(item));
   };
 
   window.clearModeMockHistory = function (mode) {
@@ -107,7 +112,7 @@
     // Replace Persistent Assessment Ledger title, Clear button & rows with mode-filtered logs
     ws.querySelectorAll("h3").forEach(h => {
       if (h.textContent.includes("Serial Mock ID")) {
-        h.textContent = `${mode} Serial Mock ID & Diagnostic Score History (${modeLogs.length} ${mode} Logged)`;
+        h.innerHTML = `${mode} Full-Length Mock Ledger (${modeLogs.length} Full Mocks Logged) <span class="block text-[11px] font-medium text-slate-500 mt-0.5">Only Full-Length ${mode} Mocks are logged here to power Tab 6&#39;s Score &amp; Percentile Forecaster. Short sectionals provide instant scorecards &amp; PDFs without skewing your forecast.</span>`;
       }
     });
     ws.querySelectorAll("button").forEach(b => {
@@ -131,7 +136,7 @@
               </td>
             </tr>
           `).join("")
-        : `<tr><td colspan="6" class="py-5 text-center text-xs text-slate-400">No ${mode} mock sessions logged yet. Start a proctored ${mode} mock above to generate your first ${mode}-2026-XXXX Serial ID.</td></tr>`;
+        : `<tr><td colspan="6" class="py-5 text-center text-xs text-slate-400">No Full-Length ${mode} Mocks logged yet. Complete a Full-Length ${mode} Simulation above to generate your Serial ID and enable Tab 6&#39;s Score &amp; Percentile Forecaster.</td></tr>`;
     }
   };
 
@@ -254,7 +259,7 @@
             </td>
           </tr>
         `).join("")
-      : `<tr><td colspan="6" class="py-6 text-center text-xs text-slate-400">No ${mode} mock sessions logged yet. Switch to Tab 4 in <strong>${mode}</strong> mode and submit a mock to sync live data here.</td></tr>`;
+      : `<tr><td colspan="6" class="py-6 text-center text-xs text-slate-400"><strong>Action Required:</strong> Complete at least one <strong>Full-Length ${mode} Mock</strong> in Tab 4 to unlock live Score &amp; Percentile Forecasting (short sectional drills are excluded so your composite prediction stays accurate).</td></tr>`;
 
     el.innerHTML = `
       <div class="max-w-7xl mx-auto my-4 space-y-5">

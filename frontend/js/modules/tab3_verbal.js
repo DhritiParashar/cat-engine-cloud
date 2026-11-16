@@ -666,8 +666,10 @@ window.renderMockSimulator4 = async function (el) {
     const accuracy = (correct + wrong) > 0 ? Math.round((correct / (correct + wrong)) * 100) : 0;
     const pctScore = maxScore > 0 ? Math.round((score / maxScore) * 100) : 0;
 
-    const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
-    hist.unshift({
+    const isFullMock = bp.id.endsWith("_FULL") || bp.title.includes("Full") || st.questions.length >= 60;
+    if (isFullMock) {
+      const hist = JSON.parse(localStorage.getItem("ipm_mock_history_v1") || "[]");
+      hist.unshift({
       date: st.dateStr,
       time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
       serialId: st.serialId,
@@ -690,8 +692,9 @@ window.renderMockSimulator4 = async function (el) {
         answers: st.answers
       }
     });
-    localStorage.setItem("ipm_mock_history_v1", JSON.stringify(hist.slice(0, 25)));
-    if (typeof window.syncPreparationReadinessHeader === "function") window.syncPreparationReadinessHeader();
+      localStorage.setItem("ipm_mock_history_v1", JSON.stringify(hist.slice(0, 25)));
+      if (typeof window.syncPreparationReadinessHeader === "function") window.syncPreparationReadinessHeader();
+    }
 
     const banner = document.getElementById("mock-scorecard-banner");
     if (banner) {
@@ -699,7 +702,7 @@ window.renderMockSimulator4 = async function (el) {
       banner.innerHTML = `
         <div class="flex flex-wrap items-center justify-between gap-3">
           <div>
-            <div class="text-sm font-extrabold">Diagnostic Scorecard (${bp.title}): ${score} / ${maxScore} (${accuracy}% Accuracy)</div>
+            <div class="text-sm font-extrabold">${isFullMock ? "Full-Length Diagnostic Scorecard" : "Sectional Practice Scorecard (Not Logged to Composite Forecast)"} (${bp.title}): ${score} / ${maxScore} (${accuracy}% Accuracy)</div>
             <div class="text-xs mt-0.5">Assessment Serial ID: <strong>${st.serialId}</strong> &bull; Correct: <strong>${correct}</strong> &bull; Wrong: <strong>${wrong}</strong> &bull; Unattempted: <strong>${unattempted}</strong></div>
           </div>
           <div class="flex flex-wrap items-center gap-2">
