@@ -303,37 +303,48 @@ window.renderMockSimulator4 = async function (el) {
   const host = window.location.host.toLowerCase();
   const exam = host.includes("gmat") ? "GMAT" : (host.includes("gre") ? "GRE" : "CAT");
 
-  const BLUEPRINTS = exam === "GMAT" ? [
-    { id: "GMAT_FULL", count: 64, tag: "FULL 205–805 ADAPTIVE MOCK", title: "1. Full GMAT Focus Official Simulation (64 Qs • 135 Mins)", desc: "Complete 3-section adaptive flow: QR (21 Qs • 45m) + VR (23 Qs • 45m) + DI (20 Qs • 45m) with 5 choices (A–E) & 3 Review Edits.", mins: 135, secFilter: "ALL", scale: "205–805 Adaptive Scale" },
-    { id: "GMAT_QR",   count: 21, tag: "SECTIONAL • 45 MINS",        title: "2. Quantitative Reasoning (Zero Geometry • 21 Qs • 45 Mins)", desc: "Pure Problem Solving (Choices A–E) across Algebraic Modeling, Number Properties, Weighted Averages & Combinatorics.", mins: 45, secFilter: "QR", scale: "60–90 QR Sectional Scale" },
-    { id: "GMAT_VR",   count: 23, tag: "SECTIONAL • 45 MINS",        title: "3. Verbal Reasoning CR & RC Clinic (23 Qs • 45 Mins)", desc: "5-option Critical Reasoning (Necessary Assumption, Boldface, Paradox) + Analytical Reading Comprehension.", mins: 45, secFilter: "VR", scale: "60–90 VR Sectional Scale" },
-    { id: "GMAT_DI",   count: 20, tag: "SECTIONAL • 45 MINS",        title: "4. Data Insights Deep Clinic (20 Qs • 45 Mins)", desc: "Data Sufficiency (AD/BCE), Multi-Source Reasoning, Two-Part Analysis & Graphics Interpretation.", mins: 45, secFilter: "DI", scale: "60–90 DI Sectional Scale" },
-    { id: "GMAT_705",  count: 30, tag: "99TH %ILE HARD POOL",        title: "5. 705+ Elite Adaptive Pacing Sprint (30 Qs • 60 Mins)", desc: "Upper-quartile difficulty items engineered to protect Q1–Q6 adaptive trajectory at <= 2.0 mins/Q.", mins: 60, secFilter: "ALL", scale: "705–805 Elite Band" }
-  ] : (exam === "GRE" ? [
-    { id: "GRE_FULL",  count: 54, tag: "FULL 260–340 ADAPTIVE MOCK", title: "1. Full GRE General Section-Adaptive Mock (54 Qs • 118 Mins)", desc: "Stage 1 + Hard Stage 2 routing across Quantitative (27 Qs • 47m) and Verbal (27 Qs • 41m) with 5-option (A–E) items.", mins: 118, secFilter: "ALL", scale: "260–340 Composite Scale" },
-    { id: "GRE_Q",     count: 27, tag: "SECTIONAL • 47 MINS",        title: "2. Quantitative Reasoning QC & PS Mock (27 Qs • 47 Mins)", desc: "Quantitative Comparison (Choices A–D) + 5-Option Problem Solving (A–E) + Numeric Entry with zero negative penalty.", mins: 47, secFilter: "Quant", scale: "130–170 Quant Scale" },
-    { id: "GRE_V",     count: 27, tag: "SECTIONAL • 41 MINS",        title: "3. Verbal Reasoning TC, SE & RC Mock (27 Qs • 41 Mins)", desc: "1/2/3-Blank Text Completion, Sentence Equivalence semantic pairs & dense academic Reading Comprehension.", mins: 41, secFilter: "Verbal", scale: "130–170 Verbal Scale" },
-    { id: "GRE_Q170",  count: 20, tag: "170 CEILING DRILL",          title: "4. Quant 170 Perfection Hard-Stage Sprint (20 Qs • 30 Mins)", desc: "High-discrimination inequalities, modular remainders, normal distributions & FROZEN QC boundary traps.", mins: 30, secFilter: "Quant", scale: "167–170 Quant Ceiling" },
-    { id: "GRE_V165",  count: 20, tag: "165+ VERBAL DRILL",          title: "5. Verbal 165+ Contrast Pivot & Inference Sprint (20 Qs • 30 Mins)", desc: "Multi-clause logic hinges and dense humanities/science inference passages.", mins: 30, secFilter: "Verbal", scale: "164–170 Verbal Ceiling" }
-  ] : ((window._ACTIVE_CAT_MODE === "XAT") ? [
-    { id: "XAT_FULL",  count: 75, tag: "FULL 75-MARK XAT PAPER",      title: "1. Full XAT Official Simulation (75 Qs • 165 Mins • 5 Choices A–E)", desc: "VALR (26 Qs) + Decision Making (21 Qs) + QADI (28 Qs) in 5-option (A–E) format with +1 / -0.25 & -0.10 skip penalty.", mins: 165, secFilter: "ALL", scale: "75 Marks / XLRI BM 96%ile Scale" },
-    { id: "XAT_DM",    count: 21, tag: "SECTIONAL • 50 MINS",        title: "2. XAT Ethical & Business Decision Making (21 Qs • 50 Mins • A–E)", desc: "Stakeholder dilemma caselets, HR ethics & managerial trade-offs in 5-choice (A–E) format.", mins: 50, secFilter: "DILR", scale: "21 Marks DM Sectional" },
-    { id: "XAT_VALR",  count: 26, tag: "SECTIONAL • 55 MINS",        title: "3. XAT VALR Critical Reasoning & Poem RC (26 Qs • 55 Mins • A–E)", desc: "Abstract philosophy passages, CR assumptions & 5-option grammar/para-completion.", mins: 55, secFilter: "VARC", scale: "26 Marks VALR Sectional" },
-    { id: "XAT_QADI",  count: 28, tag: "SECTIONAL • 60 MINS",        title: "4. XAT QADI Quantitative & Data Sets (28 Qs • 60 Mins • A–E)", desc: "High-rigor geometry, probability, functions & multi-chart DI with 5 choices (A–E).", mins: 60, secFilter: "QA", scale: "28 Marks QADI Sectional" },
-    { id: "XAT_MINI",  count: 30, tag: "XLRI CUTOFF SPRINT",         title: "5. XLRI 96%ile High-Accuracy 5-Option Drill (30 Qs • 65 Mins)", desc: "Balanced 10 VALR + 10 DM + 10 QADI calibration drill capped at <= 8 unattempted skips.", mins: 65, secFilter: "ALL", scale: "XLRI Jamshedpur Target Drill" }
-  ] : ((window._ACTIVE_CAT_MODE === "NMAT") ? [
-    { id: "NMAT_FULL", count: 108, tag: "FULL 360-SCALE NMAT MOCK",  title: "1. Full NMAT Adaptive Simulation (108 Qs • 120 Mins • Zero Neg)", desc: "Language Skills (36 Qs • 28m) + Quantitative Skills (36 Qs • 52m) + Logical Reasoning (36 Qs • 40m) with +3 / 0 marking.", mins: 120, secFilter: "ALL", scale: "120–360 NMAT Scaled Score" },
-    { id: "SNAP_FULL", count: 60,  tag: "SPEED SPRINT • 60 MINS",    title: "2. Full SNAP 60-Minute Speed Mock (60 Qs • 60 Mins • +1/-0.25)", desc: "15 General English + 25 Analytical & Logical Reasoning + 20 QA/DI at 1.0 Min/Question speed.", mins: 60, secFilter: "ALL", scale: "60 Marks / SIBM Pune 42.5+ Scale" },
-    { id: "NMAT_QS",   count: 36,  tag: "SECTIONAL • 52 MINS",       title: "3. NMAT Quantitative & Data Sufficiency (36 Qs • 52 Mins)", desc: "Fast arithmetic, number properties, probability & 4-choice Data Sufficiency without negative penalty.", mins: 52, secFilter: "QA", scale: "36–120 NMAT Quant Scale" },
-    { id: "NMAT_LR",   count: 36,  tag: "SECTIONAL • 40 MINS",       title: "4. NMAT & SNAP Analytical Reasoning (36 Qs • 40 Mins)", desc: "Critical reasoning, input-output, syllogisms, coding-decoding & arrangements at 66s/Q pace.", mins: 40, secFilter: "DILR", scale: "36–120 NMAT LR Scale" },
-    { id: "NMAT_LS",   count: 36,  tag: "SECTIONAL • 28 MINS",       title: "5. NMAT Language Skills Speed Drill (36 Qs • 28 Mins • 46s/Q)", desc: "Vocabulary analogies, prepositions, error spotting & rapid RC comprehension.", mins: 28, secFilter: "VARC", scale: "36–120 NMAT Language Scale" }
-  ] : [
-    { id: "CAT_FULL",  count: 66, tag: "FULL 198-MARK CAT MOCK",     title: "1. Full-Length CAT Simulation (66 Qs • 120 Mins • 3 Sections)", desc: "Strict 40-min sectional flow: VARC (24 Qs) + DILR (20 Qs) + QA (22 Qs) with +3/-1 MCQ & +3/0 TITA.", mins: 120, secFilter: "ALL", scale: "198 Marks / 99.5%ile Scale" },
-    { id: "CAT_QA",    count: 22, tag: "SECTIONAL • 40 MINS",        title: "2. Quantitative Aptitude (QA) Sectional (22 Qs • 40 Mins)", desc: "Algebra, Arithmetic, Number System, Geometry & Modern Math calibrated to IIM Slot difficulty.", mins: 40, secFilter: "QA", scale: "66 Marks QA Scale" },
-    { id: "CAT_DILR",  count: 20, tag: "SECTIONAL • 40 MINS",        title: "3. DILR 4-Set Caselet Sprint (20 Qs • 40 Mins)", desc: "Multi-variable Arrangements, 3-Set Venn Maxima/Minima, Tournaments & Directed Networks.", mins: 40, secFilter: "DILR", scale: "60 Marks DILR Scale" },
-    { id: "CAT_VARC",  count: 24, tag: "SECTIONAL • 40 MINS",        title: "4. VARC 4-RC + 8-VA Sectional (24 Qs • 40 Mins)", desc: "Dense RC inference passages + zero-penalty TITA Para-Jumbles, Odd-One-Out & Para-Summary.", mins: 40, secFilter: "VARC", scale: "72 Marks VARC Scale" },
-    { id: "XAT_5OPT",  count: 75, tag: "5-OPTION XAT / OMET MOCK",   title: "5. XAT & Decision Making 5-Option Mock (75 Qs • 165 Mins • A–E)", desc: "Authentic 5-choice (A, B, C, D, E) VALR, Decision Making caselets & QADI with +1 / -0.25 marking.", mins: 165, secFilter: "ALL", scale: "XAT 5-Option Percentile Scale" }
-  ]));
+  let BLUEPRINTS = [];
+  if (exam === "GMAT") {
+    BLUEPRINTS = [
+      { id: "GMAT_FULL", count: 64, tag: "FULL 205–805 ADAPTIVE MOCK", title: "1. Full GMAT Focus Official Simulation (64 Qs • 135 Mins)", desc: "Complete 3-section adaptive flow: QR (21 Qs • 45m) + VR (23 Qs • 45m) + DI (20 Qs • 45m) with 5 choices (A–E) & 3 Review Edits.", mins: 135, secFilter: "ALL", scale: "205–805 Adaptive Scale" },
+      { id: "GMAT_QR",   count: 21, tag: "SECTIONAL • 45 MINS",        title: "2. Quantitative Reasoning (Zero Geometry • 21 Qs • 45 Mins)", desc: "Pure Problem Solving (Choices A–E) across Algebraic Modeling, Number Properties, Weighted Averages & Combinatorics.", mins: 45, secFilter: "QR", scale: "60–90 QR Sectional Scale" },
+      { id: "GMAT_VR",   count: 23, tag: "SECTIONAL • 45 MINS",        title: "3. Verbal Reasoning CR & RC Clinic (23 Qs • 45 Mins)", desc: "5-option Critical Reasoning (Necessary Assumption, Boldface, Paradox) + Analytical Reading Comprehension.", mins: 45, secFilter: "VR", scale: "60–90 VR Sectional Scale" },
+      { id: "GMAT_DI",   count: 20, tag: "SECTIONAL • 45 MINS",        title: "4. Data Insights Deep Clinic (20 Qs • 45 Mins)", desc: "Data Sufficiency (AD/BCE), Multi-Source Reasoning, Two-Part Analysis & Graphics Interpretation.", mins: 45, secFilter: "DI", scale: "60–90 DI Sectional Scale" },
+      { id: "GMAT_705",  count: 30, tag: "99TH %ILE HARD POOL",        title: "5. 705+ Elite Adaptive Pacing Sprint (30 Qs • 60 Mins)", desc: "Upper-quartile difficulty items engineered to protect Q1–Q6 adaptive trajectory at <= 2.0 mins/Q.", mins: 60, secFilter: "ALL", scale: "705–805 Elite Band" }
+    ];
+  } else if (exam === "GRE") {
+    BLUEPRINTS = [
+      { id: "GRE_FULL",  count: 54, tag: "FULL 260–340 ADAPTIVE MOCK", title: "1. Full GRE General Section-Adaptive Mock (54 Qs • 118 Mins)", desc: "Stage 1 + Hard Stage 2 routing across Quantitative (27 Qs • 47m) and Verbal (27 Qs • 41m) with 5-option (A–E) items.", mins: 118, secFilter: "ALL", scale: "260–340 Composite Scale" },
+      { id: "GRE_Q",     count: 27, tag: "SECTIONAL • 47 MINS",        title: "2. Quantitative Reasoning QC & PS Mock (27 Qs • 47 Mins)", desc: "Quantitative Comparison (Choices A–D) + 5-Option Problem Solving (A–E) + Numeric Entry with zero negative penalty.", mins: 47, secFilter: "Quant", scale: "130–170 Quant Scale" },
+      { id: "GRE_V",     count: 27, tag: "SECTIONAL • 41 MINS",        title: "3. Verbal Reasoning TC, SE & RC Mock (27 Qs • 41 Mins)", desc: "1/2/3-Blank Text Completion, Sentence Equivalence semantic pairs & dense academic Reading Comprehension.", mins: 41, secFilter: "Verbal", scale: "130–170 Verbal Scale" },
+      { id: "GRE_Q170",  count: 20, tag: "170 CEILING DRILL",          title: "4. Quant 170 Perfection Hard-Stage Sprint (20 Qs • 30 Mins)", desc: "High-discrimination inequalities, modular remainders, normal distributions & FROZEN QC boundary traps.", mins: 30, secFilter: "Quant", scale: "167–170 Quant Ceiling" },
+      { id: "GRE_V165",  count: 20, tag: "165+ VERBAL DRILL",          title: "5. Verbal 165+ Contrast Pivot & Inference Sprint (20 Qs • 30 Mins)", desc: "Multi-clause logic hinges and dense humanities/science inference passages.", mins: 30, secFilter: "Verbal", scale: "164–170 Verbal Ceiling" }
+    ];
+  } else if (window._ACTIVE_CAT_MODE === "XAT") {
+    BLUEPRINTS = [
+      { id: "XAT_FULL",  count: 75, tag: "FULL 75-MARK XAT PAPER",      title: "1. Full XAT Official Simulation (75 Qs • 165 Mins • 5 Choices A–E)", desc: "VALR (26 Qs) + Decision Making (21 Qs) + QADI (28 Qs) in 5-option (A–E) format with +1 / -0.25 & -0.10 skip penalty.", mins: 165, secFilter: "ALL", scale: "75 Marks / XLRI BM 96%ile Scale" },
+      { id: "XAT_DM",    count: 21, tag: "SECTIONAL • 50 MINS",        title: "2. XAT Ethical & Business Decision Making (21 Qs • 50 Mins • A–E)", desc: "Stakeholder dilemma caselets, HR ethics & managerial trade-offs in 5-choice (A–E) format.", mins: 50, secFilter: "DILR", scale: "21 Marks DM Sectional" },
+      { id: "XAT_VALR",  count: 26, tag: "SECTIONAL • 55 MINS",        title: "3. XAT VALR Critical Reasoning & Poem RC (26 Qs • 55 Mins • A–E)", desc: "Abstract philosophy passages, CR assumptions & 5-option grammar/para-completion.", mins: 55, secFilter: "VARC", scale: "26 Marks VALR Sectional" },
+      { id: "XAT_QADI",  count: 28, tag: "SECTIONAL • 60 MINS",        title: "4. XAT QADI Quantitative & Data Sets (28 Qs • 60 Mins • A–E)", desc: "High-rigor geometry, probability, functions & multi-chart DI with 5 choices (A–E).", mins: 60, secFilter: "QA", scale: "28 Marks QADI Sectional" },
+      { id: "XAT_MINI",  count: 30, tag: "XLRI CUTOFF SPRINT",         title: "5. XLRI 96%ile High-Accuracy 5-Option Drill (30 Qs • 65 Mins)", desc: "Balanced 10 VALR + 10 DM + 10 QADI calibration drill capped at <= 8 unattempted skips.", mins: 65, secFilter: "ALL", scale: "XLRI Jamshedpur Target Drill" }
+    ];
+  } else if (window._ACTIVE_CAT_MODE === "NMAT") {
+    BLUEPRINTS = [
+      { id: "NMAT_FULL", count: 108, tag: "FULL 360-SCALE NMAT MOCK",  title: "1. Full NMAT Adaptive Simulation (108 Qs • 120 Mins • Zero Neg)", desc: "Language Skills (36 Qs • 28m) + Quantitative Skills (36 Qs • 52m) + Logical Reasoning (36 Qs • 40m) with +3 / 0 marking.", mins: 120, secFilter: "ALL", scale: "120–360 NMAT Scaled Score" },
+      { id: "SNAP_FULL", count: 60,  tag: "SPEED SPRINT • 60 MINS",    title: "2. Full SNAP 60-Minute Speed Mock (60 Qs • 60 Mins • +1/-0.25)", desc: "15 General English + 25 Analytical & Logical Reasoning + 20 QA/DI at 1.0 Min/Question speed.", mins: 60, secFilter: "ALL", scale: "60 Marks / SIBM Pune 42.5+ Scale" },
+      { id: "NMAT_QS",   count: 36,  tag: "SECTIONAL • 52 MINS",       title: "3. NMAT Quantitative & Data Sufficiency (36 Qs • 52 Mins)", desc: "Fast arithmetic, number properties, probability & 4-choice Data Sufficiency without negative penalty.", mins: 52, secFilter: "QA", scale: "36–120 NMAT Quant Scale" },
+      { id: "NMAT_LR",   count: 36,  tag: "SECTIONAL • 40 MINS",       title: "4. NMAT & SNAP Analytical Reasoning (36 Qs • 40 Mins)", desc: "Critical reasoning, input-output, syllogisms, coding-decoding & arrangements at 66s/Q pace.", mins: 40, secFilter: "DILR", scale: "36–120 NMAT LR Scale" },
+      { id: "NMAT_LS",   count: 36,  tag: "SECTIONAL • 28 MINS",       title: "5. NMAT Language Skills Speed Drill (36 Qs • 28 Mins • 46s/Q)", desc: "Vocabulary analogies, prepositions, error spotting & rapid RC comprehension.", mins: 28, secFilter: "VARC", scale: "36–120 NMAT Language Scale" }
+    ];
+  } else {
+    BLUEPRINTS = [
+      { id: "CAT_FULL",  count: 66, tag: "FULL 198-MARK CAT MOCK",     title: "1. Full-Length CAT Simulation (66 Qs • 120 Mins • 3 Sections)", desc: "Strict 40-min sectional flow: VARC (24 Qs) + DILR (20 Qs) + QA (22 Qs) with +3/-1 MCQ & +3/0 TITA.", mins: 120, secFilter: "ALL", scale: "198 Marks / 99.5%ile Scale" },
+      { id: "CAT_QA",    count: 22, tag: "SECTIONAL • 40 MINS",        title: "2. Quantitative Aptitude (QA) Sectional (22 Qs • 40 Mins)", desc: "Algebra, Arithmetic, Number System, Geometry & Modern Math calibrated to IIM Slot difficulty.", mins: 40, secFilter: "QA", scale: "66 Marks QA Scale" },
+      { id: "CAT_DILR",  count: 20, tag: "SECTIONAL • 40 MINS",        title: "3. DILR 4-Set Caselet Sprint (20 Qs • 40 Mins)", desc: "Multi-variable Arrangements, 3-Set Venn Maxima/Minima, Tournaments & Directed Networks.", mins: 40, secFilter: "DILR", scale: "60 Marks DILR Scale" },
+      { id: "CAT_VARC",  count: 24, tag: "SECTIONAL • 40 MINS",        title: "4. VARC 4-RC + 8-VA Sectional (24 Qs • 40 Mins)", desc: "Dense RC inference passages + zero-penalty TITA Para-Jumbles, Odd-One-Out & Para-Summary.", mins: 40, secFilter: "VARC", scale: "72 Marks VARC Scale" },
+      { id: "XAT_5OPT",  count: 75, tag: "5-OPTION XAT / OMET MOCK",   title: "5. XAT & Decision Making 5-Option Mock (75 Qs • 165 Mins • A–E)", desc: "Authentic 5-choice (A, B, C, D, E) VALR, Decision Making caselets & QADI with +1 / -0.25 marking.", mins: 165, secFilter: "ALL", scale: "XAT 5-Option Percentile Scale" }
+    ];
+  }
 
   window._SELECTED_MOCK_BP = window._SELECTED_MOCK_BP || 0;
   const bp = BLUEPRINTS[window._SELECTED_MOCK_BP] || BLUEPRINTS[0];
@@ -986,7 +997,6 @@ window._ACTIVE_CAT_MODE = window._ACTIVE_CAT_MODE || "CAT";
 window.setCatPortalMode = function (modeKey) {
   window._ACTIVE_CAT_MODE = modeKey;
   window._SELECTED_MOCK_BP = 0; // Load Blueprint 1 of the newly selected mode
-  else if (modeKey === "CAT") window._SELECTED_MOCK_BP = 0; // Auto-select 66-Q CAT Mock
 
   // Re-render currently active tab so Tabs 1-6 reflect the chosen exam mode immediately
   const activeBtn = document.querySelector("[data-tab].bg-indigo-600, .tab-btn.active");
