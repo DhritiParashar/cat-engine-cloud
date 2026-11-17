@@ -115,4 +115,18 @@
 
   window.renderTab6 = window.renderCatFullMockForecaster6;
   window.renderCallPredictor6 = window.renderCatFullMockForecaster6;
+  window.renderCallPredictor = window.renderCatFullMockForecaster6;
+  window.renderCollegePredictor = window.renderCatFullMockForecaster6;
+  const _origCatSwitch = window.switchTab;
+  window.switchTab = function (n) {
+    if (typeof _origCatSwitch === "function") _origCatSwitch(n);
+    if (Number(n) === 6) setTimeout(() => window.renderCatFullMockForecaster6(), 30);
+  };
+  window.addEventListener("DOMContentLoaded", () => {
+    const _s = window.switchTab;
+    window.switchTab = function (n) {
+      if (typeof _s === "function") _s(n);
+      if (Number(n) === 6) setTimeout(() => window.renderCatFullMockForecaster6(), 30);
+    };
+  });
 })();
