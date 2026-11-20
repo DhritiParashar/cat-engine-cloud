@@ -439,18 +439,3 @@
     }, 250);
   });
 })();
-
-// _FOUR_PILL_OBSERVER: Keep all 4 mode pills (CAT, XAT, NMAT, SNAP) locked even after header re-renders
-(function () {
-  const obs = new MutationObserver(() => {
-    const hasCombined = Array.from(document.querySelectorAll("button")).some(b => (b.textContent || "").includes("NMAT & SNAP"));
-    if (hasCombined && typeof window.ensureFourModePills === "function") {
-      window.ensureFourModePills();
-    }
-  });
-  window.addEventListener("DOMContentLoaded", () => {
-    obs.observe(document.body, { childList: true, subtree: true });
-    setTimeout(() => window.ensureFourModePills(), 100);
-    setTimeout(() => window.ensureFourModePills(), 800);
-  });
-})();
