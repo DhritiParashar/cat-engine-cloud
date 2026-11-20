@@ -638,6 +638,7 @@ with engine.begin() as conn:
     for ddl in [
         "ALTER TABLE ipm_questions ADD COLUMN IF NOT EXISTS source_tag VARCHAR(50) DEFAULT 'IPM_CORE'",
         "ALTER TABLE ipm_questions ADD COLUMN IF NOT EXISTS trap_note TEXT DEFAULT ''",
+        "ALTER TABLE ipm_questions ALTER COLUMN difficulty TYPE VARCHAR(80)",
         "ALTER TABLE ipm_questions ADD COLUMN IF NOT EXISTS is_pyq BOOLEAN DEFAULT FALSE",
         "ALTER TABLE ipm_questions ADD COLUMN IF NOT EXISTS pyq_year VARCHAR(10) DEFAULT ''",
         "ALTER TABLE ipm_questions ADD COLUMN IF NOT EXISTS pyq_exam VARCHAR(80) DEFAULT ''"
