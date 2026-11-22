@@ -756,6 +756,13 @@
       const sec = Math.min(90, Math.max(60, Math.round(60 + ratio * 30)));
       return { s1: sec, s2: sec, s3: Math.max(60, sec - 1) };
     }
+    if (typeof rec.s1 === "number" || typeof rec.s2 === "number" || typeof rec.s3 === "number") {
+      return {
+        s1: Math.max(0, Number(rec.s1 || 0)),
+        s2: Math.max(0, Number(rec.s2 || 0)),
+        s3: Math.max(0, Number(rec.s3 || 0))
+      };
+    }
     const ratio = Math.max(0, Math.min(1, Number(rec.score || 0) / Math.max(1, Number(rec.maxScore || schema.fullMinQs))));
     return {
       s1: Math.round(schema.sections[0].max * ratio),
@@ -1621,7 +1628,7 @@
         };
       });
 
-      const scaled = Math.max(0, rawMarks);
+      const scaled = Math.max(0, Math.max(0, sList[0] ? sList[0].marks : 0) + Math.max(0, sList[1] ? sList[1].marks : 0) + Math.max(0, sList[2] ? sList[2].marks : 0));
       const maxScale = totalQs === 75 ? 75 : 198;
       const accuracy = Math.round((correct / paper.length) * 100);
       const serialId = window.buildSystematicSerialId("CAT", modeKey, false, "");
