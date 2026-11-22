@@ -1176,3 +1176,53 @@
   window.renderGreMockSimulator4 = window.renderMockSimulator4;
   window.renderGmatMockSimulator4 = window.renderMockSimulator4;
 })();
+
+
+// === NATIVE TAB 4 LEDGER RECORDER BRIDGE ===
+window.recordProctoredMockNative = function (payload) {
+  const modeKey = (typeof getActiveModeKey === "function") ? getActiveModeKey() : (payload.isGre ? "GRE_STD" : "CAT_STD");
+  const schema = (typeof getSchema === "function") ? getSchema(modeKey) : { badge: modeKey, totalMax: payload.maxScale, sections: [{ max: 72 }, { max: 60 }, { max: 66 }] };
+  const ratio = Number(payload.pct || 0) / 100;
+  const s1 = Math.round((schema.sections[0]?.max || 72) * ratio);
+  const s2 = Math.round((schema.sections[1]?.max || 60) * ratio);
+  const s3 = Math.round((schema.sections[2]?.max || 66) * ratio);
+
+  // Save into both native ledger key (if defined) and proctored ledger key
+  const pKey = payload.isGre ? "gre_proctored_ledger" : "cat_proctored_ledger";
+  const pArr = JSON.parse(localStorage.getItem(pKey) || "[]");
+  const dStr = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+  const seq = String(pArr.length + 1).padStart(2, "0");
+  const serialId = payload.serialId || `${payload.isGre ? "GRE-FULL" : "CAT-FULL"}${payload.totalQs}-${dStr}-#${seq}`;
+
+  const entry = {
+    serialId,
+    mode: modeKey,
+    modeKey,
+    blueprint: `${schema.badge || modeKey} (${payload.totalQs} Qs)`,
+    score: payload.scaled,
+    scaled: payload.scaled,
+    maxMarks: payload.maxScale,
+    maxScale: payload.maxScale,
+    pct: payload.pct,
+    accuracy: `${payload.pct}%`,
+    s1, s2, s3,
+    date: new Date().toLocaleString([], { day: "2-digit", month: "short", hour: "2-digit", minute: "2-digit" })
+  };
+
+  pArr.push(entry);
+  localStorage.setItem(pKey, JSON.stringify(pArr));
+
+  // Also append into any native MBA mock ledger key present in localStorage
+  ["mba_proctored_mocks_v1", "goalisb_mba_proctored_mocks", "mba_mock_ledger"].forEach(k => {
+    try {
+      const existing = JSON.parse(localStorage.getItem(k) || "[]");
+      if (Array.isArray(existing)) {
+        existing.unshift(entry);
+        localStorage.setItem(k, JSON.stringify(existing));
+      }
+    } catch (_) {}
+  });
+
+  if (typeof window.renderStreamlinedTab4 === "function") window.renderStreamlinedTab4();
+  return entry;
+};
